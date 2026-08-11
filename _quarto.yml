@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "312 Storage"
+  sidebar:
+   contents:
+      - section: "Assignments"
+        contents:
+          #- href: homework1/hw1.qmd
+          #  text: "Homework-1"
+          #- href: homework-2/homework2.qmd
+          #  text: "Homework-2"
+          #- href: stat-exp.qmd
+          #  text: "Statistics Experience"
+          #- href: homework3/homework3.qmd
+          #  text: "Homework-3"
+          #- href: homework4.qmd
+          #  text: "Homework-4"
+          #- href: homework4_sa.qmd
+          #  text: "Homework-4 Solutions"
+          #- href: hw-5.qmd
+          #  text: "Homework-5"
+          #- href: hw-5_sa.qmd
+          #  text: "Homework-5 Solutions"
+      - section: "Slides"
+        contents: 
+          #- href: 01-welcome-312.qmd
+          #  text: "Day-1"
+          #- href: 02-review-prob.qmd
+          #  text: "Day-2"
+          #- href: 03-review-prob.qmd
+          #  text: "Day-3"
+          #- href: 04-prob-rv.qmd
+          #  text: "Day-4"
+          #- href: review-test-slides.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    
+    
