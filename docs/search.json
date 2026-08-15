@@ -5,5 +5,500 @@
     "title": "ST312 webR assignments",
     "section": "",
     "text": "Welcome to ST312\nThis is a home base for our slides and homework assignments.\nThis space allows you to search our slides for key words, so you can quickly find a topic when studying!"
+  },
+  {
+    "objectID": "01-welcome-312.html#welcome",
+    "href": "01-welcome-312.html#welcome",
+    "title": "Welcome to ST312",
+    "section": "Welcome",
+    "text": "Welcome",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#goals-for-day-1",
+    "href": "01-welcome-312.html#goals-for-day-1",
+    "title": "Welcome to ST312",
+    "section": "Goals for Day 1",
+    "text": "Goals for Day 1\nGet organized + review\n\nGet to know the professor\nGet to know each other\nCourse overview\nReview of ST 311",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#who-am-i",
+    "href": "01-welcome-312.html#who-am-i",
+    "title": "Welcome to ST312",
+    "section": "Who Am I?",
+    "text": "Who Am I?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#at-nc-state",
+    "href": "01-welcome-312.html#at-nc-state",
+    "title": "Welcome to ST312",
+    "section": "At NC State",
+    "text": "At NC State",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#at-nc-state-1",
+    "href": "01-welcome-312.html#at-nc-state-1",
+    "title": "Welcome to ST312",
+    "section": "At NC State",
+    "text": "At NC State\nProject COMPASS (Community Partnership and Assessment for School Safety). This is a three-year, federally funded initiative focused on developing and piloting a data-driven framework to strengthen collaboration between schools and community partners.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#who-are-you",
+    "href": "01-welcome-312.html#who-are-you",
+    "title": "Welcome to ST312",
+    "section": "Who Are You?",
+    "text": "Who Are You?\nPlease share with the class\n\nName\nMajor\nYear (Freshman, Sophomore, etc.)\nWhy you are taking this course\nAnything else",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#st-312",
+    "href": "01-welcome-312.html#st-312",
+    "title": "Welcome to ST312",
+    "section": "ST 312",
+    "text": "ST 312\nFundamental Statistics Concepts\n– Probability\n– Power\n– Error\n– Normality\n– Properties of distributions",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#st-312-1",
+    "href": "01-welcome-312.html#st-312-1",
+    "title": "Welcome to ST312",
+    "section": "ST 312",
+    "text": "ST 312\nStatistical inference\n– Two sample tests\n– One-way ANOVA\n– Two-way ANOVA\n– Inference on regression parameters",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#st-312-2",
+    "href": "01-welcome-312.html#st-312-2",
+    "title": "Welcome to ST312",
+    "section": "ST 312",
+    "text": "ST 312\nDescriptive statistics\n– Calculate summary statistics\n– Interpret regression coefficients\n– Make predictions",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#st-312-3",
+    "href": "01-welcome-312.html#st-312-3",
+    "title": "Welcome to ST312",
+    "section": "ST 312",
+    "text": "ST 312\nOther skills\n– Statistical literacy\n– Pick up some R along the way (optional, but I’ll provide resources)",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#where-to-get-help",
+    "href": "01-welcome-312.html#where-to-get-help",
+    "title": "Welcome to ST312",
+    "section": "Where to get help",
+    "text": "Where to get help\nOffice Hours\n\n\n\n\n\n\n\n\nWho\nWhen\nWhere\n\n\n\n\nDr. Meyer\nMonday: 1:00-2:00pm  | Thursday: 10:15 - 11:15am\nSAS 5228 or Zoom\n\n\nYichen Hu\nTBD | TBD\nSAS 1101",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#stat-hub",
+    "href": "01-welcome-312.html#stat-hub",
+    "title": "Welcome to ST312",
+    "section": "STAT Hub",
+    "text": "STAT Hub\nHours: Monday - Thursday, 5:30p-8p (except on University holidays and breaks)\nLocation: 1101 SAS Hall\nWebsite: https://statistics.sciences.ncsu.edu/resources/student/tutors/",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#videos",
+    "href": "01-welcome-312.html#videos",
+    "title": "Welcome to ST312",
+    "section": "Videos",
+    "text": "Videos\nI will also post class videos for you to review… unless attendance takes a nose dive…",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#grades",
+    "href": "01-welcome-312.html#grades",
+    "title": "Welcome to ST312",
+    "section": "Grades",
+    "text": "Grades\n\n\n\nCategory\nPercentage\n\n\n\n\nReview Test\n5%\n\n\nRubric Assignment\n5%\n\n\nStatistics Experience\n5%\n\n\nHomework\n15%\n\n\nMidterms (2)\n40%\n\n\nFinal Exam\n30%",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#review-test",
+    "href": "01-welcome-312.html#review-test",
+    "title": "Welcome to ST312",
+    "section": "Review Test",
+    "text": "Review Test\n– Revisiting past material helps reinforce it\n– Make sure everyone is set up for success\n– Third-week of class\n– We will review some today and next class (+review material is posted)",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#review-test-topics",
+    "href": "01-welcome-312.html#review-test-topics",
+    "title": "Welcome to ST312",
+    "section": "Review test topics",
+    "text": "Review test topics\n– Null and alternative hypotheses\n– Confidence intervals (create + interpret)\n– p-value\n– standard normal + t-distribution\n– z + t statistics\n– categorical vs quantitative\nClosed notes. A formula sheet is posted\nThis is on 8/27!",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#rubric-assignment",
+    "href": "01-welcome-312.html#rubric-assignment",
+    "title": "Welcome to ST312",
+    "section": "Rubric assignment",
+    "text": "Rubric assignment\nYou will be given a topic\nYou will create your own rubric\nYou will use your rubric on a given response\nMore information later!",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#statistics-experience",
+    "href": "01-welcome-312.html#statistics-experience",
+    "title": "Welcome to ST312",
+    "section": "Statistics Experience",
+    "text": "Statistics Experience\nThe goal of the statistics experience assignments is to help you engage with the statistics and data science communities outside of the classroom!\n\nHave an experience\nMake connections between our class, and the experience\nMake a slide (poster) summarizing your experience\n\nConnections can be topics of regression, coding, working with data, etc.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#student-example",
+    "href": "01-welcome-312.html#student-example",
+    "title": "Welcome to ST312",
+    "section": "Student Example",
+    "text": "Student Example",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#student-example-1",
+    "href": "01-welcome-312.html#student-example-1",
+    "title": "Welcome to ST312",
+    "section": "Student Example",
+    "text": "Student Example",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#research-study",
+    "href": "01-welcome-312.html#research-study",
+    "title": "Welcome to ST312",
+    "section": "Research study",
+    "text": "Research study\nI’m interested in interest-based assessment\nYou’ll be asked to be a part of the study!",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#ai-in-st-312",
+    "href": "01-welcome-312.html#ai-in-st-312",
+    "title": "Welcome to ST312",
+    "section": "AI in ST 312",
+    "text": "AI in ST 312\nThere is nothing stopping you from using AI (such as ChatGPT) as an additional resource to help build up your mastery of the material. However, please use it responsibly.\n– It is suggested that you use AI as a generator for additional practice problems\n– A tool to help uncover a misunderstanding you may have with ST 312 content",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#ai-in-st-312-1",
+    "href": "01-welcome-312.html#ai-in-st-312-1",
+    "title": "Welcome to ST312",
+    "section": "AI in ST 312",
+    "text": "AI in ST 312\nIrresponsible uses of AI\n– Having it think for you\n– Only asking AI questions\nAny work you turn in must be created by you! I’m interested in your fundemental understandings",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#ai-in-st-312-2",
+    "href": "01-welcome-312.html#ai-in-st-312-2",
+    "title": "Welcome to ST312",
+    "section": "AI in ST 312",
+    "text": "AI in ST 312\nDialogues with AI Reduce Beliefs in Misinformation but Build No Lasting Discernment Skills\nYour brain on ChatGPT\nHow AI is reshaping human skills and thinking\n– I believe it’s disingenuous for people to tell you to jump into using AI\n– I believe it’s disingenuous for people to tell you to never use AI\n– I try to be as transparent as possible with all of my in-class decisions, so please do not hesitate to ask questions!",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#how-class-runs",
+    "href": "01-welcome-312.html#how-class-runs",
+    "title": "Welcome to ST312",
+    "section": "How class runs",
+    "text": "How class runs\nBuild a community of learners",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#moodle",
+    "href": "01-welcome-312.html#moodle",
+    "title": "Welcome to ST312",
+    "section": "Moodle",
+    "text": "Moodle\nMoodle Tour",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#how-to-be-successful",
+    "href": "01-welcome-312.html#how-to-be-successful",
+    "title": "Welcome to ST312",
+    "section": "How to be successful",
+    "text": "How to be successful\nTake advantage of the different forms of help\nCome to class as an active participant\n– Take notes\n– Engage in discussion\n– Post questions in the forums\n– Stat Hub",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#review-toipcs",
+    "href": "01-welcome-312.html#review-toipcs",
+    "title": "Welcome to ST312",
+    "section": "Review toipcs",
+    "text": "Review toipcs\n– Normal Distribution: probabilities, z-scores, z-table (1.4)\n– Sampling Distribution: for sample means (5.2), sample proportions (5.3)\n– Confidence Intervals (6.1): for 1-sample mean (7.1), 1-sample proportion (8.1)\n– Hypothesis Testing (6.2): for 1-sample mean (7.1), 1-sample proportion (8.1)\n– P-values (6.2)",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#types-of-variables",
+    "href": "01-welcome-312.html#types-of-variables",
+    "title": "Welcome to ST312",
+    "section": "Types of variables",
+    "text": "Types of variables\nCategorical or Quantitative?\n– Height (inches)\n– State you are from\n– Zip code",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#probability-distributions",
+    "href": "01-welcome-312.html#probability-distributions",
+    "title": "Welcome to ST312",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nA probability distribution –\nA random variable –",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#probability-distributions-1",
+    "href": "01-welcome-312.html#probability-distributions-1",
+    "title": "Welcome to ST312",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nA probability distribution is a mathematical function that describes the likelihood of different outcomes for a random variable\nA random variable, usually written X, is a variable whose possible values are numerical outcomes of a random phenomenon.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#normal-distribution",
+    "href": "01-welcome-312.html#normal-distribution",
+    "title": "Welcome to ST312",
+    "section": "Normal Distribution",
+    "text": "Normal Distribution\nWhat does it look like?\nWhat’s the center?\nWhat’s the area under the curve?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#normal-distribution-1",
+    "href": "01-welcome-312.html#normal-distribution-1",
+    "title": "Welcome to ST312",
+    "section": "Normal Distribution",
+    "text": "Normal Distribution\n\nHow can we measure spread?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#spread",
+    "href": "01-welcome-312.html#spread",
+    "title": "Welcome to ST312",
+    "section": "Spread",
+    "text": "Spread\nStandard deviation - how spread out on average, each value is away from the center",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#population-vs-sample",
+    "href": "01-welcome-312.html#population-vs-sample",
+    "title": "Welcome to ST312",
+    "section": "Population vs sample",
+    "text": "Population vs sample\nWhat’s the difference?\n\\(\\mu\\) vs \\(\\bar{x}\\)\n\\(\\sigma\\) vs \\(s\\)",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#question",
+    "href": "01-welcome-312.html#question",
+    "title": "Welcome to ST312",
+    "section": "Question",
+    "text": "Question\nWhich curve has the larger mean?\nWhich curve has the larger standard deviation?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#standard-normal-distribution-1",
+    "href": "01-welcome-312.html#standard-normal-distribution-1",
+    "title": "Welcome to ST312",
+    "section": "Standard Normal Distribution",
+    "text": "Standard Normal Distribution\n\\[\nz = \\frac{x - \\mu}{\\sigma}\n\\]\nThis represents how many standard deviations a value (x) is away from the mean!\nWe can calculate probabilities using a z-score.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#probability",
+    "href": "01-welcome-312.html#probability",
+    "title": "Welcome to ST312",
+    "section": "Probability",
+    "text": "Probability\nWhat is probability?\nWhat values can probability take on?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#probability-1",
+    "href": "01-welcome-312.html#probability-1",
+    "title": "Welcome to ST312",
+    "section": "Probability",
+    "text": "Probability\nAssume that the true mean value of a can of Coke is 500mL, with a true standard deviation of 9mL. What’s the probability that a randomly sampled can of Coke contains at least 510mL?\nLet’s draw it out!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can use this chunk as a calculator if you would like!",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#z-score",
+    "href": "01-welcome-312.html#z-score",
+    "title": "Welcome to ST312",
+    "section": "z-score",
+    "text": "z-score\npnorm(your_zcore)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\npnorm() gives the area to the left, subtract the result from 1 to get the area to the right.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#z-table",
+    "href": "01-welcome-312.html#z-table",
+    "title": "Welcome to ST312",
+    "section": "z-table",
+    "text": "z-table",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#probability-2",
+    "href": "01-welcome-312.html#probability-2",
+    "title": "Welcome to ST312",
+    "section": "Probability",
+    "text": "Probability\nWhat about the probability our can of Coke contains exactly 510mL?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#setting-the-stage-for-research",
+    "href": "01-welcome-312.html#setting-the-stage-for-research",
+    "title": "Welcome to ST312",
+    "section": "Setting the stage for research",
+    "text": "Setting the stage for research\n– What’s a null hypothesis?\n– What’s an alternative hypothesis",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#context",
+    "href": "01-welcome-312.html#context",
+    "title": "Welcome to ST312",
+    "section": "Context",
+    "text": "Context\nSuppose I am a height researcher interested in how tall, on average, NC residents are. It is assumed that the average height for US citizens is 69 inches. I have hunch that NC residents are taller than that…\n\\(Ho:\\)\n\\(Ha:\\)",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#next-time",
+    "href": "01-welcome-312.html#next-time",
+    "title": "Welcome to ST312",
+    "section": "Next time",
+    "text": "Next time\n– More review\n– Probability rules",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
   }
 ]

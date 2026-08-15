@@ -26,8 +26,8 @@ website:
           #  text: "Homework-5 Solutions"
       - section: "Slides"
         contents: 
-          #- href: 01-welcome-312.qmd
-          #  text: "Day-1"
+          - href: 01-welcome-312.qmd
+            text: "Day-1"
           #- href: 02-review-prob.qmd
           #  text: "Day-2"
           #- href: 03-review-prob.qmd
