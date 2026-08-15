@@ -1,7 +1,7 @@
 ---
 title: "Welcome to ST312"
 subtitle: "Lecture 1"
-date: "August 19, 2025"
+date: "August 17, 2026"
 format: 
   revealjs:
     theme: [dark, slides.scss]
