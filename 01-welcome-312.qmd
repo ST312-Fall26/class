@@ -1,7 +1,7 @@
 ---
 title: "Welcome to ST312"
 subtitle: "Lecture 1"
-date: "August 17, 2026"
+date: "August 18, 2026"
 format: 
   revealjs:
     theme: [dark, slides.scss]
@@ -138,7 +138,7 @@ I will also post class videos for you to review... unless attendance takes a nos
 
 -- Make sure everyone is set up for success
 
--- Third-week of class
+-- Second-week of class
 
 -- We will review some today and next class (+review material is posted)
 
@@ -214,7 +214,7 @@ Irresponsible uses of AI
 
 -- Only asking AI questions 
 
-Any work you turn in must be created by you! I'm interested in your fundemental understandings
+Any work you turn in must be created by you! I'm interested in your fundamental understandings
 
 ## AI in ST 312{.smaller}
 
@@ -274,6 +274,12 @@ proportion (8.1)
 
 # Review
 
+## Overview 
+
+Why should we learn statistics / take a statistics course? 
+
+Why is this useful?
+
 ## Types of variables 
 
 Categorical or Quantitative? 
@@ -295,6 +301,12 @@ A random variable --
 A probability distribution is a mathematical function that describes the likelihood of different outcomes for a random variable
 
 A random variable, usually written X, is a variable whose possible values are numerical outcomes of a random phenomenon.
+
+## Distributions 
+
+Probability distributions vs sampoling distributions 
+
+What's the difference?
 
 ## Normal Distribution
 

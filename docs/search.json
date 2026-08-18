@@ -165,7 +165,7 @@
     "href": "01-welcome-312.html#review-test",
     "title": "Welcome to ST312",
     "section": "Review Test",
-    "text": "Review Test\n– Revisiting past material helps reinforce it\n– Make sure everyone is set up for success\n– Third-week of class\n– We will review some today and next class (+review material is posted)",
+    "text": "Review Test\n– Revisiting past material helps reinforce it\n– Make sure everyone is set up for success\n– Second-week of class\n– We will review some today and next class (+review material is posted)",
     "crumbs": [
       "Slides",
       "Day-1"
@@ -253,7 +253,7 @@
     "href": "01-welcome-312.html#ai-in-st-312-1",
     "title": "Welcome to ST312",
     "section": "AI in ST 312",
-    "text": "AI in ST 312\nIrresponsible uses of AI\n– Having it think for you\n– Only asking AI questions\nAny work you turn in must be created by you! I’m interested in your fundemental understandings",
+    "text": "AI in ST 312\nIrresponsible uses of AI\n– Having it think for you\n– Only asking AI questions\nAny work you turn in must be created by you! I’m interested in your fundamental understandings",
     "crumbs": [
       "Slides",
       "Day-1"
@@ -315,6 +315,17 @@
     ]
   },
   {
+    "objectID": "01-welcome-312.html#overview",
+    "href": "01-welcome-312.html#overview",
+    "title": "Welcome to ST312",
+    "section": "Overview",
+    "text": "Overview\nWhy should we learn statistics / take a statistics course?\nWhy is this useful?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
     "objectID": "01-welcome-312.html#types-of-variables",
     "href": "01-welcome-312.html#types-of-variables",
     "title": "Welcome to ST312",
@@ -342,6 +353,17 @@
     "title": "Welcome to ST312",
     "section": "Probability distributions",
     "text": "Probability distributions\nA probability distribution is a mathematical function that describes the likelihood of different outcomes for a random variable\nA random variable, usually written X, is a variable whose possible values are numerical outcomes of a random phenomenon.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#distributions",
+    "href": "01-welcome-312.html#distributions",
+    "title": "Welcome to ST312",
+    "section": "Distributions",
+    "text": "Distributions\nProbability distributions vs sampoling distributions\nWhat’s the difference?",
     "crumbs": [
       "Slides",
       "Day-1"
