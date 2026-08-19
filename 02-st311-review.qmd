@@ -28,6 +28,8 @@ editor:
 
 Review the fundamentals of statistics (ST311 review)
 
+Get to know your TA!
+
 ## Notation Check 
 
 -- $\mu$

@@ -522,5 +522,412 @@
       "Slides",
       "Day-1"
     ]
+  },
+  {
+    "objectID": "02-st311-review.html#checklist",
+    "href": "02-st311-review.html#checklist",
+    "title": "ST311 Review",
+    "section": "Checklist",
+    "text": "Checklist\n– Review Test (8/27)\n– Do you have access to the required textbook?\n– Do you understand how/where to get help in ST312?\n– Have you filled out the Getting to know you survey?\n– Do you have plan to take notes?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#goals-today",
+    "href": "02-st311-review.html#goals-today",
+    "title": "ST311 Review",
+    "section": "Goals Today",
+    "text": "Goals Today\nReview the fundamentals of statistics (ST311 review)\nGet to know your TA!",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#notation-check",
+    "href": "02-st311-review.html#notation-check",
+    "title": "ST311 Review",
+    "section": "Notation Check",
+    "text": "Notation Check\n– \\(\\mu\\)\n– \\(\\pi\\) or \\(p\\)\n– \\(\\hat{p}\\)\n– \\(s\\)\n– \\(\\sigma\\)\n– \\(\\bar{x}\\)\n– \\(n\\)",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#notation-check-1",
+    "href": "02-st311-review.html#notation-check-1",
+    "title": "ST311 Review",
+    "section": "Notation Check",
+    "text": "Notation Check\n– \\(\\mu\\) - population mean\n– \\(\\pi\\) or \\(p\\) - population proportion\n– \\(\\hat{p}\\) - sample proportion\n– \\(s\\) - sample standard deviation\n– \\(\\sigma\\) - population standard deviation\n– \\(\\bar{x}\\) - sample mean\n– \\(n\\) - sample size",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#last-time",
+    "href": "02-st311-review.html#last-time",
+    "title": "ST311 Review",
+    "section": "Last time",
+    "text": "Last time\nProbability distribution vs sampling distribution\nA probability distribution describes the likelihood of all possible outcomes for a single random variable.\nA sampling distribution describes the distribution of a statistic.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#question",
+    "href": "02-st311-review.html#question",
+    "title": "ST311 Review",
+    "section": "Question",
+    "text": "Question\nRead these as sentences. Which one corresponds to a sampling distribution vs a probability distribution?\n\\(\\bar{x} \\sim N(\\mu, \\frac{\\sigma}{\\sqrt{n}})\\)\n\\(x \\sim N(\\mu, \\sigma)\\)",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#setting-the-stage-for-research",
+    "href": "02-st311-review.html#setting-the-stage-for-research",
+    "title": "ST311 Review",
+    "section": "Setting the stage for research",
+    "text": "Setting the stage for research\n– What is a null hypothesis?\n– What is an alternative hypothesis?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#setting-the-stage-for-research-1",
+    "href": "02-st311-review.html#setting-the-stage-for-research-1",
+    "title": "ST311 Review",
+    "section": "Setting the stage for research",
+    "text": "Setting the stage for research\n\\(Ho:\\) - what we assume to be true / what we test against\n\\(Ha:\\) - this is our research question!",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#context",
+    "href": "02-st311-review.html#context",
+    "title": "ST311 Review",
+    "section": "Context",
+    "text": "Context\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that \\(\\bar{x}\\) = 2035mL, and \\(s\\) = 150mL\n\\(Ho:\\)\n\\(Ha:\\)",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#context-1",
+    "href": "02-st311-review.html#context-1",
+    "title": "ST311 Review",
+    "section": "Context",
+    "text": "Context\n\\(Ho: \\mu = 2000\\)\n\\(Ha: \\mu &gt; 2000\\)\nShould we do a t-test or a z-test?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#before-we-do-that",
+    "href": "02-st311-review.html#before-we-do-that",
+    "title": "ST311 Review",
+    "section": "Before we do that…",
+    "text": "Before we do that…\nAssumptions\n– Are our observations independent\n– Is our sample size larger than 30? &lt;- why is this important?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#test-statistic",
+    "href": "02-st311-review.html#test-statistic",
+    "title": "ST311 Review",
+    "section": "test-statistic",
+    "text": "test-statistic\nCalculate our test statistic using the following formula.\n\\[t = \\frac{\\bar{x} - \\mu_0}{\\frac{s}{\\sqrt{n}}}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#test-statistic-1",
+    "href": "02-st311-review.html#test-statistic-1",
+    "title": "ST311 Review",
+    "section": "test-statistic",
+    "text": "test-statistic\n\\[t = \\frac{\\bar{x} - \\mu_0}{\\frac{s}{\\sqrt{n}}}\\]\n\\[t = \\frac{2035 - 2000}{\\frac{150}{\\sqrt{50}}}\\]\n\\[t = \\frac{35}{\\frac{150}{7.07107}}\\]\n\\[t = \\frac{35}{21.2132}\\]\n\\[t \\approx 1.65\\]\nHow do we interpret this number?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#test-statistic-2",
+    "href": "02-st311-review.html#test-statistic-2",
+    "title": "ST311 Review",
+    "section": "test-statistic",
+    "text": "test-statistic\n\\[t \\approx 1.65\\]\n2035 \\((\\bar{x})\\) is 1.65 standard errors away from the null value 2000!",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#test-statistic-3",
+    "href": "02-st311-review.html#test-statistic-3",
+    "title": "ST311 Review",
+    "section": "test-statistic",
+    "text": "test-statistic\n\\[t \\approx 1.65\\]\n2035 \\((\\bar{x})\\) is 1.65 standard errors away from the null value 2000!\nNow what?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#p-value",
+    "href": "02-st311-review.html#p-value",
+    "title": "ST311 Review",
+    "section": "p-value",
+    "text": "p-value\np-value - what is it?\nIs it going to be large or small?\nHow do we know?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#section-1",
+    "href": "02-st311-review.html#section-1",
+    "title": "ST311 Review",
+    "section": "",
+    "text": "But there is one problem…… this is a rule for a standard normal distribution….\n… and we don’t have that…",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#t-distribution",
+    "href": "02-st311-review.html#t-distribution",
+    "title": "ST311 Review",
+    "section": "t-distribution",
+    "text": "t-distribution\nt-distribution\nWhat is a degree of freedom?\nWhat t-distribution are we using?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#degrees-of-freedom",
+    "href": "02-st311-review.html#degrees-of-freedom",
+    "title": "ST311 Review",
+    "section": "Degrees of freedom",
+    "text": "Degrees of freedom\nThe Wardrobe Analogy\nImagine you have 7 different shirts to wear over a 7-day week. On Monday, you have 7 choices. On Tuesday, 6 choices. By the time Sunday rolls around, you only have 1 shirt left. You have no choice on Sunday—your decision was perfectly determined by the previous 6 days. You had 6 days of true flexibility, meaning your degrees of freedom are 6.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#degrees-of-freedom-1",
+    "href": "02-st311-review.html#degrees-of-freedom-1",
+    "title": "ST311 Review",
+    "section": "Degrees of freedom",
+    "text": "Degrees of freedom\nNote: We need degrees of freedom because in a single mean test, we also have to use data to estimate \\(s\\) for the standard error. In a single proportion test, the standard error is entirely estimated using our statistic \\(\\hat{p}\\). We will re-visit this when we review single proportion.\nHow many independent pieces of information you have\nIf you have \\(\\bar{x}\\) and n = 50…. the 50th observation is “locked” into whatever the exact number makes the mean equal to \\(\\bar{x}\\) (2035).\nWe are working with 49 degrees of freedom!\n\\(t_{49}\\)",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#complete-the-story",
+    "href": "02-st311-review.html#complete-the-story",
+    "title": "ST311 Review",
+    "section": "Complete the story",
+    "text": "Complete the story\nBecause our statistic follows a \\(t_{49}\\), it is essentially the same shape as a normal distribution. Because our test statistic is &lt; 2, our p-value is going to be relatively large. Let’s calculate it.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#p-value-1",
+    "href": "02-st311-review.html#p-value-1",
+    "title": "ST311 Review",
+    "section": "p-value",
+    "text": "p-value\n\nThe probability of observing our statistic, or something more extreme, given the null hypothesis is true.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#p-value-2",
+    "href": "02-st311-review.html#p-value-2",
+    "title": "ST311 Review",
+    "section": "p-value",
+    "text": "p-value\nThe probability of observing a mean of 2035, or something more extreme, given the population mean of water intake for young adults is 2000 mL, is about 10.53%.\nSo what do we do with this information?\n– Decision\n– Conclusion",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#decision-and-conclusion",
+    "href": "02-st311-review.html#decision-and-conclusion",
+    "title": "ST311 Review",
+    "section": "Decision and Conclusion",
+    "text": "Decision and Conclusion\nWe do this based on \\(\\alpha\\).\n\\(\\alpha\\) is the threshold we compare our p-value to. This is set at the beginning of your study.\nLet’s assume that \\(\\alpha = 0.05\\).\nLet’s now write our decision and conclusion together.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#decision-and-conclusion-1",
+    "href": "02-st311-review.html#decision-and-conclusion-1",
+    "title": "ST311 Review",
+    "section": "Decision and Conclusion",
+    "text": "Decision and Conclusion\nDecision:\nConclusion:",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-intervals",
+    "href": "02-st311-review.html#confidence-intervals",
+    "title": "ST311 Review",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that \\(\\bar{x}\\) = 2035mL, and \\(s\\) = 150mL\nHow could we change this question if I wanted to make a confidence interval instead of performing a hypothesis test?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-intervals-1",
+    "href": "02-st311-review.html#confidence-intervals-1",
+    "title": "ST311 Review",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\nestimate",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-intervals-2",
+    "href": "02-st311-review.html#confidence-intervals-2",
+    "title": "ST311 Review",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). We want to estimate the population mean water consumption for these students on campus.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-interval",
+    "href": "02-st311-review.html#confidence-interval",
+    "title": "ST311 Review",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval\nYou may use 2.01 for \\(t^*\\). Calculate a 95% confidence interval using the formula below.\n\\[\\bar{x} \\pm t^* \\cdot \\left( \\frac{s}{\\sqrt{n}} \\right)\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-interval-1",
+    "href": "02-st311-review.html#confidence-interval-1",
+    "title": "ST311 Review",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval\n\\[\\bar{x} \\pm t^* \\cdot \\left( \\frac{s}{\\sqrt{n}} \\right)\\]\n\\[2035 \\pm 2.010 \\cdot \\left( \\frac{150}{\\sqrt{50}} \\right)\\]\n\\[2035 \\pm 2.010 \\cdot (21.2132)\\]\n\\[2035 \\pm 42.64\\]\n\\[(1992.36\\text{ mL},\\ 2077.64\\text{ mL})\\]\nhow do we interpret this?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#null-and-alternative",
+    "href": "02-st311-review.html#null-and-alternative",
+    "title": "ST311 Review",
+    "section": "Null and alternative",
+    "text": "Null and alternative\n\\(Ho: \\pi = .5\\)\n\\(Ha: \\pi &gt; .5\\)\nWe are going to conduct a z-test, because our response variable is categorical!",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#t-vs-z-test",
+    "href": "02-st311-review.html#t-vs-z-test",
+    "title": "ST311 Review",
+    "section": "t vs z-test",
+    "text": "t vs z-test\n\\[{SE(\\bar{x})} = \\frac{s}{\\sqrt{n}}\\]\n\\[\\text{Sample Standard Deviation } (s) = \\sqrt{\\frac{\\sum (x_i - \\bar{x})^2}{n - 1}}\\]\nvs\n\\[SE({\\hat{p})} = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]\n\\[{SE(p_o)} = \\sqrt{\\frac{p_0(1 - p_0)}{n}}\\]\nBecause we know the standard error when we calculate our statistic \\(\\hat{p}\\), we are justified to do a z-test and a standard normal distribution.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#other-formulas",
+    "href": "02-st311-review.html#other-formulas",
+    "title": "ST311 Review",
+    "section": "Other formulas",
+    "text": "Other formulas\n\\[z = \\frac{\\hat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\]\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#assumptions",
+    "href": "02-st311-review.html#assumptions",
+    "title": "ST311 Review",
+    "section": "Assumptions",
+    "text": "Assumptions\nHypothesis test:\n\\[n p_0 \\ge 10 \\quad \\text{and} \\quad n (1 - p_0) \\ge 10\\]\nConfidence interval:\n\\[n \\hat{p} \\ge 10 \\quad \\text{and} \\quad n (1 - \\hat{p}) \\ge 10\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#z-statistic",
+    "href": "02-st311-review.html#z-statistic",
+    "title": "ST311 Review",
+    "section": "z-statistic",
+    "text": "z-statistic\n\\[z = \\frac{\\hat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\]\n\\[z = \\frac{0.70 - 0.50}{\\sqrt{\\frac{0.50(1 - 0.50)}{50}}}\\]\n\\[z = \\frac{0.20}{\\sqrt{\\frac{0.25}{50}}}\\]\n\\[z = \\frac{0.20}{\\sqrt{0.005}}\\]\n\\[z = \\frac{0.20}{0.07071}\\]\n\\[z \\approx 2.83\\]\nDraw out how the p-value would be calculated.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-interval-2",
+    "href": "02-st311-review.html#confidence-interval-2",
+    "title": "ST311 Review",
+    "section": "Confidence interval",
+    "text": "Confidence interval\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-interval-3",
+    "href": "02-st311-review.html#confidence-interval-3",
+    "title": "ST311 Review",
+    "section": "Confidence interval",
+    "text": "Confidence interval\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{\\frac{0.70(1 - 0.70)}{50}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{\\frac{0.70(0.30)}{50}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{\\frac{0.21}{50}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{0.0042}\\]\n\\[0.70 \\pm 1.96 \\cdot (0.06481)\\]\n\\[0.70 \\pm 0.1270\\]\n\\[(0.5730,\\ 0.8270) \\quad \\text{or} \\quad (57.30\\%,\\ 82.70\\%)\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
   }
 ]
