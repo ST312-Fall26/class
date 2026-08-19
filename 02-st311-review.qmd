@@ -1,0 +1,615 @@
+---
+title: "ST311 Review"
+subtitle: "Lecture 2"
+date: "August 20, 2026"
+format: 
+  revealjs:
+    theme: [dark, slides.scss]
+filters: 
+- webr
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Checklist 
+
+-- Review Test (8/27) 
+
+-- Do you have access to the required textbook?
+
+– Do you understand how/where to get help in ST312?
+
+-- Have you filled out the *Getting to know you* survey? 
+
+-- Do you have plan to take notes? 
+
+## Goals Today 
+
+Review the fundamentals of statistics (ST311 review)
+
+## Notation Check 
+
+-- $\mu$
+
+-- $\pi$ or $p$
+
+-- $\hat{p}$
+
+-- $s$
+
+-- $\sigma$ 
+
+-- $\bar{x}$
+
+-- $n$
+
+## Notation Check 
+
+-- $\mu$ - population mean
+
+-- $\pi$ or $p$ - population proportion
+
+-- $\hat{p}$ - sample proportion 
+
+-- $s$ - sample standard deviation 
+
+-- $\sigma$ - population standard deviation 
+
+-- $\bar{x}$ - sample mean
+
+-- $n$ - sample size
+
+## Last time 
+
+Probability distribution vs sampling distribution 
+
+A probability distribution describes the likelihood of all possible outcomes for a single random variable.
+
+A sampling distribution describes the distribution of a statistic. 
+
+## Question 
+
+Read these as sentences. Which one corresponds to a sampling distribution vs a probability distribution?
+
+$\bar{x} \sim N(\mu, \frac{\sigma}{\sqrt{n}})$
+
+$x \sim N(\mu, \sigma)$
+
+## Setting the stage for research 
+
+-- What is a null hypothesis?
+
+-- What is an alternative hypothesis?
+
+## Setting the stage for research 
+
+$Ho:$ - what we assume to be true / what we test against 
+
+$Ha:$ - this is our research question! 
+
+## Context 
+
+A health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.
+
+The researcher selects a simple random sample of $n = 50$ students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that $\bar{x}$ = 2035mL, and $s$ = 150mL
+
+$Ho:$
+
+$Ha:$
+
+## Context 
+
+$Ho: \mu = 2000$
+
+$Ha: \mu > 2000$
+
+Should we do a t-test or a z-test? 
+
+## Before we do that... 
+
+Assumptions
+
+-- Are our observations independent
+
+-- Is our sample size larger than 30? <- why is this important?
+
+
+## test-statistic 
+
+Calculate our test statistic using the following formula.
+
+$$t = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}$$
+
+## test-statistic{.smaller}
+
+$$t = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}$$
+
+$$t = \frac{2035 - 2000}{\frac{150}{\sqrt{50}}}$$
+
+$$t = \frac{35}{\frac{150}{7.07107}}$$
+
+$$t = \frac{35}{21.2132}$$
+
+$$t \approx 1.65$$
+
+
+How do we interpret this number?
+
+## test-statistic 
+
+$$t \approx 1.65$$
+
+2035 $(\bar{x})$ is 1.65 standard errors away from the null value 2000!
+
+## test-statistic 
+
+$$t \approx 1.65$$
+
+2035 $(\bar{x})$ is 1.65 standard errors away from the null value 2000!
+
+Now what? 
+
+## p-value 
+
+p-value - what is it?
+
+Is it going to be large or small? 
+
+How do we know? 
+
+## 
+
+```{r}
+#| message: false
+#| warning: false
+library(ggplot2)
+
+# Define parameters for a standard normal distribution
+mu <- 0
+sigma <- 1
+
+# Generate x values and corresponding normal density values
+x <- seq(-4, 4, length.out = 1000)
+df <- data.frame(
+  x = x,
+  y = dnorm(x, mean = mu, sd = sigma)
+)
+
+# Plot the Empirical Rule (68-95-99.7 Rule)
+ggplot(df, aes(x = x, y = y)) +
+  # Highlight Area 3: Within 3 SDs (99.7%)
+  geom_area(data = subset(df, x >= -3 & x <= 3), fill = "#D6EAF8", alpha = 0.8) +
+  # Highlight Area 2: Within 2 SDs (95%)
+  geom_area(data = subset(df, x >= -2 & x <= 2), fill = "#85C1E9", alpha = 0.8) +
+  # Highlight Area 1: Within 1 SD (68%)
+  geom_area(data = subset(df, x >= -1 & x <= 1), fill = "#3498DB", alpha = 0.8) +
+  
+  # Draw standard deviation vertical lines
+  geom_vline(xintercept = c(-3, -2, -1, 0, 1, 2, 3), 
+             linetype = "dashed", color = "gray30", alpha = 0.7) +
+  
+  # Draw normal distribution curve
+  geom_line(color = "#1B4F72", size = 1.2) +
+  
+  # Add percentage annotations
+  annotate("text", x = 0, y = 0.20, label = "68%", color = "white", fontface = "bold", size = 6) +
+  annotate("text", x = 1.5, y = 0.08, label = "13.5%", color = "gray20", fontface = "bold", size = 4.5) +
+  annotate("text", x = -1.5, y = 0.08, label = "13.5%", color = "gray20", fontface = "bold", size = 4.5) +
+  annotate("text", x = 2.5, y = 0.02, label = "2.35%", color = "gray20", fontface = "bold", size = 3.5) +
+  annotate("text", x = -2.5, y = 0.02, label = "2.35%", color = "gray20", fontface = "bold", size = 3.5) +
+  
+  # Label x-axis ticks using Greek standard deviation symbols
+  scale_x_continuous(
+    breaks = -3:3,
+    labels = c(expression(mu - 3*sigma), expression(mu - 2*sigma), expression(mu - sigma), 
+               expression(mu), 
+               expression(mu + sigma), expression(mu + 2*sigma), expression(mu + 3*sigma))
+  ) +
+  
+  # Titles and Styling
+  labs(
+    title = "The Empirical Rule (68-95-99.7 Rule)",
+    subtitle = "Percentage of data falling within 1, 2, and 3 standard deviations of the mean",
+    x = "Standard Deviations from the Mean",
+    y = "Density"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5, color = "gray30"),
+    panel.grid.minor = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+```
+
+
+## 
+
+```{r}
+#| message: false
+#| warning: false
+library(ggplot2)
+
+# Define parameters for a standard normal distribution
+mu <- 0
+sigma <- 1
+
+# Generate x values and corresponding normal density values
+x <- seq(-4, 4, length.out = 1000)
+df <- data.frame(
+  x = x,
+  y = dnorm(x, mean = mu, sd = sigma)
+)
+
+# Plot the Empirical Rule (68-95-99.7 Rule)
+ggplot(df, aes(x = x, y = y)) +
+  # Highlight Area 3: Within 3 SDs (99.7%)
+  geom_area(data = subset(df, x >= -3 & x <= 3), fill = "#D6EAF8", alpha = 0.8) +
+  # Highlight Area 2: Within 2 SDs (95%)
+  geom_area(data = subset(df, x >= -2 & x <= 2), fill = "#85C1E9", alpha = 0.8) +
+  # Highlight Area 1: Within 1 SD (68%)
+  geom_area(data = subset(df, x >= -1 & x <= 1), fill = "#3498DB", alpha = 0.8) +
+  
+  # Draw standard deviation vertical lines
+  geom_vline(xintercept = c(-3, -2, -1, 0, 1, 2, 3), 
+             linetype = "dashed", color = "gray30", alpha = 0.7) +
+  
+  # Draw normal distribution curve
+  geom_line(color = "#1B4F72", size = 1.2) +
+  
+  # Add percentage annotations
+  annotate("text", x = 0, y = 0.20, label = "68%", color = "white", fontface = "bold", size = 6) +
+  annotate("text", x = 1.5, y = 0.08, label = "13.5%", color = "gray20", fontface = "bold", size = 4.5) +
+  annotate("text", x = -1.5, y = 0.08, label = "13.5%", color = "gray20", fontface = "bold", size = 4.5) +
+  annotate("text", x = 2.5, y = 0.02, label = "2.35%", color = "gray20", fontface = "bold", size = 3.5) +
+  annotate("text", x = -2.5, y = 0.02, label = "2.35%", color = "gray20", fontface = "bold", size = 3.5) +
+  
+  # Label x-axis ticks using Greek standard deviation symbols
+  scale_x_continuous(
+    breaks = -3:3,
+    labels = c(expression(mu - 3*sigma), expression(mu - 2*sigma), expression(mu - sigma), 
+               expression(mu), 
+               expression(mu + sigma), expression(mu + 2*sigma), expression(mu + 3*sigma))
+  ) +
+  
+  # Titles and Styling
+  labs(
+    title = "The Empirical Rule (68-95-99.7 Rule)",
+    subtitle = "Percentage of data falling within 1, 2, and 3 standard deviations of the mean",
+    x = "Standard Deviations from the Mean",
+    y = "Density"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5, color = "gray30"),
+    panel.grid.minor = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+```
+
+But there is one problem...... this is a rule for a standard normal distribution.... 
+
+... and we don't have that...
+
+## t-distribution 
+
+[t-distribution]
+
+What is a degree of freedom? 
+
+What t-distribution are we using? 
+
+## Degrees of freedom 
+
+The Wardrobe Analogy
+
+Imagine you have 7 different shirts to wear over a 7-day week. On Monday, you have 7 choices. On Tuesday, 6 choices. By the time Sunday rolls around, you only have 1 shirt left. You have no choice on Sunday—your decision was perfectly determined by the previous 6 days. You had 6 days of true flexibility, meaning your degrees of freedom are 6.
+
+## Degrees of freedom 
+
+Note: We need degrees of freedom because in a single mean test, we also have to use data to estimate $s$ for the standard error. In a single proportion test, the standard error is entirely estimated using our statistic $\hat{p}$. We will re-visit this when we review single proportion.  
+
+How many **independent pieces of information you have** 
+
+If you have $\bar{x}$ and n = 50.... the 50th observation is "locked" into whatever the exact number makes the mean equal to $\bar{x}$ (2035). 
+
+We are working with 49 degrees of freedom!
+
+$t_{49}$
+
+## Complete the story 
+
+Because our statistic follows a $t_{49}$, it is *essentially* the same shape as a normal distribution. Because our test statistic is < 2, our p-value is going to be relatively large. Let's calculate it. 
+
+## p-value 
+
+```{r}
+#| message: false
+#| warning: false
+library(ggplot2)
+
+# Parameters
+df_val <- 49
+t_stat <- 1.65
+p_val_two_tail <- 2 * (1 - pt(t_stat, df = df_val)) # ~ 0.1053
+
+# Generate curve data
+x <- seq(-4, 4, length.out = 1000)
+df_plot <- data.frame(
+  x = x,
+  y = dt(x, df = df_val)
+)
+
+ggplot(df_plot, aes(x = x, y = y)) +
+  # Curve
+  geom_line(color = "#1F2937", size = 1) +
+  
+  # Right tail shading (t >= 1.65)
+  geom_area(
+    data = subset(df_plot, x >= t_stat),
+    fill = "#EF4444", alpha = 0.6
+  ) +
+  
+  # Left tail shading (t <= -1.65)
+  geom_area(
+    data = subset(df_plot, x <= -t_stat),
+    fill = "#EF4444", alpha = 0.6
+  ) +
+  
+  # Vertical test statistic lines
+  geom_vline(xintercept = c(-t_stat, t_stat), linetype = "dashed", color = "#DC2626", size = 0.8) +
+  
+  # Annotations for tails
+  annotate("text", x = 2.3, y = 0.08, 
+           label = paste0("p/2 = ", round(p_val_two_tail / 2, 4)), 
+           color = "#B91C1C", fontface = "bold", size = 4) +
+  annotate("text", x = -2.3, y = 0.08, 
+           label = paste0("p/2 = ", round(p_val_two_tail / 2, 4)), 
+           color = "#B91C1C", fontface = "bold", size = 4) +
+  
+  # Custom x-axis breaks
+  scale_x_continuous(
+    breaks = c(-3, -t_stat, -1, 0, 1, t_stat, 3),
+    labels = c("-3", "-1.65", "-1", "0", "1", "1.65", "3")
+  ) +
+  
+  # Title and Axis Labels
+  labs(
+    title = "Two-Tailed p-Value Visualization",
+    subtitle = paste0("Student's t-Distribution (df = ", df_val, ", t = ±", t_stat, ")"),
+    x = "t-statistic",
+    y = "Density"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5, color = "gray40"),
+    panel.grid.minor = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+```
+
+
+The probability of observing our statistic, or something more extreme, given the null hypothesis is true.
+
+## p-value 
+
+The probability of observing a mean of 2035, or something more extreme, given the population mean of water intake for young adults is 2000 mL, is about 10.53%.
+
+So what do we do with this information?
+
+-- Decision 
+
+-- Conclusion 
+
+## Decision and Conclusion 
+
+We do this based on $\alpha$. 
+
+$\alpha$ is the threshold we compare our p-value to. This is set at the beginning of your study.
+
+Let's assume that $\alpha = 0.05$. 
+
+Let's now write our decision and conclusion together. 
+
+## Decision and Conclusion 
+
+Decision: 
+
+Conclusion: 
+
+# Questions 
+
+## Confidence Intervals
+
+A health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.
+
+The researcher selects a simple random sample of $n = 50$ students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that $\bar{x}$ = 2035mL, and $s$ = 150mL
+
+How could we change this question if I wanted to make a confidence interval instead of performing a hypothesis test? 
+
+## Confidence Intervals 
+
+**estimate** 
+
+## Confidence Intervals 
+
+A health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.
+
+The researcher selects a simple random sample of $n = 50$ students from the campus library and records their daily water consumption in milliliters (mL). We want to **estimate** the population mean water consumption for these students on campus. 
+
+
+## Confidence Interval 
+
+You may use 2.01 for $t^*$. Calculate a 95% confidence interval using the formula below. 
+
+$$\bar{x} \pm t^* \cdot \left( \frac{s}{\sqrt{n}} \right)$$
+
+## Confidence Interval 
+
+$$\bar{x} \pm t^* \cdot \left( \frac{s}{\sqrt{n}} \right)$$
+
+$$2035 \pm 2.010 \cdot \left( \frac{150}{\sqrt{50}} \right)$$
+
+$$2035 \pm 2.010 \cdot (21.2132)$$
+
+$$2035 \pm 42.64$$
+
+$$(1992.36\text{ mL},\ 2077.64\text{ mL})$$
+
+how do we interpret this? 
+
+
+# Questions?
+
+A health researcher wants to see if more than half of college students are drinking water. In a sample size of $n = 50$, the researcher recorded that 35 students drink more than 1 bottle of water a day.
+
+What's different than before?
+
+What's the null and alternative hypothesis?
+
+What type of test are we doing?
+
+## Null and alternative
+
+$Ho: \pi = .5$
+
+$Ha: \pi > .5$
+
+We are going to conduct a z-test, because our response variable is categorical! 
+
+## t vs z-test{.smaller} 
+
+$${SE(\bar{x})} = \frac{s}{\sqrt{n}}$$
+
+$$\text{Sample Standard Deviation } (s) = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}$$
+
+vs
+
+$$SE({\hat{p})} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$ 
+
+$${SE(p_o)} = \sqrt{\frac{p_0(1 - p_0)}{n}}$$
+
+Because we know the standard error when we calculate our statistic $\hat{p}$, we are justified to do a z-test and a standard normal distribution. 
+
+## Other formulas 
+
+$$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}$$
+
+
+$$\hat{p} \pm z^* \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}$$
+
+## Assumptions 
+
+Hypothesis test: 
+
+$$n p_0 \ge 10 \quad \text{and} \quad n (1 - p_0) \ge 10$$
+
+
+Confidence interval: 
+
+$$n \hat{p} \ge 10 \quad \text{and} \quad n (1 - \hat{p}) \ge 10$$
+
+## z-statistic{.smaller} 
+
+$$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}$$
+
+$$z = \frac{0.70 - 0.50}{\sqrt{\frac{0.50(1 - 0.50)}{50}}}$$
+
+$$z = \frac{0.20}{\sqrt{\frac{0.25}{50}}}$$
+
+$$z = \frac{0.20}{\sqrt{0.005}}$$
+
+$$z = \frac{0.20}{0.07071}$$
+
+$$z \approx 2.83$$
+
+Draw out how the p-value would be calculated. 
+
+##
+
+```{r}
+#| message: false
+#| warning: false
+library(ggplot2)
+
+# Parameters
+z_stat <- 2.83
+p_value <- 1 - pnorm(z_stat) # ~ 0.0023
+
+# Generate standard normal curve data
+x <- seq(-4, 4, length.out = 1000)
+df_plot <- data.frame(
+  x = x,
+  y = dnorm(x)
+)
+
+ggplot(df_plot, aes(x = x, y = y)) +
+  # Standard normal curve
+  geom_line(color = "#1F2937", size = 1) +
+  
+  # Right tail shading (z >= 2.83)
+  geom_area(
+    data = subset(df_plot, x >= z_stat),
+    fill = "#EF4444", alpha = 0.7
+  ) +
+  
+  # Vertical line for test statistic
+  geom_vline(xintercept = z_stat, linetype = "dashed", color = "#DC2626", size = 0.9) +
+  
+  # Pointer arrow & annotation for the shaded right tail
+  annotate("segment", x = 3.4, xend = 3.0, y = 0.08, yend = 0.01,
+           arrow = arrow(length = unit(0.2, "cm")), color = "#B91C1C", size = 0.8) +
+  annotate("text", x = 3.4, y = 0.10, 
+           label = paste0("Right-Tail Area\n(p-value = ", round(p_value, 4), ")"), 
+           color = "#B91C1C", fontface = "bold", size = 4) +
+  
+  # Custom x-axis breaks
+  scale_x_continuous(
+    breaks = c(-3, -2, -1, 0, 1, 2, z_stat, 4),
+    labels = c("-3", "-2", "-1", "0", "1", "2", "2.83", "4")
+  ) +
+  
+  # Titles & Labels
+  labs(
+    title = "Right-Tailed p-Value Visualization (z-Test)",
+    subtitle = "Standard Normal Distribution (Z)",
+    x = "z-score",
+    y = "Density"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5, color = "gray40"),
+    panel.grid.minor = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+```
+
+## Confidence interval 
+
+$$\hat{p} \pm z^* \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}$$
+
+## Confidence interval{.smaller} 
+
+$$\hat{p} \pm z^* \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}$$
+
+$$0.70 \pm 1.96 \cdot \sqrt{\frac{0.70(1 - 0.70)}{50}}$$
+
+$$0.70 \pm 1.96 \cdot \sqrt{\frac{0.70(0.30)}{50}}$$
+
+$$0.70 \pm 1.96 \cdot \sqrt{\frac{0.21}{50}}$$
+
+$$0.70 \pm 1.96 \cdot \sqrt{0.0042}$$
+
+$$0.70 \pm 1.96 \cdot (0.06481)$$
+
+$$0.70 \pm 0.1270$$
+
+$$(0.5730,\ 0.8270) \quad \text{or} \quad (57.30\%,\ 82.70\%)$$
