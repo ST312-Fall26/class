@@ -30,6 +30,10 @@ Review the fundamentals of statistics (ST311 review)
 
 Get to know your TA!
 
+## Warm up 
+
+What is statistical inference?
+
 ## Notation Check 
 
 -- $\mu$
