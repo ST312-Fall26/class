@@ -10,20 +10,18 @@ z-score for probability distributions
 
 $z = \frac{x - \mu}{\sigma}$
 
-$z = \frac{x - n\pi_o}{\sqrt{np(1-\pi_o)}}$
-
 test-statistic for sampling distributions
 
-$z = \frac{\bar{x} - \mu}{\sigma/\sqrt{n}}$
+$z = \frac{\bar{x} - \mu_o}{\sigma/\sqrt{n}}$ (rare: if we know $\sigma$, but not $\mu$)
 
 $z = \frac{\hat{p} - \pi_o}{\sqrt{\frac{\pi_o(1-\pi_o)}{n}}}$
 
-$t = \frac{\bar{x} - \mu}{s/\sqrt{n}}$
+$t = \frac{\bar{x} - \mu_o}{s/\sqrt{n}}$
 
 
 Confidence intervals
 
-$\bar{x} \pm z^* \frac{\sigma}{\sqrt{n}}$
+$\bar{x} \pm z^* \frac{\sigma}{\sqrt{n}}$ (rare: if we know $\sigma$, but not $\mu$)
 
 $\bar{x} \pm t^* \frac{s}{\sqrt{n}}$
 

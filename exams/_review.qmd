@@ -43,8 +43,61 @@ Good luck!
 
 {{< pagebreak >}}
 
+## Multiple Choice (2-points each)
 
-## Question 1
+1. In hypothesis testing, our significance level ($\alpha$) is our... 
+
+      a. Type I error rate. 
+
+      b. Type II error rate. 
+
+      c. Probability to accept the null hypothesis. 
+
+      d. Probability to reject the null hypothesis. 
+
+2. What is the primary goal of statistical inference?
+
+      a. To calculate the exact mean and standard deviation of the entire population by measuring every single individual within it.
+
+      b. To organize and summarize the data from a specific sample using charts, graphs, and tables.
+
+      c. To use information collected from a sample to make a generalization or prediction about the broader population.
+
+      d. To ensure that no errors or variability occur during the process of data collection. 
+
+3. The average annual income per person in NC is reported to be \$41,385. Suppose a researcher was interested in **estimating** the income of the residents in North Carolina. What type of statistical procedure could they use to answer their research question?
+
+      a. Single proportion confidence interval. 
+
+      b. Single mean confidence interval. 
+
+      c. Single proportion hypothesis test. 
+
+      d. Single mean hypothesis test.
+
+4. Compared with the standard normal (z) distribution, a t-distribution with 5 degrees of freedom is:
+
+      a. Narrower, with lighter tails.
+
+      b. Roughly the same width and shape.
+
+      c. Wider, with heavier tails.
+
+      d. Wider, with lighter tails.
+      
+5. Compared with the standard normal (z) distribution, a t-distribution with 100 degrees of freedom is:
+
+      a. Narrower, with lighter tails.
+
+      b. Roughly the same width and shape.
+
+      c. Wider, with heavier tails.
+
+      d. Wider, with lighter tails.
+
+{{< pagebreak >}}
+
+## Question 1 (7-points)
 
 A farmer is interested in the proportion of corn in his corn fields that are stricken with a certain
 disease. He randomly selects 90 ears of corn and sees if they have the disease. It turns out 15
@@ -56,11 +109,11 @@ that has the disease.  You may use $z_{.995}$ = 2.575 for this calculation.
 
 
 
-## Question 2
+## Question 2 (12-points)
 
 Grand Auto Corporation produces auto batteries. The company claims that its top-of-the-line
 batteries are good, on average, for at least 6000 minutes. A consumer protection agency tested 45
-such batteries to check this claim. You have a theory that these batteries do not last as long as the owner claims. You take a random sample of 45 batteries from the store, and found that the sample mean life of these 45 batteries is 5478 minutes, and the sample standard deviation is 800 minutes. Use this information to answer the following questions below. 
+such batteries to check this claim. You have a theory that these batteries do not last as long as the owner claims. You take a random sample of 45 batteries from the store, and found that the sample mean life of these 45 batteries is 5478 minutes, and the sample standard deviation is 800 minutes. Use this information to answer the following questions below. You may assume $\alpha$ = 0.05 for this question.
 
 a. What is the null and alternative hypothesis for this problem? Write this out in proper notation below. 
 
@@ -74,7 +127,7 @@ $H_a:$
 
 b. Assume that your test statistic was -4.38 that follows a t-distribution with 44 degrees of freedom. Is your p-value going to be larger or small? Justify your answer. Hint: Use information from the distribution and from your alternative hypothesis to justify your answer.
 
-\vspace{30 mm}
+\vspace{60 mm}
 
 c. Based on your justification in part c, write a conclusion in the context of the problem. 
 
@@ -84,19 +137,23 @@ c. Based on your justification in part c, write a conclusion in the context of t
 
 e. True or False: If the alternative hypothesis sign were changed to $\neq$, the p-value would double.
 
+      True
+      
+      False
+
 \vspace{5 mm}
 
 \newpage
 
-## Question 3
+## Question 3 (10-points)
 
 A psychology class has an exam with a mean score of 75 and a standard deviation of 7. Sarah scored 85 on the exam. A math class has an exam with a mean score of 82 and a standard deviation of 5. Scott scored 88 on the exam. Using z-scores, make an argument for what score is more impressive. 
 
 \newpage
 
-## Question 4 
+## Question 4 (12-points)
 
-A basketball team claims that at least 70% of its free throws are made during games. A sports analyst believes the team's true free-throw percentage is actually lower than 70%. The analyst randomly selects 100 free-throw attempts from the team's games and finds that the team made 63 of them.
+A basketball team claims that at least 70% of its free throws are made during games. A sports analyst believes the team's true free-throw percentage is actually lower than 70%. The analyst randomly selects 100 free-throw attempts from the team's games and finds that the team made 63 of them. You may assume $\alpha$ = 0.05 for this question.
 
 a. What is the null and alternative hypothesis for this problem? Write this out in proper notation below. 
 
@@ -108,13 +165,13 @@ $H_a:$
 
 \vspace{5 mm}
 
-b. This hypothesis produced a p-value of approximately 0.074, and a z-statistic of -1.53. Use the space below to draw how the p-value was calculated on the respective sampling distribution. Your drawing should include. 
+b. This hypothesis produced a p-value of approximately 0.074, and a z-statistic of -1.53. Use the space below to draw how the p-value was calculated. Your drawing should include. 
 
 -- The sampling distribution 
 
--- Correctly labeled values on the x-axis dashes (|)
+-- Correctly labeled values on the x-axis dashes |
 
--- Correctly labeled statistic 
+-- Correctly label your statistic 
 
 -- Shade the area under the curve that corresponds to the calculated p-value
 
@@ -182,7 +239,7 @@ ggplot() +
 \newpage
 
     
-### Question 5 
+### Question 5 (6-points)
 
 Please see the following two probability distributions below. Answer A, B, or NA. 
 
@@ -202,7 +259,11 @@ c. Which probability distribution has the largest area under the curve?
 
 \newpage
 
-#### True or False
+#### True or False (2-points each)
+
+\vspace{5 mm}
+
+Circle True or False for each of the following questions **clearly**. 
 
 True or False: A p-value can be negative 
 \vspace{5 mm}
@@ -229,17 +290,15 @@ True or False: The variable **height** could either be a categorical variable or
 
 ## Formula Sheet 
 
-test-statistic for probability distributions
+z-score for probability distributions
 
 $z = \frac{x - \mu}{\sigma}$
-
-$z = \frac{x - n\pi}{\sqrt{np(1-\pi)}}$
 
 test-statistic for sampling distributions
 
 $z = \frac{\bar{x} - \mu}{\sigma/\sqrt{n}}$
 
-$z = \frac{\hat{p} - \pi}{\sqrt{\frac{\pi(1-\pi)}{n}}}$
+$z = \frac{\hat{p} - \pi_o}{\sqrt{\frac{\pi_o(1-\pi_o)}{n}}}$
 
 $t = \frac{\bar{x} - \mu}{s/\sqrt{n}}$
 

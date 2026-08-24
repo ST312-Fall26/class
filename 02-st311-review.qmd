@@ -94,7 +94,7 @@ $Ho:$ - what we assume to be true / what we test against
 
 $Ha:$ - this is our research question! 
 
-## Context 
+## Context{.smaller} 
 
 A health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.
 
@@ -108,7 +108,7 @@ $Ha:$
 
 $Ho: \mu = 2000$
 
-$Ha: \mu > 2000$
+$Ha: \mu \neq 2000$
 
 Should we do a t-test or a z-test? 
 
@@ -431,7 +431,7 @@ Conclusion:
 
 # Questions 
 
-## Confidence Intervals
+## Confidence Intervals{.smaller}
 
 A health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.
 
@@ -472,6 +472,8 @@ how do we interpret this?
 
 
 # Questions?
+
+## Categorical example
 
 A health researcher wants to see if more than half of college students are drinking water. In a sample size of $n = 50$, the researcher recorded that 35 students drink more than 1 bottle of water a day.
 
@@ -617,5 +619,7 @@ $$0.70 \pm 1.96 \cdot \sqrt{0.0042}$$
 $$0.70 \pm 1.96 \cdot (0.06481)$$
 
 $$0.70 \pm 0.1270$$
+
+## Confidence interval
 
 $$(0.5730,\ 0.8270) \quad \text{or} \quad (57.30\%,\ 82.70\%)$$
