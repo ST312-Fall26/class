@@ -66,7 +66,7 @@
     "href": "03-review2.html#last-time",
     "title": "Review-Part 2",
     "section": "Last time",
-    "text": "Last time\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that \\(\\bar{x}\\) = 2035mL, and \\(s\\) = 150mL\n\\(Ho: \\mu = 2000\\)\n\\(Ha: \\mu &gt; 2000\\)\nWhat is \\(\\mu\\) in the context of the problem?",
+    "text": "Last time\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that \\(\\bar{x}\\) = 2035mL, and \\(s\\) = 150mL.\n\\(Ho: \\mu = 2000\\)\n\\(Ha: \\mu \\neq 2000\\)\nWhat is \\(\\mu\\) in the context of the problem?",
     "crumbs": [
       "Slides",
       "Day-3"
@@ -308,7 +308,7 @@
     "href": "03-review2.html#confidence-intervals-2",
     "title": "Review-Part 2",
     "section": "Confidence Intervals",
-    "text": "Confidence Intervals\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). We want to estimate the population mean water consumption for these students on campus.",
+    "text": "Confidence Intervals\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). We want to estimate the population mean water consumption for these students on campus. Assume that \\(\\bar{x}\\) = 2035mL, and \\(s\\) = 150mL",
     "crumbs": [
       "Slides",
       "Day-3"
@@ -374,7 +374,7 @@
     "href": "03-review2.html#t-vs-z-test-1",
     "title": "Review-Part 2",
     "section": "t vs z-test",
-    "text": "t vs z-test\n\\[{SE(\\bar{x})} = \\frac{s}{\\sqrt{n}}\\]\n\\[\\text{Sample Standard Deviation } (s) = \\sqrt{\\frac{\\sum (x_i - \\bar{x})^2}{n - 1}}\\]\nvs\n\\[SE({\\hat{p})} = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]\n\\[{SE(p_o)} = \\sqrt{\\frac{p_0(1 - p_0)}{n}}\\]\nBecause we know the standard error when we calculate our statistic \\(\\hat{p}\\), we are justified to do a z-test and a standard normal distribution.",
+    "text": "t vs z-test\n\\[{SE(\\bar{x})} = \\frac{s}{\\sqrt{n}}\\]\n\\[\\text{Sample Standard Deviation } (s) = \\sqrt{\\frac{\\sum (x_i - \\bar{x})^2}{n - 1}}\\]\n\\(vs\\)\n\\[{SE(p_o)} = \\sqrt{\\frac{p_0(1 - p_0)}{n}}\\]\nBecause we know the standard error when we calculate our statistic \\(\\hat{p}\\), we are justified to do a z-test and a standard normal distribution.",
     "crumbs": [
       "Slides",
       "Day-3"
@@ -407,7 +407,18 @@
     "href": "03-review2.html#z-statistic",
     "title": "Review-Part 2",
     "section": "z-statistic",
-    "text": "z-statistic\n\\[z = \\frac{\\hat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\]\n\\[z = \\frac{0.70 - 0.50}{\\sqrt{\\frac{0.50(1 - 0.50)}{50}}}\\]\n\\[z = \\frac{0.20}{\\sqrt{\\frac{0.25}{50}}}\\]\n\\[z = \\frac{0.20}{\\sqrt{0.005}}\\]\n\\[z = \\frac{0.20}{0.07071}\\]\n\\[z \\approx 2.83\\]\nDraw out how the p-value would be calculated.",
+    "text": "z-statistic\n\\[z = \\frac{\\hat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\]\n\\[z = \\frac{0.70 - 0.50}{\\sqrt{\\frac{0.50(1 - 0.50)}{50}}}\\]\n\\[z = \\frac{0.20}{\\sqrt{\\frac{0.25}{50}}}\\]\n\\[z = \\frac{0.20}{\\sqrt{0.005}}\\]\n\\[z = \\frac{0.20}{0.07071}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-3"
+    ]
+  },
+  {
+    "objectID": "03-review2.html#z-statistic-1",
+    "href": "03-review2.html#z-statistic-1",
+    "title": "Review-Part 2",
+    "section": "z-statistic",
+    "text": "z-statistic\n\\[z \\approx 2.83\\]\nDraw out how the p-value would be calculated.",
     "crumbs": [
       "Slides",
       "Day-3"
@@ -440,7 +451,7 @@
     "href": "03-review2.html#confidence-interval-4",
     "title": "Review-Part 2",
     "section": "Confidence interval",
-    "text": "Confidence interval\n\\[(0.5730,\\ 0.8270) \\quad \\text{or} \\quad (57.30\\%,\\ 82.70\\%)\\]",
+    "text": "Confidence interval\n\\[(0.5730,\\ 0.8270) \\quad \\text{or} \\quad (57.30\\%,\\ 82.70\\%)\\]\nHow do we interpret this?",
     "crumbs": [
       "Slides",
       "Day-3"

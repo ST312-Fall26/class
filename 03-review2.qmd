@@ -71,11 +71,11 @@ Closed notes. Please bring a calculator.
 
 A health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.
 
-The researcher selects a simple random sample of $n = 50$ students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that $\bar{x}$ = 2035mL, and $s$ = 150mL
+The researcher selects a simple random sample of $n = 50$ students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that $\bar{x}$ = 2035mL, and $s$ = 150mL.
 
 $Ho: \mu = 2000$
 
-$Ha: \mu > 2000$
+$Ha: \mu \neq 2000$
 
 What is $\mu$ in the context of the problem?
 
@@ -319,7 +319,7 @@ p-values, decisions, conclusions, etc. follow the same rules!
 
 # Questions 
 
-## Confidence Intervals
+## Confidence Intervals{.smaller}
 
 A health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.
 
@@ -331,11 +331,11 @@ How could we change this question if I wanted to make a confidence interval inst
 
 **estimate** 
 
-## Confidence Intervals 
+## Confidence Intervals{.smaller} 
 
 A health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.
 
-The researcher selects a simple random sample of $n = 50$ students from the campus library and records their daily water consumption in milliliters (mL). We want to **estimate** the population mean water consumption for these students on campus. 
+The researcher selects a simple random sample of $n = 50$ students from the campus library and records their daily water consumption in milliliters (mL). We want to **estimate** the population mean water consumption for these students on campus. Assume that $\bar{x}$ = 2035mL, and $s$ = 150mL
 
 
 ## Confidence Interval 
@@ -391,9 +391,9 @@ $${SE(\bar{x})} = \frac{s}{\sqrt{n}}$$
 
 $$\text{Sample Standard Deviation } (s) = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}$$
 
-vs
+$vs$
 
-$$SE({\hat{p})} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$ 
+
 
 $${SE(p_o)} = \sqrt{\frac{p_0(1 - p_0)}{n}}$$
 
@@ -428,6 +428,9 @@ $$z = \frac{0.20}{\sqrt{\frac{0.25}{50}}}$$
 $$z = \frac{0.20}{\sqrt{0.005}}$$
 
 $$z = \frac{0.20}{0.07071}$$
+
+
+## z-statistic
 
 $$z \approx 2.83$$
 
@@ -517,6 +520,8 @@ $$0.70 \pm 0.1270$$
 ## Confidence interval
 
 $$(0.5730,\ 0.8270) \quad \text{or} \quad (57.30\%,\ 82.70\%)$$
+
+How do we interpret this?
 
 # z-scores
 
