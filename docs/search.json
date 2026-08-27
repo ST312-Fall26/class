@@ -337,6 +337,17 @@
     ]
   },
   {
+    "objectID": "03-review2.html#interpretation",
+    "href": "03-review2.html#interpretation",
+    "title": "Review-Part 2",
+    "section": "Interpretation",
+    "text": "Interpretation\nWe are 95% confident that the true mean water consumption of students at this certain university is between \\((1992.36\\text{ mL},\\ 2077.64\\text{ mL})\\)!\n– Note: We are saying confident and not probability!\n– Note: All interpretations (including this one) are in the context of the problem!",
+    "crumbs": [
+      "Slides",
+      "Day-3"
+    ]
+  },
+  {
     "objectID": "03-review2.html#more-review-questions",
     "href": "03-review2.html#more-review-questions",
     "title": "Review-Part 2",
@@ -429,7 +440,7 @@
     "href": "03-review2.html#confidence-interval-2",
     "title": "Review-Part 2",
     "section": "Confidence interval",
-    "text": "Confidence interval\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]",
+    "text": "Confidence interval\nWe are using the z* for a 95% confidence interval!\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]",
     "crumbs": [
       "Slides",
       "Day-3"
@@ -452,6 +463,17 @@
     "title": "Review-Part 2",
     "section": "Confidence interval",
     "text": "Confidence interval\n\\[(0.5730,\\ 0.8270) \\quad \\text{or} \\quad (57.30\\%,\\ 82.70\\%)\\]\nHow do we interpret this?",
+    "crumbs": [
+      "Slides",
+      "Day-3"
+    ]
+  },
+  {
+    "objectID": "03-review2.html#interpretation-1",
+    "href": "03-review2.html#interpretation-1",
+    "title": "Review-Part 2",
+    "section": "Interpretation",
+    "text": "Interpretation\nWe are 95% confident that the true proportion of students who drink at least one bottle of water a day is between (57.30%, 82.70%).\n– Note: We are using the word confident and not probability!\n– This (and other) interpretations are in the context of the problem!",
     "crumbs": [
       "Slides",
       "Day-3"

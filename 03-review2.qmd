@@ -358,6 +358,14 @@ $$(1992.36\text{ mL},\ 2077.64\text{ mL})$$
 
 how do we interpret this? 
 
+## Interpretation 
+
+We are 95% confident that the true mean water consumption of students at this certain university is between $(1992.36\text{ mL},\ 2077.64\text{ mL})$!
+
+-- Note: We are saying **confident** and not probability!
+
+-- Note: All interpretations (including this one) are in the context of the problem!
+
 ## More Review Questions 
 
 -- Go through single proportion 
@@ -499,6 +507,8 @@ ggplot(df_plot, aes(x = x, y = y)) +
 
 ## Confidence interval 
 
+We are using the z* for a 95% confidence interval!
+
 $$\hat{p} \pm z^* \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}$$
 
 ## Confidence interval{.smaller} 
@@ -522,6 +532,14 @@ $$0.70 \pm 0.1270$$
 $$(0.5730,\ 0.8270) \quad \text{or} \quad (57.30\%,\ 82.70\%)$$
 
 How do we interpret this?
+
+## Interpretation 
+
+We are 95% confident that the true proportion of students who drink at least one bottle of water a day is between (57.30\%,\ 82.70\%).
+
+-- Note: We are using the word **confident** and not probability!
+
+-- This (and other) interpretations are in the context of the problem!
 
 # z-scores
 
