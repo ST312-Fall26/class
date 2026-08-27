@@ -104,7 +104,7 @@ Office Hours
 
 | Who       | When                                         | Where            |
 |-----------|----------------------------------------------|------------------|
-| Dr. Meyer | Monday: 1:00-2:00pm  \| Thursday: 10:15 - 11:15am | SAS 5228 or Zoom |
+| Dr. Meyer | Monday: 1:00-2:00pm  \| Tuesday: 10:15 - 11:15am | SAS 5228 or Zoom |
 | Yichen Hu      | Friday 3:00pm - 5:00pm              | SAS 1101   |
 
 ## STAT Hub
