@@ -12,7 +12,7 @@ editor:
     wrap: 72
 ---
 
-## Exam Day 
+## Exam Day{.smaller} 
 
 We will all start at 3:00. You may read the front and sign your name. Please write your first as last name as clear as possible.
 
@@ -28,6 +28,7 @@ We will all start at 3:00. You may read the front and sign your name. Please wri
 
 -- You may ask questions. If the question gives you an advantage over other students, I have to say "I can not answer that"
 
+When you are done, please come up and turn in your exam
 
 
 
