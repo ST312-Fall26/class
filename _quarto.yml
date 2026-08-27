@@ -32,8 +32,8 @@ website:
             text: "Day-2"
           - href: 03-review2.qmd
             text: "Day-3"
-          #- href: 04-prob-rv.qmd
-          #  text: "Day-4"
+          - href: reviewexamslide.qmd
+            text: "Day-4"
           #- href: review-test-slides.qmd
 
 format:

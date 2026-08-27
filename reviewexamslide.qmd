@@ -1,0 +1,34 @@
+---
+title: "ST311 Review Test"
+subtitle: ""
+date: "August 27, 2026"
+format: 
+  revealjs:
+    theme: [dark, slides.scss]
+filters: 
+- webr
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Exam Day 
+
+We will all start at 3:00. You may read the front and sign your name. Please write your first as last name as clear as possible.
+
+-- Don't cheat. It sucks for all of us
+
+-- The exam is worth 5\% of your grade 
+
+-- You may use a calculator and your 🧠
+
+-- Show your work! Demonstrate your understanding! I can not make assumptions when grading
+
+-- The exam starts with M/C questions ends with T/F questions. Mark your responses as clear as possible
+
+-- You may ask questions. If the question gives you an advantage over other students, I have to say "I can not answer that"
+
+
+
+
+
