@@ -1,0 +1,440 @@
+---
+title: "Probability"
+subtitle: "Lecture 5"
+date: "September 1, 2026"
+format: 
+  revealjs:
+    theme: [dark, slides.scss]
+filters: 
+- webr
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Checklist{.smaller} 
+
+-- Congrats on the review test! Grades + key released Friday (weekend at the latest)
+
+-- Homework-1 released week-4
+
+-- Exam-1 (9/24)
+
+# Probability 
+
+## Why are we learning probability 
+
+-- It's important for statisticians to know a variety of probability rules 
+
+-- Pre-req knowledge for other courses 
+
+-- Helps us better conceptualize the fundemental idea of a p-value 
+
+
+## Probability 
+
+What is the definition of probability?
+
+What values does probability take on?
+
+## Probability 
+
+Probability is the likelihood that something happens
+
+[0, 1]
+
+## Probability definitions
+
+-- An **event** is any collection of results or outcomes of a procedure
+
+-- The **sample space** for a procedure consists of all possible events
+(denoted as S = {})
+
+-- Events are usually labeled with letters (A, B, C, etc.)
+
+-- P(A) is the notation for the probability of event A
+
+-- $P(A^c)$ is the complement of A. You can think of the $^c$ as the
+word NOT
+
+## Practice
+
+We conduct an experiment where we flip a coin 3 times...
+
+-- What is the sample space?
+
+-- What is the probability of getting at least two tails?
+
+-- What is the sum of the probability of all events?
+
+## Sample Space
+
+S = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}
+
+## Identify at least 2 tails
+
+S = {HHH, HHT, HTH, THH, <span style="color:blue">HTT</span>, <span style="color:blue">THT</span>, <span style="color:blue">TTH</span>, <span style="color:blue">TTT</span>}
+
+## Probability of A
+
+A = flipping at least 2 tails
+
+P(A) = probability of flipping at least 2 tails
+
+$P(A) = \frac{\text{number of favorable outcomes}}{\text{total number of possible outcomes}}$
+
+$\frac{4}{8}$
+
+The probability of flipping at least two tails in three coin flips is .5
+or 50%
+
+# What is the sum of the probability of all events?
+
+## What is the sum of the probability of all events?
+
+It's one (100%). If we are calculating the probability of the entire
+sample space, the numberator and denominator will be the same.
+
+# Questions
+
+## More complicated probabilities
+
+P(A and B) = P(A $\cap$ B) = P(A intersect B)
+
+P(A or B) = P(A $\cup$ B) = P(A union B) = P(A) + P(B) - P(A $\cap$ B) (Addition Rule of Probability)
+
+This is to avoid double counting, and will be made more clear on the following examples 
+
+## Practice{.smaller}
+
+A = column
+
+B = row
+
+|                   |                  |                      |     |
+|-----------------------|------------------|----------------------|-----|
+|                       | Business student | Not Business student |     |
+| Taking Statistics     | 18               | 67                   |  85   |
+| Not taking statistics | 142              | 534                  | 676    |
+|                       | 160              | 601                  | 761 |
+
+-- Define events A, $A^c$ , B, and $B^c$
+
+-- Calculate the P(A)
+
+-- Calculate the P(A and B)
+
+-- Calculate the P(A or B)
+
+# Don't look at the next slides until you try the table yourself!
+
+## P(A)
+
+|                       |                  |                      |                                    |
+| --------------------- | ---------------- | -------------------- | ---------------------------------- |
+|                       | Business student | Not Business student |                                    |
+| Taking Statistics     | 18               | 67                   | <span style="color:red">85</span>  |
+| Not taking statistics | 142              | 534                  | 676                                |
+|                       | 160              | 601                  | <span style="color:red">761</span> |
+
+## P(A and B)
+
+|                       |                                   |                      |                                    |
+| --------------------- | --------------------------------- | -------------------- | ---------------------------------- |
+|                       | Business student                  | Not Business student |                                    |
+| Taking Statistics     | <span style="color:red">18</span> | 67                   | 85                                 |
+| Not taking statistics | 142                               | 534                  | 676                                |
+|                       | 160                               | 601                  | <span style="color:red">761</span> |
+
+## P(A or B)
+
+|                       |                                    |                                   |                                    |
+| --------------------- | ---------------------------------- | --------------------------------- | ---------------------------------- |
+|                       | Business student                   | Not Business student              |                                    |
+| Taking Statistics     | <span style="color:red">18</span>  | <span style="color:red">67</span> | <span style="color:red">85</span>  |
+| Not taking statistics | 142                                | 534                               | 676                                |
+|                       | <span style="color:red">160</span> | 601                               | <span style="color:red">761</span> |
+
+
+# Questions 
+
+
+## Conditional Probability
+
+What do we think a conditional probability is? 
+
+## Conditional Probability
+
+P(A \| B) where the \| represents the word **given**
+
+For starters, I want us to think about the vertical bar as:
+
+-- Cutting up our table
+
+-- Make it so our denominator is not the table total
+
+# Practice
+
+## 
+
+|                       |                  |                      |     |
+|-----------------------|------------------|----------------------|-----|
+|                       | Business student | Not Business student |     |
+| Taking Statistics     | 18               | 67                   | 85  |
+| Not taking statistics | 142              | 534                  | 676 |
+|                       | 160              | 601                  | 761 |
+
+-- Calculate P(A \| B)
+
+# Don't look at the next slides until you try the table yourself!
+
+## P(A | B)
+
+|                       |                                    |                      |     |
+| --------------------- | ---------------------------------- | -------------------- | --- |
+|                       | Business student                   | Not Business student |     |
+| Taking Statistics     | <span style="color:red">18</span>  | 67                   | 85  |
+| Not taking statistics | 142                                | 534                  | 676 |
+|                       | <span style="color:red">160</span> | 601                  | 761 |
+
+
+
+## Conditional Probability Rule
+
+P(A\|B) = $\frac{P(A \cap B)}{P(B)}$
+
+|                       |                  |                      |     |
+|-----------------------|------------------|----------------------|-----|
+|                       | Business student | Not Business student |     |
+| Taking Statistics     | 18               | 67                   | 85    |
+| Not taking statistics | 142              | 534                  | 676    |
+|                       | 160              | 601                  | 761 |
+
+Show the above formula to be true
+
+## Conditional Probability Rule{.smaller}
+
+Bayes' Rule: 
+
+Everything we learn in ST-312 is from a frequentist perspective. 
+
+Bayes' Rule has created a new way to think about statistics by showing how we can update our beliefs when new evidence becomes available. Instead of relying only on past data, Bayesian statistics combines prior knowledge with new evidence to make more informed conclusions.
+
+$\text{Posterior} = \frac{\text{Evidence} \times \text{Likelihood}}{\text{Prior}}$
+
+$P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}$
+
+## Bayes' Rule
+
+Show: $P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}$
+
+
+|                       |                  |                      |     |
+|-----------------------|------------------|----------------------|-----|
+|                       | Business student | Not Business student |     |
+| Taking Statistics     | 18               | 67                   | 85    |
+| Not taking statistics | 142              | 534                  | 676    |
+|                       | 160              | 601                  | 761 |
+
+
+## More practice{.smaller}
+
+A company has two types of employees: 60% are experienced and 40% are new. An experienced employee has a 90% chance of completing a project on time, while a new employee has a 60% chance.
+
+You randomly select an employee who completed their project on time. What is the probability that the employee is experienced?
+
+What do we know? And what do we need to find out?
+
+## What we know
+
+$P(E)=0.60$
+
+$P(E^c)=0.40$
+
+$P(O\mid E)=0.90$
+
+$P(O\mid E^c)=0.60$
+
+What are we trying to solve?
+
+## What we want 
+
+$P(E\mid O)$
+
+We want to find the probability that the employee is experienced given that they completed the project on time.
+
+So what else do we need?
+
+## What we need
+
+We need to find:
+
+$P(O)$
+
+Then we can use Bayes' Rule:
+
+$P(E\mid O)=\frac{P(O\mid E)P(E)}{P(O)}$
+
+How do we find $P(O)$? 
+
+## P(O)
+
+If I want the probability of O, I want the probability when O and E occur, and the probability when O and $E^c$ occur.... 
+
+
+Let's think back to this rule: P(A\|B) = $\frac{P(A \cap B)}{P(B)}$
+
+ P(O\|E) = $\frac{P(O \cap E)}{P(E)}$
+
+How can we rewrite this?
+
+## P(O)
+
+$P(O | E) = \frac{P(O \cap E)}{P(E)}$
+
+$P(O\cap E)=P(O\mid E)P(E)$
+
+and 
+
+$P(O| E^c) = \frac{P(O \cap E^c)}{P(E^c)}$
+
+$P(O\cap E^c)=P(O\mid E^c)P(E^c)$
+
+and we should add them together to get $P(O)$!
+
+## Think back{.smaller}
+
+$P(E)=0.60$
+
+$P(E^c)=0.40$
+
+$P(O\mid E)=0.90$
+
+$P(O\mid E^c)=0.60$
+
+
+$$
+P(O) = (0.90)(0.60) + (0.60)(0.40) = 0.78
+$$
+
+and now we can answer the question!
+
+
+
+## Solutions{.smaller}
+
+$$
+P(E \mid O) = \frac{P(O \mid E)P(E)}{P(O)}
+$$
+
+$$
+P(O) = (0.90)(0.60) + (0.60)(0.40)
+$$
+
+$$
+P(O) = 0.54 + 0.24 = 0.78
+$$
+
+$$
+P(E \mid O) = \frac{(0.90)(0.60)}{0.78}
+$$
+
+$$
+P(E \mid O) = \frac{0.54}{0.78} \approx 0.6923
+$$
+
+$$
+\boxed{P(E \mid O) \approx 69.23\%}
+$$
+
+
+## In Summary{.smaller} 
+
+-- An **event** is any collection of results or outcomes of a procedure
+
+-- The **sample space** for a procedure consists of all possible events
+(denoted as S = {})
+
+-- We can calculated: 
+
+      > single event 
+      > and 
+      > or 
+      
+-- We have all of these rules to help us!
+
+      > Law of total probability 
+      > Bayes Rule 
+      > Conditional rule
+      > Addition Rule of Probability
+      
+# Questions 
+
+## Practice (if time)
+
+A jar contains 20 marbles: 7 blue, 4 red, 6 yellow, 3 green. Two marbles are drawn one after the other. What
+is the probability the first ball is red, and the second ball is blue?
+
+Define: A
+
+Define: B
+
+"What even am I interested in calculating probabilities of?"
+
+## Events 
+
+A = pulling a red ball 1st
+
+B = pulling a blue ball 2nd
+
+## Practice 
+
+A jar contains 20 marbles: 7 blue, 4 red, 6 yellow, 3 green. Two marbles are drawn one after the other. What
+is the probability the first ball is red, and the second ball is blue?
+
+Set up your formula! 
+
+## Practice{.smaller} 
+
+P(pulling a red ball 1st and pulling a blue ball 2nd)  
+
+P(pulling a red ball 1st)*P(pulling a blue ball 2nd ∣ pulling a red ball 1st)
+
+$$
+P(\text{Red first and Blue second})
+=\frac{4}{20}\times\frac{7}{19}
+=\frac{7}{95}
+\approx 7.37\%
+$$
+
+
+
+# Questions 
+
+# In the previous problem, what happens if I replace the first marble drawn? 
+
+# Independence 
+
+## Independence 
+
+Events are independent if the outcome of one event is not affected by the outcome of the other
+
+We go from: $P(A \cap B)$ = P(A\|B)*P(B) 
+
+To: $P(A \cap B)$ = P(A) * P(B)
+
+## Examples 
+
+Independent vs not: 
+
+–- Flipping a coin and rolling a die?
+
+–- Drawing two cards from a deck without replacement?
+
+–- Flipping a coin and getting heads, then flipping and getting a heads
+again?
+
+# Questions 
+
+# See you Thursday!
+

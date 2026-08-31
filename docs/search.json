@@ -11,963 +11,6 @@
     ]
   },
   {
-    "objectID": "02-st311-review.html#checklist",
-    "href": "02-st311-review.html#checklist",
-    "title": "ST311 Review",
-    "section": "Checklist",
-    "text": "Checklist\n– Review Test (8/27)\n– Do you have access to the required textbook?\n– Do you understand how/where to get help in ST312?\n– Have you filled out the Getting to know you survey?\n– Do you have plan to take notes?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#goals-today",
-    "href": "02-st311-review.html#goals-today",
-    "title": "ST311 Review",
-    "section": "Goals Today",
-    "text": "Goals Today\nReview the fundamentals of statistics (ST311 review)\nGet to know your TA!",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#warm-up",
-    "href": "02-st311-review.html#warm-up",
-    "title": "ST311 Review",
-    "section": "Warm up",
-    "text": "Warm up\nWhat is statistical inference?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#notation-check",
-    "href": "02-st311-review.html#notation-check",
-    "title": "ST311 Review",
-    "section": "Notation Check",
-    "text": "Notation Check\n– \\(\\mu\\)\n– \\(\\pi\\) or \\(p\\)\n– \\(\\hat{p}\\)\n– \\(s\\)\n– \\(\\sigma\\)\n– \\(\\bar{x}\\)\n– \\(n\\)",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#notation-check-1",
-    "href": "02-st311-review.html#notation-check-1",
-    "title": "ST311 Review",
-    "section": "Notation Check",
-    "text": "Notation Check\n– \\(\\mu\\) - population mean\n– \\(\\pi\\) or \\(p\\) - population proportion\n– \\(\\hat{p}\\) - sample proportion\n– \\(s\\) - sample standard deviation\n– \\(\\sigma\\) - population standard deviation\n– \\(\\bar{x}\\) - sample mean\n– \\(n\\) - sample size",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#last-time",
-    "href": "02-st311-review.html#last-time",
-    "title": "ST311 Review",
-    "section": "Last time",
-    "text": "Last time\nProbability distribution vs sampling distribution\nA probability distribution describes the likelihood of all possible outcomes for a single random variable.\nA sampling distribution describes the distribution of a statistic.",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#question",
-    "href": "02-st311-review.html#question",
-    "title": "ST311 Review",
-    "section": "Question",
-    "text": "Question\nRead these as sentences. Which one corresponds to a sampling distribution vs a probability distribution?\n\\(\\bar{x} \\sim N(\\mu, \\frac{\\sigma}{\\sqrt{n}})\\)\n\\(x \\sim N(\\mu, \\sigma)\\)",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#setting-the-stage-for-research",
-    "href": "02-st311-review.html#setting-the-stage-for-research",
-    "title": "ST311 Review",
-    "section": "Setting the stage for research",
-    "text": "Setting the stage for research\n– What is a null hypothesis?\n– What is an alternative hypothesis?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#setting-the-stage-for-research-1",
-    "href": "02-st311-review.html#setting-the-stage-for-research-1",
-    "title": "ST311 Review",
-    "section": "Setting the stage for research",
-    "text": "Setting the stage for research\n\\(Ho:\\) - what we assume to be true / what we test against\n\\(Ha:\\) - this is our research question!",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#context",
-    "href": "02-st311-review.html#context",
-    "title": "ST311 Review",
-    "section": "Context",
-    "text": "Context\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that \\(\\bar{x}\\) = 2035mL, and \\(s\\) = 150mL\n\\(Ho:\\)\n\\(Ha:\\)",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#context-1",
-    "href": "02-st311-review.html#context-1",
-    "title": "ST311 Review",
-    "section": "Context",
-    "text": "Context\n\\(Ho: \\mu = 2000\\)\n\\(Ha: \\mu \\neq 2000\\)\nShould we do a t-test or a z-test?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#before-we-do-that",
-    "href": "02-st311-review.html#before-we-do-that",
-    "title": "ST311 Review",
-    "section": "Before we do that…",
-    "text": "Before we do that…\nAssumptions\n– Are our observations independent\n– Is our sample size larger than 30? &lt;- why is this important?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#test-statistic",
-    "href": "02-st311-review.html#test-statistic",
-    "title": "ST311 Review",
-    "section": "test-statistic",
-    "text": "test-statistic\nCalculate our test statistic using the following formula.\n\\[t = \\frac{\\bar{x} - \\mu_0}{\\frac{s}{\\sqrt{n}}}\\]",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#test-statistic-1",
-    "href": "02-st311-review.html#test-statistic-1",
-    "title": "ST311 Review",
-    "section": "test-statistic",
-    "text": "test-statistic\n\\[t = \\frac{\\bar{x} - \\mu_0}{\\frac{s}{\\sqrt{n}}}\\]\n\\[t = \\frac{2035 - 2000}{\\frac{150}{\\sqrt{50}}}\\]\n\\[t = \\frac{35}{\\frac{150}{7.07107}}\\]\n\\[t = \\frac{35}{21.2132}\\]\n\\[t \\approx 1.65\\]\nHow do we interpret this number?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#test-statistic-2",
-    "href": "02-st311-review.html#test-statistic-2",
-    "title": "ST311 Review",
-    "section": "test-statistic",
-    "text": "test-statistic\n\\[t \\approx 1.65\\]\n2035 \\((\\bar{x})\\) is 1.65 standard errors away from the null value 2000!",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#test-statistic-3",
-    "href": "02-st311-review.html#test-statistic-3",
-    "title": "ST311 Review",
-    "section": "test-statistic",
-    "text": "test-statistic\n\\[t \\approx 1.65\\]\n2035 \\((\\bar{x})\\) is 1.65 standard errors away from the null value 2000!\nNow what?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#p-value",
-    "href": "02-st311-review.html#p-value",
-    "title": "ST311 Review",
-    "section": "p-value",
-    "text": "p-value\np-value - what is it?\nIs it going to be large or small?\nHow do we know?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#section-1",
-    "href": "02-st311-review.html#section-1",
-    "title": "ST311 Review",
-    "section": "",
-    "text": "But there is one problem…… this is a rule for a standard normal distribution….\n… and we don’t have that…",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#t-distribution",
-    "href": "02-st311-review.html#t-distribution",
-    "title": "ST311 Review",
-    "section": "t-distribution",
-    "text": "t-distribution\nt-distribution\nWhat is a degree of freedom?\nWhat t-distribution are we using?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#degrees-of-freedom",
-    "href": "02-st311-review.html#degrees-of-freedom",
-    "title": "ST311 Review",
-    "section": "Degrees of freedom",
-    "text": "Degrees of freedom\nThe Wardrobe Analogy\nImagine you have 7 different shirts to wear over a 7-day week. On Monday, you have 7 choices. On Tuesday, 6 choices. By the time Sunday rolls around, you only have 1 shirt left. You have no choice on Sunday—your decision was perfectly determined by the previous 6 days. You had 6 days of true flexibility, meaning your degrees of freedom are 6.",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#degrees-of-freedom-1",
-    "href": "02-st311-review.html#degrees-of-freedom-1",
-    "title": "ST311 Review",
-    "section": "Degrees of freedom",
-    "text": "Degrees of freedom\nNote: We need degrees of freedom because in a single mean test, we also have to use data to estimate \\(s\\) for the standard error. In a single proportion test, the standard error is entirely estimated using our statistic \\(\\hat{p}\\). We will re-visit this when we review single proportion.\nHow many independent pieces of information you have\nIf you have \\(\\bar{x}\\) and n = 50…. the 50th observation is “locked” into whatever the exact number makes the mean equal to \\(\\bar{x}\\) (2035).\nWe are working with 49 degrees of freedom!\n\\(t_{49}\\)",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#complete-the-story",
-    "href": "02-st311-review.html#complete-the-story",
-    "title": "ST311 Review",
-    "section": "Complete the story",
-    "text": "Complete the story\nBecause our statistic follows a \\(t_{49}\\), it is essentially the same shape as a normal distribution. Because our test statistic is &lt; 2, our p-value is going to be relatively large. Let’s calculate it.",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#p-value-1",
-    "href": "02-st311-review.html#p-value-1",
-    "title": "ST311 Review",
-    "section": "p-value",
-    "text": "p-value\n\nThe probability of observing our statistic, or something more extreme, given the null hypothesis is true.",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#p-value-2",
-    "href": "02-st311-review.html#p-value-2",
-    "title": "ST311 Review",
-    "section": "p-value",
-    "text": "p-value\nThe probability of observing a mean of 2035, or something more extreme, given the population mean of water intake for young adults is 2000 mL, is about 10.53%.\nSo what do we do with this information?\n– Decision\n– Conclusion",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#decision-and-conclusion",
-    "href": "02-st311-review.html#decision-and-conclusion",
-    "title": "ST311 Review",
-    "section": "Decision and Conclusion",
-    "text": "Decision and Conclusion\nWe do this based on \\(\\alpha\\).\n\\(\\alpha\\) is the threshold we compare our p-value to. This is set at the beginning of your study.\nLet’s assume that \\(\\alpha = 0.05\\).\nLet’s now write our decision and conclusion together.",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#decision-and-conclusion-1",
-    "href": "02-st311-review.html#decision-and-conclusion-1",
-    "title": "ST311 Review",
-    "section": "Decision and Conclusion",
-    "text": "Decision and Conclusion\nDecision:\nConclusion:",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#confidence-intervals",
-    "href": "02-st311-review.html#confidence-intervals",
-    "title": "ST311 Review",
-    "section": "Confidence Intervals",
-    "text": "Confidence Intervals\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that \\(\\bar{x}\\) = 2035mL, and \\(s\\) = 150mL\nHow could we change this question if I wanted to make a confidence interval instead of performing a hypothesis test?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#confidence-intervals-1",
-    "href": "02-st311-review.html#confidence-intervals-1",
-    "title": "ST311 Review",
-    "section": "Confidence Intervals",
-    "text": "Confidence Intervals\nestimate",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#confidence-intervals-2",
-    "href": "02-st311-review.html#confidence-intervals-2",
-    "title": "ST311 Review",
-    "section": "Confidence Intervals",
-    "text": "Confidence Intervals\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). We want to estimate the population mean water consumption for these students on campus.",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#confidence-interval",
-    "href": "02-st311-review.html#confidence-interval",
-    "title": "ST311 Review",
-    "section": "Confidence Interval",
-    "text": "Confidence Interval\nYou may use 2.01 for \\(t^*\\). Calculate a 95% confidence interval using the formula below.\n\\[\\bar{x} \\pm t^* \\cdot \\left( \\frac{s}{\\sqrt{n}} \\right)\\]",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#confidence-interval-1",
-    "href": "02-st311-review.html#confidence-interval-1",
-    "title": "ST311 Review",
-    "section": "Confidence Interval",
-    "text": "Confidence Interval\n\\[\\bar{x} \\pm t^* \\cdot \\left( \\frac{s}{\\sqrt{n}} \\right)\\]\n\\[2035 \\pm 2.010 \\cdot \\left( \\frac{150}{\\sqrt{50}} \\right)\\]\n\\[2035 \\pm 2.010 \\cdot (21.2132)\\]\n\\[2035 \\pm 42.64\\]\n\\[(1992.36\\text{ mL},\\ 2077.64\\text{ mL})\\]\nhow do we interpret this?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#categorical-example",
-    "href": "02-st311-review.html#categorical-example",
-    "title": "ST311 Review",
-    "section": "Categorical example",
-    "text": "Categorical example\nA health researcher wants to see if more than half of college students are drinking water. In a sample size of \\(n = 50\\), the researcher recorded that 35 students drink more than 1 bottle of water a day.\nWhat’s different than before?\nWhat’s the null and alternative hypothesis?\nWhat type of test are we doing?",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#null-and-alternative",
-    "href": "02-st311-review.html#null-and-alternative",
-    "title": "ST311 Review",
-    "section": "Null and alternative",
-    "text": "Null and alternative\n\\(Ho: \\pi = .5\\)\n\\(Ha: \\pi &gt; .5\\)\nWe are going to conduct a z-test, because our response variable is categorical!",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#t-vs-z-test",
-    "href": "02-st311-review.html#t-vs-z-test",
-    "title": "ST311 Review",
-    "section": "t vs z-test",
-    "text": "t vs z-test\n\\[{SE(\\bar{x})} = \\frac{s}{\\sqrt{n}}\\]\n\\[\\text{Sample Standard Deviation } (s) = \\sqrt{\\frac{\\sum (x_i - \\bar{x})^2}{n - 1}}\\]\nvs\n\\[SE({\\hat{p})} = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]\n\\[{SE(p_o)} = \\sqrt{\\frac{p_0(1 - p_0)}{n}}\\]\nBecause we know the standard error when we calculate our statistic \\(\\hat{p}\\), we are justified to do a z-test and a standard normal distribution.",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#other-formulas",
-    "href": "02-st311-review.html#other-formulas",
-    "title": "ST311 Review",
-    "section": "Other formulas",
-    "text": "Other formulas\n\\[z = \\frac{\\hat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\]\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#assumptions",
-    "href": "02-st311-review.html#assumptions",
-    "title": "ST311 Review",
-    "section": "Assumptions",
-    "text": "Assumptions\nHypothesis test:\n\\[n p_0 \\ge 10 \\quad \\text{and} \\quad n (1 - p_0) \\ge 10\\]\nConfidence interval:\n\\[n \\hat{p} \\ge 10 \\quad \\text{and} \\quad n (1 - \\hat{p}) \\ge 10\\]",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#z-statistic",
-    "href": "02-st311-review.html#z-statistic",
-    "title": "ST311 Review",
-    "section": "z-statistic",
-    "text": "z-statistic\n\\[z = \\frac{\\hat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\]\n\\[z = \\frac{0.70 - 0.50}{\\sqrt{\\frac{0.50(1 - 0.50)}{50}}}\\]\n\\[z = \\frac{0.20}{\\sqrt{\\frac{0.25}{50}}}\\]\n\\[z = \\frac{0.20}{\\sqrt{0.005}}\\]\n\\[z = \\frac{0.20}{0.07071}\\]\n\\[z \\approx 2.83\\]\nDraw out how the p-value would be calculated.",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#confidence-interval-2",
-    "href": "02-st311-review.html#confidence-interval-2",
-    "title": "ST311 Review",
-    "section": "Confidence interval",
-    "text": "Confidence interval\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#confidence-interval-3",
-    "href": "02-st311-review.html#confidence-interval-3",
-    "title": "ST311 Review",
-    "section": "Confidence interval",
-    "text": "Confidence interval\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{\\frac{0.70(1 - 0.70)}{50}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{\\frac{0.70(0.30)}{50}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{\\frac{0.21}{50}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{0.0042}\\]\n\\[0.70 \\pm 1.96 \\cdot (0.06481)\\]\n\\[0.70 \\pm 0.1270\\]",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "02-st311-review.html#confidence-interval-4",
-    "href": "02-st311-review.html#confidence-interval-4",
-    "title": "ST311 Review",
-    "section": "Confidence interval",
-    "text": "Confidence interval\n\\[(0.5730,\\ 0.8270) \\quad \\text{or} \\quad (57.30\\%,\\ 82.70\\%)\\]",
-    "crumbs": [
-      "Slides",
-      "Day-2"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#welcome",
-    "href": "01-welcome-312.html#welcome",
-    "title": "Welcome to ST312",
-    "section": "Welcome",
-    "text": "Welcome",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#goals-for-day-1",
-    "href": "01-welcome-312.html#goals-for-day-1",
-    "title": "Welcome to ST312",
-    "section": "Goals for Day 1",
-    "text": "Goals for Day 1\nGet organized + review\n\nGet to know the professor\nGet to know each other\nCourse overview\nReview of ST 311",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#who-am-i",
-    "href": "01-welcome-312.html#who-am-i",
-    "title": "Welcome to ST312",
-    "section": "Who Am I?",
-    "text": "Who Am I?",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#at-nc-state",
-    "href": "01-welcome-312.html#at-nc-state",
-    "title": "Welcome to ST312",
-    "section": "At NC State",
-    "text": "At NC State",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#at-nc-state-1",
-    "href": "01-welcome-312.html#at-nc-state-1",
-    "title": "Welcome to ST312",
-    "section": "At NC State",
-    "text": "At NC State\nProject COMPASS (Community Partnership and Assessment for School Safety). This is a three-year, federally funded initiative focused on developing and piloting a data-driven framework to strengthen collaboration between schools and community partners.",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#who-are-you",
-    "href": "01-welcome-312.html#who-are-you",
-    "title": "Welcome to ST312",
-    "section": "Who Are You?",
-    "text": "Who Are You?\nPlease share with the class\n\nName\nMajor\nYear (Freshman, Sophomore, etc.)\nWhy you are taking this course\nAnything else",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#st-312",
-    "href": "01-welcome-312.html#st-312",
-    "title": "Welcome to ST312",
-    "section": "ST 312",
-    "text": "ST 312\nFundamental Statistics Concepts\n– Probability\n– Power\n– Error\n– Normality\n– Properties of distributions",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#st-312-1",
-    "href": "01-welcome-312.html#st-312-1",
-    "title": "Welcome to ST312",
-    "section": "ST 312",
-    "text": "ST 312\nStatistical inference\n– Two sample tests\n– One-way ANOVA\n– Two-way ANOVA\n– Inference on regression parameters",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#st-312-2",
-    "href": "01-welcome-312.html#st-312-2",
-    "title": "Welcome to ST312",
-    "section": "ST 312",
-    "text": "ST 312\nDescriptive statistics\n– Calculate summary statistics\n– Interpret regression coefficients\n– Make predictions",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#st-312-3",
-    "href": "01-welcome-312.html#st-312-3",
-    "title": "Welcome to ST312",
-    "section": "ST 312",
-    "text": "ST 312\nOther skills\n– Statistical literacy\n– Pick up some R along the way (optional, but I’ll provide resources)",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#where-to-get-help",
-    "href": "01-welcome-312.html#where-to-get-help",
-    "title": "Welcome to ST312",
-    "section": "Where to get help",
-    "text": "Where to get help\nOffice Hours\n\n\n\n\n\n\n\n\nWho\nWhen\nWhere\n\n\n\n\nDr. Meyer\nMonday: 1:00-2:00pm  | Tuesday: 10:15 - 11:15am\nSAS 5228 or Zoom\n\n\nYichen Hu\nFriday 3:00pm - 5:00pm\nSAS 1101",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#stat-hub",
-    "href": "01-welcome-312.html#stat-hub",
-    "title": "Welcome to ST312",
-    "section": "STAT Hub",
-    "text": "STAT Hub\nHours: Monday - Thursday, 5:30p-8p (except on University holidays and breaks)\nLocation: 1101 SAS Hall\nWebsite: https://statistics.sciences.ncsu.edu/resources/student/tutors/",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#videos",
-    "href": "01-welcome-312.html#videos",
-    "title": "Welcome to ST312",
-    "section": "Videos",
-    "text": "Videos\nI will also post class videos for you to review… unless attendance takes a nose dive…",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#grades",
-    "href": "01-welcome-312.html#grades",
-    "title": "Welcome to ST312",
-    "section": "Grades",
-    "text": "Grades\n\n\n\nCategory\nPercentage\n\n\n\n\nReview Test\n5%\n\n\nRubric Assignment\n5%\n\n\nStatistics Experience\n5%\n\n\nHomework\n15%\n\n\nMidterms (2)\n40%\n\n\nFinal Exam\n30%",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#review-test",
-    "href": "01-welcome-312.html#review-test",
-    "title": "Welcome to ST312",
-    "section": "Review Test",
-    "text": "Review Test\n– Revisiting past material helps reinforce it\n– Make sure everyone is set up for success\n– Second-week of class\n– We will review some today and next class (+review material is posted)",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#review-test-topics",
-    "href": "01-welcome-312.html#review-test-topics",
-    "title": "Welcome to ST312",
-    "section": "Review test topics",
-    "text": "Review test topics\n– Null and alternative hypotheses\n– Confidence intervals (create + interpret)\n– p-value\n– standard normal + t-distribution\n– z + t statistics\n– categorical vs quantitative\nClosed notes. A formula sheet is posted\nThis is on 8/27!",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#rubric-assignment",
-    "href": "01-welcome-312.html#rubric-assignment",
-    "title": "Welcome to ST312",
-    "section": "Rubric assignment",
-    "text": "Rubric assignment\nYou will be given a topic\nYou will create your own rubric\nYou will use your rubric on a given response\nMore information later!",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#statistics-experience",
-    "href": "01-welcome-312.html#statistics-experience",
-    "title": "Welcome to ST312",
-    "section": "Statistics Experience",
-    "text": "Statistics Experience\nThe goal of the statistics experience assignments is to help you engage with the statistics and data science communities outside of the classroom!\n\nHave an experience\nMake connections between our class, and the experience\nMake a slide (poster) summarizing your experience\n\nConnections can be topics of regression, coding, working with data, etc.",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#student-example",
-    "href": "01-welcome-312.html#student-example",
-    "title": "Welcome to ST312",
-    "section": "Student Example",
-    "text": "Student Example",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#student-example-1",
-    "href": "01-welcome-312.html#student-example-1",
-    "title": "Welcome to ST312",
-    "section": "Student Example",
-    "text": "Student Example",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#research-study",
-    "href": "01-welcome-312.html#research-study",
-    "title": "Welcome to ST312",
-    "section": "Research study",
-    "text": "Research study\nI’m interested in interest-based assessment\nYou’ll be asked to be a part of the study!",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#ai-in-st-312",
-    "href": "01-welcome-312.html#ai-in-st-312",
-    "title": "Welcome to ST312",
-    "section": "AI in ST 312",
-    "text": "AI in ST 312\nThere is nothing stopping you from using AI (such as ChatGPT) as an additional resource to help build up your mastery of the material. However, please use it responsibly.\n– It is suggested that you use AI as a generator for additional practice problems\n– A tool to help uncover a misunderstanding you may have with ST 312 content",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#ai-in-st-312-1",
-    "href": "01-welcome-312.html#ai-in-st-312-1",
-    "title": "Welcome to ST312",
-    "section": "AI in ST 312",
-    "text": "AI in ST 312\nIrresponsible uses of AI\n– Having it think for you\n– Only asking AI questions\nAny work you turn in must be created by you! I’m interested in your fundamental understandings",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#ai-in-st-312-2",
-    "href": "01-welcome-312.html#ai-in-st-312-2",
-    "title": "Welcome to ST312",
-    "section": "AI in ST 312",
-    "text": "AI in ST 312\nDialogues with AI Reduce Beliefs in Misinformation but Build No Lasting Discernment Skills\nYour brain on ChatGPT\nHow AI is reshaping human skills and thinking\n– I believe it’s disingenuous for people to tell you to jump into using AI\n– I believe it’s disingenuous for people to tell you to never use AI\n– I try to be as transparent as possible with all of my in-class decisions, so please do not hesitate to ask questions!",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#how-class-runs",
-    "href": "01-welcome-312.html#how-class-runs",
-    "title": "Welcome to ST312",
-    "section": "How class runs",
-    "text": "How class runs\nBuild a community of learners",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#moodle",
-    "href": "01-welcome-312.html#moodle",
-    "title": "Welcome to ST312",
-    "section": "Moodle",
-    "text": "Moodle\nMoodle Tour",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#how-to-be-successful",
-    "href": "01-welcome-312.html#how-to-be-successful",
-    "title": "Welcome to ST312",
-    "section": "How to be successful",
-    "text": "How to be successful\nTake advantage of the different forms of help\nCome to class as an active participant\n– Take notes\n– Engage in discussion\n– Post questions in the forums\n– Stat Hub",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#review-toipcs",
-    "href": "01-welcome-312.html#review-toipcs",
-    "title": "Welcome to ST312",
-    "section": "Review toipcs",
-    "text": "Review toipcs\n– Normal Distribution: probabilities, z-scores, z-table (1.4)\n– Sampling Distribution: for sample means (5.2), sample proportions (5.3)\n– Confidence Intervals (6.1): for 1-sample mean (7.1), 1-sample proportion (8.1)\n– Hypothesis Testing (6.2): for 1-sample mean (7.1), 1-sample proportion (8.1)\n– P-values (6.2)",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#overview",
-    "href": "01-welcome-312.html#overview",
-    "title": "Welcome to ST312",
-    "section": "Overview",
-    "text": "Overview\nWhy should we learn statistics / take a statistics course?\nWhy is this useful?",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#types-of-variables",
-    "href": "01-welcome-312.html#types-of-variables",
-    "title": "Welcome to ST312",
-    "section": "Types of variables",
-    "text": "Types of variables\nCategorical or Quantitative?\n– Height (inches)\n– State you are from\n– Zip code",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#probability-distributions",
-    "href": "01-welcome-312.html#probability-distributions",
-    "title": "Welcome to ST312",
-    "section": "Probability distributions",
-    "text": "Probability distributions\nA probability distribution –\nA random variable –",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#probability-distributions-1",
-    "href": "01-welcome-312.html#probability-distributions-1",
-    "title": "Welcome to ST312",
-    "section": "Probability distributions",
-    "text": "Probability distributions\nA probability distribution is a mathematical function that describes the likelihood of different outcomes for a random variable\nA random variable, usually written X, is a variable whose possible values are numerical outcomes of a random phenomenon.",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#distributions",
-    "href": "01-welcome-312.html#distributions",
-    "title": "Welcome to ST312",
-    "section": "Distributions",
-    "text": "Distributions\nProbability distributions vs sampoling distributions\nWhat’s the difference?",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#normal-distribution",
-    "href": "01-welcome-312.html#normal-distribution",
-    "title": "Welcome to ST312",
-    "section": "Normal Distribution",
-    "text": "Normal Distribution\nWhat does it look like?\nWhat’s the center?\nWhat’s the area under the curve?",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#normal-distribution-1",
-    "href": "01-welcome-312.html#normal-distribution-1",
-    "title": "Welcome to ST312",
-    "section": "Normal Distribution",
-    "text": "Normal Distribution\n\nHow can we measure spread?",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#spread",
-    "href": "01-welcome-312.html#spread",
-    "title": "Welcome to ST312",
-    "section": "Spread",
-    "text": "Spread\nStandard deviation - how spread out on average, each value is away from the center",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#population-vs-sample",
-    "href": "01-welcome-312.html#population-vs-sample",
-    "title": "Welcome to ST312",
-    "section": "Population vs sample",
-    "text": "Population vs sample\nWhat’s the difference?\n\\(\\mu\\) vs \\(\\bar{x}\\)\n\\(\\sigma\\) vs \\(s\\)",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#question",
-    "href": "01-welcome-312.html#question",
-    "title": "Welcome to ST312",
-    "section": "Question",
-    "text": "Question\nWhich curve has the larger mean?\nWhich curve has the larger standard deviation?",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#standard-normal-distribution-1",
-    "href": "01-welcome-312.html#standard-normal-distribution-1",
-    "title": "Welcome to ST312",
-    "section": "Standard Normal Distribution",
-    "text": "Standard Normal Distribution\n\\[\nz = \\frac{x - \\mu}{\\sigma}\n\\]\nThis represents how many standard deviations a value (x) is away from the mean!\nWe can calculate probabilities using a z-score.",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#probability",
-    "href": "01-welcome-312.html#probability",
-    "title": "Welcome to ST312",
-    "section": "Probability",
-    "text": "Probability\nWhat is probability?\nWhat values can probability take on?",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#probability-1",
-    "href": "01-welcome-312.html#probability-1",
-    "title": "Welcome to ST312",
-    "section": "Probability",
-    "text": "Probability\nAssume that the true mean value of a can of Coke is 500mL, with a true standard deviation of 9mL. What’s the probability that a randomly sampled can of Coke contains at least 510mL?\nLet’s draw it out!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can use this chunk as a calculator if you would like!",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#z-score",
-    "href": "01-welcome-312.html#z-score",
-    "title": "Welcome to ST312",
-    "section": "z-score",
-    "text": "z-score\npnorm(your_zcore)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\npnorm() gives the area to the left, subtract the result from 1 to get the area to the right.",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#z-table",
-    "href": "01-welcome-312.html#z-table",
-    "title": "Welcome to ST312",
-    "section": "z-table",
-    "text": "z-table",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#probability-2",
-    "href": "01-welcome-312.html#probability-2",
-    "title": "Welcome to ST312",
-    "section": "Probability",
-    "text": "Probability\nWhat about the probability our can of Coke contains exactly 510mL?",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#setting-the-stage-for-research",
-    "href": "01-welcome-312.html#setting-the-stage-for-research",
-    "title": "Welcome to ST312",
-    "section": "Setting the stage for research",
-    "text": "Setting the stage for research\n– What’s a null hypothesis?\n– What’s an alternative hypothesis",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#context",
-    "href": "01-welcome-312.html#context",
-    "title": "Welcome to ST312",
-    "section": "Context",
-    "text": "Context\nSuppose I am a height researcher interested in how tall, on average, NC residents are. It is assumed that the average height for US citizens is 69 inches. I have hunch that NC residents are taller than that…\n\\(Ho:\\)\n\\(Ha:\\)",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
-    "objectID": "01-welcome-312.html#next-time",
-    "href": "01-welcome-312.html#next-time",
-    "title": "Welcome to ST312",
-    "section": "Next time",
-    "text": "Next time\n– More review\n– Probability rules",
-    "crumbs": [
-      "Slides",
-      "Day-1"
-    ]
-  },
-  {
     "objectID": "03-review2.html#checklist",
     "href": "03-review2.html#checklist",
     "title": "Review-Part 2",
@@ -1504,6 +547,1370 @@
     "crumbs": [
       "Slides",
       "Day-3"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#welcome",
+    "href": "01-welcome-312.html#welcome",
+    "title": "Welcome to ST312",
+    "section": "Welcome",
+    "text": "Welcome",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#goals-for-day-1",
+    "href": "01-welcome-312.html#goals-for-day-1",
+    "title": "Welcome to ST312",
+    "section": "Goals for Day 1",
+    "text": "Goals for Day 1\nGet organized + review\n\nGet to know the professor\nGet to know each other\nCourse overview\nReview of ST 311",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#who-am-i",
+    "href": "01-welcome-312.html#who-am-i",
+    "title": "Welcome to ST312",
+    "section": "Who Am I?",
+    "text": "Who Am I?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#at-nc-state",
+    "href": "01-welcome-312.html#at-nc-state",
+    "title": "Welcome to ST312",
+    "section": "At NC State",
+    "text": "At NC State",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#at-nc-state-1",
+    "href": "01-welcome-312.html#at-nc-state-1",
+    "title": "Welcome to ST312",
+    "section": "At NC State",
+    "text": "At NC State\nProject COMPASS (Community Partnership and Assessment for School Safety). This is a three-year, federally funded initiative focused on developing and piloting a data-driven framework to strengthen collaboration between schools and community partners.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#who-are-you",
+    "href": "01-welcome-312.html#who-are-you",
+    "title": "Welcome to ST312",
+    "section": "Who Are You?",
+    "text": "Who Are You?\nPlease share with the class\n\nName\nMajor\nYear (Freshman, Sophomore, etc.)\nWhy you are taking this course\nAnything else",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#st-312",
+    "href": "01-welcome-312.html#st-312",
+    "title": "Welcome to ST312",
+    "section": "ST 312",
+    "text": "ST 312\nFundamental Statistics Concepts\n– Probability\n– Power\n– Error\n– Normality\n– Properties of distributions",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#st-312-1",
+    "href": "01-welcome-312.html#st-312-1",
+    "title": "Welcome to ST312",
+    "section": "ST 312",
+    "text": "ST 312\nStatistical inference\n– Two sample tests\n– One-way ANOVA\n– Two-way ANOVA\n– Inference on regression parameters",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#st-312-2",
+    "href": "01-welcome-312.html#st-312-2",
+    "title": "Welcome to ST312",
+    "section": "ST 312",
+    "text": "ST 312\nDescriptive statistics\n– Calculate summary statistics\n– Interpret regression coefficients\n– Make predictions",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#st-312-3",
+    "href": "01-welcome-312.html#st-312-3",
+    "title": "Welcome to ST312",
+    "section": "ST 312",
+    "text": "ST 312\nOther skills\n– Statistical literacy\n– Pick up some R along the way (optional, but I’ll provide resources)",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#where-to-get-help",
+    "href": "01-welcome-312.html#where-to-get-help",
+    "title": "Welcome to ST312",
+    "section": "Where to get help",
+    "text": "Where to get help\nOffice Hours\n\n\n\n\n\n\n\n\nWho\nWhen\nWhere\n\n\n\n\nDr. Meyer\nMonday: 1:00-2:00pm  | Tuesday: 10:15 - 11:15am\nSAS 5228 or Zoom\n\n\nYichen Hu\nFriday 3:00pm - 5:00pm\nSAS 1101",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#stat-hub",
+    "href": "01-welcome-312.html#stat-hub",
+    "title": "Welcome to ST312",
+    "section": "STAT Hub",
+    "text": "STAT Hub\nHours: Monday - Thursday, 5:30p-8p (except on University holidays and breaks)\nLocation: 1101 SAS Hall\nWebsite: https://statistics.sciences.ncsu.edu/resources/student/tutors/",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#videos",
+    "href": "01-welcome-312.html#videos",
+    "title": "Welcome to ST312",
+    "section": "Videos",
+    "text": "Videos\nI will also post class videos for you to review… unless attendance takes a nose dive…",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#grades",
+    "href": "01-welcome-312.html#grades",
+    "title": "Welcome to ST312",
+    "section": "Grades",
+    "text": "Grades\n\n\n\nCategory\nPercentage\n\n\n\n\nReview Test\n5%\n\n\nRubric Assignment\n5%\n\n\nStatistics Experience\n5%\n\n\nHomework\n15%\n\n\nMidterms (2)\n40%\n\n\nFinal Exam\n30%",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#review-test",
+    "href": "01-welcome-312.html#review-test",
+    "title": "Welcome to ST312",
+    "section": "Review Test",
+    "text": "Review Test\n– Revisiting past material helps reinforce it\n– Make sure everyone is set up for success\n– Second-week of class\n– We will review some today and next class (+review material is posted)",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#review-test-topics",
+    "href": "01-welcome-312.html#review-test-topics",
+    "title": "Welcome to ST312",
+    "section": "Review test topics",
+    "text": "Review test topics\n– Null and alternative hypotheses\n– Confidence intervals (create + interpret)\n– p-value\n– standard normal + t-distribution\n– z + t statistics\n– categorical vs quantitative\nClosed notes. A formula sheet is posted\nThis is on 8/27!",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#rubric-assignment",
+    "href": "01-welcome-312.html#rubric-assignment",
+    "title": "Welcome to ST312",
+    "section": "Rubric assignment",
+    "text": "Rubric assignment\nYou will be given a topic\nYou will create your own rubric\nYou will use your rubric on a given response\nMore information later!",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#statistics-experience",
+    "href": "01-welcome-312.html#statistics-experience",
+    "title": "Welcome to ST312",
+    "section": "Statistics Experience",
+    "text": "Statistics Experience\nThe goal of the statistics experience assignments is to help you engage with the statistics and data science communities outside of the classroom!\n\nHave an experience\nMake connections between our class, and the experience\nMake a slide (poster) summarizing your experience\n\nConnections can be topics of regression, coding, working with data, etc.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#student-example",
+    "href": "01-welcome-312.html#student-example",
+    "title": "Welcome to ST312",
+    "section": "Student Example",
+    "text": "Student Example",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#student-example-1",
+    "href": "01-welcome-312.html#student-example-1",
+    "title": "Welcome to ST312",
+    "section": "Student Example",
+    "text": "Student Example",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#research-study",
+    "href": "01-welcome-312.html#research-study",
+    "title": "Welcome to ST312",
+    "section": "Research study",
+    "text": "Research study\nI’m interested in interest-based assessment\nYou’ll be asked to be a part of the study!",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#ai-in-st-312",
+    "href": "01-welcome-312.html#ai-in-st-312",
+    "title": "Welcome to ST312",
+    "section": "AI in ST 312",
+    "text": "AI in ST 312\nThere is nothing stopping you from using AI (such as ChatGPT) as an additional resource to help build up your mastery of the material. However, please use it responsibly.\n– It is suggested that you use AI as a generator for additional practice problems\n– A tool to help uncover a misunderstanding you may have with ST 312 content",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#ai-in-st-312-1",
+    "href": "01-welcome-312.html#ai-in-st-312-1",
+    "title": "Welcome to ST312",
+    "section": "AI in ST 312",
+    "text": "AI in ST 312\nIrresponsible uses of AI\n– Having it think for you\n– Only asking AI questions\nAny work you turn in must be created by you! I’m interested in your fundamental understandings",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#ai-in-st-312-2",
+    "href": "01-welcome-312.html#ai-in-st-312-2",
+    "title": "Welcome to ST312",
+    "section": "AI in ST 312",
+    "text": "AI in ST 312\nDialogues with AI Reduce Beliefs in Misinformation but Build No Lasting Discernment Skills\nYour brain on ChatGPT\nHow AI is reshaping human skills and thinking\n– I believe it’s disingenuous for people to tell you to jump into using AI\n– I believe it’s disingenuous for people to tell you to never use AI\n– I try to be as transparent as possible with all of my in-class decisions, so please do not hesitate to ask questions!",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#how-class-runs",
+    "href": "01-welcome-312.html#how-class-runs",
+    "title": "Welcome to ST312",
+    "section": "How class runs",
+    "text": "How class runs\nBuild a community of learners",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#moodle",
+    "href": "01-welcome-312.html#moodle",
+    "title": "Welcome to ST312",
+    "section": "Moodle",
+    "text": "Moodle\nMoodle Tour",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#how-to-be-successful",
+    "href": "01-welcome-312.html#how-to-be-successful",
+    "title": "Welcome to ST312",
+    "section": "How to be successful",
+    "text": "How to be successful\nTake advantage of the different forms of help\nCome to class as an active participant\n– Take notes\n– Engage in discussion\n– Post questions in the forums\n– Stat Hub",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#review-toipcs",
+    "href": "01-welcome-312.html#review-toipcs",
+    "title": "Welcome to ST312",
+    "section": "Review toipcs",
+    "text": "Review toipcs\n– Normal Distribution: probabilities, z-scores, z-table (1.4)\n– Sampling Distribution: for sample means (5.2), sample proportions (5.3)\n– Confidence Intervals (6.1): for 1-sample mean (7.1), 1-sample proportion (8.1)\n– Hypothesis Testing (6.2): for 1-sample mean (7.1), 1-sample proportion (8.1)\n– P-values (6.2)",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#overview",
+    "href": "01-welcome-312.html#overview",
+    "title": "Welcome to ST312",
+    "section": "Overview",
+    "text": "Overview\nWhy should we learn statistics / take a statistics course?\nWhy is this useful?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#types-of-variables",
+    "href": "01-welcome-312.html#types-of-variables",
+    "title": "Welcome to ST312",
+    "section": "Types of variables",
+    "text": "Types of variables\nCategorical or Quantitative?\n– Height (inches)\n– State you are from\n– Zip code",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#probability-distributions",
+    "href": "01-welcome-312.html#probability-distributions",
+    "title": "Welcome to ST312",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nA probability distribution –\nA random variable –",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#probability-distributions-1",
+    "href": "01-welcome-312.html#probability-distributions-1",
+    "title": "Welcome to ST312",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nA probability distribution is a mathematical function that describes the likelihood of different outcomes for a random variable\nA random variable, usually written X, is a variable whose possible values are numerical outcomes of a random phenomenon.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#distributions",
+    "href": "01-welcome-312.html#distributions",
+    "title": "Welcome to ST312",
+    "section": "Distributions",
+    "text": "Distributions\nProbability distributions vs sampoling distributions\nWhat’s the difference?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#normal-distribution",
+    "href": "01-welcome-312.html#normal-distribution",
+    "title": "Welcome to ST312",
+    "section": "Normal Distribution",
+    "text": "Normal Distribution\nWhat does it look like?\nWhat’s the center?\nWhat’s the area under the curve?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#normal-distribution-1",
+    "href": "01-welcome-312.html#normal-distribution-1",
+    "title": "Welcome to ST312",
+    "section": "Normal Distribution",
+    "text": "Normal Distribution\n\nHow can we measure spread?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#spread",
+    "href": "01-welcome-312.html#spread",
+    "title": "Welcome to ST312",
+    "section": "Spread",
+    "text": "Spread\nStandard deviation - how spread out on average, each value is away from the center",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#population-vs-sample",
+    "href": "01-welcome-312.html#population-vs-sample",
+    "title": "Welcome to ST312",
+    "section": "Population vs sample",
+    "text": "Population vs sample\nWhat’s the difference?\n\\(\\mu\\) vs \\(\\bar{x}\\)\n\\(\\sigma\\) vs \\(s\\)",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#question",
+    "href": "01-welcome-312.html#question",
+    "title": "Welcome to ST312",
+    "section": "Question",
+    "text": "Question\nWhich curve has the larger mean?\nWhich curve has the larger standard deviation?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#standard-normal-distribution-1",
+    "href": "01-welcome-312.html#standard-normal-distribution-1",
+    "title": "Welcome to ST312",
+    "section": "Standard Normal Distribution",
+    "text": "Standard Normal Distribution\n\\[\nz = \\frac{x - \\mu}{\\sigma}\n\\]\nThis represents how many standard deviations a value (x) is away from the mean!\nWe can calculate probabilities using a z-score.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#probability",
+    "href": "01-welcome-312.html#probability",
+    "title": "Welcome to ST312",
+    "section": "Probability",
+    "text": "Probability\nWhat is probability?\nWhat values can probability take on?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#probability-1",
+    "href": "01-welcome-312.html#probability-1",
+    "title": "Welcome to ST312",
+    "section": "Probability",
+    "text": "Probability\nAssume that the true mean value of a can of Coke is 500mL, with a true standard deviation of 9mL. What’s the probability that a randomly sampled can of Coke contains at least 510mL?\nLet’s draw it out!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can use this chunk as a calculator if you would like!",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#z-score",
+    "href": "01-welcome-312.html#z-score",
+    "title": "Welcome to ST312",
+    "section": "z-score",
+    "text": "z-score\npnorm(your_zcore)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\npnorm() gives the area to the left, subtract the result from 1 to get the area to the right.",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#z-table",
+    "href": "01-welcome-312.html#z-table",
+    "title": "Welcome to ST312",
+    "section": "z-table",
+    "text": "z-table",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#probability-2",
+    "href": "01-welcome-312.html#probability-2",
+    "title": "Welcome to ST312",
+    "section": "Probability",
+    "text": "Probability\nWhat about the probability our can of Coke contains exactly 510mL?",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#setting-the-stage-for-research",
+    "href": "01-welcome-312.html#setting-the-stage-for-research",
+    "title": "Welcome to ST312",
+    "section": "Setting the stage for research",
+    "text": "Setting the stage for research\n– What’s a null hypothesis?\n– What’s an alternative hypothesis",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#context",
+    "href": "01-welcome-312.html#context",
+    "title": "Welcome to ST312",
+    "section": "Context",
+    "text": "Context\nSuppose I am a height researcher interested in how tall, on average, NC residents are. It is assumed that the average height for US citizens is 69 inches. I have hunch that NC residents are taller than that…\n\\(Ho:\\)\n\\(Ha:\\)",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "01-welcome-312.html#next-time",
+    "href": "01-welcome-312.html#next-time",
+    "title": "Welcome to ST312",
+    "section": "Next time",
+    "text": "Next time\n– More review\n– Probability rules",
+    "crumbs": [
+      "Slides",
+      "Day-1"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#checklist",
+    "href": "02-st311-review.html#checklist",
+    "title": "ST311 Review",
+    "section": "Checklist",
+    "text": "Checklist\n– Review Test (8/27)\n– Do you have access to the required textbook?\n– Do you understand how/where to get help in ST312?\n– Have you filled out the Getting to know you survey?\n– Do you have plan to take notes?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#goals-today",
+    "href": "02-st311-review.html#goals-today",
+    "title": "ST311 Review",
+    "section": "Goals Today",
+    "text": "Goals Today\nReview the fundamentals of statistics (ST311 review)\nGet to know your TA!",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#warm-up",
+    "href": "02-st311-review.html#warm-up",
+    "title": "ST311 Review",
+    "section": "Warm up",
+    "text": "Warm up\nWhat is statistical inference?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#notation-check",
+    "href": "02-st311-review.html#notation-check",
+    "title": "ST311 Review",
+    "section": "Notation Check",
+    "text": "Notation Check\n– \\(\\mu\\)\n– \\(\\pi\\) or \\(p\\)\n– \\(\\hat{p}\\)\n– \\(s\\)\n– \\(\\sigma\\)\n– \\(\\bar{x}\\)\n– \\(n\\)",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#notation-check-1",
+    "href": "02-st311-review.html#notation-check-1",
+    "title": "ST311 Review",
+    "section": "Notation Check",
+    "text": "Notation Check\n– \\(\\mu\\) - population mean\n– \\(\\pi\\) or \\(p\\) - population proportion\n– \\(\\hat{p}\\) - sample proportion\n– \\(s\\) - sample standard deviation\n– \\(\\sigma\\) - population standard deviation\n– \\(\\bar{x}\\) - sample mean\n– \\(n\\) - sample size",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#last-time",
+    "href": "02-st311-review.html#last-time",
+    "title": "ST311 Review",
+    "section": "Last time",
+    "text": "Last time\nProbability distribution vs sampling distribution\nA probability distribution describes the likelihood of all possible outcomes for a single random variable.\nA sampling distribution describes the distribution of a statistic.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#question",
+    "href": "02-st311-review.html#question",
+    "title": "ST311 Review",
+    "section": "Question",
+    "text": "Question\nRead these as sentences. Which one corresponds to a sampling distribution vs a probability distribution?\n\\(\\bar{x} \\sim N(\\mu, \\frac{\\sigma}{\\sqrt{n}})\\)\n\\(x \\sim N(\\mu, \\sigma)\\)",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#setting-the-stage-for-research",
+    "href": "02-st311-review.html#setting-the-stage-for-research",
+    "title": "ST311 Review",
+    "section": "Setting the stage for research",
+    "text": "Setting the stage for research\n– What is a null hypothesis?\n– What is an alternative hypothesis?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#setting-the-stage-for-research-1",
+    "href": "02-st311-review.html#setting-the-stage-for-research-1",
+    "title": "ST311 Review",
+    "section": "Setting the stage for research",
+    "text": "Setting the stage for research\n\\(Ho:\\) - what we assume to be true / what we test against\n\\(Ha:\\) - this is our research question!",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#context",
+    "href": "02-st311-review.html#context",
+    "title": "ST311 Review",
+    "section": "Context",
+    "text": "Context\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that \\(\\bar{x}\\) = 2035mL, and \\(s\\) = 150mL\n\\(Ho:\\)\n\\(Ha:\\)",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#context-1",
+    "href": "02-st311-review.html#context-1",
+    "title": "ST311 Review",
+    "section": "Context",
+    "text": "Context\n\\(Ho: \\mu = 2000\\)\n\\(Ha: \\mu \\neq 2000\\)\nShould we do a t-test or a z-test?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#before-we-do-that",
+    "href": "02-st311-review.html#before-we-do-that",
+    "title": "ST311 Review",
+    "section": "Before we do that…",
+    "text": "Before we do that…\nAssumptions\n– Are our observations independent\n– Is our sample size larger than 30? &lt;- why is this important?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#test-statistic",
+    "href": "02-st311-review.html#test-statistic",
+    "title": "ST311 Review",
+    "section": "test-statistic",
+    "text": "test-statistic\nCalculate our test statistic using the following formula.\n\\[t = \\frac{\\bar{x} - \\mu_0}{\\frac{s}{\\sqrt{n}}}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#test-statistic-1",
+    "href": "02-st311-review.html#test-statistic-1",
+    "title": "ST311 Review",
+    "section": "test-statistic",
+    "text": "test-statistic\n\\[t = \\frac{\\bar{x} - \\mu_0}{\\frac{s}{\\sqrt{n}}}\\]\n\\[t = \\frac{2035 - 2000}{\\frac{150}{\\sqrt{50}}}\\]\n\\[t = \\frac{35}{\\frac{150}{7.07107}}\\]\n\\[t = \\frac{35}{21.2132}\\]\n\\[t \\approx 1.65\\]\nHow do we interpret this number?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#test-statistic-2",
+    "href": "02-st311-review.html#test-statistic-2",
+    "title": "ST311 Review",
+    "section": "test-statistic",
+    "text": "test-statistic\n\\[t \\approx 1.65\\]\n2035 \\((\\bar{x})\\) is 1.65 standard errors away from the null value 2000!",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#test-statistic-3",
+    "href": "02-st311-review.html#test-statistic-3",
+    "title": "ST311 Review",
+    "section": "test-statistic",
+    "text": "test-statistic\n\\[t \\approx 1.65\\]\n2035 \\((\\bar{x})\\) is 1.65 standard errors away from the null value 2000!\nNow what?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#p-value",
+    "href": "02-st311-review.html#p-value",
+    "title": "ST311 Review",
+    "section": "p-value",
+    "text": "p-value\np-value - what is it?\nIs it going to be large or small?\nHow do we know?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#section-1",
+    "href": "02-st311-review.html#section-1",
+    "title": "ST311 Review",
+    "section": "",
+    "text": "But there is one problem…… this is a rule for a standard normal distribution….\n… and we don’t have that…",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#t-distribution",
+    "href": "02-st311-review.html#t-distribution",
+    "title": "ST311 Review",
+    "section": "t-distribution",
+    "text": "t-distribution\nt-distribution\nWhat is a degree of freedom?\nWhat t-distribution are we using?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#degrees-of-freedom",
+    "href": "02-st311-review.html#degrees-of-freedom",
+    "title": "ST311 Review",
+    "section": "Degrees of freedom",
+    "text": "Degrees of freedom\nThe Wardrobe Analogy\nImagine you have 7 different shirts to wear over a 7-day week. On Monday, you have 7 choices. On Tuesday, 6 choices. By the time Sunday rolls around, you only have 1 shirt left. You have no choice on Sunday—your decision was perfectly determined by the previous 6 days. You had 6 days of true flexibility, meaning your degrees of freedom are 6.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#degrees-of-freedom-1",
+    "href": "02-st311-review.html#degrees-of-freedom-1",
+    "title": "ST311 Review",
+    "section": "Degrees of freedom",
+    "text": "Degrees of freedom\nNote: We need degrees of freedom because in a single mean test, we also have to use data to estimate \\(s\\) for the standard error. In a single proportion test, the standard error is entirely estimated using our statistic \\(\\hat{p}\\). We will re-visit this when we review single proportion.\nHow many independent pieces of information you have\nIf you have \\(\\bar{x}\\) and n = 50…. the 50th observation is “locked” into whatever the exact number makes the mean equal to \\(\\bar{x}\\) (2035).\nWe are working with 49 degrees of freedom!\n\\(t_{49}\\)",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#complete-the-story",
+    "href": "02-st311-review.html#complete-the-story",
+    "title": "ST311 Review",
+    "section": "Complete the story",
+    "text": "Complete the story\nBecause our statistic follows a \\(t_{49}\\), it is essentially the same shape as a normal distribution. Because our test statistic is &lt; 2, our p-value is going to be relatively large. Let’s calculate it.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#p-value-1",
+    "href": "02-st311-review.html#p-value-1",
+    "title": "ST311 Review",
+    "section": "p-value",
+    "text": "p-value\n\nThe probability of observing our statistic, or something more extreme, given the null hypothesis is true.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#p-value-2",
+    "href": "02-st311-review.html#p-value-2",
+    "title": "ST311 Review",
+    "section": "p-value",
+    "text": "p-value\nThe probability of observing a mean of 2035, or something more extreme, given the population mean of water intake for young adults is 2000 mL, is about 10.53%.\nSo what do we do with this information?\n– Decision\n– Conclusion",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#decision-and-conclusion",
+    "href": "02-st311-review.html#decision-and-conclusion",
+    "title": "ST311 Review",
+    "section": "Decision and Conclusion",
+    "text": "Decision and Conclusion\nWe do this based on \\(\\alpha\\).\n\\(\\alpha\\) is the threshold we compare our p-value to. This is set at the beginning of your study.\nLet’s assume that \\(\\alpha = 0.05\\).\nLet’s now write our decision and conclusion together.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#decision-and-conclusion-1",
+    "href": "02-st311-review.html#decision-and-conclusion-1",
+    "title": "ST311 Review",
+    "section": "Decision and Conclusion",
+    "text": "Decision and Conclusion\nDecision:\nConclusion:",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-intervals",
+    "href": "02-st311-review.html#confidence-intervals",
+    "title": "ST311 Review",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). You want to investigate if students at this particular college are different than the national average. Assume that \\(\\bar{x}\\) = 2035mL, and \\(s\\) = 150mL\nHow could we change this question if I wanted to make a confidence interval instead of performing a hypothesis test?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-intervals-1",
+    "href": "02-st311-review.html#confidence-intervals-1",
+    "title": "ST311 Review",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\nestimate",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-intervals-2",
+    "href": "02-st311-review.html#confidence-intervals-2",
+    "title": "ST311 Review",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\nA health researcher wants to test whether college students at a local university drink a different amount of water daily compared to the national average. Health guidelines estimate that the national average daily water intake for young adults is 2000 mL.\nThe researcher selects a simple random sample of \\(n = 50\\) students from the campus library and records their daily water consumption in milliliters (mL). We want to estimate the population mean water consumption for these students on campus.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-interval",
+    "href": "02-st311-review.html#confidence-interval",
+    "title": "ST311 Review",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval\nYou may use 2.01 for \\(t^*\\). Calculate a 95% confidence interval using the formula below.\n\\[\\bar{x} \\pm t^* \\cdot \\left( \\frac{s}{\\sqrt{n}} \\right)\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-interval-1",
+    "href": "02-st311-review.html#confidence-interval-1",
+    "title": "ST311 Review",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval\n\\[\\bar{x} \\pm t^* \\cdot \\left( \\frac{s}{\\sqrt{n}} \\right)\\]\n\\[2035 \\pm 2.010 \\cdot \\left( \\frac{150}{\\sqrt{50}} \\right)\\]\n\\[2035 \\pm 2.010 \\cdot (21.2132)\\]\n\\[2035 \\pm 42.64\\]\n\\[(1992.36\\text{ mL},\\ 2077.64\\text{ mL})\\]\nhow do we interpret this?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#categorical-example",
+    "href": "02-st311-review.html#categorical-example",
+    "title": "ST311 Review",
+    "section": "Categorical example",
+    "text": "Categorical example\nA health researcher wants to see if more than half of college students are drinking water. In a sample size of \\(n = 50\\), the researcher recorded that 35 students drink more than 1 bottle of water a day.\nWhat’s different than before?\nWhat’s the null and alternative hypothesis?\nWhat type of test are we doing?",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#null-and-alternative",
+    "href": "02-st311-review.html#null-and-alternative",
+    "title": "ST311 Review",
+    "section": "Null and alternative",
+    "text": "Null and alternative\n\\(Ho: \\pi = .5\\)\n\\(Ha: \\pi &gt; .5\\)\nWe are going to conduct a z-test, because our response variable is categorical!",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#t-vs-z-test",
+    "href": "02-st311-review.html#t-vs-z-test",
+    "title": "ST311 Review",
+    "section": "t vs z-test",
+    "text": "t vs z-test\n\\[{SE(\\bar{x})} = \\frac{s}{\\sqrt{n}}\\]\n\\[\\text{Sample Standard Deviation } (s) = \\sqrt{\\frac{\\sum (x_i - \\bar{x})^2}{n - 1}}\\]\nvs\n\\[SE({\\hat{p})} = \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]\n\\[{SE(p_o)} = \\sqrt{\\frac{p_0(1 - p_0)}{n}}\\]\nBecause we know the standard error when we calculate our statistic \\(\\hat{p}\\), we are justified to do a z-test and a standard normal distribution.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#other-formulas",
+    "href": "02-st311-review.html#other-formulas",
+    "title": "ST311 Review",
+    "section": "Other formulas",
+    "text": "Other formulas\n\\[z = \\frac{\\hat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\]\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#assumptions",
+    "href": "02-st311-review.html#assumptions",
+    "title": "ST311 Review",
+    "section": "Assumptions",
+    "text": "Assumptions\nHypothesis test:\n\\[n p_0 \\ge 10 \\quad \\text{and} \\quad n (1 - p_0) \\ge 10\\]\nConfidence interval:\n\\[n \\hat{p} \\ge 10 \\quad \\text{and} \\quad n (1 - \\hat{p}) \\ge 10\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#z-statistic",
+    "href": "02-st311-review.html#z-statistic",
+    "title": "ST311 Review",
+    "section": "z-statistic",
+    "text": "z-statistic\n\\[z = \\frac{\\hat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\]\n\\[z = \\frac{0.70 - 0.50}{\\sqrt{\\frac{0.50(1 - 0.50)}{50}}}\\]\n\\[z = \\frac{0.20}{\\sqrt{\\frac{0.25}{50}}}\\]\n\\[z = \\frac{0.20}{\\sqrt{0.005}}\\]\n\\[z = \\frac{0.20}{0.07071}\\]\n\\[z \\approx 2.83\\]\nDraw out how the p-value would be calculated.",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-interval-2",
+    "href": "02-st311-review.html#confidence-interval-2",
+    "title": "ST311 Review",
+    "section": "Confidence interval",
+    "text": "Confidence interval\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-interval-3",
+    "href": "02-st311-review.html#confidence-interval-3",
+    "title": "ST311 Review",
+    "section": "Confidence interval",
+    "text": "Confidence interval\n\\[\\hat{p} \\pm z^* \\cdot \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{\\frac{0.70(1 - 0.70)}{50}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{\\frac{0.70(0.30)}{50}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{\\frac{0.21}{50}}\\]\n\\[0.70 \\pm 1.96 \\cdot \\sqrt{0.0042}\\]\n\\[0.70 \\pm 1.96 \\cdot (0.06481)\\]\n\\[0.70 \\pm 0.1270\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "02-st311-review.html#confidence-interval-4",
+    "href": "02-st311-review.html#confidence-interval-4",
+    "title": "ST311 Review",
+    "section": "Confidence interval",
+    "text": "Confidence interval\n\\[(0.5730,\\ 0.8270) \\quad \\text{or} \\quad (57.30\\%,\\ 82.70\\%)\\]",
+    "crumbs": [
+      "Slides",
+      "Day-2"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#checklist",
+    "href": "05-prob.html#checklist",
+    "title": "Probability",
+    "section": "Checklist",
+    "text": "Checklist\n– Congrats on the review test! Grades + key released Friday (weekend at the latest)\n– Homework-1 released week-4\n– Exam-1 (9/24)",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#why-are-we-learning-probability",
+    "href": "05-prob.html#why-are-we-learning-probability",
+    "title": "Probability",
+    "section": "Why are we learning probability",
+    "text": "Why are we learning probability\n– It’s important for statisticians to know a variety of probability rules\n– Pre-req knowledge for other courses\n– Helps us better conceptualize the fundemental idea of a p-value",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#probability-1",
+    "href": "05-prob.html#probability-1",
+    "title": "Probability",
+    "section": "Probability",
+    "text": "Probability\nWhat is the definition of probability?\nWhat values does probability take on?",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#probability-2",
+    "href": "05-prob.html#probability-2",
+    "title": "Probability",
+    "section": "Probability",
+    "text": "Probability\nProbability is the likelihood that something happens\n[0, 1]",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#probability-definitions",
+    "href": "05-prob.html#probability-definitions",
+    "title": "Probability",
+    "section": "Probability definitions",
+    "text": "Probability definitions\n– An event is any collection of results or outcomes of a procedure\n– The sample space for a procedure consists of all possible events (denoted as S = {})\n– Events are usually labeled with letters (A, B, C, etc.)\n– P(A) is the notation for the probability of event A\n– \\(P(A^c)\\) is the complement of A. You can think of the \\(^c\\) as the word NOT",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#practice",
+    "href": "05-prob.html#practice",
+    "title": "Probability",
+    "section": "Practice",
+    "text": "Practice\nWe conduct an experiment where we flip a coin 3 times…\n– What is the sample space?\n– What is the probability of getting at least two tails?\n– What is the sum of the probability of all events?",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#sample-space",
+    "href": "05-prob.html#sample-space",
+    "title": "Probability",
+    "section": "Sample Space",
+    "text": "Sample Space\nS = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#identify-at-least-2-tails",
+    "href": "05-prob.html#identify-at-least-2-tails",
+    "title": "Probability",
+    "section": "Identify at least 2 tails",
+    "text": "Identify at least 2 tails\nS = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#probability-of-a",
+    "href": "05-prob.html#probability-of-a",
+    "title": "Probability",
+    "section": "Probability of A",
+    "text": "Probability of A\nA = flipping at least 2 tails\nP(A) = probability of flipping at least 2 tails\n\\(P(A) = \\frac{\\text{number of favorable outcomes}}{\\text{total number of possible outcomes}}\\)\n\\(\\frac{4}{8}\\)\nThe probability of flipping at least two tails in three coin flips is .5 or 50%",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#what-is-the-sum-of-the-probability-of-all-events-1",
+    "href": "05-prob.html#what-is-the-sum-of-the-probability-of-all-events-1",
+    "title": "Probability",
+    "section": "What is the sum of the probability of all events?",
+    "text": "What is the sum of the probability of all events?\nIt’s one (100%). If we are calculating the probability of the entire sample space, the numberator and denominator will be the same.",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#more-complicated-probabilities",
+    "href": "05-prob.html#more-complicated-probabilities",
+    "title": "Probability",
+    "section": "More complicated probabilities",
+    "text": "More complicated probabilities\nP(A and B) = P(A \\(\\cap\\) B) = P(A intersect B)\nP(A or B) = P(A \\(\\cup\\) B) = P(A union B) = P(A) + P(B) - P(A \\(\\cap\\) B) (Addition Rule of Probability)\nThis is to avoid double counting, and will be made more clear on the following examples",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#practice-1",
+    "href": "05-prob.html#practice-1",
+    "title": "Probability",
+    "section": "Practice",
+    "text": "Practice\nA = column\nB = row\n\n\n\n\n\n\n\n\n\n\nBusiness student\nNot Business student\n\n\n\nTaking Statistics\n18\n67\n85\n\n\nNot taking statistics\n142\n534\n676\n\n\n\n160\n601\n761\n\n\n\n– Define events A, \\(A^c\\) , B, and \\(B^c\\)\n– Calculate the P(A)\n– Calculate the P(A and B)\n– Calculate the P(A or B)",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#pa",
+    "href": "05-prob.html#pa",
+    "title": "Probability",
+    "section": "P(A)",
+    "text": "P(A)\n\n\n\n\n\n\n\n\n\n\nBusiness student\nNot Business student\n\n\n\nTaking Statistics\n18\n67\n85\n\n\nNot taking statistics\n142\n534\n676\n\n\n\n160\n601\n761",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#pa-and-b",
+    "href": "05-prob.html#pa-and-b",
+    "title": "Probability",
+    "section": "P(A and B)",
+    "text": "P(A and B)\n\n\n\n\n\n\n\n\n\n\nBusiness student\nNot Business student\n\n\n\nTaking Statistics\n18\n67\n85\n\n\nNot taking statistics\n142\n534\n676\n\n\n\n160\n601\n761",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#pa-or-b",
+    "href": "05-prob.html#pa-or-b",
+    "title": "Probability",
+    "section": "P(A or B)",
+    "text": "P(A or B)\n\n\n\n\n\n\n\n\n\n\nBusiness student\nNot Business student\n\n\n\nTaking Statistics\n18\n67\n85\n\n\nNot taking statistics\n142\n534\n676\n\n\n\n160\n601\n761",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#conditional-probability",
+    "href": "05-prob.html#conditional-probability",
+    "title": "Probability",
+    "section": "Conditional Probability",
+    "text": "Conditional Probability\nWhat do we think a conditional probability is?",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#conditional-probability-1",
+    "href": "05-prob.html#conditional-probability-1",
+    "title": "Probability",
+    "section": "Conditional Probability",
+    "text": "Conditional Probability\nP(A | B) where the | represents the word given\nFor starters, I want us to think about the vertical bar as:\n– Cutting up our table\n– Make it so our denominator is not the table total",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#section",
+    "href": "05-prob.html#section",
+    "title": "Probability",
+    "section": "",
+    "text": "Business student\nNot Business student\n\n\n\nTaking Statistics\n18\n67\n85\n\n\nNot taking statistics\n142\n534\n676\n\n\n\n160\n601\n761\n\n\n\n– Calculate P(A | B)",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#pa-b",
+    "href": "05-prob.html#pa-b",
+    "title": "Probability",
+    "section": "P(A | B)",
+    "text": "P(A | B)\n\n\n\n\n\n\n\n\n\n\nBusiness student\nNot Business student\n\n\n\nTaking Statistics\n18\n67\n85\n\n\nNot taking statistics\n142\n534\n676\n\n\n\n160\n601\n761",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#conditional-probability-rule",
+    "href": "05-prob.html#conditional-probability-rule",
+    "title": "Probability",
+    "section": "Conditional Probability Rule",
+    "text": "Conditional Probability Rule\nP(A|B) = \\(\\frac{P(A \\cap B)}{P(B)}\\)\n\n\n\n\n\n\n\n\n\n\nBusiness student\nNot Business student\n\n\n\nTaking Statistics\n18\n67\n85\n\n\nNot taking statistics\n142\n534\n676\n\n\n\n160\n601\n761\n\n\n\nShow the above formula to be true",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#conditional-probability-rule-1",
+    "href": "05-prob.html#conditional-probability-rule-1",
+    "title": "Probability",
+    "section": "Conditional Probability Rule",
+    "text": "Conditional Probability Rule\nBayes’ Rule:\nEverything we learn in ST-312 is from a frequentist perspective.\nBayes’ Rule has created a new way to think about statistics by showing how we can update our beliefs when new evidence becomes available. Instead of relying only on past data, Bayesian statistics combines prior knowledge with new evidence to make more informed conclusions.\n\\(\\text{Posterior} = \\frac{\\text{Evidence} \\times \\text{Likelihood}}{\\text{Prior}}\\)\n\\(P(A \\mid B) = \\frac{P(B \\mid A)P(A)}{P(B)}\\)",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#bayes-rule",
+    "href": "05-prob.html#bayes-rule",
+    "title": "Probability",
+    "section": "Bayes’ Rule",
+    "text": "Bayes’ Rule\nShow: \\(P(A \\mid B) = \\frac{P(B \\mid A)P(A)}{P(B)}\\)\n\n\n\n\n\n\n\n\n\n\nBusiness student\nNot Business student\n\n\n\nTaking Statistics\n18\n67\n85\n\n\nNot taking statistics\n142\n534\n676\n\n\n\n160\n601\n761",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#more-practice",
+    "href": "05-prob.html#more-practice",
+    "title": "Probability",
+    "section": "More practice",
+    "text": "More practice\nA company has two types of employees: 60% are experienced and 40% are new. An experienced employee has a 90% chance of completing a project on time, while a new employee has a 60% chance.\nYou randomly select an employee who completed their project on time. What is the probability that the employee is experienced?\nWhat do we know? And what do we need to find out?",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#what-we-know",
+    "href": "05-prob.html#what-we-know",
+    "title": "Probability",
+    "section": "What we know",
+    "text": "What we know\n\\(P(E)=0.60\\)\n\\(P(E^c)=0.40\\)\n\\(P(O\\mid E)=0.90\\)\n\\(P(O\\mid E^c)=0.60\\)\nWhat are we trying to solve?",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#what-we-want",
+    "href": "05-prob.html#what-we-want",
+    "title": "Probability",
+    "section": "What we want",
+    "text": "What we want\n\\(P(E\\mid O)\\)\nWe want to find the probability that the employee is experienced given that they completed the project on time.\nSo what else do we need?",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#what-we-need",
+    "href": "05-prob.html#what-we-need",
+    "title": "Probability",
+    "section": "What we need",
+    "text": "What we need\nWe need to find:\n\\(P(O)\\)\nThen we can use Bayes’ Rule:\n\\(P(E\\mid O)=\\frac{P(O\\mid E)P(E)}{P(O)}\\)\nHow do we find \\(P(O)\\)?",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#po",
+    "href": "05-prob.html#po",
+    "title": "Probability",
+    "section": "P(O)",
+    "text": "P(O)\nIf I want the probability of O, I want the probability when O and E occur, and the probability when O and \\(E^c\\) occur….\nLet’s think back to this rule: P(A|B) = \\(\\frac{P(A \\cap B)}{P(B)}\\)\nP(O|E) = \\(\\frac{P(O \\cap E)}{P(E)}\\)\nHow can we rewrite this?",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#po-1",
+    "href": "05-prob.html#po-1",
+    "title": "Probability",
+    "section": "P(O)",
+    "text": "P(O)\n\\(P(O | E) = \\frac{P(O \\cap E)}{P(E)}\\)\n\\(P(O\\cap E)=P(O\\mid E)P(E)\\)\nand\n\\(P(O| E^c) = \\frac{P(O \\cap E^c)}{P(E^c)}\\)\n\\(P(O\\cap E^c)=P(O\\mid E^c)P(E^c)\\)\nand we should add them together to get \\(P(O)\\)!",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#think-back",
+    "href": "05-prob.html#think-back",
+    "title": "Probability",
+    "section": "Think back",
+    "text": "Think back\n\\(P(E)=0.60\\)\n\\(P(E^c)=0.40\\)\n\\(P(O\\mid E)=0.90\\)\n\\(P(O\\mid E^c)=0.60\\)\n\\[\nP(O) = (0.90)(0.60) + (0.60)(0.40) = 0.78\n\\]\nand now we can answer the question!",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#solutions",
+    "href": "05-prob.html#solutions",
+    "title": "Probability",
+    "section": "Solutions",
+    "text": "Solutions\n\\[\nP(E \\mid O) = \\frac{P(O \\mid E)P(E)}{P(O)}\n\\]\n\\[\nP(O) = (0.90)(0.60) + (0.60)(0.40)\n\\]\n\\[\nP(O) = 0.54 + 0.24 = 0.78\n\\]\n\\[\nP(E \\mid O) = \\frac{(0.90)(0.60)}{0.78}\n\\]\n\\[\nP(E \\mid O) = \\frac{0.54}{0.78} \\approx 0.6923\n\\]\n\\[\n\\boxed{P(E \\mid O) \\approx 69.23\\%}\n\\]",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#in-summary",
+    "href": "05-prob.html#in-summary",
+    "title": "Probability",
+    "section": "In Summary",
+    "text": "In Summary\n– An event is any collection of results or outcomes of a procedure\n– The sample space for a procedure consists of all possible events (denoted as S = {})\n– We can calculated:\n  &gt; single event \n  &gt; and \n  &gt; or \n  \n– We have all of these rules to help us!\n  &gt; Law of total probability \n  &gt; Bayes Rule \n  &gt; Conditional rule\n  &gt; Addition Rule of Probability",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#practice-if-time",
+    "href": "05-prob.html#practice-if-time",
+    "title": "Probability",
+    "section": "Practice (if time)",
+    "text": "Practice (if time)\nA jar contains 20 marbles: 7 blue, 4 red, 6 yellow, 3 green. Two marbles are drawn one after the other. What is the probability the first ball is red, and the second ball is blue?\nDefine: A\nDefine: B\n“What even am I interested in calculating probabilities of?”",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#events",
+    "href": "05-prob.html#events",
+    "title": "Probability",
+    "section": "Events",
+    "text": "Events\nA = pulling a red ball 1st\nB = pulling a blue ball 2nd",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#practice-3",
+    "href": "05-prob.html#practice-3",
+    "title": "Probability",
+    "section": "Practice",
+    "text": "Practice\nA jar contains 20 marbles: 7 blue, 4 red, 6 yellow, 3 green. Two marbles are drawn one after the other. What is the probability the first ball is red, and the second ball is blue?\nSet up your formula!",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#practice-4",
+    "href": "05-prob.html#practice-4",
+    "title": "Probability",
+    "section": "Practice",
+    "text": "Practice\nP(pulling a red ball 1st and pulling a blue ball 2nd)\nP(pulling a red ball 1st)*P(pulling a blue ball 2nd ∣ pulling a red ball 1st)\n\\[\nP(\\text{Red first and Blue second})\n=\\frac{4}{20}\\times\\frac{7}{19}\n=\\frac{7}{95}\n\\approx 7.37\\%\n\\]",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#independence-1",
+    "href": "05-prob.html#independence-1",
+    "title": "Probability",
+    "section": "Independence",
+    "text": "Independence\nEvents are independent if the outcome of one event is not affected by the outcome of the other\nWe go from: \\(P(A \\cap B)\\) = P(A|B)*P(B)\nTo: \\(P(A \\cap B)\\) = P(A) * P(B)",
+    "crumbs": [
+      "Slides",
+      "Day-5"
+    ]
+  },
+  {
+    "objectID": "05-prob.html#examples",
+    "href": "05-prob.html#examples",
+    "title": "Probability",
+    "section": "Examples",
+    "text": "Examples\nIndependent vs not:\n–- Flipping a coin and rolling a die?\n–- Drawing two cards from a deck without replacement?\n–- Flipping a coin and getting heads, then flipping and getting a heads again?",
+    "crumbs": [
+      "Slides",
+      "Day-5"
     ]
   },
   {
