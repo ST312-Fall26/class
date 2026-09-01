@@ -12,36 +12,37 @@ editor:
     wrap: 72
 ---
 
-## Checklist{.smaller} 
+## Checklist {.smaller}
 
--- Congrats on the review test! Grades + key released Friday (weekend at the latest)
+-- Congrats on the review test! Grades + key released Friday (weekend at
+the latest)
 
 -- Homework-1 released week-4
 
 -- Exam-1 (9/24)
 
-# Probability 
+# Probability
 
-## Why are we learning probability 
+## Why are we learning probability
 
--- It's important for statisticians to know a variety of probability rules 
+-- It's important for statisticians to know a variety of probability
+rules
 
--- Pre-req knowledge for other courses 
+-- Pre-req knowledge for other courses
 
--- Helps us better conceptualize the fundemental idea of a p-value 
+-- Helps us better conceptualize the fundemental idea of a p-value
 
-
-## Probability 
+## Probability
 
 What is the definition of probability?
 
 What values does probability take on?
 
-## Probability 
+## Probability
 
 Probability is the likelihood that something happens
 
-[0, 1]
+\[0, 1\]
 
 ## Probability definitions
 
@@ -73,7 +74,9 @@ S = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}
 
 ## Identify at least 2 tails
 
-S = {HHH, HHT, HTH, THH, <span style="color:blue">HTT</span>, <span style="color:blue">THT</span>, <span style="color:blue">TTH</span>, <span style="color:blue">TTT</span>}
+S = {HHH, HHT, HTH, THH, [HTT]{style="color:blue"},
+[THT]{style="color:blue"}, [TTH]{style="color:blue"},
+[TTT]{style="color:blue"}}
 
 ## Probability of A
 
@@ -101,21 +104,23 @@ sample space, the numberator and denominator will be the same.
 
 P(A and B) = P(A $\cap$ B) = P(A intersect B)
 
-P(A or B) = P(A $\cup$ B) = P(A union B) = P(A) + P(B) - P(A $\cap$ B) (Addition Rule of Probability)
+P(A or B) = P(A $\cup$ B) = P(A union B) = P(A) + P(B) - P(A $\cap$ B)
+(Addition Rule of Probability)
 
-This is to avoid double counting, and will be made more clear on the following examples 
+This is to avoid double counting, and will be made more clear on the
+following examples
 
-## Practice{.smaller}
+## Practice {.smaller}
 
 A = column
 
 B = row
 
-|                   |                  |                      |     |
+|                       |                  |                      |     |
 |-----------------------|------------------|----------------------|-----|
 |                       | Business student | Not Business student |     |
-| Taking Statistics     | 18               | 67                   |  85   |
-| Not taking statistics | 142              | 534                  | 676    |
+| Taking Statistics     | 18               | 67                   | 85  |
+| Not taking statistics | 142              | 534                  | 676 |
 |                       | 160              | 601                  | 761 |
 
 -- Define events A, $A^c$ , B, and $B^c$
@@ -130,38 +135,36 @@ B = row
 
 ## P(A)
 
-|                       |                  |                      |                                    |
-| --------------------- | ---------------- | -------------------- | ---------------------------------- |
-|                       | Business student | Not Business student |                                    |
-| Taking Statistics     | 18               | 67                   | <span style="color:red">85</span>  |
-| Not taking statistics | 142              | 534                  | 676                                |
-|                       | 160              | 601                  | <span style="color:red">761</span> |
+|                       |                  |                      |                          |
+|----------------|----------------|----------------|------------------------|
+|                       | Business student | Not Business student |                          |
+| Taking Statistics     | 18               | 67                   | 85  |
+| Not taking statistics | 142              | 534                  | 676                      |
+|                       | [160]{style="color:red"}              | 601                  | [761]{style="color:red"} |
 
 ## P(A and B)
 
-|                       |                                   |                      |                                    |
-| --------------------- | --------------------------------- | -------------------- | ---------------------------------- |
-|                       | Business student                  | Not Business student |                                    |
-| Taking Statistics     | <span style="color:red">18</span> | 67                   | 85                                 |
-| Not taking statistics | 142                               | 534                  | 676                                |
-|                       | 160                               | 601                  | <span style="color:red">761</span> |
+|                       |                         |                      |                          |
+|----------------|--------------------|----------------|---------------------|
+|                       | Business student        | Not Business student |                          |
+| Taking Statistics     | [18]{style="color:red"} | 67                   | 85                       |
+| Not taking statistics | 142                     | 534                  | 676                      |
+|                       | 160                     | 601                  | [761]{style="color:red"} |
 
 ## P(A or B)
 
-|                       |                                    |                                   |                                    |
-| --------------------- | ---------------------------------- | --------------------------------- | ---------------------------------- |
-|                       | Business student                   | Not Business student              |                                    |
-| Taking Statistics     | <span style="color:red">18</span>  | <span style="color:red">67</span> | <span style="color:red">85</span>  |
-| Not taking statistics | 142                                | 534                               | 676                                |
-|                       | <span style="color:red">160</span> | 601                               | <span style="color:red">761</span> |
+|                       |                          |                         |                          |
+|-----------------|-------------------|------------------|-------------------|
+|                       | Business student         | Not Business student    |                          |
+| Taking Statistics     | [18]{style="color:red"}  | 67 | [85]{style="color:red"}  |
+| Not taking statistics | 142                      | 534                     | 676                      |
+|                       | [160]{style="color:red"} | 601                     | [761]{style="color:red"} |
 
-
-# Questions 
-
+# Questions
 
 ## Conditional Probability
 
-What do we think a conditional probability is? 
+What do we think a conditional probability is?
 
 ## Conditional Probability
 
@@ -188,16 +191,14 @@ For starters, I want us to think about the vertical bar as:
 
 # Don't look at the next slides until you try the table yourself!
 
-## P(A | B)
+## P(A \| B)
 
-|                       |                                    |                      |     |
-| --------------------- | ---------------------------------- | -------------------- | --- |
-|                       | Business student                   | Not Business student |     |
-| Taking Statistics     | <span style="color:red">18</span>  | 67                   | 85  |
-| Not taking statistics | 142                                | 534                  | 676 |
-|                       | <span style="color:red">160</span> | 601                  | 761 |
-
-
+|                       |                          |                      |     |
+|----------------|---------------------------|---------------|---------------|
+|                       | Business student         | Not Business student |     |
+| Taking Statistics     | [18]{style="color:red"}  | 67                   | 85  |
+| Not taking statistics | 142                      | 534                  | 676 |
+|                       | [160]{style="color:red"} | 601                  | 761 |
 
 ## Conditional Probability Rule
 
@@ -206,19 +207,22 @@ P(A\|B) = $\frac{P(A \cap B)}{P(B)}$
 |                       |                  |                      |     |
 |-----------------------|------------------|----------------------|-----|
 |                       | Business student | Not Business student |     |
-| Taking Statistics     | 18               | 67                   | 85    |
-| Not taking statistics | 142              | 534                  | 676    |
+| Taking Statistics     | 18               | 67                   | 85  |
+| Not taking statistics | 142              | 534                  | 676 |
 |                       | 160              | 601                  | 761 |
 
 Show the above formula to be true
 
-## Conditional Probability Rule{.smaller}
+## Conditional Probability Rule {.smaller}
 
-Bayes' Rule: 
+Bayes' Rule:
 
-Everything we learn in ST-312 is from a frequentist perspective. 
+Everything we learn in ST-312 is from a frequentist perspective.
 
-Bayes' Rule has created a new way to think about statistics by showing how we can update our beliefs when new evidence becomes available. Instead of relying only on past data, Bayesian statistics combines prior knowledge with new evidence to make more informed conclusions.
+Bayes' Rule has created a new way to think about statistics by showing
+how we can update our beliefs when new evidence becomes available.
+Instead of relying only on past data, Bayesian statistics combines prior
+knowledge with new evidence to make more informed conclusions.
 
 $\text{Posterior} = \frac{\text{Evidence} \times \text{Likelihood}}{\text{Prior}}$
 
@@ -228,20 +232,21 @@ $P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}$
 
 Show: $P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}$
 
-
 |                       |                  |                      |     |
 |-----------------------|------------------|----------------------|-----|
 |                       | Business student | Not Business student |     |
-| Taking Statistics     | 18               | 67                   | 85    |
-| Not taking statistics | 142              | 534                  | 676    |
+| Taking Statistics     | 18               | 67                   | 85  |
+| Not taking statistics | 142              | 534                  | 676 |
 |                       | 160              | 601                  | 761 |
 
+## More practice {.smaller}
 
-## More practice{.smaller}
+A company has two types of employees: 60% are experienced and 40% are
+new. An experienced employee has a 90% chance of completing a project on
+time, while a new employee has a 60% chance.
 
-A company has two types of employees: 60% are experienced and 40% are new. An experienced employee has a 90% chance of completing a project on time, while a new employee has a 60% chance.
-
-You randomly select an employee who completed their project on time. What is the probability that the employee is experienced?
+You randomly select an employee who completed their project on time.
+What is the probability that the employee is experienced?
 
 What do we know? And what do we need to find out?
 
@@ -257,11 +262,12 @@ $P(O\mid E^c)=0.60$
 
 What are we trying to solve?
 
-## What we want 
+## What we want
 
 $P(E\mid O)$
 
-We want to find the probability that the employee is experienced given that they completed the project on time.
+We want to find the probability that the employee is experienced given
+that they completed the project on time.
 
 So what else do we need?
 
@@ -275,16 +281,16 @@ Then we can use Bayes' Rule:
 
 $P(E\mid O)=\frac{P(O\mid E)P(E)}{P(O)}$
 
-How do we find $P(O)$? 
+How do we find $P(O)$?
 
 ## P(O)
 
-If I want the probability of O, I want the probability when O and E occur, and the probability when O and $E^c$ occur.... 
-
+If I want the probability of O, I want the probability when O and E
+occur, and the probability when O and $E^c$ occur....
 
 Let's think back to this rule: P(A\|B) = $\frac{P(A \cap B)}{P(B)}$
 
- P(O\|E) = $\frac{P(O \cap E)}{P(E)}$
+P(O\|E) = $\frac{P(O \cap E)}{P(E)}$
 
 How can we rewrite this?
 
@@ -294,7 +300,7 @@ $P(O | E) = \frac{P(O \cap E)}{P(E)}$
 
 $P(O\cap E)=P(O\mid E)P(E)$
 
-and 
+and
 
 $P(O| E^c) = \frac{P(O \cap E^c)}{P(E^c)}$
 
@@ -302,7 +308,7 @@ $P(O\cap E^c)=P(O\mid E^c)P(E^c)$
 
 and we should add them together to get $P(O)$!
 
-## Think back{.smaller}
+## Think back {.smaller}
 
 $P(E)=0.60$
 
@@ -312,16 +318,13 @@ $P(O\mid E)=0.90$
 
 $P(O\mid E^c)=0.60$
 
-
 $$
 P(O) = (0.90)(0.60) + (0.60)(0.40) = 0.78
 $$
 
 and now we can answer the question!
 
-
-
-## Solutions{.smaller}
+## Solutions {.smaller}
 
 $$
 P(E \mid O) = \frac{P(O \mid E)P(E)}{P(O)}
@@ -347,33 +350,39 @@ $$
 \boxed{P(E \mid O) \approx 69.23\%}
 $$
 
-
-## In Summary{.smaller} 
+## In Summary {.smaller}
 
 -- An **event** is any collection of results or outcomes of a procedure
 
 -- The **sample space** for a procedure consists of all possible events
 (denoted as S = {})
 
--- We can calculated: 
+-- We can calculated:
 
-      > single event 
-      > and 
-      > or 
-      
+```         
+  > single event 
+  > and 
+  > or 
+  
+```
+
 -- We have all of these rules to help us!
 
-      > Law of total probability 
-      > Bayes Rule 
-      > Conditional rule
-      > Addition Rule of Probability
-      
-# Questions 
+```         
+  > Law of total probability 
+  > Bayes Rule 
+  > Conditional rule
+  > Addition Rule of Probability
+  
+```
+
+# Questions
 
 ## Practice (if time)
 
-A jar contains 20 marbles: 7 blue, 4 red, 6 yellow, 3 green. Two marbles are drawn one after the other. What
-is the probability the first ball is red, and the second ball is blue?
+A jar contains 20 marbles: 7 blue, 4 red, 6 yellow, 3 green. Two marbles
+are drawn one after the other. What is the probability the first ball is
+red, and the second ball is blue?
 
 Define: A
 
@@ -381,24 +390,26 @@ Define: B
 
 "What even am I interested in calculating probabilities of?"
 
-## Events 
+## Events
 
 A = pulling a red ball 1st
 
 B = pulling a blue ball 2nd
 
-## Practice 
+## Practice
 
-A jar contains 20 marbles: 7 blue, 4 red, 6 yellow, 3 green. Two marbles are drawn one after the other. What
-is the probability the first ball is red, and the second ball is blue?
+A jar contains 20 marbles: 7 blue, 4 red, 6 yellow, 3 green. Two marbles
+are drawn one after the other. What is the probability the first ball is
+red, and the second ball is blue?
 
-Set up your formula! 
+Set up your formula!
 
-## Practice{.smaller} 
+## Practice {.smaller}
 
-P(pulling a red ball 1st and pulling a blue ball 2nd)  
+P(pulling a red ball 1st and pulling a blue ball 2nd)
 
-P(pulling a red ball 1st)*P(pulling a blue ball 2nd ∣ pulling a red ball 1st)
+P(pulling a red ball 1st)\*P(pulling a blue ball 2nd ∣ pulling a red
+ball 1st)
 
 $$
 P(\text{Red first and Blue second})
@@ -407,25 +418,24 @@ P(\text{Red first and Blue second})
 \approx 7.37\%
 $$
 
+# Questions
 
+# In the previous problem, what happens if I replace the first marble drawn?
 
-# Questions 
+# Independence
 
-# In the previous problem, what happens if I replace the first marble drawn? 
+## Independence
 
-# Independence 
+Events are independent if the outcome of one event is not affected by
+the outcome of the other
 
-## Independence 
+We go from: $P(A \cap B)$ = P(A\|B)\*P(B)
 
-Events are independent if the outcome of one event is not affected by the outcome of the other
+To: $P(A \cap B)$ = P(A) \* P(B)
 
-We go from: $P(A \cap B)$ = P(A\|B)*P(B) 
+## Examples
 
-To: $P(A \cap B)$ = P(A) * P(B)
-
-## Examples 
-
-Independent vs not: 
+Independent vs not:
 
 –- Flipping a coin and rolling a die?
 
@@ -434,7 +444,6 @@ Independent vs not:
 –- Flipping a coin and getting heads, then flipping and getting a heads
 again?
 
-# Questions 
+# Questions
 
 # See you Thursday!
-
