@@ -37,7 +37,8 @@ website:
           #- href: review-test-slides.qmd
           - href: 05-prob.qmd
             text: "Day-5"
-
+          - href: 06-basics.qmd
+            text: "Day-6"
 format:
   html:
     theme: cosmo

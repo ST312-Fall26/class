@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <meta name="dcterms.date" content="2026-09-03">
+  <title>312 Storage – Finish Probability + Study Designs &amp; Abuse of tests</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-c7b6cf73ab47db6ccc8c81f07da29931.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Finish Probability + Study Designs &amp; Abuse of tests</h1>
+  <p class="subtitle">Lecture 6</p>
+
+<div class="quarto-title-authors">
+</div>
+
+  <p class="date">2026-09-03</p>
+</section>
+<section id="checklist" class="slide level2">
+<h2>Checklist</h2>
+<p>– Homework-1 released week-4</p>
+<p>– Exam-1 (9/24)</p>
+<p>– Statistics Experience will be assigned next week!</p>
+<pre><code>  &gt; Interest based assessment 
+  &gt; Extra credit opportunity 
+  &gt; due on the last day of class</code></pre>
+</section>
+<section id="last-time" class="slide level2">
+<h2>Last Time</h2>
+<p>All things probability!</p>
+<p>– P(A)</p>
+<p>– P(A and B)</p>
+<p>– P(A or B)</p>
+<p>– P(A | B)</p>
+<p>I want us to talk about the intuition behind some probability rules that come from the equations above!</p>
+</section>
+<section id="probability-rules" class="slide level2 smaller">
+<h2>Probability Rules</h2>
+<p>– P(A or B) = P(A) + P(B) - P(A and B) (Addition Rule of Probability)</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 26%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;"><strong>Soccer (B)</strong></th>
+<th style="text-align: right;"><strong>No Soccer</strong></th>
+<th style="text-align: right;"><strong>Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Basketball (A)</strong></td>
+<td style="text-align: right;"><strong>20</strong> ← A AND B</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;"><strong>50</strong> ← P(A)</td>
+</tr>
+<tr class="even">
+<td><strong>No Basketball</strong></td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>30</strong> ← P(B)</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;"><strong>100</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Those 20 students got counted twice! So, we subtract them out.</p>
+</section>
+<section id="probability-rules-1" class="slide level2 smaller">
+<h2>Probability Rules</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;"><strong>Soccer (B)</strong></th>
+<th style="text-align: right;"><strong>No Soccer</strong></th>
+<th style="text-align: right;"><strong>Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Basketball (A)</strong></td>
+<td style="text-align: right;"><strong>20</strong> ← A AND B</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="even">
+<td><strong>No Basketball</strong></td>
+<td style="text-align: right;"><strong>10</strong></td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>30</strong> ← B</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<p>P(A|B) = <span class="math inline">\(\frac{P(A \text{and} B)}{P(B)}\)</span></p>
+<p>Out of the people in B, how many are also in A?</p>
+<p>The denominator is P(B) because once we’re told B happened, we only care about the B group.</p>
+</section>
+<section id="probability-rules-2" class="slide level2 smaller">
+<h2>Probability Rules</h2>
+<p>Independence:</p>
+<p><span class="math inline">\(P(A|B) = P(A)\)</span></p>
+<p>Recall normally: <span class="math inline">\(P(A \text{and} B)\)</span> = P(A|B)*P(B)</p>
+<p>Now: <span class="math inline">\(P(A \text{and} B)\)</span> = P(A) * P(B)</p>
+</section>
+<section id="probability-rules-3" class="slide level2 smaller">
+<h2>Probability Rules</h2>
+<p>Bayes Rule: <span class="math inline">\(P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}\)</span></p>
+<p>Suppose:</p>
+<p>A - having the disease</p>
+<p><span class="math inline">\(A^c\)</span> - not having the disease</p>
+<p>B - positive test</p>
+<p><span class="math inline">\(B^c\)</span> - negative test</p>
+</section>
+<section id="bayes" class="slide level2">
+<h2>Bayes</h2>
+<p><span class="math inline">\(P(A)\)</span> - Starting point</p>
+<p>Only __% of people have the disease before looking at the test</p>
+<p><span class="math inline">\(P(B|A)\)</span> - How good is the evidence?</p>
+<p>If someone actually has the disease, there’s a ___% chance they’ll test positive (likelihood)</p>
+<p><span class="math inline">\(P(B)\)</span> - how common is the evidence</p>
+<p>___% of everyone tests positive.</p>
+</section>
+<section id="proof" class="slide level2 smaller">
+<h2>Proof</h2>
+<p><span class="math display">\[ P(A \text{ and } B) = P(A \mid B)P(B) \]</span> <span class="math display">\[\text{And probability can be re-written as so!}\]</span></p>
+<p><span class="math display">\[ P(A \text{ and } B) = P(B \mid A)P(A) \]</span></p>
+<p><span class="math display">\[\text{plug in what P(A and B) is from above}\]</span></p>
+<p><span class="math display">\[ P(A \mid B)P(B) = P(B \mid A)P(A) \]</span></p>
+<p><span class="math display">\[\text{divide by B}\]</span></p>
+<p><span class="math display">\[ P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)} \]</span></p>
+</section>
+<section>
+<section id="questions" class="title-slide slide level1 center">
+<h1>Questions</h1>
+
+</section>
+<section id="last-time-1" class="slide level2 smaller">
+<h2>Last Time</h2>
+<p>A company has two types of employees: 60% are experienced and 40% are new. An experienced employee has a 90% chance of completing a project on time, while a new employee has a 60% chance.</p>
+<p>You randomly select an employee who completed their project on time. What is the probability that the employee is experienced?</p>
+<p>What do we know? And what do we need to find out?</p>
+</section>
+<section id="what-we-know" class="slide level2">
+<h2>What we know</h2>
+<p><span class="math inline">\(P(E)=0.60\)</span></p>
+<p><span class="math inline">\(P(E^c)=0.40\)</span></p>
+<p><span class="math inline">\(P(O\mid E)=0.90\)</span></p>
+<p><span class="math inline">\(P(O\mid E^c)=0.60\)</span></p>
+<p>What are we trying to solve?</p>
+</section>
+<section id="what-we-want" class="slide level2">
+<h2>What we want</h2>
+<p><span class="math inline">\(P(E\mid O)\)</span></p>
+<p>We want to find the probability that the employee is experienced given that they completed the project on time.</p>
+<p>So what else do we need?</p>
+</section>
+<section id="what-we-need" class="slide level2">
+<h2>What we need</h2>
+<p>We need to find:</p>
+<p><span class="math inline">\(P(O)\)</span></p>
+<p>Then we can use Bayes’ Rule:</p>
+<p><span class="math inline">\(P(E\mid O)=\frac{P(O\mid E)P(E)}{P(O)}\)</span></p>
+<p>How do we find <span class="math inline">\(P(O)\)</span>?</p>
+</section>
+<section id="po" class="slide level2">
+<h2>P(O)</h2>
+<p>If I want the probability of O, I want the probability when O and E occur, and the probability when O and <span class="math inline">\(E^c\)</span> occur….</p>
+<p>Let’s think back to this rule: P(A|B) = <span class="math inline">\(\frac{P(A \cap B)}{P(B)}\)</span></p>
+<p>P(O|E) = <span class="math inline">\(\frac{P(O \cap E)}{P(E)}\)</span></p>
+<p>How can we rewrite this?</p>
+</section>
+<section id="po-1" class="slide level2">
+<h2>P(O)</h2>
+<p><span class="math inline">\(P(O | E) = \frac{P(O \cap E)}{P(E)}\)</span></p>
+<p><span class="math inline">\(P(O\cap E)=P(O\mid E)P(E)\)</span></p>
+<p>and</p>
+<p><span class="math inline">\(P(O| E^c) = \frac{P(O \cap E^c)}{P(E^c)}\)</span></p>
+<p><span class="math inline">\(P(O\cap E^c)=P(O\mid E^c)P(E^c)\)</span></p>
+<p>and we can add them together to get <span class="math inline">\(P(O)\)</span>!</p>
+</section>
+<section id="probability-rule" class="slide level2">
+<h2>Probability Rule</h2>
+<p><span class="math inline">\(P(A) = P(A and B) + P(A and B^c)\)</span></p>
+<p>What is this called?</p>
+</section>
+<section id="probability-rule-1" class="slide level2">
+<h2>Probability Rule</h2>
+<p><span class="math inline">\(P(A) = P(A and B) + P(A and B^c)\)</span></p>
+<p>Law of total probability!</p>
+</section>
+<section id="think-back" class="slide level2 smaller">
+<h2>Think back</h2>
+<p><span class="math inline">\(P(E)=0.60\)</span></p>
+<p><span class="math inline">\(P(E^c)=0.40\)</span></p>
+<p><span class="math inline">\(P(O\mid E)=0.90\)</span></p>
+<p><span class="math inline">\(P(O\mid E^c)=0.60\)</span></p>
+<p><span class="math display">\[
+P(O) = (0.90)(0.60) + (0.60)(0.40) = 0.78
+\]</span></p>
+<p>and now we can answer the question!</p>
+</section>
+<section id="solutions" class="slide level2 smaller">
+<h2>Solutions</h2>
+<p><span class="math display">\[
+P(E \mid O) = \frac{P(O \mid E)P(E)}{P(O)}
+\]</span></p>
+<p><span class="math display">\[
+P(O) = (0.90)(0.60) + (0.60)(0.40)
+\]</span></p>
+<p><span class="math display">\[
+P(O) = 0.54 + 0.24 = 0.78
+\]</span></p>
+<p><span class="math display">\[
+P(E \mid O) = \frac{(0.90)(0.60)}{0.78}
+\]</span></p>
+<p><span class="math display">\[
+P(E \mid O) = \frac{0.54}{0.78} \approx 0.6923
+\]</span></p>
+<p><span class="math display">\[
+\boxed{P(E \mid O) \approx 69.23\%}
+\]</span></p>
+</section></section>
+<section>
+<section id="questions-1" class="title-slide slide level1 center">
+<h1>Questions</h1>
+
+</section>
+<section id="basics-of-design" class="slide level2">
+<h2>Basics of Design</h2>
+<p>– Randomization</p>
+<p>– Sampling Schemes</p>
+</section>
+<section id="randomization" class="slide level2">
+<h2>Randomization</h2>
+<p>What do we mean by randomization?</p>
+<p>For example, what would it mean to randomize a group of n = 50 people into two groups of n = 25?</p>
+</section>
+<section id="random-sampling" class="slide level2">
+<h2>Random Sampling</h2>
+<p>Using the same logic, what does it mean to take a random sample?</p>
+</section>
+<section id="sampling-schemes" class="slide level2">
+<h2>Sampling Schemes</h2>
+<p>A simple random sample (SRS) of size n consists of n individuals from the population chosen in such a way that every set of n individuals has an equal chance to be the sample actually selected.</p>
+</section>
+<section id="stratified-random-sample" class="slide level2">
+<h2>Stratified random sample</h2>
+<p>– What is a stratified random sample?</p>
+<p>– Why might it be important?</p>
+</section>
+<section id="stratified-random-sample-1" class="slide level2">
+<h2>Stratified random sample</h2>
+<p>To select a stratified random sample, first divide the population into groups of similar individuals, called strata. Then choose a separate SRS in each stratum and combine these SRSs to form the full sample.</p>
+</section>
+<section id="survey-sampling" class="slide level2">
+<h2>Survey sampling</h2>
+<p>Sample surveys of large human populations, however, require much more than a good sampling design….</p>
+<p>Survey Question: “How many of you had alcohol underage”?</p>
+</section>
+<section id="survey-sampling-1" class="slide level2">
+<h2>Survey sampling</h2>
+<p>Turn to the person next to you and ask them: “What political party do you affiliate with, if any”?</p>
+<p>…</p>
+<p>What type of bias could this elicit?</p>
+</section>
+<section id="types-of-bias" class="slide level2">
+<h2>Types of bias</h2>
+<p>– Non-response bias - participants do not want to answer / talk about</p>
+<p>– Response bias - participants provide inaccurate, untruthful, or misleading answers</p>
+</section>
+<section id="leading" class="slide level2">
+<h2>Leading</h2>
+<p>At age 18, citizens gain the right to vote and join the military. What age do you think the legal drinking age should be?</p>
+</section></section>
+<section>
+<section id="questions-2" class="title-slide slide level1 center">
+<h1>Questions</h1>
+
+</section>
+<section id="experiments" class="slide level2">
+<h2>Experiments</h2>
+<p>What would it mean to randomize a group of n = 50 people into two groups of n = 25?</p>
+<p>We defined randomization as giving all participants an equal probability of being in either group.</p>
+<p>Why might this be a good idea? Let’s give this some context.</p>
+</section>
+<section id="drug-vs-placebo" class="slide level2">
+<h2>Drug vs Placebo</h2>
+<p>Suppose I have a weight loss drug, and I’m trying to see if it’s effective.</p>
+<p>Why might randomization be a good idea?</p>
+<p>Hint: Think about the idea of <em>confounding</em> and provide an example.</p>
+</section>
+<section id="spurious-correlation" class="slide level2">
+<h2>Spurious Correlation</h2>
+<p>Unfortunately, researchers throw around the word “cause” a lot, without accounting for confouding variables…</p>
+<p><a href="https://www.tylervigen.com/spurious-correlations">Spurious Correlation</a></p>
+</section></section>
+<section>
+<section id="questions-3" class="title-slide slide level1 center">
+<h1>Questions</h1>
+
+</section>
+<section id="abuse-of-tests" class="slide level2">
+<h2>Abuse of Tests</h2>
+<p>– Choosing and abusing <span class="math inline">\(\alpha\)</span></p>
+<p>– Practical importance vs statistically significant (p-hacking)</p>
+<p>– When not to use statistical inference</p>
+</section>
+<section id="alpha" class="slide level2">
+<h2>alpha</h2>
+<p>Remind me, what is <span class="math inline">\(\alpha\)</span> when we conduct a hypothesis test?</p>
+</section>
+<section id="alpha-1" class="slide level2">
+<h2>alpha</h2>
+<p>Type I error rate - probility of rejecting the null hypothesis when the null hypothesis is true</p>
+<p>One reason for the common use of <span class="math inline">\(\alpha = 0.05\)</span> is the great influence of Sir R. A. Fisher, the inventor of formal statistical methods for analyzing experimental data. Here is his opinion on choosing a level of significance:</p>
+<p>“A scientific fact should be regarded as experimentally established only if a properly designed experiment rarely fails to give this level of significance.”</p>
+</section>
+<section id="alpha-2" class="slide level2">
+<h2>alpha</h2>
+<p>Recently, certain scientific communities, which have historically used <span class="math inline">\(\alpha = 0.05\)</span>, have proposed lowering the threshold to <span class="math inline">\(\alpha = 0.05\)</span> to <span class="math inline">\(\alpha = 0.005\)</span>. This is in response to the lack of reproducibility of study results. By lowering the threshold, it is argued that an initial discovery has a greater chance of being confirmed in follow-up studies.</p>
+</section>
+<section id="fixed-level-testing" class="slide level2">
+<h2>Fixed level testing</h2>
+<p>Suppose that the test statistic for a two-sided significance test for a population mean is t = 1.85, with an assocciated p-value of 0.0512.</p>
+<p>What is our decision?</p>
+<p>What is our conclusion?</p>
+<p>How do we feel about it?</p>
+</section>
+<section id="p-value" class="slide level2">
+<h2>p-value</h2>
+<p>So what do we do?</p>
+<p>There is no sharp border between “significant” and “not significant”; there is only increasingly strong evidence as the P-value decreases. Including the P-value with a description of the detected effect allows for a much clearer conclusion.</p>
+<p>Note: I still may ask you to write fixed level testing decisions and conclusions in class (because it is common in practice), but I want us to be very confident in reporting the interpretation of the p-value (less ambigious evidence statement)</p>
+</section>
+<section id="abuse-of-alpha" class="slide level2">
+<h2>Abuse of alpha</h2>
+<p>My colleagues and I recruited actual human subjects in Germany. We ran an actual clinical trial, with subjects randomly assigned to different diet regimes. And the statistically significant benefits of chocolate that we reported are based on the actual data.</p>
+<p><a href="https://gizmodo.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800">I Fooled Millions Into Thinking Chocolate Helps Weight Loss. Here’s How.</a></p>
+</section>
+<section id="abuse-of-alpha-1" class="slide level2">
+<h2>Abuse of alpha</h2>
+<p><em>Here’s a dirty little science secret: If you measure a large number of things about a small number of people, you are almost guaranteed to get a “statistically significant” result. Our study included 18 different measurements—weight, cholesterol, sodium, blood protein levels, sleep quality, well-being, etc.—from 15 people. (One subject was dropped.) That study design is a recipe for false positives.</em></p>
+<p><span class="math inline">\(1 - (1 - \alpha)^m\)</span></p>
+<p>We will learn how to correct for this when we learn ANOVA!</p>
+</section></section>
+<section>
+<section id="questions-4" class="title-slide slide level1 center">
+<h1>Questions</h1>
+
+</section>
+<section id="scenario" class="slide level2 smaller">
+<h2>Scenario</h2>
+<p>A company wants to determine whether a new employee-training program increases productivity. They randomly assign employees to either the old training or the new training. The company has 1,000 employees. Please see the results below.</p>
+<p><span class="math display">\[
+H_0:\mu=100; H_A:\mu\neq100
+\]</span></p>
+<p><span class="math display">\[
+n=1{,}000
+\]</span></p>
+<p><span class="math display">\[
+\bar{x}=100.04
+\]</span></p>
+<p><span class="math display">\[
+s=10
+\]</span></p>
+<p><span class="math display">\[
+t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}
+\]</span></p>
+<p><span class="math display">\[
+t=\frac{0.04}{0.3162}\approx0.1265; p\text{-value}\approx0.899
+\]</span></p>
+<p>What do we make of this?</p>
+</section>
+<section id="scenario-1" class="slide level2 smaller">
+<h2>Scenario</h2>
+<p>A company wants to determine whether a new employee-training program increases productivity. They randomly assign employees to either the old training or the new training. The company has 1,000,000 employees. Please see the results below.</p>
+<p><span class="math display">\[
+H_0:\mu=100; H_A: \mu \neq 100
+\]</span></p>
+<p><span class="math display">\[
+n=1{,}000{,}000
+\]</span></p>
+<p><span class="math display">\[
+\bar{x}=100.04
+\]</span></p>
+<p><span class="math display">\[
+s=10
+\]</span></p>
+<p><span class="math display">\[
+t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}
+\]</span></p>
+<p><span class="math display">\[
+t=\frac{0.04}{0.01} = 4; p-value&lt;0.001
+\]</span></p>
+<p>What do we make of this?</p>
+</section>
+<section id="practical-significance-vs-statistical-significance" class="slide level2">
+<h2>Practical significance vs statistical significance</h2>
+<p>Practical significance - Whether the size of an effect is large enough to matter in the real world.</p>
+<p>Statistical significance - Whether the observed effect is unlikely to have occurred by random chance, based on a chosen significance level (such as <span class="math inline">\(\alpha=0.05)\)</span></p>
+</section></section>
+<section>
+<section id="questions-5" class="title-slide slide level1 center">
+<h1>Questions</h1>
+
+</section>
+<section id="when-not-to-use-statistical-inference" class="slide level2">
+<h2>When not to use statistical inference</h2>
+<p>When should we not use statistical inference?</p>
+<p>What could we use instead?</p>
+</section>
+<section id="when-not-to-use-statistical-inference-1" class="slide level2">
+<h2>When not to use statistical inference</h2>
+<p>– A good model / test does not fix “bad” data (bias)</p>
+<p>– You cannot legitimately test a hypothesis on the same data that first suggested that hypothesisis (leading)</p>
+<p><a href="https://r-graph-gallery.com/">Graphs</a></p>
+<p>“Association”</p>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

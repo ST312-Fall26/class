@@ -1,0 +1,476 @@
+---
+title: "Finish Probability + Study Designs & Abuse of tests"
+subtitle: "Lecture 6"
+date: "September 3, 2026"
+format: 
+  revealjs:
+    theme: [dark, slides.scss]
+filters: 
+- webr
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Checklist 
+
+-- Homework-1 released week-4
+
+-- Exam-1 (9/24)
+
+-- Statistics Experience will be assigned next week! 
+
+      > Interest based assessment 
+      > Extra credit opportunity 
+      > due on the last day of class
+
+## Last Time 
+
+All things probability!
+
+-- P(A)
+
+-- P(A and B)
+
+-- P(A or B)
+
+-- P(A | B)
+
+I want us to talk about the intuition behind some probability rules that come from the equations above!
+
+## Probability Rules{.smaller}
+
+-- P(A or B) = P(A) + P(B) - P(A and B) (Addition Rule of Probability)
+
+|                    |   **Soccer (B)** | **No Soccer** |     **Total** |
+| ------------------ | ---------------: | ------------: | ------------: |
+| **Basketball (A)** | **20** ← A AND B |            30 | **50** ← P(A) |
+| **No Basketball**  |               10 |            40 |            50 |
+| **Total**          |    **30** ← P(B) |            70 |       **100** |
+
+Those 20 students got counted twice! So, we subtract them out. 
+
+## Probability Rules{.smaller}
+
+|                    |   **Soccer (B)** | **No Soccer** | **Total** |
+| ------------------ | ---------------: | ------------: | --------: |
+| **Basketball (A)** | **20** ← A AND B |            30 |        50 |
+| **No Basketball**  |           **10** |            40 |        50 |
+| **Total**          |       **30** ← B |            70 |       100 |
+
+
+P(A\|B) = $\frac{P(A \text{and} B)}{P(B)}$
+
+Out of the people in B, how many are also in A?
+
+The denominator is P(B) because once we're told B happened, we only care about the B group.
+
+## Probability Rules{.smaller}
+
+Independence:
+
+$P(A|B) = P(A)$ 
+
+Recall normally: $P(A \text{and} B)$ = P(A\|B)\*P(B)
+
+Now: $P(A \text{and} B)$ = P(A) \* P(B)
+
+
+## Probability Rules{.smaller} 
+
+Bayes Rule:  $P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}$
+
+Suppose:
+
+A - having the disease 
+
+$A^c$ - not having the disease 
+
+B - positive test 
+
+$B^c$ - negative test
+
+## Bayes
+
+$P(A)$ - Starting point 
+
+Only __% of people have the disease before looking at the test
+
+$P(B|A)$ - How good is the evidence?
+
+If someone actually has the disease, there's a ___% chance they'll test positive (likelihood)
+
+$P(B)$ - how common is the evidence
+
+___% of everyone tests positive.
+
+
+## Proof{.smaller}
+
+$$ P(A \text{ and } B) = P(A \mid B)P(B) $$ 
+$$\text{And probability can be re-written as so!}$$
+
+
+$$ P(A \text{ and } B) = P(B \mid A)P(A) $$ 
+
+$$\text{plug in what P(A and B) is from above}$$
+
+$$ P(A \mid B)P(B) = P(B \mid A)P(A) $$ 
+
+$$\text{divide by B}$$
+
+$$ P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)} $$
+
+# Questions 
+
+## Last Time{.smaller}
+
+A company has two types of employees: 60% are experienced and 40% are
+new. An experienced employee has a 90% chance of completing a project on
+time, while a new employee has a 60% chance.
+
+You randomly select an employee who completed their project on time.
+What is the probability that the employee is experienced?
+
+What do we know? And what do we need to find out?
+
+## What we know
+
+$P(E)=0.60$
+
+$P(E^c)=0.40$
+
+$P(O\mid E)=0.90$
+
+$P(O\mid E^c)=0.60$
+
+What are we trying to solve?
+
+## What we want
+
+$P(E\mid O)$
+
+We want to find the probability that the employee is experienced given
+that they completed the project on time.
+
+So what else do we need?
+
+## What we need
+
+We need to find:
+
+$P(O)$
+
+Then we can use Bayes' Rule:
+
+$P(E\mid O)=\frac{P(O\mid E)P(E)}{P(O)}$
+
+How do we find $P(O)$?
+
+## P(O)
+
+If I want the probability of O, I want the probability when O and E
+occur, and the probability when O and $E^c$ occur....
+
+Let's think back to this rule: P(A\|B) = $\frac{P(A \cap B)}{P(B)}$
+
+P(O\|E) = $\frac{P(O \cap E)}{P(E)}$
+
+How can we rewrite this?
+
+## P(O)
+
+$P(O | E) = \frac{P(O \cap E)}{P(E)}$
+
+$P(O\cap E)=P(O\mid E)P(E)$
+
+and
+
+$P(O| E^c) = \frac{P(O \cap E^c)}{P(E^c)}$
+
+$P(O\cap E^c)=P(O\mid E^c)P(E^c)$
+
+and we can add them together to get $P(O)$!
+
+## Probability Rule 
+
+$P(A) = P(A and B) + P(A and B^c)$
+
+What is this called?
+
+## Probability Rule 
+
+$P(A) = P(A and B) + P(A and B^c)$
+
+Law of total probability!
+
+## Think back {.smaller}
+
+$P(E)=0.60$
+
+$P(E^c)=0.40$
+
+$P(O\mid E)=0.90$
+
+$P(O\mid E^c)=0.60$
+
+$$
+P(O) = (0.90)(0.60) + (0.60)(0.40) = 0.78
+$$
+
+and now we can answer the question!
+
+## Solutions {.smaller}
+
+$$
+P(E \mid O) = \frac{P(O \mid E)P(E)}{P(O)}
+$$
+
+$$
+P(O) = (0.90)(0.60) + (0.60)(0.40)
+$$
+
+$$
+P(O) = 0.54 + 0.24 = 0.78
+$$
+
+$$
+P(E \mid O) = \frac{(0.90)(0.60)}{0.78}
+$$
+
+$$
+P(E \mid O) = \frac{0.54}{0.78} \approx 0.6923
+$$
+
+$$
+\boxed{P(E \mid O) \approx 69.23\%}
+$$
+
+# Questions 
+
+## Basics of Design 
+
+-- Randomization 
+
+-- Sampling Schemes
+
+## Randomization 
+
+What do we mean by randomization?
+
+For example, what would it mean to randomize a group of n = 50 people into two groups of n = 25?
+
+## Random Sampling 
+
+Using the same logic, what does it mean to take a random sample?
+
+## Sampling Schemes 
+
+A simple random sample (SRS) of size n consists of n individuals from the population chosen in such a way that every set of n individuals has an equal chance to be the sample actually selected.
+
+## Stratified random sample 
+
+-- What is a stratified random sample?
+
+-- Why might it be important?
+
+## Stratified random sample 
+
+
+To select a stratified random sample, first divide the population into groups of similar individuals, called strata. Then choose a separate SRS in each stratum and combine these SRSs to form the full sample.
+
+## Survey sampling 
+
+Sample surveys of large human populations, however, require much more than a good sampling design....
+
+Survey Question: "How many of you had alcohol underage"? 
+
+## Survey sampling 
+
+Turn to the person next to you and ask them: "What political party do you affiliate with, if any"?
+
+... 
+
+What type of bias could this elicit? 
+
+## Types of bias 
+
+-- Non-response bias - participants do not want to answer / talk about
+
+-- Response bias - participants provide inaccurate, untruthful, or misleading answers 
+
+## Leading 
+
+At age 18, citizens gain the right to vote and join the military. What age do you think the legal drinking age should be? 
+
+# Questions 
+
+## Experiments 
+
+What would it mean to randomize a group of n = 50 people into two groups of n = 25?
+
+We defined randomization as giving all participants an equal probability of being in either group.
+
+Why might this be a good idea? Let's give this some context.
+
+## Drug vs Placebo 
+
+Suppose I have a weight loss drug, and I'm trying to see if it's effective. 
+
+Why might randomization be a good idea? 
+
+Hint: Think about the idea of *confounding* and provide an example. 
+
+## Spurious Correlation 
+
+Unfortunately, researchers throw around the word "cause" a lot, without accounting for confouding variables...
+
+[Spurious Correlation](https://www.tylervigen.com/spurious-correlations)
+
+# Questions 
+
+## Abuse of Tests 
+
+-- Choosing and abusing $\alpha$
+
+-- Practical importance vs statistically significant (p-hacking)
+
+-- When not to use statistical inference
+
+## alpha 
+
+Remind me, what is $\alpha$ when we conduct a hypothesis test? 
+
+## alpha 
+
+Type I error rate - probility of rejecting the null hypothesis when the null hypothesis is true 
+
+One reason for the common use of $\alpha = 0.05$ is the great influence of Sir R. A. Fisher, the inventor of formal statistical methods for analyzing experimental data. Here is his opinion on choosing a level of significance: 
+
+“A scientific fact should be regarded as experimentally established only if a properly designed experiment rarely fails to give this level of significance.”
+
+
+## alpha 
+
+Recently, certain scientific communities, which have historically used $\alpha = 0.05$, have proposed lowering the threshold to $\alpha = 0.05$ to $\alpha = 0.005$. This is in response to the lack of reproducibility of study results. By lowering the threshold, it is argued that an initial discovery has a greater chance of being confirmed in follow-up studies.
+
+## Fixed level testing 
+
+Suppose that the test statistic for a two-sided significance test for a population mean is t = 1.85, with an assocciated p-value of 0.0512. 
+
+What is our decision?
+
+What is our conclusion?
+
+How do we feel about it?
+
+## p-value 
+
+So what do we do?
+
+There is no sharp border between “significant” and “not significant”; there is only increasingly strong evidence as the P-value decreases. Including the P-value with a description of the detected effect allows for a much clearer conclusion. 
+
+Note: I still may ask you to write fixed level testing decisions and conclusions in class (because it is common in practice), but I want us to be very confident in reporting the interpretation of the p-value (less ambigious evidence statement)
+
+## Abuse of alpha 
+
+My colleagues and I recruited actual human subjects in Germany. We ran an actual clinical trial, with subjects randomly assigned to different diet regimes. And the statistically significant benefits of chocolate that we reported are based on the actual data.
+
+[I Fooled Millions Into Thinking Chocolate Helps Weight Loss. Here’s How.](https://gizmodo.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800)
+
+## Abuse of alpha
+
+*Here’s a dirty little science secret: If you measure a large number of things about a small number of people, you are almost guaranteed to get a “statistically significant” result. Our study included 18 different measurements—weight, cholesterol, sodium, blood protein levels, sleep quality, well-being, etc.—from 15 people. (One subject was dropped.) That study design is a recipe for false positives.*
+
+$1 - (1 - \alpha)^m$
+
+We will learn how to correct for this when we learn ANOVA!
+
+# Questions 
+
+## Scenario{.smaller}
+
+A company wants to determine whether a new employee-training program increases productivity. They randomly assign employees to either the old training or the new training. The company has 1,000 employees. Please see the results below.
+
+$$
+H_0:\mu=100; H_A:\mu\neq100
+$$
+
+$$
+n=1{,}000
+$$
+
+$$
+\bar{x}=100.04
+$$
+
+$$
+s=10
+$$
+
+$$
+t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}
+$$
+
+
+$$
+t=\frac{0.04}{0.3162}\approx0.1265; p\text{-value}\approx0.899
+$$
+
+What do we make of this?
+
+
+## Scenario{.smaller}
+
+A company wants to determine whether a new employee-training program increases productivity. They randomly assign employees to either the old training or the new training. The company has 1,000,000 employees. Please see the results below. 
+
+$$
+H_0:\mu=100; H_A: \mu \neq 100
+$$
+
+$$
+n=1{,}000{,}000
+$$
+
+$$
+\bar{x}=100.04
+$$
+
+$$
+s=10
+$$
+
+$$
+t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}
+$$
+
+$$
+t=\frac{0.04}{0.01} = 4; p-value<0.001
+$$
+
+What do we make of this?
+
+## Practical significance vs statistical significance 
+
+Practical significance - Whether the size of an effect is large enough to matter in the real world.
+
+Statistical significance - Whether the observed effect is unlikely to have occurred by random chance, based on a chosen significance level (such as $\alpha=0.05)$
+
+# Questions 
+
+## When not to use statistical inference
+
+When should we not use statistical inference?
+
+What could we use instead?
+
+## When not to use statistical inference 
+
+-- A good model / test does not fix "bad" data (bias)
+
+-- You cannot legitimately test a hypothesis on the same data that first suggested that hypothesisis (leading)
+
+[Graphs](https://r-graph-gallery.com/)
+
+"Association" 
+

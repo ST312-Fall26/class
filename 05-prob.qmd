@@ -30,7 +30,7 @@ rules
 
 -- Pre-req knowledge for other courses
 
--- Helps us better conceptualize the fundemental idea of a p-value
+-- Helps us better conceptualize the fundamental idea of a p-value
 
 ## Probability
 
