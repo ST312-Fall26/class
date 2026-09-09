@@ -1,0 +1,828 @@
+---
+title: "Inference for two proportions (8.2)"
+subtitle: "Lecture 8"
+date: "September 10, 2026"
+format: 
+  revealjs:
+    theme: [dark, slides.scss]
+filters: 
+- webr
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Checklist
+
+-- Homework-1 released today! Due 9/18 at 11:59pm on Gradescope
+
+-- Exam-1 (9/24)
+
+-- Statistics Experience coming ... once IRB approves it ...
+
+      > Interest based assessment 
+      > Extra credit opportunity 
+      > due on the last day of class
+      
+## Warm Up
+
+-- Population/Probability Distribution - 
+
+-- Sampling Distribution - 
+
+## Warm Up
+
+-- Population/Probability Distribution - distribution values associated with observational units
+
+-- Sampling Distribution - distribution of statistics of size `n` taken from the population 
+
+## Warm Up 
+
+What is the central limit theorm? Why is this theorm so important? 
+
+## Warm Up
+
+[Let's talk about it](https://www.statcrunch.com/applets/type3&samplingdist)
+
+## Last Time{.smaller}
+
+A teacher wants to know whether using a new study app causes students to be more likely to pass an exam.
+
+The teacher has 100 students who agree to participate. She randomly assigns:
+
+| Group        | Passed | Total |
+| ------------ | -----: | ----: |
+| Study App    |     42 |    50 |
+| No Study App |     34 |    50 |
+
+$Ho: p_1 - p_2 = 0$
+
+$Ha: p_1 - p_2 > 0$
+
+$\hat{p_1} = \frac{42}{50} = 0.84$
+
+$\hat{p_2} = \frac{34}{50} = 0.68$
+
+## Wait 
+
+We notice $\hat{p_1} = \frac{42}{50} = 0.84$ and $\hat{p_2} = \frac{34}{50} = 0.68$...
+
+Those numbers are different...
+
+... why can't we just say we have evidence to suggest the study app works? 
+
+# Variability 
+
+## Variability 
+
+Statistics all comes down to quantifying variability/uncertainity...
+
+We are in the hypothesis testing game of trying to figure out "did we see something unusual enough" to the point where we have evidence to reject our initial claim. **We would never expect our sample statistic to be exactly our parameter value** in the first place. The question isn't are they equal, the question is is our result unusual. 
+
+## Assumptions 
+
+"can trust the results of our test..."
+
+Carful phrasing to help us remember that if our assumptions our violated... we can't trust our results. 
+
+... it doesn't stop us from calculating anything!
+
+
+
+## Central Limit Theorem 
+
+Independence of observations
+
+For quantitative data:
+
+-- n > 30
+
+For categorical data:
+
+-- Success/Failure Condition (> 10)
+
+## Checking assumptions 
+
+Success/Failure 
+
+-- How many successes would you expect to see under the assumption of your null hypothesis?
+
+-- How many failures would you expect to see under the assumption of your null hypothesis?
+
+## Checking assumptions 
+
+$H_o$: $p_1 = p_2$
+
+Without the jargon, this means that the groups don't matter! It doesn't matter if you were assigned to use the study app or not. 
+
+If the groups don't matter, how many successes did we observe? How many failures? 
+
+## Checking assumptions 
+
+$p_{pooled}$ = $\hat{p}_{\text{pooled}} = \frac{\text{success}_1 + \text{success}_2}{n_1 + n_2}$
+
+
+$$
+\hat{p}_{\text{pooled}}
+=
+\frac{\text{success}_1+\text{success}_2}{n_1+n_2}
+=
+\frac{42+34}{50+50}
+=
+0.76
+$$
+
+## Checking assumptions 
+
+$$
+n_1\hat{p}_{\text{pooled}} = 50(0.76) = 38
+$$
+$$
+n_1(1-\hat{p}_{\text{pooled}}) = 50(0.24) = 12 
+$$
+$$
+n_2\hat{p}_{\text{pooled}} = 50(0.76) = 38 
+$$
+
+$$
+n_2(1-\hat{p}_{\text{pooled}}) = 50(0.24) = 12
+$$
+
+$$
+38,\ 12,\ 38,\ 12 \geq 10
+$$
+
+
+## Sampling Distribution 
+
+```{r}
+library(ggplot2)
+
+# Null hypothesis: p1 = p2
+p_pooled <- 0.76
+n1 <- 50
+n2 <- 50
+
+# Standard error under H0
+SE <- sqrt(p_pooled * (1 - p_pooled) * (1/n1 + 1/n2))
+
+# Create values for the sampling distribution
+x <- seq(-0.5, 0.5, length.out = 1000)
+
+# Normal density under H0
+data <- data.frame(
+  x = x,
+  density = dnorm(x, mean = 0, sd = SE)
+)
+
+ggplot(data, aes(x = x, y = density)) +
+  geom_line(linewidth = 1.2, color = "steelblue") +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  labs(
+    title = "Null Sampling Distribution of p̂₁ − p̂₂",
+    subtitle = "Assuming the null hypothesis is true",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+What's the spread of the distribution? 
+
+## Standard Error{.smaller} 
+
+$$
+SE_{\hat{p}_1-\hat{p}_2}
+=
+\sqrt{
+\hat{p}_{\text{pooled}}
+(1-\hat{p}_{\text{pooled}})
+\left(
+\frac{1}{n_1}+\frac{1}{n_2}
+\right)
+}
+$$
+
+$$
+SE_{\hat{p}_1-\hat{p}_2}
+=
+\sqrt{
+(0.76)(0.24)
+\left(
+\frac{1}{50}+\frac{1}{50}
+\right)
+}
+$$
+
+$$
+SE_{\hat{p}_1-\hat{p}_2}
+=
+\sqrt{0.007296}
+\approx 0.0854
+$$
+
+## Sampling Distribution 
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+# Null hypothesis: p1 = p2
+p_pooled <- 0.76
+n1 <- 50
+n2 <- 50
+
+# Standard error under H0
+SE <- sqrt(p_pooled * (1 - p_pooled) * (1/n1 + 1/n2))
+
+# Create values for the sampling distribution
+x <- seq(-0.5, 0.5, length.out = 1000)
+
+# Normal density under H0
+data <- data.frame(
+  x = x,
+  density = dnorm(x, mean = 0, sd = SE)
+)
+
+ggplot(data, aes(x = x, y = density)) +
+  geom_line(linewidth = 1.2, color = "steelblue") +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  labs(
+    title = "Null Sampling Distribution of p̂₁ − p̂₂",
+    subtitle = "Assuming the null hypothesis is true",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+Centered at 0, with a standard error of $\approx 0.0854$
+
+## Hypothesis Test 
+
+And we could conduct the hypothesis test here! 
+
+BUT 
+
+We tend to standardize so we can to: 
+
+-- Compare against other studies 
+
+-- Nice z-statistic interpretation 
+
+So let's do it! 
+
+## z-statistic 
+
+How do we standardize our statistic? 
+
+## z-statistic 
+
+$$
+z =
+\frac{\text{observed statistic} - \text{null value}}
+{\text{standard error}}
+$$
+... and we know these things!
+
+## z-statistic 
+
+$$
+z =
+\frac{
+\hat{p}_1-\hat{p}_2 - (p_{1o} - p_{2o})
+}{
+\sqrt{
+\hat{p}_{\text{pooled}}
+(1-\hat{p}_{\text{pooled}})
+\left(
+\frac{1}{n_1}+\frac{1}{n_2}
+\right)
+}
+}
+$$
+
+## z-statistic 
+
+$$
+z =
+\frac{
+(0.84-0.68)-0
+}{
+\sqrt{
+(0.76)(0.24)
+\left(
+\frac{1}{50}+\frac{1}{50}
+\right)
+}
+}
+= \approx 1.87
+$$
+
+## Hypothesis Test
+
+For this, assume that $\alpha = 0.05$
+
+
+Draw how the p-value is calculated
+
+## Hypothesis Test
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+# Create standard normal distribution
+data <- data.frame(
+  z = seq(-4, 4, length.out = 1000)
+)
+
+data$y <- dnorm(data$z)
+
+# Data for the shaded p-value region
+shade <- subset(data, z >= 1.87)
+
+ggplot(data, aes(x = z, y = y)) +
+  geom_line(linewidth = 1.2, color = "black") +
+  
+  # Shade the p-value
+  geom_area(
+    data = shade,
+    aes(x = z, y = y),
+    fill = "steelblue",
+    alpha = 0.6
+  ) +
+  
+  # Mark z = 1.87
+  geom_vline(
+    xintercept = 1.87,
+    linetype = "dashed",
+    color = "red",
+    linewidth = 1
+  ) +
+  
+  # Label
+  annotate(
+    "text",
+    x = 2.35,
+    y = 0.08,
+    label = "p-value",
+    color = "steelblue",
+    size = 5
+  ) +
+  
+  annotate(
+    "text",
+    x = 1.87,
+    y = 0.42,
+    label = "z = 1.87",
+    color = "red",
+    size = 5
+  ) +
+  
+  labs(
+    title = "Standard Normal Distribution",
+    subtitle = "Right-tailed test",
+    x = "z",
+    y = "Density"
+  ) +
+  
+  theme_minimal()
+```
+
+## p-value 
+
+Before clicking that button, guess what the p-value is going to be!
+
+```{webr-r}
+pnorm(1.87, 0, 1, lower.tail = FALSE)
+```
+
+## p-value 
+
+-- Decision
+
+-- Conclusion 
+
+-- Interpretation 
+
+# Questions 
+
+## Hypothesis Testing 
+
+Our hypothesis test helped us gain evidence (or lack of) for some alternative range of values....
+
+... but this doesn't really help us **estimate** plausible values of our population parameter.
+
+How could we do that?
+
+## Confidence Interval 
+
+We want to estimate plausible values of $p_1 - p2$! 
+
+Let's talk about the intuition behind this. 
+
+## Context 
+
+A teacher wants to know whether using a new study app causes students to be more likely to pass an exam.
+
+The teacher has 100 students who agree to participate. She randomly assigns:
+
+| Group        | Passed | Total |
+| ------------ | -----: | ----: |
+| Study App    |     42 |    50 |
+| No Study App |     34 |    50 |
+
+Based on the data, what is your best guess of $p_1 - p2$?
+
+How do you feel about this guess? Is it right?
+
+## Context
+
+You can make an educated guess using your sample data... but you probably don't think that is equal to $p_1 - p_2$. 
+
+So, let's take our best guess and quantify some variability around it!
+
+$\hat{p_1} = \frac{42}{50} = 0.84$
+
+$\hat{p_2} = \frac{34}{50} = 0.68$
+
+$\hat{p_1} - \hat{p_2} = .16$
+
+## Goal 
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+# Sample proportions
+p1 <- 42/50
+p2 <- 34/50
+
+# Difference in sample proportions
+diff <- p1 - p2
+
+# Standard error for the sampling distribution
+SE <- sqrt((p1 * (1 - p1) / 50) +
+           (p2 * (1 - p2) / 50))
+
+# Create x-values
+x <- seq(diff - 4*SE, diff + 4*SE, length.out = 1000)
+
+# Normal density
+df <- data.frame(
+  x = x,
+  y = dnorm(x, mean = diff, sd = SE)
+)
+
+# Plot
+ggplot(df, aes(x = x, y = y)) +
+  geom_line(linewidth = 1.2, color = "steelblue") +
+  geom_vline(xintercept = diff, linetype = "dashed") +
+  labs(
+    title = "Sampling Distribution of Difference in Sample Proportions",
+    x = "Difference in Sample Proportions",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+The standard error is ~ 0.0839
+
+## Goal
+
+Our goal is to make a 95% confidence interval for $p_1 - p_2$
+
+```{r}
+#| echo: false
+lower <- diff - 1.96 * SE
+upper <- diff + 1.96 * SE
+
+ggplot(df, aes(x = x, y = y)) +
+  geom_line(linewidth = 1.2, color = "steelblue") +
+  geom_vline(xintercept = diff, linetype = "dashed") +
+  geom_vline(xintercept = c(lower, upper),
+             color = "red", linetype = "dashed") +
+  labs(
+    title = "Sampling Distribution with 95% Confidence Interval",
+    x = "Difference in Sample Proportions",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+## Difference 
+
+This is the sampling distribution from hypothesis testing... how are they different?
+
+
+```{r}
+#| echo: false
+
+library(ggplot2)
+
+# Null hypothesis: p1 = p2
+p_pooled <- 0.76
+n1 <- 50
+n2 <- 50
+
+# Standard error under H0
+SE <- sqrt(p_pooled * (1 - p_pooled) * (1/n1 + 1/n2))
+
+# Create values for the sampling distribution
+x <- seq(-0.5, 0.5, length.out = 1000)
+
+# Normal density under H0
+data <- data.frame(
+  x = x,
+  density = dnorm(x, mean = 0, sd = SE)
+)
+
+ggplot(data, aes(x = x, y = density)) +
+  geom_line(linewidth = 1.2, color = "steelblue") +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  labs(
+    title = "Null Sampling Distribution of p̂₁ − p̂₂",
+    subtitle = "Assuming the null hypothesis is true",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+
+The standard error is ~ 0.0854
+
+# Questions 
+
+## Checking Assumptions 
+
+Independence of observations
+
+For quantitative data:
+
+-- n > 30
+
+For categorical data:
+
+-- Success/Failure Condition (> 10)
+
+but with a slight twist for confidence intervals...
+
+## Before 
+
+$p_{pooled}$ = $\hat{p}_{\text{pooled}} = \frac{\text{success}_1 + \text{success}_2}{n_1 + n_2}$
+
+why did we do this?
+
+## Now 
+
+We don't have a null hypothesis to assume true... 
+
+We use the observed proportions to check the success failure condition!
+
+Check your success failure condition now!
+
+$$
+\begin{aligned}
+\text{Study App:} \quad
+&50(0.84)=42>10 \\
+&50(1-0.84)=8<10 \\[6pt]
+\text{No Study App:} \quad
+&50(0.68)=34>10 \\
+&50(1-0.68)=16>10
+\end{aligned}
+$$
+
+## Assumptions
+
+... in practice... this would give us pause
+
+We will continue moving forward under the idea that there is not enough evidence to violate our assumptions
+
+
+## Confidence interval 
+
+So now, we need to calculate this interval. What's the formula?
+
+```{r}
+#| echo: false
+lower <- diff - 1.96 * SE
+upper <- diff + 1.96 * SE
+
+ggplot(df, aes(x = x, y = y)) +
+  geom_line(linewidth = 1.2, color = "steelblue") +
+  geom_vline(xintercept = diff, linetype = "dashed") +
+  geom_vline(xintercept = c(lower, upper),
+             color = "red", linetype = "dashed") +
+  labs(
+    title = "Sampling Distribution with 95% Confidence Interval",
+    subtitle = "SE ~ 0.0839",
+    x = "Difference in Sample Proportions",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+## Formula 
+
+$\hat{p_1} - \hat{p_2} \pm z^* * SE(\hat{p_1} - \hat{p_2})$
+
+What is $z^*$?
+
+## z*
+
+$z^*$ is the critical value that tells you how many standard errors you need to go out from your sample statistic to capture the desired confidence level.
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+df <- data.frame(
+  x = seq(-4, 4, length.out = 1000)
+)
+
+df$y <- dnorm(df$x)
+
+ggplot(df, aes(x, y)) +
+  geom_line(linewidth = 1) +
+  geom_vline(xintercept = c(-2.0, 2.0),
+             color = "red", linetype = "dashed") +
+  annotate("text", x = 2.0, y = 0.05,
+           label = "t*", color = "red") +
+  annotate("text", x = -2.0, y = 0.05,
+           label = "-t*", color = "red") +
+  theme_minimal() +
+  labs(
+    title = "95% Confidence Interval",
+    x = "Standard Deviations from 0",
+    y = "Density"
+  )
+```
+
+
+## z*
+
+We can use $z^*$ because the sampling distribution of our statistic $\hat{p_1} - \hat{p_2}$ is normal. 
+
+On a normal distribution with mean 0 and SD of 1.... 1.96 standard deviations away from the CONTAINS 95% of the distribution! 
+
+Our statistic $\hat{p_1} - \hat{p_2}$ is normally distributed, it just has a different measure of spread. 
+
+## Formula 
+
+$\hat{p_1} - \hat{p_2} \pm z^* * SE(\hat{p_1} - \hat{p_2})$
+
+1.96 standard errors away from the center will contain 95% of our sampling distribution! 
+
+## z*
+
+How do we know 1.96?
+
+```{webr-r}
+qnorm(.975, 0, 1)
+```
+
+# Questions
+
+## Confidence Interval{.smaller} 
+
+$$
+\begin{aligned}
+\hat{p}_1 &= \frac{42}{50}=0.84 \\
+\hat{p}_2 &= \frac{34}{50}=0.68 \\[4pt]
+\hat{p}_1-\hat{p}_2 &= 0.16 \\[6pt]
+SE &= \sqrt{
+\frac{0.84(1-0.84)}{50}
++
+\frac{0.68(1-0.68)}{50}
+} \\[6pt]
+&= 0.0864 \\[6pt]
+95\%\ CI &= 0.16 \pm 1.96(0.0864) \\[4pt]
+&= 0.16 \pm 0.1693 \\[4pt]
+&=\boxed{(-0.0093,\ 0.3293)}
+\end{aligned}
+$$
+
+## Interpretation
+
+How do we interpret this?
+
+Why do we not say probability?
+
+# Do my tests agree?
+
+## Not really 
+
+But here is why?
+
+```{r}
+#| echo: false
+library(ggplot2)
+library(dplyr)
+
+# Observed proportions
+p1 <- 42/50
+p2 <- 34/50
+diff <- p1 - p2
+
+# Null (pooled) SE
+p_pool <- (42 + 34)/(50 + 50)
+
+SE_null <- sqrt(
+  p_pool * (1 - p_pool) * (1/50 + 1/50)
+)
+
+# CI SE
+SE_CI <- sqrt(
+  p1*(1-p1)/50 +
+  p2*(1-p2)/50
+)
+
+# 95% CI
+z_star <- 1.96
+lower <- diff - z_star*SE_CI
+upper <- diff + z_star*SE_CI
+
+# Create x values
+x <- seq(-0.15, 0.40, length.out = 1000)
+
+# Data for both panels
+df <- bind_rows(
+  data.frame(
+    x = x,
+    y = dnorm(x, 0, SE_null),
+    Panel = "Hypothesis Test: Null Distribution"
+  ),
+  data.frame(
+    x = x,
+    y = dnorm(x, diff, SE_CI),
+    Panel = "95% Confidence Interval"
+  )
+)
+
+ggplot(df, aes(x = x, y = y)) +
+  
+  geom_line(linewidth = 1, color = "black") +
+  
+  # Shade p-value in null distribution
+  geom_area(
+    data = subset(
+      df,
+      Panel == "Hypothesis Test: Null Distribution" &
+        x >= diff
+    ),
+    fill = "red",
+    alpha = 0.5
+  ) +
+  
+  # Shade the 95% CI in the CI distribution
+  geom_area(
+    data = subset(
+      df,
+      Panel == "95% Confidence Interval" &
+        x >= lower & x <= upper
+    ),
+    fill = "skyblue",
+    alpha = 0.6
+  ) +
+  
+  # Null value = 0
+  geom_vline(
+    xintercept = 0,
+    color = "darkgreen",
+    linewidth = 1,
+    linetype = "dashed"
+  ) +
+  
+  # Observed difference
+  geom_vline(
+    xintercept = diff,
+    color = "red",
+    linewidth = 1,
+    linetype = "dashed"
+  ) +
+  
+  # CI endpoints
+  geom_vline(
+    data = data.frame(
+      x = c(lower, upper),
+      Panel = "95% Confidence Interval"
+    ),
+    aes(xintercept = x),
+    color = "blue",
+    linetype = "dashed",
+    linewidth = 1
+  ) +
+  
+  facet_wrap(~Panel, ncol = 1) +
+  
+  labs(
+    title = "Why p < 0.05 but the 95% CI Contains 0",
+    x = "Difference in Proportions",
+    y = "Density"
+  ) +
+  
+  theme_minimal()
+```
+
+# Questions
+
+# See you next week!
