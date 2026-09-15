@@ -1,0 +1,774 @@
+---
+title: "Finish Inference for two proportions (8.2)"
+subtitle: "Start inference for two means (7.2): Lecture 9"
+date: "September 10, 2026"
+format: 
+  revealjs:
+    theme: [dark, slides.scss]
+filters: 
+- webr
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Checklist{.smaller}
+
+-- Homework-1 due 9/18 at 11:59pm on Gradescope\
+      
+      > Key will be posted shortly after the late window so you can study from it
+
+-- Exam-1 (9/24)
+
+      > Some probability 
+      > Inference for two proportions 
+      > Inference for two means
+      > Design of Experiments  
+      > Use and abuse of tests 
+
+-- Let's talk about the Statistics Experience! 
+
+      > Where it is located
+      > When it is due 
+      > What's it all about 
+      
+## Warm-up 
+
+What's the difference between a hypothesis test and a confidence interval?
+
+## Last time 
+
+A teacher wants to know whether using a new study app causes students to be more likely to pass an exam.
+
+The teacher has 100 students who agree to participate. She randomly assigns:
+
+| Group        | Passed | Total |
+| ------------ | -----: | ----: |
+| Study App    |     42 |    50 |
+| No Study App |     34 |    50 |
+
+Last class, we talked about the intuition around creating a confidence interval. Someone help me best understand the process of creating a confidence interval.
+
+## Context
+
+You can make an educated guess using your sample data... but you probably don't think that is equal to $p_1 - p_2$. 
+
+So, let's take our best guess and quantify some variability around it!
+
+$\hat{p_1} = \frac{42}{50} = 0.84$
+
+$\hat{p_2} = \frac{34}{50} = 0.68$
+
+$\hat{p_1} - \hat{p_2} = .16$
+
+## Goal 
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+# Sample proportions
+p1 <- 42/50
+p2 <- 34/50
+
+# Difference in sample proportions
+diff <- p1 - p2
+
+# Standard error for the sampling distribution
+SE <- sqrt((p1 * (1 - p1) / 50) +
+           (p2 * (1 - p2) / 50))
+
+# Create x-values
+x <- seq(diff - 4*SE, diff + 4*SE, length.out = 1000)
+
+# Normal density
+df <- data.frame(
+  x = x,
+  y = dnorm(x, mean = diff, sd = SE)
+)
+
+# Plot
+ggplot(df, aes(x = x, y = y)) +
+  geom_line(linewidth = 1.2, color = "steelblue") +
+  geom_vline(xintercept = diff, linetype = "dashed") +
+  labs(
+    title = "Sampling Distribution of Difference in Sample Proportions",
+    x = "Difference in Sample Proportions",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+The standard error is ~ 0.0839
+
+## Goal
+
+Our goal is to make a 95% confidence interval for $p_1 - p_2$
+
+```{r}
+#| echo: false
+lower <- diff - 1.96 * SE
+upper <- diff + 1.96 * SE
+
+ggplot(df, aes(x = x, y = y)) +
+  geom_line(linewidth = 1.2, color = "steelblue") +
+  geom_vline(xintercept = diff, linetype = "dashed") +
+  geom_vline(xintercept = c(lower, upper),
+             color = "red", linetype = "dashed") +
+  labs(
+    title = "Sampling Distribution with 95% Confidence Interval",
+    x = "Difference in Sample Proportions",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+## Difference 
+
+This is the sampling distribution from hypothesis testing... how are they different?
+
+
+```{r}
+#| echo: false
+
+library(ggplot2)
+
+# Null hypothesis: p1 = p2
+p_pooled <- 0.76
+n1 <- 50
+n2 <- 50
+
+# Standard error under H0
+SE <- sqrt(p_pooled * (1 - p_pooled) * (1/n1 + 1/n2))
+
+# Create values for the sampling distribution
+x <- seq(-0.5, 0.5, length.out = 1000)
+
+# Normal density under H0
+data <- data.frame(
+  x = x,
+  density = dnorm(x, mean = 0, sd = SE)
+)
+
+ggplot(data, aes(x = x, y = density)) +
+  geom_line(linewidth = 1.2, color = "steelblue") +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  labs(
+    title = "Null Sampling Distribution of p̂₁ − p̂₂",
+    subtitle = "Assuming the null hypothesis is true",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+
+The standard error is ~ 0.0854
+
+# Questions 
+
+## Checking Assumptions 
+
+Independence of observations
+
+For quantitative data:
+
+-- n > 30
+
+For categorical data:
+
+-- Success/Failure Condition (> 10)
+
+but with a slight twist for confidence intervals...
+
+## Before 
+
+$p_{pooled}$ = $\hat{p}_{\text{pooled}} = \frac{\text{success}_1 + \text{success}_2}{n_1 + n_2}$
+
+why did we do this?
+
+## Now 
+
+We don't have a null hypothesis to assume true... 
+
+We use the observed proportions to check the success failure condition!
+
+Check your success failure condition now!
+
+$$
+\begin{aligned}
+\text{Study App:} \quad
+&50(0.84)=42>10 \\
+&50(1-0.84)=8<10 \\[6pt]
+\text{No Study App:} \quad
+&50(0.68)=34>10 \\
+&50(1-0.68)=16>10
+\end{aligned}
+$$
+
+## Assumptions
+
+... in practice... this would give us pause
+
+We will continue moving forward under the idea that there is not enough evidence to violate our assumptions
+
+
+## Confidence interval 
+
+So now, we need to calculate this interval. What's the formula?
+
+```{r}
+#| echo: false
+lower <- diff - 1.96 * SE
+upper <- diff + 1.96 * SE
+
+ggplot(df, aes(x = x, y = y)) +
+  geom_line(linewidth = 1.2, color = "steelblue") +
+  geom_vline(xintercept = diff, linetype = "dashed") +
+  geom_vline(xintercept = c(lower, upper),
+             color = "red", linetype = "dashed") +
+  labs(
+    title = "Sampling Distribution with 95% Confidence Interval",
+    subtitle = "SE ~ 0.0839",
+    x = "Difference in Sample Proportions",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+## Formula 
+
+$\hat{p_1} - \hat{p_2} \pm z^* * SE(\hat{p_1} - \hat{p_2})$
+
+What is $z^*$?
+
+## z*
+
+$z^*$ is the critical value that tells you how many standard errors you need to go out from your sample statistic to capture the desired confidence level.
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+df <- data.frame(
+  x = seq(-4, 4, length.out = 1000)
+)
+
+df$y <- dnorm(df$x)
+
+ggplot(df, aes(x, y)) +
+  geom_line(linewidth = 1) +
+  geom_vline(xintercept = c(-2.0, 2.0),
+             color = "red", linetype = "dashed") +
+  annotate("text", x = 2.0, y = 0.05,
+           label = "t*", color = "red") +
+  annotate("text", x = -2.0, y = 0.05,
+           label = "-t*", color = "red") +
+  theme_minimal() +
+  labs(
+    title = "95% Confidence Interval",
+    x = "Standard Deviations from 0",
+    y = "Density"
+  )
+```
+
+
+## z*
+
+We can use $z^*$ because the sampling distribution of our statistic $\hat{p_1} - \hat{p_2}$ is normal. 
+
+On a normal distribution with mean 0 and SD of 1.... 1.96 standard deviations away from the CONTAINS 95% of the distribution! 
+
+Our statistic $\hat{p_1} - \hat{p_2}$ is normally distributed, it just has a different measure of spread. 
+
+## Formula 
+
+$\hat{p_1} - \hat{p_2} \pm z^* * SE(\hat{p_1} - \hat{p_2})$
+
+1.96 standard errors away from the center will contain 95% of our sampling distribution! 
+
+## z*
+
+How do we know 1.96?
+
+```{webr-r}
+qnorm(.975, 0, 1)
+```
+
+# Questions
+
+## Confidence Interval{.smaller} 
+
+$$
+\begin{aligned}
+\hat{p}_1 &= \frac{42}{50}=0.84 \\
+\hat{p}_2 &= \frac{34}{50}=0.68 \\[4pt]
+\hat{p}_1-\hat{p}_2 &= 0.16 \\[6pt]
+SE &= \sqrt{
+\frac{0.84(1-0.84)}{50}
++
+\frac{0.68(1-0.68)}{50}
+} \\[6pt]
+&= 0.0864 \\[6pt]
+95\%\ CI &= 0.16 \pm 1.96(0.0864) \\[4pt]
+&= 0.16 \pm 0.1693 \\[4pt]
+&=\boxed{(-0.0093,\ 0.3293)}
+\end{aligned}
+$$
+
+## Interpretation
+
+How do we interpret this?
+
+Why do we not say probability?
+
+# Do my tests agree?
+
+## Not really 
+
+But here is why?
+
+```{r}
+#| echo: false
+library(ggplot2)
+library(dplyr)
+
+# Observed proportions
+p1 <- 42/50
+p2 <- 34/50
+diff <- p1 - p2
+
+# Null (pooled) SE
+p_pool <- (42 + 34)/(50 + 50)
+
+SE_null <- sqrt(
+  p_pool * (1 - p_pool) * (1/50 + 1/50)
+)
+
+# CI SE
+SE_CI <- sqrt(
+  p1*(1-p1)/50 +
+  p2*(1-p2)/50
+)
+
+# 95% CI
+z_star <- 1.96
+lower <- diff - z_star*SE_CI
+upper <- diff + z_star*SE_CI
+
+# Create x values
+x <- seq(-0.15, 0.40, length.out = 1000)
+
+# Data for both panels
+df <- bind_rows(
+  data.frame(
+    x = x,
+    y = dnorm(x, 0, SE_null),
+    Panel = "Hypothesis Test: Null Distribution"
+  ),
+  data.frame(
+    x = x,
+    y = dnorm(x, diff, SE_CI),
+    Panel = "95% Confidence Interval"
+  )
+)
+
+ggplot(df, aes(x = x, y = y)) +
+  
+  geom_line(linewidth = 1, color = "black") +
+  
+  # Shade p-value in null distribution
+  geom_area(
+    data = subset(
+      df,
+      Panel == "Hypothesis Test: Null Distribution" &
+        x >= diff
+    ),
+    fill = "red",
+    alpha = 0.5
+  ) +
+  
+  # Shade the 95% CI in the CI distribution
+  geom_area(
+    data = subset(
+      df,
+      Panel == "95% Confidence Interval" &
+        x >= lower & x <= upper
+    ),
+    fill = "skyblue",
+    alpha = 0.6
+  ) +
+  
+  # Null value = 0
+  geom_vline(
+    xintercept = 0,
+    color = "darkgreen",
+    linewidth = 1,
+    linetype = "dashed"
+  ) +
+  
+  # Observed difference
+  geom_vline(
+    xintercept = diff,
+    color = "red",
+    linewidth = 1,
+    linetype = "dashed"
+  ) +
+  
+  # CI endpoints
+  geom_vline(
+    data = data.frame(
+      x = c(lower, upper),
+      Panel = "95% Confidence Interval"
+    ),
+    aes(xintercept = x),
+    color = "blue",
+    linetype = "dashed",
+    linewidth = 1
+  ) +
+  
+  facet_wrap(~Panel, ncol = 1) +
+  
+  labs(
+    title = "Why p < 0.05 but the 95% CI Contains 0",
+    x = "Difference in Proportions",
+    y = "Density"
+  ) +
+  
+  theme_minimal()
+```
+
+# Questions
+
+## Context{.smaller}
+
+Suppose we want to test whether the mean home value differs between Wake County and Mecklenburg County. We'll compare 100 homes randomly selected homes in Wake County with 100 randomly selected homes in Mecklenburg County. The Wake County sample had a mean home value of \$461,300 with a sample standard deviation of \$120,000, while the Mecklenburg County sample had a mean home value of \$406,800 with a sample standard deviation of \$105,000.
+
+-- Observational units?
+
+-- How many variables? 
+
+-- What type of variables are we working with?
+
+-- Explanatory? Response?
+
+## Context 
+
+We are collecting data on homes (observational units). The information we are collecting are both county, and price. This implies that we have two variables! 
+
+County is categorical (bin), and price is quantitative.
+
+We hope to better understand price (response), and that county (explanatory) explains the changes we see in price! 
+
+## Context{.smaller}
+
+Suppose we want to test whether the mean home value differs between Wake County and Mecklenburg County. We'll compare 100 homes randomly selected homes in Wake County with 100 randomly selected homes in Mecklenburg County. The Wake County sample had a mean home value of \$461,300 with a sample standard deviation of \$120,000, while the Mecklenburg County sample had a mean home value of \$406,800 with a sample standard deviation of \$105,000.
+
+-- What scenario are we in? 
+
+-- What is our sample statistic? 
+
+-- How do we interpret 120,000? 105,000?
+
+## Sample Statistic 
+
+Because our response variable is quantitative, and we have a binary categorical explanatory variable, we are in a difference in means scenario. 
+
+$\bar{x_1} - \bar{x_2}$ 
+
+461,300 - 406,800 = 54,500
+
+## Standard deviation 
+
+Looking at this formula, how do we interpret 120,000? 105,000?
+
+$$
+s = \sqrt{\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}
+$$
+
+## Standard deviation
+
+Naive interpretation: The typical (average) distance that individual measurements are from the sample mean.
+
+But it's not *exactly* right, because of the denominator (n-1). Why do we divide by n-1?
+
+## n-1{.smaller} 
+
+Because $\bar{x}$ is an estimate of $\mu$, we use n-1 instead of n to account for the uncertainty introduced by estimating the population mean.
+
+-- It's called Bessel's correction.
+
+-- Bessel's correction purpose is to make $s^2$ unbiased for $\sigma^2$
+
+-- Calculating $s^2$ without the correction tends to underestimate the variance when we don't know $\mu$
+
+
+## Context{.smaller}
+
+Suppose we want to test whether the mean home value differs between Wake County and Mecklenburg County. We'll compare 100 homes randomly selected homes in Wake County with 100 randomly selected homes in Mecklenburg County. The Wake County sample had a mean home value of \$461,300 with a sample standard deviation of \$120,000, while the Mecklenburg County sample had a mean home value of \$406,800 with a sample standard deviation of \$105,000.
+
+-- Hypotheses? 
+
+-- Assumptions? 
+
+## CLT 
+
+n > 30
+
+[Let's talk about it](https://www.statcrunch.com/applets/type3&samplingdist)
+
+## Hypotheses 
+
+$Ho: \mu_1 - \mu_2 = 0$
+
+$Ha: \mu_1 - \mu_2 \neq 0$
+
+$\bar{x_1} - \bar{x_2}$
+
+$461,300 - 406,800 = 54,500$ 
+
+## Sampling Distribution 
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+set.seed(123)
+
+null_dist <- data.frame(
+  difference = rnorm(
+    10000,
+    mean = 0,
+    sd = 15910
+  )
+)
+
+ggplot(null_dist, aes(x = difference)) +
+  geom_histogram(
+    aes(y = after_stat(density)),
+    bins = 50,
+    fill = "steelblue",
+    color = "white"
+  ) +
+  labs(
+    title = "Sampling Distribution of Difference in Means Under Ho",
+    x = "Difference in Sample Means ($)",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+
+## Sampling Distribution{.smaller} 
+
+**A linear combination of independent normal random variables is also normally distributed.**
+
+
+$$
+\bar{X}_W \sim N\left(\mu_W,\frac{\sigma_W^2}{n_W}\right)
+$$
+
+and
+
+$$
+\bar{X}_M \sim N\left(\mu_M,\frac{\sigma_M^2}{n_M}\right)
+$$
+
+
+
+
+Since both variables are normal, their linear combination is normal:
+
+$$
+\bar{X}_W-\bar{X}_M
+\sim
+N\left(
+\mu_W-\mu_M,
+\frac{\sigma_W^2}{n_W}+\frac{\sigma_M^2}{n_M}
+\right)
+$$
+
+## Difference in proportions{.smaller} 
+
+Conceptually, it's very similar for a difference in proportions!
+
+... proportions are based on binomial/random-count data, so we use the Central Limit Theorem/normal approximation rather than saying the original observations are normally distributed.
+
+$$
+\hat{p}_1-\hat{p}_2
+\approx
+N\left(
+p_1 - p_2,\,
+\frac{p(1-p)}{n_1}
++
+\frac{p(1-p)}{n_2}
+\right)
+$$
+
+# Questions 
+
+## Sampling Distribution 
+
+## Sampling Distribution{.smaller}
+
+Just like last time, we could calculate a p-value here, but we tend to standardize.... 
+
+So let's do it!
+
+```{r}
+#| echo: false
+library(ggplot2)
+
+set.seed(123)
+
+null_dist <- data.frame(
+  difference = rnorm(
+    10000,
+    mean = 0,
+    sd = 15910
+  )
+)
+
+ggplot(null_dist, aes(x = difference)) +
+  geom_histogram(
+    aes(y = after_stat(density)),
+    bins = 50,
+    fill = "steelblue",
+    color = "white"
+  ) +
+  labs(
+    title = "Sampling Distribution of Difference in Means Under Ho",
+    x = "Difference in Sample Means ($)",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+## test-statistic 
+
+$\frac{\text{statistic - null value}}{\text{standard error}}$
+
+And we know all of these! 
+
+## test-statistic 
+
+statistic - $461,300 - 406,800 = 54,500$ 
+
+null value - 0 
+
+$SE_{\bar{x}_1-\bar{x}_2}=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$
+
+What statistic are we calculating? t or z? 
+
+# t 
+
+## t
+
+$$
+t=
+\frac{(\bar{x}_1-\bar{x}_2)-(\mu_1-\mu_2)_0}
+{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}
+$$
+
+# t 
+
+$$
+t=
+\frac{461{,}300-406{,}800}
+{\sqrt{
+\frac{120{,}000^2}{100}
++
+\frac{105{,}000^2}{100}
+}} = 3.43
+$$
+
+Draw out the p-value! 
+
+## t-distribution 
+
+Every t-distribution is different! We need to specify the degrees of freedom.
+
+## df{.smaller}
+
+If you cannot access software, we recommend using degrees of freedom k equal to the smaller of 
+$n_1$-1 and $n_2 - 1$. This approximation is appealing because it is conservative.
+
+Software can use Welch–Satterthwaite:
+
+$$
+df=
+\frac{
+\left(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}\right)^2
+}{
+\frac{\left(\frac{s_1^2}{n_1}\right)^2}{n_1-1}
++
+\frac{\left(\frac{s_2^2}{n_2}\right)^2}{n_2-1}
+}
+$$
+
+Welch–Satterthwaite: $df\approx193.5$
+
+Conservative shortcut: df=99
+
+## p-value guess
+
+```{webr-r}
+pt(3.43, 99, lower.tail = FALSE) * 2
+```
+
+## Context 
+
+-- Decision 
+
+-- Conclusion 
+
+-- Interpretation 
+
+# Questions 
+
+## Confidence Interval{.smaller} 
+
+Suppose we want to **estimate** whether the mean home value differs between Wake County and Mecklenburg County. We'll compare 100 homes randomly selected homes in Wake County with 100 randomly selected homes in Mecklenburg County. The Wake County sample had a mean home value of \$461,300 with a sample standard deviation of \$120,000, while the Mecklenburg County sample had a mean home value of \$406,800 with a sample standard deviation of \$105,000.
+
+## Formula 
+
+$(\bar{x}_1-\bar{x}_2)\pm t^*\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$
+
+$(\hat{p}_1-\hat{p}_2)\pm z^*\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$
+
+## t* 
+
+$t^*$ is the critical value from the t-distribution that determines how many standard errors we move away from our observed difference in order to capture the desired confidence level.
+
+The conservative estimate for our degrees of freedom is $n-1$ of the smaller group!
+
+## t* 
+
+We can find t-star using the following R code... and we know what this value should be close to!
+
+```{webr-r}
+qt(.975, 99, lower.tail = TRUE)
+```
+
+## Confidence Interval 
+
+Calculate a 95% confidence interval 
+
+## Confidence Interval 
+
+$$
+\begin{aligned}
+(461{,}300-406{,}800)
+&\pm 1.984\sqrt{
+\frac{120{,}000^2}{100}
++
+\frac{105{,}000^2}{100}
+}\\
+&=54{,}500\pm31{,}566\\
+&=\boxed{(22{,}934,\ 86{,}066)}
+\end{aligned}
+$$
+
+Interpret this in the context of the problem! 
+
+# Questions
+
