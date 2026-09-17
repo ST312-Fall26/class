@@ -11,83 +11,6 @@
     ]
   },
   {
-    "objectID": "hw/hw1.html",
-    "href": "hw/hw1.html",
-    "title": "Homework-1",
-    "section": "",
-    "text": "This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
-  },
-  {
-    "objectID": "hw/hw1.html#instructions-on-how-to-start",
-    "href": "hw/hw1.html#instructions-on-how-to-start",
-    "title": "Homework-1",
-    "section": "",
-    "text": "This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
-  },
-  {
-    "objectID": "hw/hw1.html#instructions-on-how-to-turn-your-homework-in",
-    "href": "hw/hw1.html#instructions-on-how-to-turn-your-homework-in",
-    "title": "Homework-1",
-    "section": "Instructions on how to turn your homework in",
-    "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
-  },
-  {
-    "objectID": "hw/hw1.html#exercise-1-6-points",
-    "href": "hw/hw1.html#exercise-1-6-points",
-    "title": "Homework-1",
-    "section": "Exercise-1 (6-points)",
-    "text": "Exercise-1 (6-points)\nIn each of the following scenarios, there is something wrong. Describe what is wrong and give a reason for your answer.\n\nIf the probability of A is 0.6 and the probability of B is 0.7, the probability of both A and B happening is 1.3.\nIf the probability of A is 0.55, then the probability of the complement of A is -0.55.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
-  },
-  {
-    "objectID": "hw/hw1.html#exercise-2-7-points",
-    "href": "hw/hw1.html#exercise-2-7-points",
-    "title": "Homework-1",
-    "section": "Exercise-2 (7-points)",
-    "text": "Exercise-2 (7-points)\nAll human blood can be “ABO‑typed” as one of O, A, B, or AB, but the distribution of the types varies a bit among groups of people. Here is the distribution of blood types for a randomly chosen person in the United States. The following may be a useful resource for this question: article\n\n\n\nBlood type\nA\nB\nAB\nO\n\n\nU.S. probability\n0.42\n0.11\n0.03\n?\n\n\n\na) What is the probability of type O blood in the United States?\nb) Explain your answer to part a.\nc) Are events A, B, AB, and O disjoint? Justify your response.\nd) Sasha has type A blood. She can safely receive blood transfusions from people with blood types O and A. What is the probability that a randomly chosen person from the United States can donate blood to Sasha? (This exercise ignores the Rh factor, another classification of blood types that is related to whether one person can donate blood to another.)",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
-  },
-  {
-    "objectID": "hw/hw1.html#exercise-3-10-points",
-    "href": "hw/hw1.html#exercise-3-10-points",
-    "title": "Homework-1",
-    "section": "Exercise-3 (10-points)",
-    "text": "Exercise-3 (10-points)\nA roulette wheel has 38 slots, numbered 0, 00, and 1 to 36. The slots 0 and 00 are colored green, 18 of the others are red, and 18 are black. The dealer spins the wheel and, at the same time, rolls a small ball along the wheel in the opposite direction. The wheel is carefully balanced so that the ball is equally likely to land in any slot when the wheel slows. Gamblers can bet on various combinations of numbers and colors.\n\n\nWhat is the probability that the ball will land in any one slot? Give your answer to four decimal places for this question.\nIf you bet on “red,” you win if the ball lands in a red slot. What is the probability of winning? Give your answer to four decimal places. Define your event A, and use proper notation when writing your response.\nThe slot numbers are laid out on a board on which gamblers place their bets. One column of numbers on the board contains all multiples of 3 – that is, 3, 6, 9, …, 36. You place a “column bet” that wins if any of these numbers comes up. What is your probability of winning? Give your answer to four decimal places for this question. Define your event B, and use proper notation when writing your response.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
-  },
-  {
-    "objectID": "hw/hw1.html#exercise-4-40-points",
-    "href": "hw/hw1.html#exercise-4-40-points",
-    "title": "Homework-1",
-    "section": "Exercise 4 (40 points)",
-    "text": "Exercise 4 (40 points)\n\nMurderous Nurse\nFor several years in the 1990s, Kristen Gilbert worked as a nurse in the intensive care unit (ICU) of the Veterans Administration Hospital in Northampton, Massachusetts. Over the course of her time there, other nurses came to suspect that she was killing patients by inject-ing them with the heart stimulant epinephrine. Gilbert was eventually arrested and charged with these murders. Part of the evidence presented against Gilbert at her murder trial was a statistical analysis of 1,641 randomly selected eight-hour shifts during the time Gilbert worked in the ICU. For each of these shifts, researchers recorded two variables: whether Gilbert worked on the shift and whether at least one patient died during the shift.You may use \\(\\alpha = 0.05\\) for this question.\n\nWhat are the observational units. That is, Whom or what exactly are the data being collected off of.\nClassify each variable as categorical or quantitative. Additionally, classify if this is our response variable or explanatory variable.\n\n– Whether Gilbert worked on the shift\n– Whether at least one patient died during the shift\n\nBased on the research question in the context of the problem, write out your null and alternative hypotheses below in both words and in proper notation. Use informative subscripts.\n\nHo:\nHa:\n\nThe researchers’ data can be found below:\n\n\n\n\n\n\n\n\n\n\n\nGilbert working on shift\nGilbert not working on shift\nTotal\n\n\nPatient died during shift\n40\n34\n74\n\n\nNo patient died during shift\n217\n1350\n1567\n\n\nTotal\n257\n1384\n1641\n\n\n\nReport your sample statistic in proper notation based on the values from the table.\n\nWe are now going to conduct a Z-test to test your null/alternative hypothesis.\n\nBefore conducting this test, justify if we can trust the results of a z-test below? Why or why not.\n\nRegardless of your answer, calculate your z-statistic below. Show your work.\nDraw a standard normal distribution, and label your z-statistic on the distribution. Shade in the area of the p-value.\nBased on your z-statistic, would you your p-value be large or small? Justify your answer.\nNow, write an appropriate decision and conclusion in the context of the problem.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
-  },
-  {
     "objectID": "09-inferenceIII.html#checklist",
     "href": "09-inferenceIII.html#checklist",
     "title": "Finish Inference for two proportions (8.2)",
@@ -4023,6 +3946,424 @@
     "crumbs": [
       "Slides",
       "Day-8"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#checklist",
+    "href": "10-inference-III.html#checklist",
+    "title": "Inference for two means (7.2)",
+    "section": "Checklist",
+    "text": "Checklist\n– Homework-1 due 9/18 at 11:59pm on Gradescope\n\n  &gt; Key will be posted shortly after the late window so you can study from it\n– Exam-1 (9/24)\n  &gt; Some probability \n  &gt; Inference for two proportions \n  &gt; Inference for two means\n  &gt; Design of Experiments  \n  &gt; Use and abuse of tests \n– Let’s talk about the Statistics Experience!\n  &gt; Where it is located\n  &gt; When it is due \n  &gt; What's it all about",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#warm-up",
+    "href": "10-inference-III.html#warm-up",
+    "title": "Inference for two means (7.2)",
+    "section": "Warm up",
+    "text": "Warm up\nWhat’s the difference between a z and t distribution?",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#last-time",
+    "href": "10-inference-III.html#last-time",
+    "title": "Inference for two means (7.2)",
+    "section": "Last time",
+    "text": "Last time\nA teacher wants to know whether using a new study app causes students to be more likely to pass an exam.\nThe teacher has 100 students who agree to participate. She randomly assigns:\n\n\n\nGroup\nPassed\nTotal\n\n\n\n\nStudy App\n42\n50\n\n\nNo Study App\n34\n50\n\n\n\n… and we both conducted a hypothesis test and created a confidence interval!",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#results",
+    "href": "10-inference-III.html#results",
+    "title": "Inference for two means (7.2)",
+    "section": "Results",
+    "text": "Results\nConfidence Interval\n\\[\n\\begin{aligned}\n\\hat{p}_1 &= \\frac{42}{50}=0.84 \\\\\n\\hat{p}_2 &= \\frac{34}{50}=0.68 \\\\[4pt]\n\\hat{p}_1-\\hat{p}_2 &= 0.16 \\\\[6pt]\nSE &= \\sqrt{\n\\frac{0.84(1-0.84)}{50}\n+\n\\frac{0.68(1-0.68)}{50}\n} \\\\[6pt]\n&= 0.0864 \\\\[6pt]\n95\\%\\ CI &= 0.16 \\pm 1.96(0.0864) \\\\[4pt]\n&= 0.16 \\pm 0.1693 \\\\[4pt]\n&=\\boxed{(-0.0093,\\ 0.3293)}\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#hypothesis-test",
+    "href": "10-inference-III.html#hypothesis-test",
+    "title": "Inference for two means (7.2)",
+    "section": "Hypothesis Test",
+    "text": "Hypothesis Test",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#p-value",
+    "href": "10-inference-III.html#p-value",
+    "title": "Inference for two means (7.2)",
+    "section": "p-value",
+    "text": "p-value\nBefore clicking that button, guess what the p-value is going to be!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#not-really",
+    "href": "10-inference-III.html#not-really",
+    "title": "Inference for two means (7.2)",
+    "section": "Not really",
+    "text": "Not really\nBut here is why?",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#summary",
+    "href": "10-inference-III.html#summary",
+    "title": "Inference for two means (7.2)",
+    "section": "Summary",
+    "text": "Summary\nA hypothesis test at a given \\(\\alpha\\) should have results that coincide with with a (1 - \\(\\alpha\\))% confidence interval …\n… IF the hypothesis test is two-sided.\nThere are special exceptions (like the one above) where our tests disagree.",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#last-time-1",
+    "href": "10-inference-III.html#last-time-1",
+    "title": "Inference for two means (7.2)",
+    "section": "Last Time",
+    "text": "Last Time\nSuppose we want to test whether the mean home value differs between Wake County and Mecklenburg County. We’ll compare 100 homes randomly selected homes in Wake County with 100 randomly selected homes in Mecklenburg County. The Wake County sample had a mean home value of $461,300 with a sample standard deviation of $120,000, while the Mecklenburg County sample had a mean home value of $406,800 with a sample standard deviation of $105,000.\n– Hypotheses?\n– Assumptions?",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#clt",
+    "href": "10-inference-III.html#clt",
+    "title": "Inference for two means (7.2)",
+    "section": "CLT",
+    "text": "CLT\nn &gt; 30\nLet’s talk about it",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#hypotheses",
+    "href": "10-inference-III.html#hypotheses",
+    "title": "Inference for two means (7.2)",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\\(Ho: \\mu_1 - \\mu_2 = 0\\)\n\\(Ha: \\mu_1 - \\mu_2 \\neq 0\\)\n\\(\\bar{x_1} - \\bar{x_2}\\)\n\\(461,300 - 406,800 = 54,500\\)",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#sampling-distribution",
+    "href": "10-inference-III.html#sampling-distribution",
+    "title": "Inference for two means (7.2)",
+    "section": "Sampling Distribution",
+    "text": "Sampling Distribution",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#sampling-distribution-1",
+    "href": "10-inference-III.html#sampling-distribution-1",
+    "title": "Inference for two means (7.2)",
+    "section": "Sampling Distribution",
+    "text": "Sampling Distribution\nA linear combination of independent normal random variables is also normally distributed.\n\\[\n\\bar{X}_W \\sim N\\left(\\mu_W,\\frac{\\sigma_W^2}{n_W}\\right)\n\\]\nand\n\\[\n\\bar{X}_M \\sim N\\left(\\mu_M,\\frac{\\sigma_M^2}{n_M}\\right)\n\\]\nSince both variables are normal, their linear combination is normal:\n\\[\n\\bar{X}_W-\\bar{X}_M\n\\sim\nN\\left(\n\\mu_W-\\mu_M,\n\\frac{\\sigma_W^2}{n_W}+\\frac{\\sigma_M^2}{n_M}\n\\right)\n\\]",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#difference-in-proportions",
+    "href": "10-inference-III.html#difference-in-proportions",
+    "title": "Inference for two means (7.2)",
+    "section": "Difference in proportions",
+    "text": "Difference in proportions\nConceptually, it’s very similar for a difference in proportions!\n… proportions are based on binomial/random-count data, so we use the Central Limit Theorem/normal approximation rather than saying the original observations are normally distributed.\n\\[\n\\hat{p}_1-\\hat{p}_2\n\\approx\nN\\left(\np_1 - p_2,\\,\n\\frac{p(1-p)}{n_1}\n+\n\\frac{p(1-p)}{n_2}\n\\right)\n\\]",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#sampling-distribution-2",
+    "href": "10-inference-III.html#sampling-distribution-2",
+    "title": "Inference for two means (7.2)",
+    "section": "Sampling Distribution",
+    "text": "Sampling Distribution",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#sampling-distribution-3",
+    "href": "10-inference-III.html#sampling-distribution-3",
+    "title": "Inference for two means (7.2)",
+    "section": "Sampling Distribution",
+    "text": "Sampling Distribution\nJust like last time, we could calculate a p-value here, but we tend to standardize….\nSo let’s do it!",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#test-statistic",
+    "href": "10-inference-III.html#test-statistic",
+    "title": "Inference for two means (7.2)",
+    "section": "test-statistic",
+    "text": "test-statistic\n\\(\\frac{\\text{statistic - null value}}{\\text{standard error}}\\)\nAnd we know all of these!",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#test-statistic-1",
+    "href": "10-inference-III.html#test-statistic-1",
+    "title": "Inference for two means (7.2)",
+    "section": "test-statistic",
+    "text": "test-statistic\nstatistic - \\(461,300 - 406,800 = 54,500\\)\nnull value - 0\n\\(SE_{\\bar{x}_1-\\bar{x}_2}=\\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\)\nWhat statistic are we calculating? t or z?",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#t-1",
+    "href": "10-inference-III.html#t-1",
+    "title": "Inference for two means (7.2)",
+    "section": "t",
+    "text": "t\n\\[\nt=\n\\frac{(\\bar{x}_1-\\bar{x}_2)-(\\mu_1-\\mu_2)_0}\n{\\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}}\n\\]",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#t-distribution",
+    "href": "10-inference-III.html#t-distribution",
+    "title": "Inference for two means (7.2)",
+    "section": "t-distribution",
+    "text": "t-distribution\nEvery t-distribution is different! We need to specify the degrees of freedom.",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#df",
+    "href": "10-inference-III.html#df",
+    "title": "Inference for two means (7.2)",
+    "section": "df",
+    "text": "df\nIf you cannot access software, we recommend using degrees of freedom k equal to the smaller of \\(n_1\\)-1 and \\(n_2 - 1\\). This approximation is appealing because it is conservative.\nSoftware can use Welch–Satterthwaite:\n\\[\ndf=\n\\frac{\n\\left(\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}\\right)^2\n}{\n\\frac{\\left(\\frac{s_1^2}{n_1}\\right)^2}{n_1-1}\n+\n\\frac{\\left(\\frac{s_2^2}{n_2}\\right)^2}{n_2-1}\n}\n\\]\nWelch–Satterthwaite: \\(df\\approx193.5\\)\nConservative shortcut: df=99",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#p-value-guess",
+    "href": "10-inference-III.html#p-value-guess",
+    "title": "Inference for two means (7.2)",
+    "section": "p-value guess",
+    "text": "p-value guess\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#context",
+    "href": "10-inference-III.html#context",
+    "title": "Inference for two means (7.2)",
+    "section": "Context",
+    "text": "Context\n– Decision\n– Conclusion\n– Interpretation",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#confidence-interval",
+    "href": "10-inference-III.html#confidence-interval",
+    "title": "Inference for two means (7.2)",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval\nSuppose we want to estimate whether the mean home value differs between Wake County and Mecklenburg County. We’ll compare 100 homes randomly selected homes in Wake County with 100 randomly selected homes in Mecklenburg County. The Wake County sample had a mean home value of $461,300 with a sample standard deviation of $120,000, while the Mecklenburg County sample had a mean home value of $406,800 with a sample standard deviation of $105,000.",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#formula",
+    "href": "10-inference-III.html#formula",
+    "title": "Inference for two means (7.2)",
+    "section": "Formula",
+    "text": "Formula\n\\((\\bar{x}_1-\\bar{x}_2)\\pm t^*\\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\)\n\\((\\hat{p}_1-\\hat{p}_2)\\pm z^*\\sqrt{\\frac{\\hat{p}_1(1-\\hat{p}_1)}{n_1}+\\frac{\\hat{p}_2(1-\\hat{p}_2)}{n_2}}\\)",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#t-3",
+    "href": "10-inference-III.html#t-3",
+    "title": "Inference for two means (7.2)",
+    "section": "t*",
+    "text": "t*\n\\(t^*\\) is the critical value from the t-distribution that determines how many standard errors we move away from our observed difference in order to capture the desired confidence level.\nThe conservative estimate for our degrees of freedom is \\(n-1\\) of the smaller group!",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#t-4",
+    "href": "10-inference-III.html#t-4",
+    "title": "Inference for two means (7.2)",
+    "section": "t*",
+    "text": "t*\nWe can find t-star using the following R code… and we know what this value should be close to!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#confidence-interval-1",
+    "href": "10-inference-III.html#confidence-interval-1",
+    "title": "Inference for two means (7.2)",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval\nCalculate a 95% confidence interval",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#confidence-interval-2",
+    "href": "10-inference-III.html#confidence-interval-2",
+    "title": "Inference for two means (7.2)",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval\n\\[\n\\begin{aligned}\n(461{,}300-406{,}800)\n&\\pm 1.984\\sqrt{\n\\frac{120{,}000^2}{100}\n+\n\\frac{105{,}000^2}{100}\n}\\\\\n&=54{,}500\\pm31{,}566\\\\\n&=\\boxed{(22{,}934,\\ 86{,}066)}\n\\end{aligned}\n\\]\nInterpret this in the context of the problem!",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#discussion",
+    "href": "10-inference-III.html#discussion",
+    "title": "Inference for two means (7.2)",
+    "section": "Discussion",
+    "text": "Discussion\nWhat is the benefit of an 80% confidence interval vs a 95%?\nWHat is a disadvantage of an 80% confidence interval vs a 95%",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "10-inference-III.html#see-you-tuesday",
+    "href": "10-inference-III.html#see-you-tuesday",
+    "title": "Inference for two means (7.2)",
+    "section": "See you Tuesday!",
+    "text": "See you Tuesday!",
+    "crumbs": [
+      "Slides",
+      "Day-10"
+    ]
+  },
+  {
+    "objectID": "hw/hw1.html",
+    "href": "hw/hw1.html",
+    "title": "Homework-1",
+    "section": "",
+    "text": "This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
+  },
+  {
+    "objectID": "hw/hw1.html#instructions-on-how-to-start",
+    "href": "hw/hw1.html#instructions-on-how-to-start",
+    "title": "Homework-1",
+    "section": "",
+    "text": "This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
+  },
+  {
+    "objectID": "hw/hw1.html#instructions-on-how-to-turn-your-homework-in",
+    "href": "hw/hw1.html#instructions-on-how-to-turn-your-homework-in",
+    "title": "Homework-1",
+    "section": "Instructions on how to turn your homework in",
+    "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
+  },
+  {
+    "objectID": "hw/hw1.html#exercise-1-6-points",
+    "href": "hw/hw1.html#exercise-1-6-points",
+    "title": "Homework-1",
+    "section": "Exercise-1 (6-points)",
+    "text": "Exercise-1 (6-points)\nIn each of the following scenarios, there is something wrong. Describe what is wrong and give a reason for your answer.\n\nIf the probability of A is 0.6 and the probability of B is 0.7, the probability of both A and B happening is 1.3.\nIf the probability of A is 0.55, then the probability of the complement of A is -0.55.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
+  },
+  {
+    "objectID": "hw/hw1.html#exercise-2-7-points",
+    "href": "hw/hw1.html#exercise-2-7-points",
+    "title": "Homework-1",
+    "section": "Exercise-2 (7-points)",
+    "text": "Exercise-2 (7-points)\nAll human blood can be “ABO‑typed” as one of O, A, B, or AB, but the distribution of the types varies a bit among groups of people. Here is the distribution of blood types for a randomly chosen person in the United States. The following may be a useful resource for this question: article\n\n\n\nBlood type\nA\nB\nAB\nO\n\n\nU.S. probability\n0.42\n0.11\n0.03\n?\n\n\n\na) What is the probability of type O blood in the United States?\nb) Explain your answer to part a.\nc) Are events A, B, AB, and O disjoint? Justify your response.\nd) Sasha has type A blood. She can safely receive blood transfusions from people with blood types O and A. What is the probability that a randomly chosen person from the United States can donate blood to Sasha? (This exercise ignores the Rh factor, another classification of blood types that is related to whether one person can donate blood to another.)",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
+  },
+  {
+    "objectID": "hw/hw1.html#exercise-3-10-points",
+    "href": "hw/hw1.html#exercise-3-10-points",
+    "title": "Homework-1",
+    "section": "Exercise-3 (10-points)",
+    "text": "Exercise-3 (10-points)\nA roulette wheel has 38 slots, numbered 0, 00, and 1 to 36. The slots 0 and 00 are colored green, 18 of the others are red, and 18 are black. The dealer spins the wheel and, at the same time, rolls a small ball along the wheel in the opposite direction. The wheel is carefully balanced so that the ball is equally likely to land in any slot when the wheel slows. Gamblers can bet on various combinations of numbers and colors.\n\n\nWhat is the probability that the ball will land in any one slot? Give your answer to four decimal places for this question.\nIf you bet on “red,” you win if the ball lands in a red slot. What is the probability of winning? Give your answer to four decimal places. Define your event A, and use proper notation when writing your response.\nThe slot numbers are laid out on a board on which gamblers place their bets. One column of numbers on the board contains all multiples of 3 – that is, 3, 6, 9, …, 36. You place a “column bet” that wins if any of these numbers comes up. What is your probability of winning? Give your answer to four decimal places for this question. Define your event B, and use proper notation when writing your response.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
+  },
+  {
+    "objectID": "hw/hw1.html#exercise-4-40-points",
+    "href": "hw/hw1.html#exercise-4-40-points",
+    "title": "Homework-1",
+    "section": "Exercise 4 (40 points)",
+    "text": "Exercise 4 (40 points)\n\nMurderous Nurse\nFor several years in the 1990s, Kristen Gilbert worked as a nurse in the intensive care unit (ICU) of the Veterans Administration Hospital in Northampton, Massachusetts. Over the course of her time there, other nurses came to suspect that she was killing patients by inject-ing them with the heart stimulant epinephrine. Gilbert was eventually arrested and charged with these murders. Part of the evidence presented against Gilbert at her murder trial was a statistical analysis of 1,641 randomly selected eight-hour shifts during the time Gilbert worked in the ICU. For each of these shifts, researchers recorded two variables: whether Gilbert worked on the shift and whether at least one patient died during the shift.You may use \\(\\alpha = 0.05\\) for this question.\n\nWhat are the observational units. That is, Whom or what exactly are the data being collected off of.\nClassify each variable as categorical or quantitative. Additionally, classify if this is our response variable or explanatory variable.\n\n– Whether Gilbert worked on the shift\n– Whether at least one patient died during the shift\n\nBased on the research question in the context of the problem, write out your null and alternative hypotheses below in both words and in proper notation. Use informative subscripts.\n\nHo:\nHa:\n\nThe researchers’ data can be found below:\n\n\n\n\n\n\n\n\n\n\n\nGilbert working on shift\nGilbert not working on shift\nTotal\n\n\nPatient died during shift\n40\n34\n74\n\n\nNo patient died during shift\n217\n1350\n1567\n\n\nTotal\n257\n1384\n1641\n\n\n\nReport your sample statistic in proper notation based on the values from the table.\n\nWe are now going to conduct a Z-test to test your null/alternative hypothesis.\n\nBefore conducting this test, justify if we can trust the results of a z-test below? Why or why not.\n\nRegardless of your answer, calculate your z-statistic below. Show your work.\nDraw a standard normal distribution, and label your z-statistic on the distribution. Shade in the area of the p-value.\nBased on your z-statistic, would you your p-value be large or small? Justify your answer.\nNow, write an appropriate decision and conclusion in the context of the problem.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
     ]
   },
   {

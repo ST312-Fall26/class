@@ -8,6 +8,8 @@ website:
    contents:
       - section: "Assignments"
         contents:
+          - href: hw-stats-experience.qmd
+            text: "Statistics Experience"
           - href: hw/hw1.qmd
             text: "Homework-1"
           #- href: homework-2/homework2.qmd
@@ -45,6 +47,8 @@ website:
             text: "Day-8"
           - href: 09-inferenceIII.qmd
             text: "Day-9"
+          - href: 10-inference-III.qmd
+            text: "Day-10"
 format:
   html:
     theme: cosmo
