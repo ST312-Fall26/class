@@ -130,17 +130,23 @@ Make sure the slide includes the information mentioned above and is easily reada
 
 ## Part 3: Complete the Statistics Experience survey
 
-[Coming Soon!](fixwhenapprovedhttps://ncsu.qualtrics.com/jfe/form/SV_9BLqawGzaV1MnIO) to complete the Statistics Experience survey. The end of the survey includes a consent asking whether you agree to let your de-identified responses be used for research. 
+[Coming Soon!](https://ncsu.qualtrics.com/jfe/form/SV_9BLqawGzaV1MnIO) to complete the Statistics Experience survey. The end of the survey includes a consent asking whether you agree to let your de-identified responses be used for research. 
 
 
 
 The survey data will be collected and de-identified by our teaching assistant. The survey is optional, and for extra credit. If you do not consent to be part of the research study, you do not need complete the survey. Professor Meyer will receive the de-identified survey responses after the final course grades have been submitted.
 
+If you decide that you do not want to participate in our research study by filling out the survey, you can complete an alternative assignment to earn the same extra credit. In 2-3 hand-written paragraphs, please answer the following questions: 
+
+-- On your own, provide working definitions of performance assessment, and interest-based assessment. Cite your sources in APA format. Describe one general benefit from each assessment type. 
+
+-- Next, reflect on your experience completing homework assignments, and how this experience contrasted with your statistics experience assignment. Compare and contrast each assessment based on what you preferred (+ why) and what assessment taught you the most about statistics. Provide one additional contrast you found interesting. This will also be turned in via Gradescope.
+
 ## Submission
 
 This assignment is due on **Tuesday, December 1st at 11:59pm.** To be considered on time, the image of the slide must be uploaded to Gradescope and the survey completed by the deadline. There is no late policy for the statistics experience. 
 
-Completing the survey will earn you extra credit towards the final exam. You may earn the same amount of extra credit by writing a 1-paragraph reflection on your experiences between completing a standard homework assignment vs the statistics experience. 
+Completing the survey will earn you extra credit towards the final exam. You may earn the same amount of extra credit by writing a 1-paragraph reflection on your experiences between completing a standard homework assignment vs the statistics experience. You will earn +3 extra credit on either Exam-1, or Exam-2. Note, you can not earn more than a 100% on the exam.
 
 ## Examples 
 
