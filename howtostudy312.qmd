@@ -1,0 +1,72 @@
+---
+title: "ST-312: How to study guide (Exam-1)"
+format: pdf
+editor: visual
+---
+
+#### Question Type
+
+The exam will contain the following types of of questions:
+
+-- Multiple choice
+
+-- TRUE/FALSE
+
+-- Free response
+
+Midterm-1 is worth 20% of your total grade earned in ST 312. Below is a list of high level topics that have been covered so far, that would be good for you to have thought about going into midterm-1. Note: this list is not meant to be exhaustive, and serves to act as a guide on how to study for the exam. As a reminder, this is only a 75-minute exam, and I can not test you on everything.
+
+The exam covers weeks 1 through 5.5 in their entirety. Confidence intervals for difference in means **is on** this exam. 
+
+#### Topics
+
+We have spent a lot of time talking about statistical inference. When going through the problems in the slides, ask yourself... 
+
+-- Can I identify different scenarios (difference in means vs difference in proportions)
+
+-- Do I know when I should create a confidence interval vs conduct a hypothesis test? Do I know when the results should agree?
+
+-- Am I comfortable with notation? Do I understand how to differentiate between a population parameter and a sample statistic? 
+
+-- Can I write out null and alternative hypotheses?
+
+-- When can I trust my results? How do I check my assumptions for each scenario. 
+
+-- Can I write out decisions and conclusions in the context of the problem?
+
+-- Can I interpret a p-value? Do I know how to compare a p-value to $\alpha$ with fixed level testing? Can I articulate why fixed level testing might not be the most appropriate? 
+
+-- Can I interpret confidence intervals?
+
+Before statistical inference, we talked about probability! Can you... 
+
+-- Define events
+
+-- Calculate single event probabilities from a table / paragraph 
+
+-- Calculate multi-event probabilities from a table / paragraph 
+
+I will not ask you to use Baye's rule on Exam-1.
+
+After talking about probability, we talked about the fundemental theorem in statistics that allows us to use the z and t tools we have discussed thus far. That would be the central limit theorem! We explored the central limit theorem using this [applet](https://www.statcrunch.com/applets/type3&samplingdist). This also helps you understand: 
+
+-- Shapes of distributions 
+
+-- Differences between population distributions and sampling distributions 
+
+-- Properties of the central limit theorm 
+
+As a friendly reminder, I will not ask you about any R-code I've shown you (ex. `pnorm()`) on this exam. 
+
+### Study strategies
+
+It's one thing to follow along in-class, but I **highly** suggest you take the time to go back and re-read the notes you have put together. Sometimes, it's difficult to internalize the content the first time seeing the content. To help cement the foundation, please go back and re-read + apply your understandings. 
+
+Simulate the situation! I do not post a formal practice exam because I have seen too many students memorize the practice exam and perform poorly on the actual exam. However, you have an abundance of practice problems that you can do in a self-timed setting between our slides, homework-1, and practice problems from the book. Print out your formula sheet, and apply your understanding (using pencil + paper) when studying for the midterm.
+
+Practice setting up problems! My suggestion here is to write out what you know from the problem, and use this information in combination with what you are trying to solve in order to pick a correct path.
+
+**Bring a highlighter**. Pick out important information from the paragraph that will help you answer the question. 
+
+
+

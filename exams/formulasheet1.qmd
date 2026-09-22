@@ -1,9 +1,14 @@
 ---
 title: ""
+format: pdf
 editor: visual
 ---
 
 #### Formula sheet 
+
+$df$ = n - 1
+
+$df$ = $min(n_1 - 1, n_2 - 1)$
 
 $s = \sqrt{\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}}$
 
