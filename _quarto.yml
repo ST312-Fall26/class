@@ -12,6 +12,8 @@ website:
             text: "Statistics Experience"
           - href: hw/hw1.qmd
             text: "Homework-1"
+          - href: hw_1_sa.qmd
+            text: "Homework-1 Solutions"
           #- href: homework-2/homework2.qmd
           #  text: "Homework-2"
           #- href: stat-exp.qmd

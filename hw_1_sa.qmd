@@ -1,0 +1,143 @@
+---
+title: "Homework-1 Solutions"
+format: pdf
+---
+
+## Exercise 1
+
+a)  Probability can not be larger than 1.
+
+b)  Probability can not be negative.
+
+## Exercise 2
+
+a)  $P(O) = 1 - P(A) - P(B) - P(AB) = 1 - 0.42 - 0.11 - 0.03 = 0.44$
+
+b) Because every trial will produce an outcome, the sum of the probabilities for all possible outcomes must be exactly 1.
+
+Therefore, the probability of type O blood in the United States is the difference between 1 and all the probabilities of the other types of blood.
+
+$P(O \text{ or } A) = P(O) + P(A) = 0.44 + 0.42 = 0.86$
+
+c) Yes, these events are disjoint. The definition of disjoint is that the probability of each of these events happening at the same time ("and" probability) = 0. Based on what we know about blood types (it is impossible to have more than a single blood type), these events are disjoint, and the definition holds true for any two events. 
+
+d) As Sasha can receive blood types O and A, a randomly chosen person from the U.S. can donate blood to her if the person has either blood type O or blood type A. Compute the probability of a person having blood type O or A. For two disjoint events A and B, P(A or B) = P(A) + P(B). 
+
+Thus, add the probability of type O blood in the United States to the probability of type A blood in the United States to determine the probability of either blood type.
+
+## Exercise 3
+
+a)  If a random phenomenon has k equally likely possible outcomes, then each individual outcome has probability 1/k.
+
+There are 38 possible outcomes for the roulette ball slot landing: 18 red slots, 18 black slots, and the two slots for 0 and 00 that are colored green. The 38 possible outcomes are equally likely as the ball can randomly land in any one slot. Because the total probability must be 1, the probability of each of the outcomes must be 1/38 or 0.0263.
+
+b)  The probability of any event A when a random phenomenon has k equally likely possible outcomes is
+
+P(A) = $\frac{\text{count of outcomes in 𝐴}}{k}$
+
+Because 18 slots are red, the probability of winning by obtaining a red is P(red) = 18/38=0.4737.
+
+c)  The probability of any event 𝐴when a random phenomenon has 𝑘equally likely possible outcomes is
+
+P(A) = $\frac{\text{count of outcomes in 𝐴}}{k}$
+
+There are 12 winning slots, so 𝑃(win a column bet)=12/38=0.3158.
+
+## Exercise 4 
+
+a) The observational units are the shifts at the hospital (whom or what we are collecting data off of)
+
+b) Did Kristen work on the shift or not (worked variable) - categorical explanatory variable 
+
+Did at least one patient die (outcome variable) - categorical response variable 
+
+
+c) $Ho: \pi_w - \pi_{nw} = 0$
+
+$Ha: \pi_w - \pi_{nw} > 0$
+
+
+$\pi_w$ = The true proportion of observing shifts where at least one patient died while Gilbert was working
+
+$\pi_{nw}$ = The true proportion of observing shifts where at least one patient died while Gilbert was not working
+
+
+d) $\hat{p_w} = \frac{40}{257} = 0.156$ 
+
+$\hat{p_{nw}} = \frac{34}{1384} = 0.025$ 
+
+
+e) First, we need to calculate the pooled proportion: 
+
+$\hat{p_{pooled}} = \frac{77}{1641} = 0.047$
+
+0.047 * 257 > 10
+
+0.047 * 1384 > 10 
+
+And we can assume independence as the shifts were randomly sampled from all possible shifts. 
+
+
+
+f) 
+
+$z = \frac{\frac{40}{257} - \frac{34}{1384}}{\sqrt{\left(\frac{74}{1641}\right)\left(1-\frac{74}{1641}\right)\left(\frac{1}{257}+\frac{1}{1384}\right)}} \approx 8.68$
+
+
+g) 
+
+At 8.68 and to the right!
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+
+# z-statistic
+z <- 8.68
+
+# Data for standard normal curve
+x <- seq(-4, 9, length.out = 2000)
+df <- data.frame(
+  x = x,
+  y = dnorm(x)
+)
+
+# Shade right-tail p-value area
+shade_df <- subset(df, x >= z)
+
+ggplot(df, aes(x = x, y = y)) +
+  geom_line(linewidth = 1) +
+  geom_area(
+    data = shade_df,
+    aes(x = x, y = y),
+    alpha = 0.4
+  ) +
+  geom_vline(
+    xintercept = z,
+    linetype = "dashed",
+    linewidth = 1
+  ) +
+  annotate(
+    "text",
+    x = z,
+    y = 0.02,
+    label = paste0("z = ", z),
+    hjust = -0.1
+  ) +
+  labs(
+    title = "Standard Normal Distribution",
+    subtitle = "Shaded area represents the p-value",
+    x = "z",
+    y = "Density"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+
+h) My p-value would be small. My test statistic is 8.86 standard deviations away from the null value of 0. This is way out on the right tail of the distribution with minimal area under the curve. 
+
+i) Based on a p-value < 0.001, we reject the null hypothesis, and have strong evidence to conclude that the true proportion of shifts where at least one patient died was higher when Gilbert worked versus when she didn't work. 
+
