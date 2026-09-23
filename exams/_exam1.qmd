@@ -38,7 +38,7 @@ editor_options:
 6.  You are **not** allowed a cell phone, even if you intend to use it for checking the time, music device or headphones, notes, books, or other resources, or to communicate with anyone other than the professor during the exam.
 7.  Show your work. Partial credit can not be earned without any work shown.
 8.  Round all answers to 4 digits (ex. 2.34245 = 2.3425)
-9.  For True or False / MC questions, please circle True or False clearly. 
+9.  For True or False / MC questions, please circle your answer clearly. 
 
 
 Good luck!
@@ -203,7 +203,7 @@ c. The above graph is a probability distribution. In general, what is a **sampli
 
 For the remaining questions, assume that n = 50, and observations (times recorded) were randomly sampled 
 
-d. The central limit theorem suggested that the sampling distribution of $\bar{x}$ will be normally distributed, even if the population distribution is not IF two conditions are met. Please list the two conditions below. 
+d. The central limit theorem suggested that the sampling distribution of $\bar{x}$ will be normally distributed, even if the population distribution is not, IF two conditions are met. Please list the two conditions below. 
 \vspace{5 mm}
 
 1. 
@@ -235,7 +235,7 @@ g. Calculate the standard error for the sampling distribution of $\bar{x}$. Show
 
 ## Question 2 (22 points)
 
-The Iris Dataset contains measurements of a flower's sepal and petal. There are 50 samples for each of the three species of Iris flowers (150 in total across the Iris setosa, Iris virginica and Iris versicolor species). A sepal is the outer parts of the flower (often green and leaf-like) that enclose a developing bud. The petal are parts of a flower that are the pollen producing part of the flower that are often conspicuously colored. The difference between sepals and petals can be seen below.
+The Iris Dataset contains measurements of a flower's sepal and petal. There are 50 randomly selected flowers for each of the three species of Iris flowers (150 in total across the Iris setosa, Iris virginica and Iris versicolor species). A sepal is the outer parts of the flower (often green and leaf-like) that enclose a developing bud. The petal are parts of a flower that are the pollen producing part of the flower that are often conspicuously colored. The difference between sepals and petals can be seen below.
 
 ![](images\Iris.png){fig-align="center" width="500"}
 
@@ -283,7 +283,9 @@ c)  Assuming the Central Limit Theorem assumptions are met, what would you expec
 
 (c) Right skewed
 
-(d) Not enough information to answer the question
+(d) Non-normal (but can't specify exact shape)
+
+(e) Not enough information to answer the question
 
 \vspace{5mm}
 
@@ -297,11 +299,13 @@ d)  Assuming the Central Limit Theorem assumptions are met, what would you expec
 
 (c) Right skewed
 
-(d) Not enough information to answer the question
+(d) Non-normal (but can't specify exact shape)
+
+(e) Not enough information to answer the question
 
 e)  Using 1.66 as your $t^*$ multiplier, set up the equation for a 90% confidence interval with the appropriate values from our data. You do not need to calculate the exact CI.
 
-\vspace{15 mm}
+\newpage
 
 f) Regardless of your answer part e, assume you calculated the following 90% confidence interval for the population mean difference in petal length (-2.9424, -2.6576). On the sampling distribution below, label the following that correspond the the calculated interval: 
 
@@ -339,12 +343,12 @@ ggplot(data.frame(x = c(-4, 4)), aes(x)) +
 ```
 
 
-{{< pagebreak >}}
+\vspace{40 mm}
 
 
 g.  Regardless of your answer part e, assume you calculated the following 90% confidence interval for the population mean difference in petal length (-2.9424, -2.6576). Interpret this confidence interval in the context of the problem.
 
-\vspace{20 mm}
+\newpage
 
 ## Question 3 (14 points)
 
@@ -362,7 +366,7 @@ a.  Recall your 90% confidence interval from question 2: (-2.9424, -2.6576). If 
 
 \vspace{5 mm}
 
-b.  Recall your 90% confidence interval from question 1: (-2.9424, -2.6576). If the researchers instead collected a sample size of 100 flowers for each species, what would change about your interval? Assume that everything else stayed the exact same from the study except for the sample size. Circle all that apply.
+b.  Recall your 90% confidence interval from question 2: (-2.9424, -2.6576). If the researchers instead collected a sample size of 100 flowers for each species, what would change about your interval? Assume that everything else stayed the exact same from the study except for the sample size. Circle all that apply.
 
 <!-- -->
 
@@ -374,18 +378,21 @@ b.  Recall your 90% confidence interval from question 1: (-2.9424, -2.6576). If 
 
 (d) The interval remains the same
 
-{{< pagebreak >}}
+\vspace{5 mm}
 
 
 3.  Suppose a different researcher went out and collected a very very large sample of 1000 flowers for each species and calculated a 99% confidence interval: (-3.25, -1.5)
 
+
 What is the value of this new researcher's difference in means for the 99% confidence interval above? Show your work. Assume the order of subtraction is still setosa - versicolor.
 
-\vspace{25 mm}
+\vspace{45 mm}
 
 What is the **approximate** value of this new researcher's t\* multiplier for the 99% confidence interval above? Justify your answer in 1-2 sentences.
 
-\vspace{20 mm}
+\vspace{40 mm}
+
+\newpage
 
 ## Question 4 (15 points)
 
@@ -411,7 +418,7 @@ $H_a:$
 
 b. Suppose the p-value comes out to be 0.0521. Can we trust this p-value? Justify your answer below. Show your work. 
 
-\newpage
+\vspace{40 mm}
 
 3. Suppose your friend compares your p-value of 0.0521 with an $\alpha$ value equal to 0.05, and fails to reject the null hypothesis. 
 
@@ -419,7 +426,7 @@ b. Suppose the p-value comes out to be 0.0521. Can we trust this p-value? Justif
 
 -- How might you suggest the results be reported instead?
 
-\vspace{25 mm}
+\newpage
 
 ## Question 5 (10 points)
 
