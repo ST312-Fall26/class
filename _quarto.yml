@@ -53,6 +53,8 @@ website:
             text: "Day-10"
           - href: 11-review.qmd
             text: "Day-11"
+          - href: 12-exam.qmd
+            text: "exam-1-slide"
 format:
   html:
     theme: cosmo

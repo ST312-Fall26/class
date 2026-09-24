@@ -1,0 +1,60 @@
+---
+title: "Exam-1"
+subtitle: ""
+date: "September 24, 2026"
+format: 
+  revealjs:
+    theme: [dark, slides.scss]
+filters: 
+- webr
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Announcements
+
+-- Don’t cheat. It sucks for all of us
+
+-- This exam is worth 20% of your grade 
+
+-- You may use a calculator and your 🧠
+
+
+## 
+
+<div class="big-clock" id="clock" style="margin-bottom: 50px;"></div>
+
+<script>
+function updateClock() {
+  document.getElementById("clock").textContent =
+    new Date().toLocaleTimeString();
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+
+<style>
+.big-clock {
+  font-size: 1em;
+  transform: scale(3);
+  font-weight: bold;
+  text-align: center;
+}
+</style>
+
+
+\vspace{2mm}
+
+-- Skip questions you do not know 
+
+-- Answer exactly what the question is asking (nothing more)
+
+-- Show your work! Demonstrate your understanding! I can not make assumptions when grading
+
+-- Circle your answers to MC/TF as clear as possible
+
+-- There is a formula sheet on the back you may/may not need
+
+
