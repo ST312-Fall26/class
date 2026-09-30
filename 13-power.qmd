@@ -1,0 +1,1800 @@
+---
+title: "Error and Power"
+subtitle: "Lecture 12?"
+date: "October 1, 2026"
+execute:
+  echo: false
+  message: false
+  warning: false
+format: 
+  revealjs:
+    theme: [dark, slides.scss]
+filters: 
+- webr
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Checklist{.smaller} 
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+
+-- Homework-1 grade will be released shortly 
+
+-- Exam-1 will be released by end of next week 
+
+      > I don't plan for a curve
+      > If the performance on one question indicates an unfair question 
+      > Re-grade window will open after grades are released 
+      > Solutions are posted on Moodle 
+      
+-- Homework-2 will come out next week!
+
+## Warm-up{.smaller}
+
+Let's talk about sampling distributions.  
+
+## Motivation for today{.smaller}
+
+As a consultant + masters/PhD adviser ...
+
+... one of the first things I routinely get asked is to conduct a power analysis
+
+So let's learn this together!
+
+We are going to learn this in the difference in means context. This extends to difference in proportions, etc. etc. 
+
+## Warm-up{.smaller} 
+
+A company wants to determine whether two types of pens differ in their average writing time (measured in minutes before running out of ink). A random sample of 35 blue-ink pens and 40 black-ink pens is selected. The number of minutes each pen writes before running out of ink is recorded. You can assume that both sample standard deviations are 8-minutes for each pen.
+
+Is there sufficient evidence to conclude that the mean writing time differs between blue-ink and black-ink pens?
+
+Set up our null and alternative hypothesis: 
+
+$H_o:$
+
+$H_a:$
+
+## Warm-up{.smaller} 
+
+$H_o: \mu_b = \mu_{bk}$
+
+$H_a: \mu_b \neq \mu_{bk}$
+
+-- How do we make decisions/conclusions in fixed level testing?
+
+## Errors 
+
+|                       | $H_o$ is True | $H_o$ is False |
+|-----------------------|---------------|----------------|
+| Reject $H_o$          | ____________  | ____________ |
+| Fail to Reject $H_o$  | ____________  | _____________ |
+
+## Errors 
+
+$H_o: \mu_b = \mu_{bk}$
+
+$H_a: \mu_b \neq \mu_{bk}$
+
+-- What would be a Type-1 Error in the context of this problem?
+
+-- What would be a Type-2 Error in the context of this problem?
+
+## Context 
+
+Suppose we calculated the following
+
+p-value ~ 0.321 vs $\alpha = 0.05$
+
+Does this mean we **did** make a Type-1 Error?
+
+## Context 
+
+Suppose we calculated the following
+
+p-value ~ 0.321 vs $\alpha = 0.05$
+
+Does this mean we **did** makea Type-1 Error?
+
+**NO** 
+
+## Type-1 Error 
+
+```{r}
+library(ggplot2)
+
+alpha <- 0.05
+z_crit <- qnorm(1 - alpha / 2)
+
+data <- data.frame(x = seq(-4, 4, length.out = 1000))
+data$y <- dnorm(data$x)
+
+ggplot(data, aes(x = x, y = y)) +
+  geom_area(
+    data = subset(data, x <= -z_crit),
+    fill = "steelblue",
+    alpha = 0.7
+  ) +
+  geom_area(
+    data = subset(data, x >= z_crit),
+    fill = "steelblue",
+    alpha = 0.7
+  ) +
+  geom_line(linewidth = 1) +
+  geom_vline(
+    xintercept = c(-z_crit, z_crit),
+    linetype = "dashed",
+    color = "red"
+  ) +
+  annotate("text", x = -2.5, y = 0.03, label = expression(alpha/2),
+           color = "steelblue", size = 5) +
+  annotate("text", x = 2.5, y = 0.03, label = expression(alpha/2),
+           color = "steelblue", size = 5) +
+  labs(
+    title = "Sampling Distribution Under the Null Hypothesis",
+    x = "Test Statistic",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+# Questions 
+
+## Type-2 
+
+What would be a Type-2 Error in the context of this problem?
+
+Fail to reject the null hypothesis that $\mu_b = \mu_{bk}$ when $\mu_b = \mu_{bk}$ is actually false (we should have rejected)!
+
+In order to calculate this probability (and power), we need to make an assumption on what $\mu_b - \mu_{bk}$ actually is!
+
+Let's assume that $\mu_b - \mu_{bk} = 5$. 
+
+## Why 5?{.smaller}
+
+The true difference of 5 minutes is an assumed **effect size** for the purpose of calculating the probability of a Type II error. It is not something we know from the sample data.
+
+Effect size is a quantitative measure of the magnitude of a difference, relationship, or effect in a population.
+
+We might choose 5 because...
+
+1. Previous research: Earlier studies may suggest that one type of pen lasts approximately 5 minutes longer than the other.
+
+2. Practical significance: The company might consider a 5-minute difference large enough to matter when deciding which pen to manufacture or sell.
+
+In practice, we may calculate the probability of a Type-2 error for many many different effect sizes!
+
+## The plot{.smaller}
+
+I want to just give us time to think, ask questions, and explain what's going on.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+alpha <- 0.05
+effect_size <- 5
+se <- 1.852
+
+crit <- qnorm(1 - alpha / 2) * se
+
+x <- seq(-6, 11, length.out = 2000)
+
+null <- data.frame(
+  x = x,
+  y = dnorm(x, mean = 0, sd = se)
+)
+
+alternative <- data.frame(
+  x = x,
+  y = dnorm(x, mean = effect_size, sd = se)
+)
+
+beta <- pnorm(crit, mean = effect_size, sd = se) -
+        pnorm(-crit, mean = effect_size, sd = se)
+
+ggplot() +
+  # Type I error: two tails under the null distribution
+  geom_area(
+    data = subset(null, x <= -crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(null, x >= crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  # Type II error: central region under the alternative distribution
+  geom_area(
+    data = subset(alternative, x >= -crit & x <= crit),
+    aes(x = x, y = y, fill = "Type II Error (beta)"),
+    alpha = 0.6
+  ) +
+  # Null and alternative distributions
+  geom_line(
+    data = null,
+    aes(x = x, y = y, color = "Null Distribution"),
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y, color = "Alternative Distribution"),
+    linewidth = 1
+  ) +
+  # Critical values
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed",
+    color = "black"
+  ) +
+  # Type I error labels
+  annotate(
+    "text",
+    x = -4.8, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  annotate(
+    "text",
+    x = 4.5, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  # Type II error label
+  annotate(
+    "text",
+    x = 0, y = 0.035,
+    label = paste0("beta = ", round(beta, 2)),
+    color = "darkorange3",
+    size = 4
+  ) +
+  scale_fill_manual(
+    name = "Error Regions",
+    values = c(
+      "Type I Error (alpha)" = "steelblue",
+      "Type II Error (beta)" = "orange"
+    )
+  ) +
+  scale_color_manual(
+    name = "Sampling Distributions",
+    values = c(
+      "Null Distribution" = "steelblue4",
+      "Alternative Distribution" = "darkgreen"
+    )
+  ) +
+  labs(
+    title = "Sampling Distributions of the Difference in Means",
+    subtitle = "Two-sided test with alpha = 0.05 and a true difference of 5 minutes",
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 11)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+# How do we calculate this?
+
+## Things we need to know 
+
+-- We need to propose an effect size $\mu_b - \mu_{bk}$ ✅ 
+
+-- Calculate the standard error 
+
+-- Calculate the critical values (at what value or "more extreme" we would reject)
+
+## Standard error 
+
+Please solve!
+
+$SE=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$
+
+## Standard error 
+
+$SE=\sqrt{\frac{8^2}{35}+\frac{8^2}{40}}=1.852$
+
+## Things we need to know 
+
+-- We need to propose an effect size $\mu_b - \mu_{bk}$ ✅ 
+
+-- Calculate the standard error ✅ 
+
+-- Calculate the critical values (at what value or "more extreme" we would reject)
+
+## Critical values
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+alpha <- 0.05
+effect_size <- 5
+se <- 1.852
+
+crit <- qnorm(1 - alpha / 2) * se
+
+x <- seq(-6, 11, length.out = 2000)
+
+null <- data.frame(
+  x = x,
+  y = dnorm(x, mean = 0, sd = se)
+)
+
+alternative <- data.frame(
+  x = x,
+  y = dnorm(x, mean = effect_size, sd = se)
+)
+
+beta <- pnorm(crit, mean = effect_size, sd = se) -
+        pnorm(-crit, mean = effect_size, sd = se)
+
+ggplot() +
+  # Type I error: two tails under the null distribution
+  geom_area(
+    data = subset(null, x <= -crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(null, x >= crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  # Type II error: central region under the alternative distribution
+  geom_area(
+    data = subset(alternative, x >= -crit & x <= crit),
+    aes(x = x, y = y, fill = "Type II Error (beta)"),
+    alpha = 0.6
+  ) +
+  # Null and alternative distributions
+  geom_line(
+    data = null,
+    aes(x = x, y = y, color = "Null Distribution"),
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y, color = "Alternative Distribution"),
+    linewidth = 1
+  ) +
+  # Critical values
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed",
+    color = "black"
+  ) +
+  # Type I error labels
+  annotate(
+    "text",
+    x = -4.8, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  annotate(
+    "text",
+    x = 4.5, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  # Type II error label
+  annotate(
+    "text",
+    x = 0, y = 0.035,
+    label = paste0("beta = ", round(beta, 2)),
+    color = "darkorange3",
+    size = 4
+  ) +
+  # Arrows pointing to the critical values
+  annotate(
+    "text",
+    x = -4.7, y = 0.245,
+    label = "Critical value",
+    size = 3.5
+  ) +
+  annotate(
+    "segment",
+    x = -4.0, y = 0.225,
+    xend = -crit, yend = 0.12,
+    arrow = grid::arrow(length = grid::unit(0.15, "cm")),
+    color = "black"
+  ) +
+  annotate(
+    "text",
+    x = 5.0, y = 0.245,
+    label = "Critical value",
+    size = 3.5
+  ) +
+  annotate(
+    "segment",
+    x = 4.4, y = 0.225,
+    xend = crit, yend = 0.15,
+    arrow = grid::arrow(length = grid::unit(0.15, "cm")),
+    color = "black"
+  ) +
+  scale_fill_manual(
+    name = "Error Regions",
+    values = c(
+      "Type I Error (alpha)" = "steelblue",
+      "Type II Error (beta)" = "orange"
+    )
+  ) +
+  scale_color_manual(
+    name = "Sampling Distributions",
+    values = c(
+      "Null Distribution" = "steelblue4",
+      "Alternative Distribution" = "darkgreen"
+    )
+  ) +
+  labs(
+    title = "Sampling Distributions of the Difference in Means",
+    subtitle = "Two-sided test with alpha = 0.05 and a true difference of 5 minutes",
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 11), ylim = c(0, 0.28)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Critical values 
+
+For this example, we are going to use 2.032 for our $t^*$. 
+
+The critical values are then... 
+
+1.852 * 2.032 = 3.76
+
+1.852 * (-2.032) = -3.76
+
+## Type II Error 
+
+Therefore, we calculate the probability that the observed difference in sample means falls between the critical values, assuming the true difference is 5 minutes.
+
+$\beta=P(-3.76<\bar{x}_1-\bar{x}_2<3.76)$
+
+## Type II Error 
+
+$$
+\begin{aligned}
+\beta
+&=P\left(\frac{-3.76-5}{1.852}<t<\frac{3.76-5}{1.852}\right)\\
+&=P(-4.72<t<-0.67)\\
+&=\Phi(-0.67)-\Phi(-4.72)\\
+&=0.2536-0.0000 (\text{very small number})\\
+&\approx 0.2536
+\end{aligned}
+$$
+$\Phi$ represents the cumulative probability up to that point on the distribution.
+
+## Type II Error 
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+df <- 34
+
+ggplot(data.frame(x = c(-5, 4)), aes(x)) +
+  stat_function(fun = dt, args = list(df = df)) +
+  
+  # Phi(-4.72)
+  stat_function(
+    fun = dt,
+    args = list(df = df),
+    geom = "area",
+    xlim = c(-5, -4.72),
+    alpha = 0.3
+  ) +
+  
+  # Phi(-0.67)
+  stat_function(
+    fun = dt,
+    args = list(df = df),
+    geom = "area",
+    xlim = c(-5, -0.67),
+    alpha = 0.15
+  ) +
+  
+  geom_vline(xintercept = -4.72, linetype = "dashed") +
+  geom_vline(xintercept = -0.67, linetype = "dashed") +
+  
+  annotate(
+    "text",
+    x = -2.5,
+    y = 0.08,
+    label = "25%",
+    size = 6
+  ) +
+  
+  labs(
+    x = "t",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+## Type II Error 
+
+In R
+
+```{webr-r}
+pt(-0.67, 34, lower.tail = T) - pt(-4.72, 34, lower.tail = T)
+```
+
+# Questions 
+
+# Power 
+
+## Power 
+
+Power is the probability that a hypothesis test correctly rejects $H_o$ when $H_o$ is false.
+
+|                       | $H_o$ is True | $H_o$ is False |
+|-----------------------|---------------|----------------|
+| Reject $H_o$          | ____________  | Power |
+| Fail to Reject $H_o$  | ____________  | _____________ |
+
+And Power is a good thing!
+
+## Power 
+
+The green area is power. How do we suppose power is calculated?
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+alpha <- 0.05
+effect_size <- 5
+se <- 1.852
+
+crit <- qnorm(1 - alpha / 2) * se
+
+x <- seq(-6, 11, length.out = 2000)
+
+null <- data.frame(
+  x = x,
+  y = dnorm(x, mean = 0, sd = se)
+)
+
+alternative <- data.frame(
+  x = x,
+  y = dnorm(x, mean = effect_size, sd = se)
+)
+
+beta <- pnorm(crit, mean = effect_size, sd = se) -
+        pnorm(-crit, mean = effect_size, sd = se)
+
+power <- 1 - beta
+
+ggplot() +
+  # Type I error: two tails under the null distribution
+  geom_area(
+    data = subset(null, x <= -crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(null, x >= crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  # Type II error: central region under the alternative distribution
+  geom_area(
+    data = subset(alternative, x >= -crit & x <= crit),
+    aes(x = x, y = y, fill = "Type II Error (beta)"),
+    alpha = 0.6
+  ) +
+  # Power: two tails under the alternative distribution
+  geom_area(
+    data = subset(alternative, x <= -crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(alternative, x >= crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  # Null and alternative distributions
+  geom_line(
+    data = null,
+    aes(x = x, y = y, color = "Null Distribution"),
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y, color = "Alternative Distribution"),
+    linewidth = 1
+  ) +
+  # Critical values
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed",
+    color = "black"
+  ) +
+  # Type I error labels
+  annotate(
+    "text",
+    x = -4.8, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  annotate(
+    "text",
+    x = 4.5, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  # Type II error label
+  annotate(
+    "text",
+    x = 0, y = 0.035,
+    label = paste0("beta = ", round(beta, 2)),
+    color = "darkorange3",
+    size = 4
+  ) +
+  # Power label
+  #annotate(
+   # "text",
+    #x = 7.5, y = 0.04,
+    #label = paste0("Power = ", round(power, 2)),
+    #color = "darkgreen",
+    #size = 4
+  #) +
+  scale_fill_manual(
+    name = "Error Regions",
+    values = c(
+      "Type I Error (alpha)" = "steelblue",
+      "Type II Error (beta)" = "orange",
+      "Power" = "darkgreen"
+    )
+  ) +
+  scale_color_manual(
+    name = "Sampling Distributions",
+    values = c(
+      "Null Distribution" = "steelblue4",
+      "Alternative Distribution" = "darkgreen"
+    )
+  ) +
+  labs(
+    title = "Sampling Distributions of the Difference in Means",
+    subtitle = "Two-sided test with alpha = 0.05 and a true difference of 5 minutes",
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 11)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Power 
+
+Power = 1 - P(Type II Error)! 
+
+# Questions 
+
+# Summary 
+
+## Type I Error 
+
+$\alpha = 0.05$ 
+
+Probability of rejecting  $\mu_b = \mu_{bk}$ when  $\mu_b = \mu_{bk}$ is actually true.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+
+alpha <- 0.05
+effect_size <- 5
+se <- 1.852
+
+crit <- qnorm(1 - alpha / 2) * se
+
+x <- seq(-6, 11, length.out = 2000)
+
+null <- data.frame(
+  x = x,
+  y = dnorm(x, mean = 0, sd = se)
+)
+
+alternative <- data.frame(
+  x = x,
+  y = dnorm(x, mean = effect_size, sd = se)
+)
+
+beta <- pnorm(crit, mean = effect_size, sd = se) -
+        pnorm(-crit, mean = effect_size, sd = se)
+
+power <- 1 - beta
+
+
+# -------------------------
+# Type I Error
+# -------------------------
+
+ggplot() +
+  geom_area(
+    data = subset(null, x <= -crit),
+    aes(x = x, y = y),
+    fill = "steelblue",
+    alpha = 0.6
+  ) +
+  geom_area(
+    data = subset(null, x >= crit),
+    aes(x = x, y = y),
+    fill = "steelblue",
+    alpha = 0.6
+  ) +
+  geom_line(
+    data = null,
+    aes(x = x, y = y),
+    color = "steelblue4",
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y),
+    color = "darkgreen",
+    linewidth = 1
+  ) +
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed"
+  ) +
+  annotate(
+    "text",
+    x = -4.8, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  annotate(
+    "text",
+    x = 4.5, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  labs(
+    title = "Type I Error",
+    subtitle = "α = 0.05",
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 11)) +
+  theme_minimal()
+```
+
+## Type II Error 
+
+Probability of failing to reject  $\mu_b = \mu_{bk}$ when  $\mu_b = \mu_{bk}$ is actually false!
+
+
+```{r}
+
+# -------------------------
+# Type II Error
+# -------------------------
+
+ggplot() +
+  geom_area(
+    data = subset(alternative, x >= -crit & x <= crit),
+    aes(x = x, y = y),
+    fill = "orange",
+    alpha = 0.6
+  ) +
+  geom_line(
+    data = null,
+    aes(x = x, y = y),
+    color = "steelblue4",
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y),
+    color = "darkgreen",
+    linewidth = 1
+  ) +
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed"
+  ) +
+  annotate(
+    "text",
+    x = 0,
+    y = 0.035,
+    label = paste0("beta = ", round(beta, 2)),
+    parse = TRUE,
+    size = 4
+  ) +
+  labs(
+    title = "Type II Error",
+    subtitle = paste0("β = ", round(beta, 2)),
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 11)) +
+  theme_minimal()
+```
+
+## Power 
+
+Probability of rejecting  $\mu_b = \mu_b$ when  $\mu_b = \mu_{bk}$ is actually false!
+
+```{r}
+
+# -------------------------
+# Power
+# -------------------------
+
+ggplot() +
+  geom_area(
+    data = subset(alternative, x <= -crit),
+    aes(x = x, y = y),
+    fill = "darkgreen",
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(alternative, x >= crit),
+    aes(x = x, y = y),
+    fill = "darkgreen",
+    alpha = 0.5
+  ) +
+  geom_line(
+    data = null,
+    aes(x = x, y = y),
+    color = "steelblue4",
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y),
+    color = "darkgreen",
+    linewidth = 1
+  ) +
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed"
+  ) +
+  annotate(
+    "text",
+    x = 7.5,
+    y = 0.04,
+    label = paste0("Power = ", round(power, 2)),
+    size = 4
+  ) +
+  labs(
+    title = "Power",
+    subtitle = paste0("1 − β = ", round(power, 2)),
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 11)) +
+  theme_minimal()
+```
+
+## Scenarios{.smaller} 
+
+-- What happens if we increase/decrease our effect size? <- Let's brainstorm about this one!
+
+-- What happens if we increase/decrease our sample size? 
+
+## increase/decrease effect size 
+
+Last time
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+alpha <- 0.05
+effect_size <- 5
+se <- 1.852
+
+crit <- qnorm(1 - alpha / 2) * se
+
+x <- seq(-6, 11, length.out = 2000)
+
+null <- data.frame(
+  x = x,
+  y = dnorm(x, mean = 0, sd = se)
+)
+
+alternative <- data.frame(
+  x = x,
+  y = dnorm(x, mean = effect_size, sd = se)
+)
+
+beta <- pnorm(crit, mean = effect_size, sd = se) -
+        pnorm(-crit, mean = effect_size, sd = se)
+
+power <- 1 - beta
+
+ggplot() +
+  # Type I error: two tails under the null distribution
+  geom_area(
+    data = subset(null, x <= -crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(null, x >= crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  # Type II error: central region under the alternative distribution
+  geom_area(
+    data = subset(alternative, x >= -crit & x <= crit),
+    aes(x = x, y = y, fill = "Type II Error (beta)"),
+    alpha = 0.6
+  ) +
+  # Power: two tails under the alternative distribution
+  geom_area(
+    data = subset(alternative, x <= -crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(alternative, x >= crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  # Null and alternative distributions
+  geom_line(
+    data = null,
+    aes(x = x, y = y, color = "Null Distribution"),
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y, color = "Alternative Distribution"),
+    linewidth = 1
+  ) +
+  # Critical values
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed",
+    color = "black"
+  ) +
+  # Type I error labels
+  annotate(
+    "text",
+    x = -4.8, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  annotate(
+    "text",
+    x = 4.5, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  # Type II error label
+  annotate(
+    "text",
+    x = 0, y = 0.035,
+    label = paste0("beta = ", round(beta, 2)),
+    color = "darkorange3",
+    size = 4
+  ) +
+  # Power label
+  #annotate(
+   # "text",
+    #x = 7.5, y = 0.04,
+    #label = paste0("Power = ", round(power, 2)),
+    #color = "darkgreen",
+    #size = 4
+  #) +
+  scale_fill_manual(
+    name = "Error Regions",
+    values = c(
+      "Type I Error (alpha)" = "steelblue",
+      "Type II Error (beta)" = "orange",
+      "Power" = "darkgreen"
+    )
+  ) +
+  scale_color_manual(
+    name = "Sampling Distributions",
+    values = c(
+      "Null Distribution" = "steelblue4",
+      "Alternative Distribution" = "darkgreen"
+    )
+  ) +
+  labs(
+    title = "Sampling Distributions of the Difference in Means",
+    subtitle = "Two-sided test with alpha = 0.05 and a true difference of 5 minutes",
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 11)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## increase/decrese effect size{.smaller}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+alpha <- 0.05
+effect_size <- 10
+se <- 1.852
+
+crit <- qnorm(1 - alpha / 2) * se
+
+x <- seq(-6, 16, length.out = 2000)
+
+null <- data.frame(
+  x = x,
+  y = dnorm(x, mean = 0, sd = se)
+)
+
+alternative <- data.frame(
+  x = x,
+  y = dnorm(x, mean = effect_size, sd = se)
+)
+
+beta <- pnorm(crit, mean = effect_size, sd = se) -
+        pnorm(-crit, mean = effect_size, sd = se)
+
+power <- 1 - beta
+
+ggplot() +
+  # Type I error: two tails under the null distribution
+  geom_area(
+    data = subset(null, x <= -crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(null, x >= crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  # Type II error: central region under the alternative distribution
+  geom_area(
+    data = subset(alternative, x >= -crit & x <= crit),
+    aes(x = x, y = y, fill = "Type II Error (beta)"),
+    alpha = 0.6
+  ) +
+  # Power: two tails under the alternative distribution
+  geom_area(
+    data = subset(alternative, x <= -crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(alternative, x >= crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  # Null and alternative distributions
+  geom_line(
+    data = null,
+    aes(x = x, y = y, color = "Null Distribution"),
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y, color = "Alternative Distribution"),
+    linewidth = 1
+  ) +
+  # Critical values
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed",
+    color = "black"
+  ) +
+  # Type I error labels
+  annotate(
+    "text",
+    x = -4.8, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  annotate(
+    "text",
+    x = 4.5, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  # Type II error label
+  annotate(
+    "text",
+    x = 0, y = 0.035,
+    label = paste0("beta = ", round(beta, 2)),
+    color = "darkorange3",
+    size = 4
+  ) +
+  scale_fill_manual(
+    name = "Error Regions",
+    values = c(
+      "Type I Error (alpha)" = "steelblue",
+      "Type II Error (beta)" = "orange",
+      "Power" = "darkgreen"
+    )
+  ) +
+  scale_color_manual(
+    name = "Sampling Distributions",
+    values = c(
+      "Null Distribution" = "steelblue4",
+      "Alternative Distribution" = "darkgreen"
+    )
+  ) +
+  labs(
+    title = "Sampling Distributions of the Difference in Means",
+    subtitle = "Two-sided test with alpha = 0.05 and a true difference of 10 minutes",
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 16)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+
+## increase/decrese effect size
+
+$\mu_b - \mu_{bk} = 10$
+
+What happened?
+
+-- Type I Error?
+
+-- Type II Error?
+
+-- Power?
+
+
+## increase/decrese effect size
+
+$\mu_b - \mu_{bk} = 1$
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+alpha <- 0.05
+effect_size <- 1
+se <- 1.852
+
+crit <- qnorm(1 - alpha / 2) * se
+
+x <- seq(-6, 11, length.out = 2000)
+
+null <- data.frame(
+  x = x,
+  y = dnorm(x, mean = 0, sd = se)
+)
+
+alternative <- data.frame(
+  x = x,
+  y = dnorm(x, mean = effect_size, sd = se)
+)
+
+beta <- pnorm(crit, mean = effect_size, sd = se) -
+        pnorm(-crit, mean = effect_size, sd = se)
+
+power <- 1 - beta
+
+ggplot() +
+  # Type I error: two tails under the null distribution
+  geom_area(
+    data = subset(null, x <= -crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(null, x >= crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  # Type II error: central region under the alternative distribution
+  geom_area(
+    data = subset(alternative, x >= -crit & x <= crit),
+    aes(x = x, y = y, fill = "Type II Error (beta)"),
+    alpha = 0.6
+  ) +
+  # Power: two tails under the alternative distribution
+  geom_area(
+    data = subset(alternative, x <= -crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(alternative, x >= crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  # Null and alternative distributions
+  geom_line(
+    data = null,
+    aes(x = x, y = y, color = "Null Distribution"),
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y, color = "Alternative Distribution"),
+    linewidth = 1
+  ) +
+  # Critical values
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed",
+    color = "black"
+  ) +
+  # Type I error labels
+  annotate(
+    "text",
+    x = -4.8, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  annotate(
+    "text",
+    x = 4.5, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  # Type II error label
+  annotate(
+    "text",
+    x = 0, y = 0.035,
+    label = paste0("beta = ", round(beta, 2)),
+    color = "darkorange3",
+    size = 4
+  ) +
+  scale_fill_manual(
+    name = "Error Regions",
+    values = c(
+      "Type I Error (alpha)" = "steelblue",
+      "Type II Error (beta)" = "orange",
+      "Power" = "darkgreen"
+    )
+  ) +
+  scale_color_manual(
+    name = "Sampling Distributions",
+    values = c(
+      "Null Distribution" = "steelblue4",
+      "Alternative Distribution" = "darkgreen"
+    )
+  ) +
+  labs(
+    title = "Sampling Distributions of the Difference in Means",
+    subtitle = "Two-sided test with alpha = 0.05 and a true difference of 1 minute",
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 11)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Scenarios{.smaller} 
+
+-- What happens if we increase/decrease our effect size? 
+
+-- What happens if we increase/decrease our sample size? <- Let's brainstorm about this one!
+
+## Changing n 
+
+$n_b = 35$
+
+$n_{bk} = 40$
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+alpha <- 0.05
+effect_size <- 5
+se <- 1.852
+
+crit <- qnorm(1 - alpha / 2) * se
+
+x <- seq(-6, 11, length.out = 2000)
+
+null <- data.frame(
+  x = x,
+  y = dnorm(x, mean = 0, sd = se)
+)
+
+alternative <- data.frame(
+  x = x,
+  y = dnorm(x, mean = effect_size, sd = se)
+)
+
+beta <- pnorm(crit, mean = effect_size, sd = se) -
+        pnorm(-crit, mean = effect_size, sd = se)
+
+power <- 1 - beta
+
+ggplot() +
+  # Type I error: two tails under the null distribution
+  geom_area(
+    data = subset(null, x <= -crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(null, x >= crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  # Type II error: central region under the alternative distribution
+  geom_area(
+    data = subset(alternative, x >= -crit & x <= crit),
+    aes(x = x, y = y, fill = "Type II Error (beta)"),
+    alpha = 0.6
+  ) +
+  # Power: two tails under the alternative distribution
+  geom_area(
+    data = subset(alternative, x <= -crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(alternative, x >= crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  # Null and alternative distributions
+  geom_line(
+    data = null,
+    aes(x = x, y = y, color = "Null Distribution"),
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y, color = "Alternative Distribution"),
+    linewidth = 1
+  ) +
+  # Critical values
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed",
+    color = "black"
+  ) +
+  # Type I error labels
+  annotate(
+    "text",
+    x = -4.8, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  annotate(
+    "text",
+    x = 4.5, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  # Type II error label
+  annotate(
+    "text",
+    x = 0, y = 0.035,
+    label = paste0("beta = ", round(beta, 2)),
+    color = "darkorange3",
+    size = 4
+  ) +
+  # Power label
+  #annotate(
+   # "text",
+    #x = 7.5, y = 0.04,
+    #label = paste0("Power = ", round(power, 2)),
+    #color = "darkgreen",
+    #size = 4
+  #) +
+  scale_fill_manual(
+    name = "Error Regions",
+    values = c(
+      "Type I Error (alpha)" = "steelblue",
+      "Type II Error (beta)" = "orange",
+      "Power" = "darkgreen"
+    )
+  ) +
+  scale_color_manual(
+    name = "Sampling Distributions",
+    values = c(
+      "Null Distribution" = "steelblue4",
+      "Alternative Distribution" = "darkgreen"
+    )
+  ) +
+  labs(
+    title = "Sampling Distributions of the Difference in Means",
+    subtitle = "Two-sided test with alpha = 0.05 and a true difference of 5 minutes",
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 11)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Changing n 
+
+
+$n_b = 350$
+
+$n_{bk} = 400$
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+alpha <- 0.05
+effect_size <- 5
+se <- 1.852 / sqrt(10)
+df <- 349
+
+crit <- qt(1 - alpha / 2, df = df) * se
+
+x <- seq(-3, 9, length.out = 2000)
+
+null <- data.frame(
+  x = x,
+  y = dnorm(x, mean = 0, sd = se)
+)
+
+alternative <- data.frame(
+  x = x,
+  y = dnorm(x, mean = effect_size, sd = se)
+)
+
+beta <- pnorm(crit, mean = effect_size, sd = se) -
+        pnorm(-crit, mean = effect_size, sd = se)
+
+power <- 1 - beta
+
+ggplot() +
+  # Type I error: two tails under the null distribution
+  geom_area(
+    data = subset(null, x <= -crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(null, x >= crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  # Type II error: central region under the alternative distribution
+  geom_area(
+    data = subset(alternative, x >= -crit & x <= crit),
+    aes(x = x, y = y, fill = "Type II Error (beta)"),
+    alpha = 0.6
+  ) +
+  # Power: two tails under the alternative distribution
+  geom_area(
+    data = subset(alternative, x <= -crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(alternative, x >= crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  # Null and alternative distributions
+  geom_line(
+    data = null,
+    aes(x = x, y = y, color = "Null Distribution"),
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y, color = "Alternative Distribution"),
+    linewidth = 1
+  ) +
+  # Critical values
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed",
+    color = "black"
+  ) +
+  # Type I error labels
+  annotate(
+    "text",
+    x = -2.5, y = 0.08,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  annotate(
+    "text",
+    x = 2.5, y = 0.08,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  # Type II error label
+  annotate(
+    "text",
+    x = 0, y = 0.10,
+    label = paste0("beta = ", round(beta, 2)),
+    color = "darkorange3",
+    size = 4
+  ) +
+  scale_fill_manual(
+    name = "Error Regions",
+    values = c(
+      "Type I Error (alpha)" = "steelblue",
+      "Type II Error (beta)" = "orange",
+      "Power" = "darkgreen"
+    )
+  ) +
+  scale_color_manual(
+    name = "Sampling Distributions",
+    values = c(
+      "Null Distribution" = "steelblue4",
+      "Alternative Distribution" = "darkgreen"
+    )
+  ) +
+  labs(
+    title = "Sampling Distributions of the Difference in Means",
+    subtitle = "n1 = 350, n2 = 400, df = 349, true difference = 5 minutes",
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-3, 9)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+# Questions 
+
+## Scenarios 
+
+-- What happens if we increase/decrease our effect size? 
+
+-- What happens if we increase/decrease our sample size? 
+
+What happens if we change $\alpha$? 
+
+## Changing α
+
+$\alpha = 0.10$
+
+What happened? Why?
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+alpha <- 0.10
+effect_size <- 5
+se <- 1.852
+
+crit <- qnorm(1 - alpha / 2) * se
+
+x <- seq(-6, 11, length.out = 2000)
+
+null <- data.frame(
+  x = x,
+  y = dnorm(x, mean = 0, sd = se)
+)
+
+alternative <- data.frame(
+  x = x,
+  y = dnorm(x, mean = effect_size, sd = se)
+)
+
+beta <- pnorm(crit, mean = effect_size, sd = se) -
+        pnorm(-crit, mean = effect_size, sd = se)
+
+power <- 1 - beta
+
+ggplot() +
+  # Type I error: two tails under the null distribution
+  geom_area(
+    data = subset(null, x <= -crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(null, x >= crit),
+    aes(x = x, y = y, fill = "Type I Error (alpha)"),
+    alpha = 0.5
+  ) +
+  # Type II error: central region under the alternative distribution
+  geom_area(
+    data = subset(alternative, x >= -crit & x <= crit),
+    aes(x = x, y = y, fill = "Type II Error (beta)"),
+    alpha = 0.6
+  ) +
+  # Power: two tails under the alternative distribution
+  geom_area(
+    data = subset(alternative, x <= -crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  geom_area(
+    data = subset(alternative, x >= crit),
+    aes(x = x, y = y, fill = "Power"),
+    alpha = 0.5
+  ) +
+  # Null and alternative distributions
+  geom_line(
+    data = null,
+    aes(x = x, y = y, color = "Null Distribution"),
+    linewidth = 1
+  ) +
+  geom_line(
+    data = alternative,
+    aes(x = x, y = y, color = "Alternative Distribution"),
+    linewidth = 1
+  ) +
+  # Critical values
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dashed",
+    color = "black"
+  ) +
+  # Type I error labels
+  annotate(
+    "text",
+    x = -4.8, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  annotate(
+    "text",
+    x = 4.5, y = 0.025,
+    label = "alpha/2",
+    parse = TRUE,
+    size = 4
+  ) +
+  # Type II error label
+  annotate(
+    "text",
+    x = 0, y = 0.035,
+    label = paste0("beta = ", round(beta, 2)),
+    color = "darkorange3",
+    size = 4
+  ) +
+  scale_fill_manual(
+    name = "Error Regions",
+    values = c(
+      "Type I Error (alpha)" = "steelblue",
+      "Type II Error (beta)" = "orange",
+      "Power" = "darkgreen"
+    )
+  ) +
+  scale_color_manual(
+    name = "Sampling Distributions",
+    values = c(
+      "Null Distribution" = "steelblue4",
+      "Alternative Distribution" = "darkgreen"
+    )
+  ) +
+  labs(
+    title = "Sampling Distributions of the Difference in Means",
+    subtitle = "Two-sided test with alpha = 0.10 and a true difference of 5 minutes",
+    x = "Difference in Sample Means (minutes)",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-6, 11)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Changing α
+
+When it's easier to reject, we reject more often... so power increases!
+
+When it's easier to reject, we reject more often... when we shouldn't...
+
+## In Summary{.smaller} 
+
+| Change                   | Type I Error ($\alpha$) | Type II Error ($\beta$) | Power ($1-\beta$) |
+| ------------------------ | ----------------------- | ----------------------- | ----------------- |
+| **Increase sample size** | ↔️ No change            | ↓ Decreases             | ↑ Increases       |
+| **Decrease sample size** | ↔️ No change            | ↑ Increases             | ↓ Decreases       |
+| **Increase effect size** | ↔️ No change            | ↓ Decreases             | ↑ Increases       |
+| **Decrease effect size** | ↔️ No change            | ↑ Increases             | ↓ Decreases       |
+| **Increase $\alpha$**    | ↑ Increases             | ↓ Decreases             | ↑ Increases       |
+| **Decrease $\alpha$**    | ↓ Decreases             | ↑ Increases             | ↓ Decreases       |
+
+# Questions 
+
+## Assessment expectations 
+
+Exams
+
+-- Probability of Type I Error 
+
+-- Know relationships 
+
+-- Know scenarios 
+
+-- Label distributions 
+
+On exams, I won't have you directly calculate the probability of a type-2 error... 
+
+... but I may have you set up the probability statement (everything up until we used R)
+
+# Questions 
+
+# if time 
+
+## Categorical Inference 
+
+So far, we have gone over two different types of categorical inference techniques
+
+-- What are they?
+
+-- Parameters?
+
+-- Statistics?
+
+## Motivation 
+
+We are going to study penguins! This real dataset includes measurements for penguin species, island in Palmer Archipelago, size (flipper length, body mass, bill dimensions), and sex. 
+
+
+## Penguins{.smaller}
+
+Suppose that we want to look at the relationship between sex and species. That is, we want to test if species of penguin is independent from sex. How is this different than what we’ve done before?
+
+```{r}
+penguins |>
+  na.omit() |>
+  group_by(species, sex) |>
+  count()
+```
+
+## Chi-Square test 
+
+The big picture idea is to compare expected counts (under the assumption of the null hypothesis with observed counts. This is how we are going to calculate our test statistic.
+
+And we will start with this next week!
+
+# Have a wonderful weekend.
+
