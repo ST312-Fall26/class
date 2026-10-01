@@ -100,7 +100,7 @@ Suppose we calculated the following
 
 p-value ~ 0.321 vs $\alpha = 0.05$
 
-Does this mean we **did** makea Type-1 Error?
+Does this mean we **did** make a Type-1 Error?
 
 **NO** 
 
@@ -1041,7 +1041,7 @@ ggplot() +
   theme(legend.position = "bottom")
 ```
 
-## increase/decrese effect size{.smaller}
+## increase/decrease effect size{.smaller}
 
 ```{r}
 #| echo: false

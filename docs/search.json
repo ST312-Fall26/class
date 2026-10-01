@@ -180,7 +180,7 @@
     "href": "13-power.html#context-1",
     "title": "Error and Power",
     "section": "Context",
-    "text": "Context\nSuppose we calculated the following\np-value ~ 0.321 vs \\(\\alpha = 0.05\\)\nDoes this mean we did makea Type-1 Error?\nNO",
+    "text": "Context\nSuppose we calculated the following\np-value ~ 0.321 vs \\(\\alpha = 0.05\\)\nDoes this mean we did make a Type-1 Error?\nNO",
     "crumbs": [
       "Slides",
       "Day-13"
@@ -429,19 +429,19 @@
     ]
   },
   {
-    "objectID": "13-power.html#increasedecrese-effect-size",
-    "href": "13-power.html#increasedecrese-effect-size",
+    "objectID": "13-power.html#increasedecrease-effect-size-1",
+    "href": "13-power.html#increasedecrease-effect-size-1",
     "title": "Error and Power",
-    "section": "increase/decrese effect size",
-    "text": "increase/decrese effect size",
+    "section": "increase/decrease effect size",
+    "text": "increase/decrease effect size",
     "crumbs": [
       "Slides",
       "Day-13"
     ]
   },
   {
-    "objectID": "13-power.html#increasedecrese-effect-size-1",
-    "href": "13-power.html#increasedecrese-effect-size-1",
+    "objectID": "13-power.html#increasedecrese-effect-size",
+    "href": "13-power.html#increasedecrese-effect-size",
     "title": "Error and Power",
     "section": "increase/decrese effect size",
     "text": "increase/decrese effect size\n\\(\\mu_b - \\mu_{bk} = 10\\)\nWhat happened?\n– Type I Error?\n– Type II Error?\n– Power?",
@@ -451,8 +451,8 @@
     ]
   },
   {
-    "objectID": "13-power.html#increasedecrese-effect-size-2",
-    "href": "13-power.html#increasedecrese-effect-size-2",
+    "objectID": "13-power.html#increasedecrese-effect-size-1",
+    "href": "13-power.html#increasedecrese-effect-size-1",
     "title": "Error and Power",
     "section": "increase/decrese effect size",
     "text": "increase/decrese effect size\n\\(\\mu_b - \\mu_{bk} = 1\\)",
