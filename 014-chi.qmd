@@ -34,9 +34,13 @@ editor:
       > Re-grade window will open after grades are released 
       > Solutions are posted on Moodle 
       
+## Checklist{.smaller}
+      
 -- Homework-2 is LIVE and due on Monday (10-12) at 11:59pm 
 
       > 24-hour late window
+      > Please start early
+      > Let's talk about homework-2, and the "coding part"
 
 ## Warmup 
 
@@ -556,3 +560,24 @@ Weak evidence to conclude that species and sex are not independent (or that spec
 # Questions?
 
 # See you Thursday
+
+## Homework Slide!
+
+I suggest having the homework up, and looking at the plot as you calculate the probability of a type-II error/power/
+
+pnorm() is used to calculate the area under the curve of a normal distribution. To answer this question, we need: 
+
+-- The critical values from the null distribution 
+
+-- The probability that we fail to reject the null hypothesis **given** the alternative hypothesis is true. Therefore, we can calculate the probability of a Type-II error by using the alternative distribution. We specify the center of the alternative distribution with mean = .2. In the code below: 
+
+-- Replace the critical_value with the correct values for a two sided $\alpha = 0.05$ test. 
+
+-- Replace your_se with the correct standard error you calculated from the null distribution (same shape as the alternative).
+
+-- Click run!
+
+```{webr-R}
+pnorm(q = critical_value, mean = .2, your_se) - pnorm(q = critical_value, mean = .2, your_se)
+```
+
