@@ -3267,6 +3267,490 @@
     ]
   },
   {
+    "objectID": "014-chi.html#checklist",
+    "href": "014-chi.html#checklist",
+    "title": "Chi-Square",
+    "section": "Checklist",
+    "text": "Checklist\n– Homework-1 is graded\n&gt; Solutions are on Moodle \n&gt; Regrade window until Friday 10-9 at 5:00pm\n– Don’t forget about the Statistics Experience (12-1)\n– Exam-2 is on 10-29\n– Exam-1 will be released by end of next week\n  &gt; I don't plan for a curve\n  &gt; If the performance on one question indicates an unfair question I'll fix it\n  &gt; Re-grade window will open after grades are released \n  &gt; Solutions are posted on Moodle \n  \n– Homework-2 is LIVE and due on Monday (10-12) at 11:59pm\n  &gt; 24-hour late window",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#warmup",
+    "href": "014-chi.html#warmup",
+    "title": "Chi-Square",
+    "section": "Warmup",
+    "text": "Warmup\nLast class, we talked all things power analysis. Let’s review the terms!\n– Type-1 error\n– Type-2 error\n– Power",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#warm-up",
+    "href": "014-chi.html#warm-up",
+    "title": "Chi-Square",
+    "section": "Warm-up",
+    "text": "Warm-up\nLast class, we talked all things power analysis. Let’s review the terms!\n– Type-1 error: Rejecting the null hypothesis when the null hypothesis was actually true\n– Type-2 error: Failing to reject the null hypothesis when the null hypothesis was actually false\n– Power: Rejecting the null hypothesis when the null hypothesis was actually false",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#warm-up-1",
+    "href": "014-chi.html#warm-up-1",
+    "title": "Chi-Square",
+    "section": "Warm-up",
+    "text": "Warm-up\nWhere are these respective probabilities on the following graph?\nWhat is an effect size? What is the value of the effect size in our prompt from last class?",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#effect-size",
+    "href": "014-chi.html#effect-size",
+    "title": "Chi-Square",
+    "section": "Effect size",
+    "text": "Effect size\nEffect size is a quantitative measure of the magnitude of an effect in a population.\nThe effect size is 5, meaning that the population mean writing time for blue pens is expected to be 5 minutes higher than the population mean writing time for black pens.",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#categorical-inference",
+    "href": "014-chi.html#categorical-inference",
+    "title": "Chi-Square",
+    "section": "Categorical Inference",
+    "text": "Categorical Inference\nSo far, we have gone over two different types of categorical inference techniques\n– What are they?\n– Parameters?\n– Statistics?",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#motivation",
+    "href": "014-chi.html#motivation",
+    "title": "Chi-Square",
+    "section": "Motivation",
+    "text": "Motivation\nWe are going to study penguins! This real dataset includes measurements for penguin species, island in Palmer Archipelago, size (flipper length, body mass, bill dimensions), and sex.",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#penguins",
+    "href": "014-chi.html#penguins",
+    "title": "Chi-Square",
+    "section": "Penguins",
+    "text": "Penguins\nSuppose that we want to look at the relationship between sex and species. That is, we want to test if species of penguin is independent from sex. How is this different than what we’ve done before?\n\n\n# A tibble: 6 × 3\n# Groups:   species, sex [6]\n  species   sex        n\n  &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;\n1 Adelie    female    73\n2 Adelie    male      73\n3 Chinstrap female    34\n4 Chinstrap male      34\n5 Gentoo    female    58\n6 Gentoo    male      61",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#type-of-test",
+    "href": "014-chi.html#type-of-test",
+    "title": "Chi-Square",
+    "section": "Type of test",
+    "text": "Type of test\nCan we use difference in means?\nDifference in proportions?",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#chi-square-test",
+    "href": "014-chi.html#chi-square-test",
+    "title": "Chi-Square",
+    "section": "Chi-square test",
+    "text": "Chi-square test\nThe big picture idea is to compare expected counts, under the assumption of the null hypothesis, with observed counts. This is how we are going to calculate our test statistic.",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#chi-square-test-1",
+    "href": "014-chi.html#chi-square-test-1",
+    "title": "Chi-Square",
+    "section": "Chi-square test",
+    "text": "Chi-square test\n\\(Ho:\\)\n\\(Ha:\\)",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#chi-square-test-2",
+    "href": "014-chi.html#chi-square-test-2",
+    "title": "Chi-Square",
+    "section": "Chi-square test",
+    "text": "Chi-square test\n\\(Ho: \\text{sex and species of penguins are independent}\\)\n\\(Ha: \\text{sex and species of penguins are not independent}\\)",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#chi-square-test-3",
+    "href": "014-chi.html#chi-square-test-3",
+    "title": "Chi-Square",
+    "section": "Chi-square test",
+    "text": "Chi-square test\nNote: This is a chi-square test of independence. We will learn about a goodness-of-fit-test Thursday!\n\\(Ho: \\text{sex and species of penguins are independent}\\)\n\\(Ha: \\text{sex and species of penguins are not independent}\\)",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#steps-of-a-null-hypothesis",
+    "href": "014-chi.html#steps-of-a-null-hypothesis",
+    "title": "Chi-Square",
+    "section": "Steps of a null hypothesis",
+    "text": "Steps of a null hypothesis\n– Set up the null and alternative hypotheses\n– Collect data\n– Check assumptions (so we can trust our theory based tests)\n– Calculate our test statistic\n– p-value\n– decisions and conclusions",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#table",
+    "href": "014-chi.html#table",
+    "title": "Chi-Square",
+    "section": "Table",
+    "text": "Table\nWhat would we expect to see under the assumption of the null hypothesis?\nWhat did we actually observe?\nAre the differences “statistically significant”?\n\n\n\n\nMale\nFemale\nTotal\n\n\n\n\nAdelie\n\n\n146\n\n\nChinstrap\n\n\n68\n\n\nGentoo\n\n\n119\n\n\nTotal\n168\n165\n333",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#assumptions",
+    "href": "014-chi.html#assumptions",
+    "title": "Chi-Square",
+    "section": "Assumptions",
+    "text": "Assumptions\n– Independence\n– Expected frequencies (sample size condition)",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#independence",
+    "href": "014-chi.html#independence",
+    "title": "Chi-Square",
+    "section": "Independence",
+    "text": "Independence\nHow could this be broken?\nWhat might we do to assume this isn’t violated?",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#expected-counts-1",
+    "href": "014-chi.html#expected-counts-1",
+    "title": "Chi-Square",
+    "section": "Expected counts",
+    "text": "Expected counts\nWith a sample size of 333, what would we expect to see in this table under the assumption that species and sex are independent?\nTable of EXPECTED counts\n\n\n\n\nMale\nFemale\nTotal\n\n\n\n\nAdelie\n\n\n146\n\n\nChinstrap\n\n\n68\n\n\nGentoo\n\n\n119\n\n\nTotal\n168\n165\n333",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#expected-formula",
+    "href": "014-chi.html#expected-formula",
+    "title": "Chi-Square",
+    "section": "Expected Formula",
+    "text": "Expected Formula",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#expected-counts-rule",
+    "href": "014-chi.html#expected-counts-rule",
+    "title": "Chi-Square",
+    "section": "Expected counts rule",
+    "text": "Expected counts rule\nYour book says “average expected cell count is &gt; 5.” This will be our rule of thumb.\nIf any of the expected values are low the p-values generated by the test start to become less reliable.",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#expected-counts-2",
+    "href": "014-chi.html#expected-counts-2",
+    "title": "Chi-Square",
+    "section": "Expected counts",
+    "text": "Expected counts\nWith a sample size of 333, what would we expect to see in this table under the assumption that species and sex are independent?\nPick one cell, and calculate the expected count!\nTable of EXPECTED counts\n\n\n\n\nMale\nFemale\nTotal\n\n\n\n\nAdelie\n\n\n146\n\n\nChinstrap\n\n\n68\n\n\nGentoo\n\n\n119\n\n\nTotal\n168\n165\n333",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#expected-table",
+    "href": "014-chi.html#expected-table",
+    "title": "Chi-Square",
+    "section": "Expected Table",
+    "text": "Expected Table\n\n\n\n\nMale\nFemale\nTotal\n\n\n\n\nAdelie\n(146*168)/333\n\n146\n\n\nChinstrap\n(68*168)/333\n\n68\n\n\nGentoo\n(119*168)/333\n\n119\n\n\nTotal\n168\n165\n333",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#expected-table-1",
+    "href": "014-chi.html#expected-table-1",
+    "title": "Chi-Square",
+    "section": "Expected Table",
+    "text": "Expected Table\n\n\n\n\nMale\nFemale\nTotal\n\n\n\n\nAdelie\n73.658\n\n146\n\n\nChinstrap\n34.306\n\n68\n\n\nGentoo\n60.036\n\n119\n\n\nTotal\n168\n165\n333\n\n\n\nIf there is no difference between sex and species, we would expect to observe this values above from our sample.",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#expected-table-2",
+    "href": "014-chi.html#expected-table-2",
+    "title": "Chi-Square",
+    "section": "Expected Table",
+    "text": "Expected Table\n\n\n\n\nMale\nFemale\nTotal\n\n\n\n\nAdelie\n73.658\n(146*165)/333 = 72.343\n146\n\n\nChinstrap\n34.306\n(68*165)/333 = 33.694\n68\n\n\nGentoo\n60.036\n(119*165)/333 = 58.964\n119\n\n\nTotal\n168\n165\n333\n\n\n\nAre these all larger than 5?",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#chi-square-test-4",
+    "href": "014-chi.html#chi-square-test-4",
+    "title": "Chi-Square",
+    "section": "Chi-square test",
+    "text": "Chi-square test\nThe big picture idea is to compare expected counts (under the assumption of the null hypothesis with observed counts. This is how we are going to calculate our test statistic.\n– Null hypothesis ✔️\n– Expected ✔️\n– Observed counts",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#observed",
+    "href": "014-chi.html#observed",
+    "title": "Chi-Square",
+    "section": "Observed",
+    "text": "Observed\n\n\n\n\nMale\nFemale\nTotal\n\n\n\n\nAdelie\n73\n73\n147\n\n\nChinstrap\n34\n34\n68\n\n\nGentoo\n61\n58\n119\n\n\nTotal\n168\n165\n333",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#observed-vs-expected",
+    "href": "014-chi.html#observed-vs-expected",
+    "title": "Chi-Square",
+    "section": "Observed vs Expected",
+    "text": "Observed vs Expected\nExpected values are in ( )\n\n\n\n\nMale\nFemale\nTotal\n\n\n\n\nAdelie\n73 (73.658)\n73 (72.342)\n146\n\n\nChinstrap\n34 (34.306)\n34 (33.694)\n68\n\n\nGentoo\n61 (60.036)\n58 (58.964)\n119\n\n\nTotal\n168\n165\n333\n\n\n\nWhat do we think? Without doing a formal test, do you think we will reject or fail to reject the null hypothesis? Why?",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#chi-square-test-5",
+    "href": "014-chi.html#chi-square-test-5",
+    "title": "Chi-Square",
+    "section": "Chi-square test",
+    "text": "Chi-square test\nThe big picture idea is to compare expected counts (under the assumption of the null hypothesis with observed counts. This is how we are going to calculate our test statistic.\n– Null hypothesis ✔️\n– Expected ✔️\n– Observed counts ✔️\nLet’s perform the test",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#section",
+    "href": "014-chi.html#section",
+    "title": "Chi-Square",
+    "section": "",
+    "text": "where r is the number of groups for one variable (rows) and c is the number of groups for the second variable (columns)",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#under-the-hood",
+    "href": "014-chi.html#under-the-hood",
+    "title": "Chi-Square",
+    "section": "Under the hood",
+    "text": "Under the hood\nThe Chi-Square test statistic \\(\\chi^2\\) is mathematically based on the normal distribution (specifically, the Chi-Square distribution is the sum of squared standardized normal variables): \\(Z_1^2 + \\cdots + Z_k^2 \\sim \\chi_k^2\\)\n… because of this, we can derive and understand its shape mathematically (when certain assumptions are met)",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#under-the-hood-1",
+    "href": "014-chi.html#under-the-hood-1",
+    "title": "Chi-Square",
+    "section": "Under the hood",
+    "text": "Under the hood",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#just-like-before",
+    "href": "014-chi.html#just-like-before",
+    "title": "Chi-Square",
+    "section": "Just like before",
+    "text": "Just like before\nIf our assumptions are not met, the test statistic doesn’t actually follow the distribution it’s being compared to…. so we can’t trust the results. The math behind the scenes of these distributions break down.",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#chi-square",
+    "href": "014-chi.html#chi-square",
+    "title": "Chi-Square",
+    "section": "Chi-square",
+    "text": "Chi-square\nApplet\nI want us to take time and play around with this applet! Explore and learn.",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#chi-square-1",
+    "href": "014-chi.html#chi-square-1",
+    "title": "Chi-Square",
+    "section": "Chi-square",
+    "text": "Chi-square\nThe CLT isn’t what makes a chi-square statistic approximately chi-square. The expected-count conditions are related to that approximation. The CLT explains why the chi-square distribution itself becomes approximately normal as its degrees of freedom increase.\n(Difference in means case): Because \\(\\bar X\\) is a function of random variables, \\(\\bar X\\) is itself a random variable. It’s the same thing with Chi-square!\nThe Central Limit Theorem tells us that sums of many independent random variables tend to become approximately normal, provided they have finite mean and variance.\n\\(\\chi^2 = Z_1^2 + \\cdots + Z_k^2\\) approaches normal as degrees of freedom increase!",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#things-we-learned",
+    "href": "014-chi.html#things-we-learned",
+    "title": "Chi-Square",
+    "section": "Things we learned",
+    "text": "Things we learned\n– The shape of the chi-square distribution curve depends on the degrees of freedom\n– Test statistic can not be negative\n– The chi-square distribution curve is skewed to the right, and the chi-square test is always right-tailed\n– A chi-square test cannot have a directional hypothesis. A chi-square value can only indicate that a relationship exists between two variables, not what the relationship is.",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#calculating-a-p-value",
+    "href": "014-chi.html#calculating-a-p-value",
+    "title": "Chi-Square",
+    "section": "Calculating a p-value",
+    "text": "Calculating a p-value\nYou can use a table……",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#calculating-a-p-value-1",
+    "href": "014-chi.html#calculating-a-p-value-1",
+    "title": "Chi-Square",
+    "section": "Calculating a p-value",
+    "text": "Calculating a p-value\nYou can use an applet. You can use software.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWhat does our p-value look like?",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#math",
+    "href": "014-chi.html#math",
+    "title": "Chi-Square",
+    "section": "Math",
+    "text": "Math\nWhat does our p-value look like mathematically?\n\\(f(x) = \\frac{1}{2^{k/2}\\Gamma(k/2)}x^{k/2-1}e^{-x/2}, \\qquad x &gt; 0\\)\n\\(k\\) = the degrees of freedom of the chi-square distribution.\n\\(x\\) = a possible value of the chi-square random variable. In other words, it is a possible value of the test statistic.\nwhere \\(\\Gamma(\\cdot)\\) is the gamma function.\n\\(\\Gamma(x) = \\int_0^\\infty t^{x-1}e^{-t}\\,dt\\) (ensures that the area under the curve = 1)",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#p-value",
+    "href": "014-chi.html#p-value",
+    "title": "Chi-Square",
+    "section": "p-value",
+    "text": "p-value\n\\[\n\\begin{aligned}\nf(x) &= \\frac{1}{2^{k/2}\\Gamma(k/2)}x^{k/2-1}e^{-x/2} \\\\\n&= \\frac{1}{2^{2/2}\\Gamma(2/2)}x^{2/2-1}e^{-x/2} \\\\\n&= \\frac{1}{2^1\\Gamma(1)}x^0e^{-x/2} \\\\\n&= \\frac{1}{2}e^{-x/2} \\\\\np &= \\int_{0.048607}^{\\infty}\\frac{1}{2}e^{-x/2}\\,dx \\\\\n&= e^{-0.048607/2} \\\\\n&\\approx 0.97598\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#math-1",
+    "href": "014-chi.html#math-1",
+    "title": "Chi-Square",
+    "section": "Math",
+    "text": "Math\nYou are not responsible for the math, but I share this to help you see this content from multiple perspectives.",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#proper-notation",
+    "href": "014-chi.html#proper-notation",
+    "title": "Chi-Square",
+    "section": "Proper notation",
+    "text": "Proper notation\nP(\\(\\chi^2 \\geq X^2\\)) = p-value\nThe probability of observing our statistic, or something larger given the null hypothesis is true.\n\\(\\chi^2\\) = map of possible outcomes on the chi-sq distribution (random variable because it is generated from a random process)\n\\(X^2\\) = your statistic calculated",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#lets-talk-about-it",
+    "href": "014-chi.html#lets-talk-about-it",
+    "title": "Chi-Square",
+    "section": "Let’s talk about it",
+    "text": "Let’s talk about it\nDecision?\nConclusion?",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#lets-talk-about-it-1",
+    "href": "014-chi.html#lets-talk-about-it-1",
+    "title": "Chi-Square",
+    "section": "Let’s talk about it",
+    "text": "Let’s talk about it\nFail to reject the null hypothesis\nWeak evidence to conclude that species and sex are not independent (or that species has an impact on sex)",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#summary",
+    "href": "014-chi.html#summary",
+    "title": "Chi-Square",
+    "section": "Summary",
+    "text": "Summary\n– Chi-square testing is used when we want to test for independence when we have a categorical variable with &gt; 2 levels\n– Always right tailed test\n– df of (r-1)*(c-1)",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
     "objectID": "03-review2.html#checklist",
     "href": "03-review2.html#checklist",
     "title": "Review-Part 2",
