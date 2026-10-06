@@ -2,6 +2,10 @@
 title: "Homework-2"
 ---
 
+:::{.callout-note}
+This assignment is due October 16th at 11:59pm on Gradescope 
+:::
+
 ## Instructions on how to start
 
 This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.
