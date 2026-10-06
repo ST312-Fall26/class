@@ -36,11 +36,10 @@ editor:
       
 ## Checklist{.smaller}
       
--- Homework-2 is LIVE and due on Monday (10-12) at 11:59pm 
+-- Homework-2 is LIVE and due on Monday (10-16) at 11:59pm 
 
       > 24-hour late window
       > Please start early
-      > Let's talk about homework-2, and the "coding part"
 
 ## Warmup 
 
