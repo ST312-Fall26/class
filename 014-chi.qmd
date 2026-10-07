@@ -560,7 +560,7 @@ Weak evidence to conclude that species and sex are not independent (or that spec
 
 # See you Thursday
 
-## Homework Slide!
+## Homework Slide!{.smaller}
 
 I suggest having the homework up, and looking at the plot as you calculate the probability of a type-II error/power/
 
@@ -576,7 +576,11 @@ pnorm() is used to calculate the area under the curve of a normal distribution. 
 
 -- Click run!
 
-```{webr-R}
+see the `pnorm()` on the next slide
+
+## Homework Slide{.smaller}
+
+```{webr-r}
 pnorm(q = critical_value, mean = .2, your_se) - pnorm(q = critical_value, mean = .2, your_se)
 ```
 

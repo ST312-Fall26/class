@@ -3766,7 +3766,18 @@
     "href": "014-chi.html#homework-slide",
     "title": "Chi-Square",
     "section": "Homework Slide!",
-    "text": "Homework Slide!\nI suggest having the homework up, and looking at the plot as you calculate the probability of a type-II error/power/\npnorm() is used to calculate the area under the curve of a normal distribution. To answer this question, we need:\n– The critical values from the null distribution\n– The probability that we fail to reject the null hypothesis given the alternative hypothesis is true. Therefore, we can calculate the probability of a Type-II error by using the alternative distribution. We specify the center of the alternative distribution with mean = .2. In the code below:\n– Replace the critical_value with the correct values for a two sided \\(\\alpha = 0.05\\) test.\n– Replace your_se with the correct standard error you calculated from the null distribution (same shape as the alternative).\n– Click run!\npnorm(q = critical_value, mean = .2, your_se) - pnorm(q = critical_value, mean = .2, your_se)",
+    "text": "Homework Slide!\nI suggest having the homework up, and looking at the plot as you calculate the probability of a type-II error/power/\npnorm() is used to calculate the area under the curve of a normal distribution. To answer this question, we need:\n– The critical values from the null distribution\n– The probability that we fail to reject the null hypothesis given the alternative hypothesis is true. Therefore, we can calculate the probability of a Type-II error by using the alternative distribution. We specify the center of the alternative distribution with mean = .2. In the code below:\n– Replace the critical_value with the correct values for a two sided \\(\\alpha = 0.05\\) test.\n– Replace your_se with the correct standard error you calculated from the null distribution (same shape as the alternative).\n– Click run!\nsee the pnorm() on the next slide",
+    "crumbs": [
+      "Slides",
+      "Day-14"
+    ]
+  },
+  {
+    "objectID": "014-chi.html#homework-slide-1",
+    "href": "014-chi.html#homework-slide-1",
+    "title": "Chi-Square",
+    "section": "Homework Slide",
+    "text": "Homework Slide\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Slides",
       "Day-14"
