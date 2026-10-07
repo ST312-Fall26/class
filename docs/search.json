@@ -3282,7 +3282,7 @@
     "href": "014-chi.html#checklist-1",
     "title": "Chi-Square",
     "section": "Checklist",
-    "text": "Checklist\n– Homework-2 is LIVE and due on Monday (10-16) at 11:59pm\n  &gt; 24-hour late window\n  &gt; Please start early",
+    "text": "Checklist\n– Homework-2 is LIVE and due on Friday (10-16) at 11:59pm\n  &gt; 24-hour late window\n  &gt; Please start early",
     "crumbs": [
       "Slides",
       "Day-14"
@@ -3403,7 +3403,7 @@
     "href": "014-chi.html#chi-square-test-2",
     "title": "Chi-Square",
     "section": "Chi-square test",
-    "text": "Chi-square test\n\\(Ho: \\text{sex and species of penguins are independent}\\)\n\\(Ha: \\text{sex and species of penguins are not independent}\\)",
+    "text": "Chi-square test\n\\(Ho: \\text{sex and species of penguins are independent at the population level}\\)\n\\(Ha: \\text{sex and species of penguins are not independent at the population level}\\)",
     "crumbs": [
       "Slides",
       "Day-14"
@@ -5718,49 +5718,77 @@
     "href": "hw2.html",
     "title": "Homework-2",
     "section": "",
-    "text": "Note\n\n\n\nThis assignment is due October 16th at 11:59pm on Gradescope"
+    "text": "Note\n\n\n\nThis assignment is due October 16th at 11:59pm on Gradescope",
+    "crumbs": [
+      "Assignments",
+      "Homework-2"
+    ]
   },
   {
     "objectID": "hw2.html#instructions-on-how-to-start",
     "href": "hw2.html#instructions-on-how-to-start",
     "title": "Homework-2",
     "section": "Instructions on how to start",
-    "text": "Instructions on how to start\nThis is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work."
+    "text": "Instructions on how to start\nThis is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
+    "crumbs": [
+      "Assignments",
+      "Homework-2"
+    ]
   },
   {
     "objectID": "hw2.html#instructions-on-how-to-turn-your-homework-in",
     "href": "hw2.html#instructions-on-how-to-turn-your-homework-in",
     "title": "Homework-2",
     "section": "Instructions on how to turn your homework in",
-    "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation."
+    "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation.",
+    "crumbs": [
+      "Assignments",
+      "Homework-2"
+    ]
   },
   {
     "objectID": "hw2.html#exercise-1-15-points",
     "href": "hw2.html#exercise-1-15-points",
     "title": "Homework-2",
     "section": "Exercise 1 (15 points)",
-    "text": "Exercise 1 (15 points)\nFor each scenario, write out the appropriate null and alternative hypothesis in proper notation.\n\nA professor wants to know if the average exam score for her class is different from the historical average of 80 on a standardized test. She believes her class will perform differently due to a new teaching method.\nA space agency wants to compare the reliability of two different private companies, Provider A and Provider B, for launching satellites into orbit. The agency collects data on their recent launch history. Provider A has completed 200 launches, with 192 of them being successful. Provider B has completed 150 launches, with 138 of them being successful. The space agency wants to investigate if Provider B has less safe launches, as they tend to user older technologies.\nA politician claims that they have an approval rating of at least 50%. A political analyst wants to test this claim and believes the true approval rating is lower."
+    "text": "Exercise 1 (15 points)\nFor each scenario, write out the appropriate null and alternative hypothesis in proper notation.\n\nA professor wants to know if the average exam score for her class is different from the historical average of 80 on a standardized test. She believes her class will perform differently due to a new teaching method.\nA space agency wants to compare the reliability of two different private companies, Provider A and Provider B, for launching satellites into orbit. The agency collects data on their recent launch history. Provider A has completed 200 launches, with 192 of them being successful. Provider B has completed 150 launches, with 138 of them being successful. The space agency wants to investigate if Provider B has less safe launches, as they tend to user older technologies.\nA politician claims that they have an approval rating of at least 50%. A political analyst wants to test this claim and believes the true approval rating is lower.",
+    "crumbs": [
+      "Assignments",
+      "Homework-2"
+    ]
   },
   {
     "objectID": "hw2.html#exercise-2-30-points",
     "href": "hw2.html#exercise-2-30-points",
     "title": "Homework-2",
     "section": "Exercise-2 (30-points)",
-    "text": "Exercise-2 (30-points)\nA veterinarian wants to determine whether the proportion of dogs that experience seasonal allergies differs between two breeds. A random sample of 150 Labrador Retrievers is examined, and 45 are found to experience seasonal allergies. A random sample of 150 Golden Retrievers is examined, and 60 are found to experience seasonal allergies.\nIs there evidence that the proportion of dogs experiencing seasonal allergies differs between Labrador Retrievers and Golden Retrievers? Use a significance level of \\(\\alpha=0.05\\) to answer this question.\n\nDefine \\(p_l\\) and \\(p_g\\) in words in the context of the problem.\nOur null and alternative hypotheses can be seen below: \\(H_o: p_l = p_g\\)\n\n\\(H_a: p_l \\neq p_g\\)\nThe researcher wants to calculate the probability of making a Type-2 error, and the Power of their test. Below, report the values from the context of the problem that we will need to make these calculations. Show your work if necessary.\n\n\\(n_g\\) =\n\\(n_l\\) =\n\\(SE(p_{\\text{l-null}} - p_{\\text{g-null}})\\) =\n\n\nPlease see the following visualization to answer the following question:\n\n\n\n\n\n\n\n\n\n\nMatch the colors red, blue, and green, to the following terms:\n\nProbability of a Type-1 error:\nProbability of a Type-2 error:\nPower:\n\n\nThe effect size the researchers are interested in is 0.2. Interpret 0.2 in the context of the problem.\nUse the information above to calculate the probability of a Type-2 error, and the power of this test.\n\nHint: Please see this slide to help answer this question. Slide"
+    "text": "Exercise-2 (30-points)\nA veterinarian wants to determine whether the proportion of dogs that experience seasonal allergies differs between two breeds. A random sample of 150 Labrador Retrievers is examined, and 45 are found to experience seasonal allergies. A random sample of 150 Golden Retrievers is examined, and 60 are found to experience seasonal allergies.\nIs there evidence that the proportion of dogs experiencing seasonal allergies differs between Labrador Retrievers and Golden Retrievers? Use a significance level of \\(\\alpha=0.05\\) to answer this question.\n\nDefine \\(p_l\\) and \\(p_g\\) in words in the context of the problem.\nOur null and alternative hypotheses can be seen below: \\(H_o: p_l = p_g\\)\n\n\\(H_a: p_l \\neq p_g\\)\nThe researcher wants to calculate the probability of making a Type-2 error, and the Power of their test. Below, report the values from the context of the problem that we will need to make these calculations. Show your work if necessary.\n\n\\(n_g\\) =\n\\(n_l\\) =\n\\(SE(p_{\\text{l-null}} - p_{\\text{g-null}})\\) =\n\n\nPlease see the following visualization to answer the following question:\n\n\n\n\n\n\n\n\n\n\nMatch the colors red, blue, and green, to the following terms:\n\nProbability of a Type-1 error:\nProbability of a Type-2 error:\nPower:\n\n\nThe effect size the researchers are interested in is 0.2. Interpret 0.2 in the context of the problem.\nUse the information above to calculate the probability of a Type-2 error, and the power of this test.\n\nHint: Please see this slide to help answer this question. Slide",
+    "crumbs": [
+      "Assignments",
+      "Homework-2"
+    ]
   },
   {
     "objectID": "hw2.html#exercise-3-23-points",
     "href": "hw2.html#exercise-3-23-points",
     "title": "Homework-2",
     "section": "Exercise-3 (23 points)",
-    "text": "Exercise-3 (23 points)\nSuppose you took a random sample of North Carolina residents. The following 2×2 contingency table presents the observed frequencies from a survey of N=200 individuals, categorized by their Age Group and their primary Media Preference.\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n85\n15\n100\n\n\nAges 55+\n45\n55\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nWe are going to do a chi-square test of independence to assess the relationship between media preference, and age. Below, in words, write out the null and alternative hypothesis.\n\n\\(Ho:\\)\n\\(Ha:\\)\n\nDraw the following table below. Fill in the blanks with the expected counts. You may round to your answers to two decimal places.\n\nTable of expected counts:\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n___\n___\n100\n\n\nAges 55+\n___\n___\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nNow, calculate our \\(\\chi^2\\) statistic, by hand. Use the following slide for help. Show your work!\nVisit the applet on the slide. Draw the appropriate chi-square distribution that our test-statistic will follow. Title the plot you draw as: “Chi-square distribution with ____ degrees of freedom”. Fill in the ____ with the appropriate degrees of freedom.\n\nNext, label your statistic, and shade in the area underneath the graph that represents your p-value."
+    "text": "Exercise-3 (23 points)\nSuppose you took a random sample of North Carolina residents. The following 2×2 contingency table presents the observed frequencies from a survey of N=200 individuals, categorized by their Age Group and their primary Media Preference.\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n85\n15\n100\n\n\nAges 55+\n45\n55\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nWe are going to do a chi-square test of independence to assess the relationship between media preference, and age. Below, in words, write out the null and alternative hypothesis.\n\n\\(Ho:\\)\n\\(Ha:\\)\n\nDraw the following table below. Fill in the blanks with the expected counts. You may round to your answers to two decimal places.\n\nTable of expected counts:\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n___\n___\n100\n\n\nAges 55+\n___\n___\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nNow, calculate our \\(\\chi^2\\) statistic, by hand. Use the following slide for help. Show your work!\nVisit the applet on the slide. Draw the appropriate chi-square distribution that our test-statistic will follow. Title the plot you draw as: “Chi-square distribution with ____ degrees of freedom”. Fill in the ____ with the appropriate degrees of freedom.\n\nNext, label your statistic, and shade in the area underneath the graph that represents your p-value.",
+    "crumbs": [
+      "Assignments",
+      "Homework-2"
+    ]
   },
   {
     "objectID": "hw2.html#exercise-4-5-points",
     "href": "hw2.html#exercise-4-5-points",
     "title": "Homework-2",
     "section": "Exercise 4 (5 points)",
-    "text": "Exercise 4 (5 points)\nA large retail store tracks customer complaints to determine if the volume of complaints is evenly distributed across the five primary days of the work week (Monday through Friday). The management’s null hypothesis is that the complaints occur with equal frequency on all five days. We want to determine if the observed distribution of complaints significantly differs from the expected uniform distribution.\n\nIn 2-4 sentences, explain the difference between a goodness of fit test, and a test for independence AND specify which test would be most appropriate for the scenario above."
+    "text": "Exercise 4 (5 points)\nA large retail store tracks customer complaints to determine if the volume of complaints is evenly distributed across the five primary days of the work week (Monday through Friday). The management’s null hypothesis is that the complaints occur with equal frequency on all five days. We want to determine if the observed distribution of complaints significantly differs from the expected uniform distribution.\n\nIn 2-4 sentences, explain the difference between a goodness of fit test, and a test for independence AND specify which test would be most appropriate for the scenario above.",
+    "crumbs": [
+      "Assignments",
+      "Homework-2"
+    ]
   },
   {
     "objectID": "index.html",
