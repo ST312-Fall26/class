@@ -144,7 +144,7 @@ d. The effect size the researchers are interested in is 0.2. Interpret 0.2 in th
 
 e. Use the information above to calculate the probability of a Type-2 error, and the power of this test. 
 
-Hint: Please see this slide to help answer this question. [Slide]()
+Hint: Please see this slide to help answer this question. [Slide](https://st312-fall26.github.io/class/014-chi.html#/homework-slide)
 
 ## Exercise-3 (23 points)
 
