@@ -435,7 +435,7 @@ where r is the number of groups for one variable (rows) and c is the number of g
 
 ## Under the hood
 
-The Chi-Square test statistic $\chi^2$ is mathematically based on the normal distribution (specifically, the Chi-Square distribution is the sum of squared standardized normal variables): $Z_1^2 + \cdots + Z_k^2 \sim \chi_k^2$
+The Chi-Square test statistic $\chi^2$ is mathematically based on the normal distribution (specifically, the Chi-Square distribution is the sum of squared standardized independent normal variables): $Z_1^2 + \cdots + Z_k^2 \sim \chi_k^2$
 
 ... because of this, we can derive and understand its shape mathematically (when certain assumptions are met)
 

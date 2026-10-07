@@ -59,6 +59,8 @@ website:
             text: "Day-13"
           - href: 014-chi.qmd
             text: "Day-14"
+          - href: 15-fit.qmd
+            text: "Day-15"
 format:
   html:
     theme: cosmo
