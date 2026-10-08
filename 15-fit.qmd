@@ -530,4 +530,4 @@ ggplot(df_variability, aes(x = Group, y = Value, fill = Group)) +
 
 # Questions?
 
-# See you Tuesday!
+# See you Next Week!
