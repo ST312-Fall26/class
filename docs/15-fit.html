@@ -490,7 +490,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"code":"chisq.test(table(penguins$species, penguins$sex))","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+  globalThis.qwebrCellDetails = [{"code":"chisq.test(table(penguins$species, penguins$sex))","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"pnorm(8.9859, 0 , 1 , lower.tail = FALSE) * 2","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"0.5","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
   </script>
   <script type="module">
@@ -2051,7 +2051,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 &gt; Regrade window until Friday 10-9 at 5:00pm</code></pre>
 <p>– Don’t forget about the Statistics Experience (12-1)</p>
 <p>– Exam-2 is on 10-29</p>
-<p>– Exam-1 will be released by end of next week</p>
+<p>– Exam-1 will be released by end of this week</p>
 </section>
 <section id="warm-up" class="slide level2">
 <h2>Warm-up</h2>
@@ -2080,7 +2080,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 </section>
-<section id="null-and-alternative-hypothesis" class="slide level2">
+<section id="null-and-alternative-hypothesis" class="slide level2 smaller">
 <h2>Null and alternative hypothesis</h2>
 <p><span class="math inline">\(Ho: \text{sex and species of penguins are independent at the population level}\)</span></p>
 <p><span class="math inline">\(Ha: \text{sex and species of penguins are not independent at the population level}\)</span></p>
@@ -2148,8 +2148,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <section id="chi-square-connection" class="slide level2 smaller">
 <h2>chi-square connection</h2>
 <p>Chi-square is an extension of difference in proportions test… but we can analyze 2 categorical variables with binary levels using a chi-square test!</p>
-<p><strong>Recall: two categorical case</strong></p>
+<p><strong>Recall: difference in proportions</strong></p>
 <p>Time magazine reported the result of a telephone poll of 800 adult Americans. The question posed of the Americans who were surveyed was: “Should the federal tax on cigarettes be raised to pay for health care reform?” For this example assume that these 800 adult Americans were taken as a random sample. We are interested in if there is a difference of opinion between non-smokers and smokers on this issue. Of the 800 Americans, 605 of them were non-smokers. 351 of the 605 answered “yes” to this question. Of the smokers, 41 said “yes” to this question. For this question, use the order of subtraction non-smoker - smoker.</p>
+<p>What’s our null/alternative?</p>
+<p>What’s our statistic?</p>
 </section>
 <section id="difference-in-proportions" class="slide level2">
 <h2>Difference in proportions</h2>
@@ -2175,11 +2177,11 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="p-value" class="slide level2">
 <h2>p-value</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource {webr-4} number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>pnorm(8.9859, 0 , 1 , lower.tail = FALSE) * 2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section>
-<section id="chi-square-test" class="title-slide slide level1 center">
-<h1>chi-square test</h1>
+<section id="chi-square-test" class="slide level2">
+<h2>chi-square test</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -2200,6 +2202,7 @@ X-squared = 80.746, df = 1, p-value &lt; 2.2e-16</code></pre>
 <section id="yes" class="slide level2">
 <h2>Yes!</h2>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fl">8.9859</span><span class="sc">^</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 80.7464</code></pre>
 </div>
@@ -2254,7 +2257,7 @@ X-squared = 80.746, df = 1, p-value &lt; 2.2e-16</code></pre>
 <h2>Under the hood</h2>
 <p><span class="math inline">\(Z_1^2 + \cdots + Z_k^2 \sim \chi_k^2\)</span></p>
 <p><a href="https://rinterested.github.io/statistics/chi_square_same_as_z_test.html">The math</a></p>
-</section></section>
+</section>
 <section>
 <section id="questions" class="title-slide slide level1 center">
 <h1>Questions</h1>
@@ -2485,8 +2488,8 @@ X-squared = 5.2, df = 5, p-value = 0.392</code></pre>
 
 </section>
 
-<section id="see-you-thursday" class="title-slide slide level1 center">
-<h1>See you Thursday!</h1>
+<section id="see-you-tuesday" class="title-slide slide level1 center">
+<h1>See you Tuesday!</h1>
 
 
 </section>

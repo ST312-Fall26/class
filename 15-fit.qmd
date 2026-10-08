@@ -32,7 +32,7 @@ editor:
 
 -- Exam-2 is on 10-29
 
--- Exam-1 will be released by end of next week 
+-- Exam-1 will be released by end of this week 
 
 ## Warm-up 
 
@@ -61,7 +61,7 @@ penguins |>
   summarise(count = n())
 ```
 
-## Null and alternative hypothesis
+## Null and alternative hypothesis{.smaller}
 
 $Ho: \text{sex and species of penguins are independent at the population level}$
 
@@ -106,9 +106,13 @@ chisq.test(table(penguins$species, penguins$sex))
 
 Chi-square is an extension of difference in proportions test... but we can analyze 2 categorical variables with binary levels using a chi-square test!
 
-**Recall: two categorical case**
+**Recall: difference in proportions**
 
 Time magazine reported the result of a telephone poll of 800 adult Americans. The question posed of the Americans who were surveyed was: "Should the federal tax on cigarettes be raised to pay for health care reform?" For this example assume that these 800 adult Americans were taken as a random sample. We are interested in if there is a difference of opinion between non-smokers and smokers on this issue. Of the 800 Americans, 605 of them were non-smokers. 351 of the 605 answered "yes" to this question. Of the smokers, 41 said "yes" to this question. For this question, use the order of subtraction non-smoker - smoker.
+
+What's our null/alternative?
+
+What's our statistic?
 
 ## Difference in proportions 
 
@@ -142,12 +146,12 @@ What is our p-value going to be?
 
 ## p-value 
 
-```{webr-4}
+```{webr-r}
 pnorm(8.9859, 0 , 1 , lower.tail = FALSE) * 2
 ```
 
 
-# chi-square test 
+## chi-square test 
 
 ```{r}
 #| echo: false
@@ -194,6 +198,7 @@ $Z_1^2 = \chi_1^2$ ?
 ## Yes! 
 
 ```{r}
+#| echo: true
 8.9859^2
 ```
 
@@ -525,4 +530,4 @@ ggplot(df_variability, aes(x = Group, y = Value, fill = Group)) +
 
 # Questions?
 
-# See you Thursday!
+# See you Tuesday!
