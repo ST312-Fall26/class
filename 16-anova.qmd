@@ -1,0 +1,71 @@
+---
+title: "Anova"
+subtitle: "Part I"
+date: "October 13, 2026"
+execute:
+  echo: false
+  message: false
+  warning: false
+format: 
+  revealjs:
+    theme: [dark, slides.scss]
+filters: 
+- webr
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Checklist
+
+-- Homework-2 is LIVE and due on Friday (10-16) at 11:59pm 
+
+      > 24-hour late window
+      > Please start early
+
+-- Homework-1 is graded
+
+    > Solutions are on Moodle 
+    > Regrade window until Friday 10-9 at 5:00pm
+    
+-- Don't forget about the Statistics Experience (12-1)
+
+-- Exam-2 is on 10-29
+
+-- Exam-1 is released! Let's talk a little about it
+
+## Exam-1 
+
+Please see the announcement of Moodle 
+
+-- Regrade window from 5:00pm today through 5:00pm Friday 
+
+-- Exam scaled due to typo + sampling distribution question 
+
+-- Questions are encouraged! Statistics builds on itself. Please do not hesitate to make an appointment / come to office hours
+
+-- One exam does not dictate your entire grade in the course
+
+# Questions 
+
+## Warm-up 
+
+How is a chi-square test of independence **different** than a difference in means/proportions test?
+
+How is a chi-square goodness of fit test different than a chi-square test of independence?
+
+## Warm-up 
+
+True or False: You can use chi-square tools on difference in proportions/single proportion scenarios
+
+True or False: Chi-square tests do not have a directional alternative hypothesis, and are always one-sided tests
+
+# Questions 
+
+## So far{.smaller} 
+
+| Method | Population Parameter | Sample Statistic | Theoretical Distribution | Degrees of Freedom |
+|:---|:---|:---|:---|:---|
+| Difference in proportions | $p_1-p_2$ | $\hat{p}_1-\hat{p}_2$ | $Z \approx N(0,1)$ | N/A |
+| Difference in means | $\mu_1-\mu_2$ | $\bar{x}_1-\bar{x}_2$ | $T \sim t_{df}$ | $df$ estimated using Welch-Satterthwaite formula |
+| Chi-square test of independence | Association between two categorical variables | $\chi^2=\sum \frac{(O-E)^2}{E}$ | $\chi^2 \sim \chi^2_{df}$ | $(r-1)(c-1)$ |
