@@ -92,35 +92,572 @@
     "href": "16-anova.html#checklist",
     "title": "Anova",
     "section": "Checklist",
-    "text": "Checklist\n– Homework-2 is LIVE and due on Friday (10-16) at 11:59pm\n  &gt; 24-hour late window\n  &gt; Please start early\n– Homework-1 is graded\n&gt; Solutions are on Moodle \n&gt; Regrade window until Friday 10-9 at 5:00pm\n– Don’t forget about the Statistics Experience (12-1)\n– Exam-2 is on 10-29\n– Exam-1 is released! Let’s talk a little about it"
+    "text": "Checklist\n– Homework-2 is LIVE and due on Friday (10-16) at 11:59pm\n  &gt; 24-hour late window\n  &gt; Please start early\n– Homework-1 is graded\n&gt; Solutions are on Moodle \n&gt; Regrade window until Friday 10-9 at 5:00pm\n– Don’t forget about the Statistics Experience (12-1)\n– Exam-2 is on 10-29\n– Exam-1 is released! Let’s talk a little about it",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
   },
   {
     "objectID": "16-anova.html#exam-1",
     "href": "16-anova.html#exam-1",
     "title": "Anova",
     "section": "Exam-1",
-    "text": "Exam-1\nPlease see the announcement of Moodle\n– Regrade window from 5:00pm today through 5:00pm Friday\n– Exam scaled due to typo + sampling distribution question\n– Questions are encouraged! Statistics builds on itself. Please do not hesitate to make an appointment / come to office hours\n– One exam does not dictate your entire grade in the course"
+    "text": "Exam-1\nPlease see the announcement of Moodle\n– Regrade window from 5:00pm today through 5:00pm Friday\n– Exam scaled due to typo + sampling distribution question\n– Questions are encouraged! Statistics builds on itself. Please do not hesitate to make an appointment / come to office hours\n– One exam does not dictate your entire grade in the course",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
   },
   {
     "objectID": "16-anova.html#warm-up",
     "href": "16-anova.html#warm-up",
     "title": "Anova",
-    "section": "Warm-up",
-    "text": "Warm-up\nHow is a chi-square test of independence different than a difference in means/proportions test?\nHow is a chi-square goodness of fit test different than a chi-square test of independence?"
+    "section": "Warm up",
+    "text": "Warm up\nA meteorologist wants to determine whether the proportion of days with measurable rainfall differs between two cities. In City A, it rained on 42 of 120 randomly selected days. In City B, it rained on 30 of 110 randomly selected days. Use a significance level of \\(\\alpha = 0.05\\) to test whether the population proportions of rainy days differ between the two cities.\n– Number of variables\n– Type of variables\n– Explanatory vs response\n– Null and alternative hypothesis",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
   },
   {
     "objectID": "16-anova.html#warm-up-1",
     "href": "16-anova.html#warm-up-1",
     "title": "Anova",
     "section": "Warm-up",
-    "text": "Warm-up\nTrue or False: You can use chi-square tools on difference in proportions/single proportion scenarios\nTrue or False: Chi-square tests do not have a directional alternative hypothesis, and are always one-sided tests"
+    "text": "Warm-up\nHow is a chi-square test of independence different than a difference in means/proportions test?\nHow is a chi-square goodness of fit test different than a chi-square test of independence?",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#warm-up-2",
+    "href": "16-anova.html#warm-up-2",
+    "title": "Anova",
+    "section": "Warm-up",
+    "text": "Warm-up\nTrue or False: You can use chi-square tools on difference in proportions/single proportion scenarios\nTrue or False: Chi-square tests do not have a directional alternative hypothesis, and are always one-sided tests",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
   },
   {
     "objectID": "16-anova.html#so-far",
     "href": "16-anova.html#so-far",
     "title": "Anova",
     "section": "So far",
-    "text": "So far\n\n\n\n\n\n\n\n\n\n\nMethod\nPopulation Parameter\nSample Statistic\nTheoretical Distribution\nDegrees of Freedom\n\n\n\n\nDifference in proportions\n\\(p_1-p_2\\)\n\\(\\hat{p}_1-\\hat{p}_2\\)\n\\(Z \\approx N(0,1)\\)\nN/A\n\n\nDifference in means\n\\(\\mu_1-\\mu_2\\)\n\\(\\bar{x}_1-\\bar{x}_2\\)\n\\(T \\sim t_{df}\\)\n\\(df\\) estimated using Welch-Satterthwaite formula\n\n\nChi-square test of independence\nAssociation between two categorical variables\n\\(\\chi^2=\\sum \\frac{(O-E)^2}{E}\\)\n\\(\\chi^2 \\sim \\chi^2_{df}\\)\n\\((r-1)(c-1)\\)"
+    "text": "So far\n\n\n\n\n\n\n\n\n\n\nMethod\nPopulation Parameter\nSample Statistic\nTheoretical Distribution\nDegrees of Freedom\n\n\n\n\nDifference in proportions\nx\nx\nx\nx\n\n\nDifference in means\nx\nx\nx\nx\n\n\nChi-square test of independence\nx\nx\nx\nx",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#so-far-1",
+    "href": "16-anova.html#so-far-1",
+    "title": "Anova",
+    "section": "So far",
+    "text": "So far\n\n\n\n\n\n\n\n\n\n\nMethod\nPopulation Parameter\nSample Statistic\nTheoretical Distribution\nDegrees of Freedom\n\n\n\n\nDifference in proportions\n\\(p_1-p_2\\)\n\\(\\hat{p}_1-\\hat{p}_2\\)\n\\(Z \\approx N(0,1)\\)\nN/A\n\n\nDifference in means\n\\(\\mu_1-\\mu_2\\)\n\\(\\bar{x}_1-\\bar{x}_2\\)\n\\(T \\sim t_{df}\\)\n\\(df\\) estimated conservative \\(min(n_1-1,n_2-1)\\)\n\n\nChi-square test of independence\nAssociation between two categorical variables\n\\(\\chi^2=\\sum \\frac{(O-E)^2}{E}\\)\n\\(\\chi^2 \\sim \\chi^2_{df}\\)\n\\((r-1)(c-1)\\)",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#new-scenario",
+    "href": "16-anova.html#new-scenario",
+    "title": "Anova",
+    "section": "New scenario",
+    "text": "New scenario",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#new-scenario-1",
+    "href": "16-anova.html#new-scenario-1",
+    "title": "Anova",
+    "section": "New scenario",
+    "text": "New scenario\nResults from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions. We are interested in seeing if the dried weight of plants is different across the three yields.\nResults from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions.\n\n\n# A tibble: 3 × 3\n  group count  mean\n  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1 ctrl     10  5.03\n2 trt1     10  4.66\n3 trt2     10  5.53\n\n\nWhat are the variables?",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#extension",
+    "href": "16-anova.html#extension",
+    "title": "Anova",
+    "section": "Extension",
+    "text": "Extension\nANOVA is an extension from difference in means, where the test statistic is the variability within group vs the variability across groups.\nWhat do I mean by variability?",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#example",
+    "href": "16-anova.html#example",
+    "title": "Anova",
+    "section": "Example",
+    "text": "Example",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#big-idea",
+    "href": "16-anova.html#big-idea",
+    "title": "Anova",
+    "section": "Big idea",
+    "text": "Big idea\nHow is the variability within vs the variability between! Keep this in mind as we go through the process…\n… especially when we get to calculating our test statistic.",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#before-we-get-started",
+    "href": "16-anova.html#before-we-get-started",
+    "title": "Anova",
+    "section": "Before we get started",
+    "text": "Before we get started\nResults from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions.\nWhy can we not answer our research question right now?\n\n\n# A tibble: 3 × 3\n  group count  mean\n  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1 ctrl     10  5.03\n2 trt1     10  4.66\n3 trt2     10  5.53",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#plants",
+    "href": "16-anova.html#plants",
+    "title": "Anova",
+    "section": "Plants",
+    "text": "Plants\nWhat would our null and alternative hypotheses in words / notation be?",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#plants-1",
+    "href": "16-anova.html#plants-1",
+    "title": "Anova",
+    "section": "Plants",
+    "text": "Plants\nHo: \\(\\mu_c = \\mu_1 = \\mu_2\\)\nHa: at least one population mean weight across the three groups is different",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#assumptions",
+    "href": "16-anova.html#assumptions",
+    "title": "Anova",
+    "section": "Assumptions",
+    "text": "Assumptions\n– Independence\n– Normality (not just going to look at sample size)\n– Equal Variance",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#independence",
+    "href": "16-anova.html#independence",
+    "title": "Anova",
+    "section": "Independence",
+    "text": "Independence\n– between groups\n– across groups",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#normality",
+    "href": "16-anova.html#normality",
+    "title": "Anova",
+    "section": "Normality",
+    "text": "Normality\nPreviously, with a quantitative response, we checked the normality assumption by looking at our sample size. If our sample size was \\(\\ge\\) 30, the CLT kicks in and we can trust that the sampling distribution of the difference in means is roughly normally distributed. However, as we will see, our statistic is a ratio of mean squares, not simply a standardized difference between two means.\nTakeaway: With non-normal data, large samples can make ANOVA more robust, but the CLT alone does not guarantee an exact F-distribution.",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#now-what-1",
+    "href": "16-anova.html#now-what-1",
+    "title": "Anova",
+    "section": "Now what",
+    "text": "Now what\n– Plot the raw data\n– Normal q-q plot",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#normality-1",
+    "href": "16-anova.html#normality-1",
+    "title": "Anova",
+    "section": "Normality",
+    "text": "Normality",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#plants-q-q",
+    "href": "16-anova.html#plants-q-q",
+    "title": "Anova",
+    "section": "Plants q-q",
+    "text": "Plants q-q\n\n– What are Sample Quantiles?\n– What are Theoretical Quantiles?\n– What are we looking for?",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#sample-quantiles",
+    "href": "16-anova.html#sample-quantiles",
+    "title": "Anova",
+    "section": "Sample Quantiles",
+    "text": "Sample Quantiles\nThese are values that we actually observe from our data set!\nThese go on the y-axis of or normal q-q plot",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#theoretical-quantiles",
+    "href": "16-anova.html#theoretical-quantiles",
+    "title": "Anova",
+    "section": "Theoretical Quantiles",
+    "text": "Theoretical Quantiles\nThe theoretical quantiles are the quantiles we would expect to see if the data followed a normal distribution.\n– They represent the values predicted by a theoretical normal distribution.\n– They are plotted on the x-axis.",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#theoretical-quantiles-1",
+    "href": "16-anova.html#theoretical-quantiles-1",
+    "title": "Anova",
+    "section": "Theoretical Quantiles",
+    "text": "Theoretical Quantiles\n– Order our observed data from smallest to largest (rank)\n– Divide up the theoretical normal distribution into EQUAL corresponding quantiles, based on the ranks of our observations\n– Calculate the quantile value\n\\(q_i = \\Phi^{-1}\\left(\\dfrac{i-0.5}{n}\\right)\\)\n\n\\(q_i\\) = theoretical quantile for observation \\(i\\)\n\\(\\Phi^{-1}\\) = inverse standard normal CDF (the quantile function)\n\\(i\\) = rank of the observation, from smallest to largest\n\\(n\\) = sample size",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#theoretical-quantiles-2",
+    "href": "16-anova.html#theoretical-quantiles-2",
+    "title": "Anova",
+    "section": "Theoretical Quantiles",
+    "text": "Theoretical Quantiles\nYou may also see the x-axis back transformed to the original units. Using the quantiles, this is what we would expect for dried weight if our data follwed a perfect theoretical normal distribution.",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#theoretical-quantiles-3",
+    "href": "16-anova.html#theoretical-quantiles-3",
+    "title": "Anova",
+    "section": "Theoretical Quantiles",
+    "text": "Theoretical Quantiles\n\nSo, how do we feel about our assumption?",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#guess-the-distribution",
+    "href": "16-anova.html#guess-the-distribution",
+    "title": "Anova",
+    "section": "Guess the distribution",
+    "text": "Guess the distribution",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#general-rule",
+    "href": "16-anova.html#general-rule",
+    "title": "Anova",
+    "section": "General Rule",
+    "text": "General Rule\nPoints above the line: Observed values are larger than the line predicts at those theoretical quantiles.\nPoints below the line: Observed values are smaller than the line predicts at those theoretical quantiles.",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#the-plot",
+    "href": "16-anova.html#the-plot",
+    "title": "Anova",
+    "section": "The plot",
+    "text": "The plot",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#guess-the-distribution-1",
+    "href": "16-anova.html#guess-the-distribution-1",
+    "title": "Anova",
+    "section": "Guess the distribution",
+    "text": "Guess the distribution",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#guess-the-distribution-2",
+    "href": "16-anova.html#guess-the-distribution-2",
+    "title": "Anova",
+    "section": "Guess the distribution",
+    "text": "Guess the distribution",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#summary",
+    "href": "16-anova.html#summary",
+    "title": "Anova",
+    "section": "Summary",
+    "text": "Summary\nYour qq-plots can take on many different shapes. There is not right/wrong cut-off. It’s up to you to make a justifiable call\n– Right-skewed: The upper tail extends farther above the reference line than expected under normality.\n– Left-skewed: The lower tail extends farther below the reference line than expected under normality.",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#equal-variance-new",
+    "href": "16-anova.html#equal-variance-new",
+    "title": "Anova",
+    "section": "Equal variance (New!)",
+    "text": "Equal variance (New!)\nThe equal variance assumption (also called homogeneity of variance) in ANOVA means that the populations for all groups have the same variance, even if their means differ\n\\(\\sigma_1^2=\\sigma_2^2=\\cdots=\\sigma_k^2\\)\n\\(\\sigma^2 = \\frac{\\sum_{i=1}^{N}(x_i-\\mu)^2}{N}\\)",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#equal-variance",
+    "href": "16-anova.html#equal-variance",
+    "title": "Anova",
+    "section": "Equal Variance",
+    "text": "Equal Variance",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#equal-variance-1",
+    "href": "16-anova.html#equal-variance-1",
+    "title": "Anova",
+    "section": "Equal Variance",
+    "text": "Equal Variance\n\nWhat’s a residual?\nWhat’s a fitted value?",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#residual",
+    "href": "16-anova.html#residual",
+    "title": "Anova",
+    "section": "Residual",
+    "text": "Residual\n\\(e_i = y_i - \\hat{y}_i\\)\nobserved - fitted value\nin ANOVA, the fitted value (best guess) is just the mean!\nSo, the residual in ANOVA is distance between individual values and their group mean",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#equal-variance-2",
+    "href": "16-anova.html#equal-variance-2",
+    "title": "Anova",
+    "section": "Equal Variance",
+    "text": "Equal Variance\n\nHow do we check the assumption?",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#equal-variance-3",
+    "href": "16-anova.html#equal-variance-3",
+    "title": "Anova",
+    "section": "Equal Variance",
+    "text": "Equal Variance\n\n\n# A tibble: 3 × 2\n  group    sd\n  &lt;fct&gt; &lt;dbl&gt;\n1 ctrl  0.583\n2 trt1  0.794\n3 trt2  0.443\n\n\nGeneral rule: Is the largest sample standard deviation more than twice the smallest sample standard deviation?",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#assumptions-1",
+    "href": "16-anova.html#assumptions-1",
+    "title": "Anova",
+    "section": "Assumptions",
+    "text": "Assumptions\nIndependence ✓\nNormality ✓\nEqual Variance ✓",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#new-statistic",
+    "href": "16-anova.html#new-statistic",
+    "title": "Anova",
+    "section": "New statistic",
+    "text": "New statistic\n\\(F = \\frac{\\text{MS}_{\\text{Between}}}{\\text{MS}_{\\text{Within}}}\\)\n\\(\\mathbf{F} = \\frac{\\frac{\\text{SS}_{\\text{Between}}}{k - 1}}{\\frac{\\text{SS}_{\\text{Within}}}{N - k}}\\)\n\\(\\text{SS}_{\\text{Between}} = \\sum_{i=1}^{k} n_i (\\bar{X}_i - \\bar{X}_{\\text{grand}})^2\\)\n\\(\\text{SS}_{\\text{Within}} = \\sum_{i=1}^{k} \\sum_{j=1}^{n_i} (X_{ij} - \\bar{X}_i)^2\\)",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#draw-it-out",
+    "href": "16-anova.html#draw-it-out",
+    "title": "Anova",
+    "section": "Draw it out",
+    "text": "Draw it out\nWhat would this look like?\nThat is, draw out how each SS would be calculated.",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#plants-2",
+    "href": "16-anova.html#plants-2",
+    "title": "Anova",
+    "section": "Plants",
+    "text": "Plants",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#anova",
+    "href": "16-anova.html#anova",
+    "title": "Anova",
+    "section": "Anova",
+    "text": "Anova\n\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)  \ngroup        2  3.766  1.8832   4.846 0.0159 *\nResiduals   27 10.492  0.3886                 \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#f-distribution",
+    "href": "16-anova.html#f-distribution",
+    "title": "Anova",
+    "section": "F-distribution",
+    "text": "F-distribution\napplet\nA continuous, positively skewed probability distribution, characterized by two degrees of freedom (numerator and denominator) that determine its shape.",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#anova-1",
+    "href": "16-anova.html#anova-1",
+    "title": "Anova",
+    "section": "Anova",
+    "text": "Anova\nWhere did all of this come from?\nThe goal is not for you to be able to calculate these values by hand (besides Df). The goal is for you to understand the relationships between the values of the Anova table.\n\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)  \ngroup        2  3.766  1.8832   4.846 0.0159 *\nResiduals   27 10.492  0.3886                 \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#definitions",
+    "href": "16-anova.html#definitions",
+    "title": "Anova",
+    "section": "Definitions",
+    "text": "Definitions\nDegrees of Freedom (df) is the number of independent pieces of information used to calculate the statistic\nThe Sum of Squares (SS) is a measure of total variability (between or within)\nThe Mean Squares (MS) is an estimate (\\(s^2\\)) of the population variance (\\(\\sigma^2\\))\nIt’s a generalized form of \\(s^2 = \\frac{\\sum(x_i - \\bar{x})^2}{n-1}\\)",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#anova-table",
+    "href": "16-anova.html#anova-table",
+    "title": "Anova",
+    "section": "Anova table",
+    "text": "Anova table\nWhere did we get df = 2 for between? Where did we get df = 27 for within?\n\n\n# A tibble: 3 × 2\n  group     n\n  &lt;fct&gt; &lt;int&gt;\n1 ctrl     10\n2 trt1     10\n3 trt2     10",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#degrees-of-freedom",
+    "href": "16-anova.html#degrees-of-freedom",
+    "title": "Anova",
+    "section": "degrees of freedom",
+    "text": "degrees of freedom\nWhen we estimate the population (grand) mean, there are k-1 independent pieces of information\nWhen we estimate the population means within each group, there are n - k independent pieces of information",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#anova-ms",
+    "href": "16-anova.html#anova-ms",
+    "title": "Anova",
+    "section": "Anova: MS",
+    "text": "Anova: MS\nThe Mean Squares (MS) is an estimate (\\(s^2\\)) of the population variance (\\(\\sigma^2\\))\nIt’s a generalized form of \\(s^2 = \\frac{\\sum(x_i - \\bar{x})^2}{n-1}\\)\nIn Anova, it’s calculated by taking \\(\\frac{SS}{df}\\)\n\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)  \ngroup        2  3.766  1.8832   4.846 0.0159 *\nResiduals   27 10.492  0.3886                 \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#anova-f-statistic",
+    "href": "16-anova.html#anova-f-statistic",
+    "title": "Anova",
+    "section": "Anova: F-statistic",
+    "text": "Anova: F-statistic\nThe whole goal of Anova is to compare the variability between groups vs the variability within groups. How can we calculate our F-statistic?\n\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)  \ngroup        2  3.766  1.8832   4.846 0.0159 *\nResiduals   27 10.492  0.3886                 \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#decision-and-conclusions",
+    "href": "16-anova.html#decision-and-conclusions",
+    "title": "Anova",
+    "section": "Decision and conclusions",
+    "text": "Decision and conclusions\nWhat are they? At the \\(\\alpha\\) = 0.05 level.",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
+  },
+  {
+    "objectID": "16-anova.html#section-3",
+    "href": "16-anova.html#section-3",
+    "title": "Anova",
+    "section": "",
+    "text": "So what’s actually different?\nNext time!",
+    "crumbs": [
+      "Slides",
+      "Day-16"
+    ]
   },
   {
     "objectID": "13-power.html#checklist",

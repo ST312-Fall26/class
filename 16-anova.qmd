@@ -48,6 +48,21 @@ Please see the announcement of Moodle
 
 # Questions 
 
+## Warm up{.smaller}
+
+A meteorologist wants to determine whether the proportion of days with measurable rainfall differs between two cities. In City A, it rained on 42 of 120 randomly selected days. In City B, it rained on 30 of 110 randomly selected days.
+Use a significance level of $\alpha = 0.05$ to test whether the population proportions of rainy days differ between the two cities.
+
+-- Number of variables 
+
+-- Type of variables 
+
+-- Explanatory vs response 
+
+-- Null and alternative hypothesis
+
+
+
 ## Warm-up 
 
 How is a chi-square test of independence **different** than a difference in means/proportions test?
@@ -62,10 +77,800 @@ True or False: Chi-square tests do not have a directional alternative hypothesis
 
 # Questions 
 
+## So far{.smaller}
+
+| Method | Population Parameter | Sample Statistic | Theoretical Distribution | Degrees of Freedom |
+|:---|:---|:---|:---|:---|
+| Difference in proportions | x | x | x | x |
+| Difference in means | x | x | x | x |
+| Chi-square test of independence | x | x | x | x |
+
 ## So far{.smaller} 
 
 | Method | Population Parameter | Sample Statistic | Theoretical Distribution | Degrees of Freedom |
 |:---|:---|:---|:---|:---|
 | Difference in proportions | $p_1-p_2$ | $\hat{p}_1-\hat{p}_2$ | $Z \approx N(0,1)$ | N/A |
-| Difference in means | $\mu_1-\mu_2$ | $\bar{x}_1-\bar{x}_2$ | $T \sim t_{df}$ | $df$ estimated using Welch-Satterthwaite formula |
+| Difference in means | $\mu_1-\mu_2$ | $\bar{x}_1-\bar{x}_2$ | $T \sim t_{df}$ | $df$ estimated conservative $min(n_1-1,n_2-1)$ |
 | Chi-square test of independence | Association between two categorical variables | $\chi^2=\sum \frac{(O-E)^2}{E}$ | $\chi^2 \sim \chi^2_{df}$ | $(r-1)(c-1)$ |
+
+## New scenario{.smaller} 
+
+![](images2/plant.png){fig-align="center"}
+
+## New scenario{.smaller} 
+
+Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions. We are interested in seeing if the dried weight of plants is different across the three yields. 
+
+Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions.
+
+```{r}
+library(tidyverse)
+tibble(PlantGrowth) |>
+  group_by(group) |>
+  summarize(count = n(),
+            mean = mean(weight))
+```
+
+What are the variables?
+
+## Extension 
+
+ANOVA is an extension from difference in means, where the test statistic is the variability within group vs the variability across groups. 
+
+What do I mean by variability?
+
+## Example 
+
+```{r}
+#| echo: false
+# 1. Load necessary libraries
+library(tidyverse)
+
+# --- Data Generation ---
+
+# Set parameters for the simulation
+set.seed(42) # For reproducibility
+N <- 50      # Sample size per group
+std_dev <- 2 # Low variability within groups
+
+# Generate data for three groups (High variability across means)
+data_a <- rnorm(N, mean = 10, sd = std_dev)
+data_b <- rnorm(N, mean = 25, sd = std_dev)
+data_c <- rnorm(N, mean = 40, sd = std_dev)
+
+# 2. Structure data in long format (tidy data)
+df_variability <- tibble(
+  Group = factor(c(rep("A (Mean=10)", N),
+                   rep("B (Mean=25)", N),
+                   rep("C (Mean=40)", N))),
+  Value = c(data_a, data_b, data_c)
+)
+
+# 3. Create the side-by-side boxplots using ggplot2
+ggplot(df_variability, aes(x = Group, y = Value, fill = Group)) +
+  geom_boxplot(width = 0.5) + # Add the boxplots
+  labs(
+    title = "Boxplots Demonstrating High Between-Group and Low Within-Group Variability",
+    x = "Group",
+    y = "Value (Units)"
+  ) +
+  scale_fill_viridis_d() + # Use a pleasant color palette
+  theme_minimal() + # Use a clean theme
+  theme(
+    plot.title = element_text(hjust = 0.5), # Center the title
+    legend.position = "none" # Hide the legend as Group is on the x-axis
+  )
+```
+
+##
+
+```{r}
+# 1. Load necessary libraries
+library(tidyverse)
+
+# --- Data Generation ---
+
+# Set parameters for the simulation
+set.seed(100) # Set a new seed for a different visualization
+N <- 50       # Sample size per group
+std_dev <- 8  # HIGH variability within groups
+
+# Generate data with LOW separation (low between-group variability)
+data_a <- rnorm(N, mean = 28, sd = std_dev) # Mean 28
+data_b <- rnorm(N, mean = 30, sd = std_dev) # Mean 30
+data_c <- rnorm(N, mean = 32, sd = std_dev) # Mean 32
+
+# 2. Structure data in long format
+df_variability <- tibble(
+  Group = factor(c(rep("A (Mean=28)", N),
+                   rep("B (Mean=30)", N),
+                   rep("C (Mean=32)", N))),
+  Value = c(data_a, data_b, data_c)
+)
+
+# 3. Create the side-by-side boxplots using ggplot2
+ggplot(df_variability, aes(x = Group, y = Value, fill = Group)) +
+  geom_boxplot(width = 0.5) + # Add the boxplots
+  labs(
+    title = "Boxplots Demonstrating High Within-Group and Low Across-Group Variability",
+    subtitle = "The variation within each group masks any difference between the groups.",
+    x = "Group",
+    y = "Value (Units)"
+  ) +
+  scale_fill_brewer(palette = "Set1") + # Use a contrasting color palette
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "none"
+  )
+```
+
+
+## Big idea 
+
+How is the variability within vs the variability between! Keep this in mind as we go through the process... 
+
+... especially when we get to calculating our test statistic. 
+
+## Before we get started
+
+Results from an experiment to compare yields (as measured by dried
+weight of plants) obtained under a control and two different treatment
+conditions.
+
+Why can we not answer our research question right now?
+
+```{r}
+#| echo: false
+library(tidyverse)
+tibble(PlantGrowth) |>
+  group_by(group) |>
+  summarize(count = n(),
+            mean = mean(weight))
+```
+
+## Plants
+
+What would our null and alternative hypotheses in words / notation be?
+
+## Plants
+
+Ho: $\mu_c = \mu_1 = \mu_2$
+
+Ha: at least one population mean weight across the three groups is
+different
+
+## Assumptions
+
+-- Independence
+
+-- Normality (not just going to look at sample size)
+
+-- Equal Variance
+
+## Independence
+
+-- between groups
+
+-- across groups
+
+## Normality
+
+Previously, with a quantitative response, we checked the normality assumption by looking at our sample size. If our sample size was $\ge$ 30, the CLT kicks in and we can trust that the sampling distribution of the difference in means is roughly normally distributed. However, as we will see, our statistic is a ratio of mean squares, not simply a standardized difference between two means.
+
+**Takeaway**: With non-normal data, large samples can make ANOVA more robust, but the CLT alone does not guarantee an exact F-distribution.
+
+# Now what?
+
+## Now what 
+
+-- Plot the raw data 
+
+-- Normal q-q plot 
+
+
+## Normality
+
+```{r}
+#| echo: false
+# 2. Convert 'group' to a factor (it already is, but good practice)
+PlantGrowth$group <- factor(PlantGrowth$group)
+
+PlantGrowth |>
+  ggplot(
+    aes(x = weight)
+  ) + 
+  geom_histogram(binwidth = .5) + 
+  facet_wrap(~group)
+```
+
+## Plants q-q
+
+```{r}
+#| echo: false
+# 1. Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(qqplotr) # A specialized package for ggplot2 Q-Q plots
+
+# The PlantGrowth dataset is built-in, so no need to load data manually.
+
+# 2. Convert 'group' to a factor (it already is, but good practice)
+PlantGrowth$group <- factor(PlantGrowth$group)
+
+library(tidyverse)
+
+qq_data <- PlantGrowth %>%
+  group_by(group) %>%
+  arrange(weight, .by_group = TRUE) %>%
+  mutate(
+    rank = row_number(),
+    theoretical = qnorm((rank - 0.5) / n())
+  ) %>%
+  ungroup()
+
+# Calculate a separate reference line for each group
+line_data <- qq_data %>%
+  group_by(group) %>%
+  summarise(
+    intercept = mean(weight) - sd(weight) * 0,
+    slope = sd(weight),
+    x_min = min(theoretical),
+    x_max = max(theoretical),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    y_min = intercept + slope * x_min,
+    y_max = intercept + slope * x_max
+  )
+
+ggplot(qq_data, aes(x = theoretical, y = weight, color = group)) +
+  geom_point(size = 2) +
+  geom_segment(
+    data = line_data,
+    aes(
+      x = x_min, y = y_min,
+      xend = x_max, yend = y_max,
+      color = group
+    ),
+    linetype = "dashed",
+    inherit.aes = FALSE
+  ) +
+  facet_wrap(~ group, ncol = 3) +
+  labs(
+    title = "Normal Q-Q Plot for PlantGrowth Data by Group",
+    x = "Theoretical Quantiles",
+    y = "Sample Quantiles"
+  ) +
+  theme_bw() +
+  theme(legend.position = "none")
+
+```
+
+
+-- What are Sample Quantiles?
+
+-- What are Theoretical Quantiles?
+
+-- What are we looking for?
+
+## Sample Quantiles 
+
+These are values that we actually observe from our data set! 
+
+These go on the y-axis of or normal q-q plot
+
+## Theoretical Quantiles 
+
+The theoretical quantiles are the quantiles we would expect to see if the data followed a normal distribution.
+
+-- They represent the values predicted by a theoretical normal distribution.
+
+-- They are plotted on the x-axis.
+
+## Theoretical Quantiles{.smaller} 
+
+-- Order our observed data from smallest to largest (rank)
+
+-- Divide up the theoretical normal distribution into EQUAL corresponding quantiles, based on the ranks of our observations
+
+-- Calculate the quantile value
+
+$q_i = \Phi^{-1}\left(\dfrac{i-0.5}{n}\right)$
+
+1. $q_i$ = theoretical quantile for observation $i$
+
+2. $\Phi^{-1}$ = inverse standard normal CDF (the quantile function)
+
+3. $i$ = rank of the observation, from smallest to largest
+
+4. $n$ = sample size
+
+## 
+
+```{r}
+library(tidyverse)
+
+# Sample data, n = 10
+x <- c(12, 15, 11, 18, 14, 13, 20, 16, 10, 17)
+
+n <- length(x)
+
+# Order the observed data and calculate theoretical quantiles
+qq_data <- tibble(
+  i = 1:n,
+  sample_quantile = sort(x),
+  probability = (i - 0.5) / n,
+  theoretical_quantile = qnorm(probability)
+)
+
+# Plot theoretical normal distribution
+ggplot() +
+  stat_function(
+    fun = dnorm,
+    xlim = c(-3, 3),
+    linewidth = 1
+  ) +
+  geom_vline(
+    data = qq_data,
+    aes(xintercept = theoretical_quantile),
+    linetype = "dashed",
+    color = "gray50"
+  ) +
+  geom_point(
+    data = qq_data,
+    aes(x = theoretical_quantile, y = dnorm(theoretical_quantile)),
+    size = 3
+  ) +
+  labs(
+    title = "Theoretical Quantiles for a Normal Q-Q Plot",
+    subtitle = "n = 10: Each rank is paired with a theoretical normal quantile",
+    x = "Theoretical normal quantile",
+    y = "Density"
+  ) +
+  theme_minimal()
+
+
+```
+
+## 
+
+```{r}
+qq_data <- PlantGrowth %>%
+  group_by(group) %>%
+  arrange(weight, .by_group = TRUE) %>%
+  mutate(
+    rank = row_number(),
+    theoretical = qnorm((rank - 0.5) / n())
+  ) %>%
+  ungroup()
+
+# Calculate a separate reference line for each group
+line_data <- qq_data %>%
+  group_by(group) %>%
+  summarise(
+    intercept = mean(weight) - sd(weight) * 0,
+    slope = sd(weight),
+    x_min = min(theoretical),
+    x_max = max(theoretical),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    y_min = intercept + slope * x_min,
+    y_max = intercept + slope * x_max
+  )
+
+ggplot(qq_data, aes(x = theoretical, y = weight, color = group)) +
+  geom_point(size = 2) +
+  geom_segment(
+    data = line_data,
+    aes(
+      x = x_min, y = y_min,
+      xend = x_max, yend = y_max,
+      color = group
+    ),
+    linetype = "dashed",
+    inherit.aes = FALSE
+  ) +
+  facet_wrap(~ group, ncol = 3) +
+  labs(
+    title = "Normal Q-Q Plot for PlantGrowth Data by Group",
+    x = "Theoretical Quantiles",
+    y = "Sample Quantiles"
+  ) +
+  theme_bw() +
+  theme(legend.position = "none")
+
+```
+
+
+
+## Theoretical Quantiles 
+
+You may also see the x-axis back transformed to the original units. Using the quantiles, this is what we would expect for dried weight if our data follwed a perfect theoretical normal distribution. 
+
+## Theoretical Quantiles 
+
+```{r}
+# 3. Create the Q-Q Plots for Each Group
+# We use facet_wrap to separate the plots by the 'group' variable.
+qq_plot_data <- ggplot(data = PlantGrowth, mapping = aes(sample = weight, color = group)) +
+  # Use stat_qq_point to plot the observed quantiles
+  stat_qq_point(size = 2) +
+  # Use stat_qq_line to add the theoretical normal line
+  stat_qq_line(line.color = "red", linetype = "dashed") +
+  # Separate the plots by the 'group' factor
+  facet_wrap(~ group, scales = "fixed", ncol = 3) +
+  labs(
+    title = "Normal Q-Q Plot for PlantGrowth Data by Group",
+    x = "Theoretical Quantiles",
+    y = "Sample Quantiles"
+  ) +
+  theme_bw() +
+  theme(legend.position = "none")
+
+# Print the plots
+print(qq_plot_data)
+```
+
+So, how do we feel about our assumption?
+
+## Guess the distribution 
+
+```{r}
+library(tidyverse)
+
+set.seed(123)
+
+left_skew_data <- tibble(
+  x = -rlnorm(100, meanlog = 0, sdlog = 0.6)
+)
+
+# Calculate theoretical quantiles and ordered observations
+qq_data <- left_skew_data %>%
+  arrange(x) %>%
+  mutate(
+    theoretical = qnorm((row_number() - 0.5) / n())
+  )
+
+# Calculate a Q-Q reference line using the first and third quartiles
+q_theory <- qnorm(c(0.25, 0.75))
+q_sample <- quantile(qq_data$x, c(0.25, 0.75))
+
+slope <- diff(q_sample) / diff(q_theory)
+intercept <- q_sample[1] - slope * q_theory[1]
+
+ggplot(qq_data, aes(x = theoretical, y = x)) +
+  geom_point(size = 2) +
+  geom_abline(
+    intercept = intercept,
+    slope = slope,
+    color = "red",
+    linetype = "dashed"
+  ) +
+  labs(
+    title = "Normal Q-Q Plot: _______ Data",
+    x = "Theoretical Normal Quantiles",
+    y = "Sample Quantiles"
+  ) +
+  theme_bw()
+```
+
+## General Rule 
+
+Points above the line: Observed values are larger than the line predicts at those theoretical quantiles.
+
+Points below the line: Observed values are smaller than the line predicts at those theoretical quantiles.
+
+## The plot 
+
+```{r}
+qq_data |>
+  ggplot(
+    aes(x = x)
+  ) + 
+  geom_histogram()
+```
+
+## Guess the distribution 
+
+```{r}
+library(tidyverse)
+
+set.seed(123)
+
+right_skew_data <- tibble(
+  x = rlnorm(100, meanlog = 0, sdlog = 0.6)
+)
+
+# Calculate theoretical quantiles and ordered observations
+qq_data <- right_skew_data %>%
+  arrange(x) %>%
+  mutate(
+    theoretical = qnorm((row_number() - 0.5) / n())
+  )
+
+# Calculate the reference line using the first and third quartiles
+q_theory <- qnorm(c(0.25, 0.75))
+q_sample <- quantile(qq_data$x, c(0.25, 0.75))
+
+slope <- diff(q_sample) / diff(q_theory)
+intercept <- q_sample[1] - slope * q_theory[1]
+
+ggplot(qq_data, aes(x = theoretical, y = x)) +
+  geom_point(size = 2) +
+  geom_abline(
+    intercept = intercept,
+    slope = slope,
+    color = "red",
+    linetype = "dashed"
+  ) +
+  labs(
+    title = "Normal Q-Q Plot: _______ Data",
+    x = "Theoretical Normal Quantiles",
+    y = "Sample Quantiles"
+  ) +
+  theme_bw()
+```
+
+## Guess the distribution 
+
+
+```{r}
+qq_data |>
+  ggplot(
+    aes(x = x)
+  ) + 
+  geom_histogram()
+```
+
+## Summary 
+
+Your qq-plots can take on many different shapes. There is not right/wrong cut-off. It's up to you to make a justifiable call
+
+--    Right-skewed: The upper tail extends farther above the reference line than expected under normality.
+
+--    Left-skewed: The lower tail extends farther below the reference line than expected under normality.
+
+# Questions 
+
+
+## Equal variance (New!)
+
+The equal variance assumption (also called homogeneity of variance) in ANOVA means that the populations for all groups have the same variance, even if their means differ
+
+$\sigma_1^2=\sigma_2^2=\cdots=\sigma_k^2$
+
+$\sigma^2 = \frac{\sum_{i=1}^{N}(x_i-\mu)^2}{N}$
+
+## Equal Variance 
+
+```{r}
+ggplot(PlantGrowth, aes(x = group, y = weight)) +
+  geom_boxplot() +
+  labs(
+    x = "Treatment Group",
+    y = "Plant Weight",
+    title = "Compare Variability Across Groups"
+  ) +
+  theme_bw()
+```
+
+## Equal Variance 
+
+```{r}
+model <- aov(weight ~ group, data = PlantGrowth)
+
+plot(
+  fitted(model),
+  residuals(model),
+  xlab = "Fitted Values",
+  ylab = "Residuals",
+  main = "Residuals vs. Fitted Values"
+)
+abline(h = 0, lty = 2)
+```
+
+What's a residual? 
+
+What's a fitted value?
+
+## Residual 
+
+$e_i = y_i - \hat{y}_i$
+
+observed - fitted value 
+
+in ANOVA, the fitted value (best guess) is just the mean! 
+
+So, the residual in ANOVA is distance between individual values and their group mean
+
+## Equal Variance 
+
+```{r}
+model <- aov(weight ~ group, data = PlantGrowth)
+
+plot(
+  fitted(model),
+  residuals(model),
+  xlab = "Fitted Values",
+  ylab = "Residuals",
+  main = "Residuals vs. Fitted Values"
+)
+abline(h = 0, lty = 2)
+```
+
+How do we check the assumption?
+
+## Equal Variance
+
+
+
+```{r}
+#| echo: false
+
+PlantGrowth |>
+  group_by(group) |>
+  summarize(sd = sd(weight))
+
+```
+
+General rule: Is the largest sample standard deviation more than twice
+the smallest sample standard deviation?
+
+## Assumptions 
+
+Independence ✓
+
+Normality ✓
+
+Equal Variance ✓ 
+
+## New statistic
+
+$F = \frac{\text{MS}_{\text{Between}}}{\text{MS}_{\text{Within}}}$
+
+$\mathbf{F} = \frac{\frac{\text{SS}_{\text{Between}}}{k - 1}}{\frac{\text{SS}_{\text{Within}}}{N - k}}$
+
+$\text{SS}_{\text{Between}} = \sum_{i=1}^{k} n_i (\bar{X}_i - \bar{X}_{\text{grand}})^2$
+
+$\text{SS}_{\text{Within}} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (X_{ij} - \bar{X}_i)^2$
+
+## Draw it out
+
+What would this look like?
+
+That is, draw out how each SS would be calculated.
+
+## Plants
+
+```{r}
+#| echo: false
+set.seed(123)
+a <- PlantGrowth |>
+  group_by(group) |>
+  summarize(mean = mean(weight))
+
+PlantGrowth |>
+  ggplot(
+    aes(x = group, y = weight)) +
+  geom_jitter(width = .1) + 
+  facet_wrap(~ group) +
+  geom_hline(yintercept = 5.073, color = "red" , lwd = 1) +     
+  geom_hline(data = a, aes(yintercept = mean), color = "blue", linetype = "solid") + 
+  labs(title = "Anova example", 
+       subtitle = "Red line is overall mean; blue lines are group means")
+
+```
+
+## Anova
+
+```{r}
+#| echo: false
+
+anova_model <- aov(weight ~ group, data = PlantGrowth)
+
+summary(anova_model)
+```
+
+## F-distribution
+
+[applet](https://www.stapplet.com/fdist.html)
+
+A continuous, positively skewed probability distribution, characterized
+by two degrees of freedom (numerator and denominator) that determine its
+shape.
+
+## Anova
+
+Where did all of this come from?
+
+The goal is not for you to be able to calculate these values by hand
+(besides Df). The goal is for you to understand the relationships
+between the values of the Anova table.
+
+```{r}
+#| echo: false
+
+anova_model <- aov(weight ~ group, data = PlantGrowth)
+
+summary(anova_model)
+```
+
+## Definitions {.smaller}
+
+Degrees of Freedom (df) is the number of independent pieces of
+information used to calculate the statistic
+
+The Sum of Squares (SS) is a measure of total variability (between or
+within)
+
+The Mean Squares (MS) is an estimate ($s^2$) of the population variance
+($\sigma^2$)
+
+It's a generalized form of $s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}$
+
+## Anova table
+
+Where did we get df = 2 for between? Where did we get df = 27 for
+within?
+
+```{r}
+#| echo: false
+
+PlantGrowth |>
+  group_by(group) |>
+  summarise(n = n())
+```
+
+## degrees of freedom 
+
+When we estimate the population (grand) mean, there are k-1 independent pieces of information 
+
+When we estimate the population means within each group, there are n - k independent pieces of information
+
+
+## Anova: MS {.smaller}
+
+The Mean Squares (MS) is an estimate ($s^2$) of the population variance
+($\sigma^2$)
+
+It's a generalized form of $s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}$
+
+In Anova, it's calculated by taking $\frac{SS}{df}$
+
+```{r}
+#| echo: false
+
+anova_model <- aov(weight ~ group, data = PlantGrowth)
+
+summary(anova_model)
+```
+
+## Anova: F-statistic
+
+The whole goal of Anova is to compare the variability between groups vs
+the variability within groups. How can we calculate our F-statistic?
+
+```{r}
+#| echo: false
+
+anova_model <- aov(weight ~ group, data = PlantGrowth)
+
+summary(anova_model)
+```
+
+## Decision and conclusions
+
+What are they? At the $\alpha$ = 0.05 level.
+
+## 
+
+So what's actually different?
+
+Next time!
+
+
+
+

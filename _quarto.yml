@@ -61,6 +61,8 @@ website:
             text: "Day-14"
           - href: 15-fit.qmd
             text: "Day-15"
+          - href: 16-anova.qmd
+            text: "Day-16"
 format:
   html:
     theme: cosmo

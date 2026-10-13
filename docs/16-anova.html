@@ -163,12 +163,20 @@
 <h1>Questions</h1>
 
 </section>
-<section id="warm-up" class="slide level2">
+<section id="warm-up" class="slide level2 smaller">
+<h2>Warm up</h2>
+<p>A meteorologist wants to determine whether the proportion of days with measurable rainfall differs between two cities. In City A, it rained on 42 of 120 randomly selected days. In City B, it rained on 30 of 110 randomly selected days. Use a significance level of <span class="math inline">\(\alpha = 0.05\)</span> to test whether the population proportions of rainy days differ between the two cities.</p>
+<p>– Number of variables</p>
+<p>– Type of variables</p>
+<p>– Explanatory vs response</p>
+<p>– Null and alternative hypothesis</p>
+</section>
+<section id="warm-up-1" class="slide level2">
 <h2>Warm-up</h2>
 <p>How is a chi-square test of independence <strong>different</strong> than a difference in means/proportions test?</p>
 <p>How is a chi-square goodness of fit test different than a chi-square test of independence?</p>
 </section>
-<section id="warm-up-1" class="slide level2">
+<section id="warm-up-2" class="slide level2">
 <h2>Warm-up</h2>
 <p>True or False: You can use chi-square tools on difference in proportions/single proportion scenarios</p>
 <p>True or False: Chi-square tests do not have a directional alternative hypothesis, and are always one-sided tests</p>
@@ -200,6 +208,50 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Difference in proportions</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Difference in means</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chi-square test of independence</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="so-far-1" class="slide level2 smaller">
+<h2>So far</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Population Parameter</th>
+<th style="text-align: left;">Sample Statistic</th>
+<th style="text-align: left;">Theoretical Distribution</th>
+<th style="text-align: left;">Degrees of Freedom</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Difference in proportions</td>
 <td style="text-align: left;"><span class="math inline">\(p_1-p_2\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\hat{p}_1-\hat{p}_2\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(Z \approx N(0,1)\)</span></td>
@@ -210,7 +262,7 @@
 <td style="text-align: left;"><span class="math inline">\(\mu_1-\mu_2\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\bar{x}_1-\bar{x}_2\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(T \sim t_{df}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(df\)</span> estimated using Welch-Satterthwaite formula</td>
+<td style="text-align: left;"><span class="math inline">\(df\)</span> estimated conservative <span class="math inline">\(min(n_1-1,n_2-1)\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Chi-square test of independence</td>
@@ -221,6 +273,336 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section id="new-scenario" class="slide level2 smaller">
+<h2>New scenario</h2>
+
+<img data-src="images2/plant.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="new-scenario-1" class="slide level2 smaller">
+<h2>New scenario</h2>
+<p>Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions. We are interested in seeing if the dried weight of plants is different across the three yields.</p>
+<p>Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  group count  mean
+  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;
+1 ctrl     10  5.03
+2 trt1     10  4.66
+3 trt2     10  5.53</code></pre>
+</div>
+</div>
+<p>What are the variables?</p>
+</section>
+<section id="extension" class="slide level2">
+<h2>Extension</h2>
+<p>ANOVA is an extension from difference in means, where the test statistic is the variability within group vs the variability across groups.</p>
+<p>What do I mean by variability?</p>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="big-idea" class="slide level2">
+<h2>Big idea</h2>
+<p>How is the variability within vs the variability between! Keep this in mind as we go through the process…</p>
+<p>… especially when we get to calculating our test statistic.</p>
+</section>
+<section id="before-we-get-started" class="slide level2">
+<h2>Before we get started</h2>
+<p>Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions.</p>
+<p>Why can we not answer our research question right now?</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  group count  mean
+  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;
+1 ctrl     10  5.03
+2 trt1     10  4.66
+3 trt2     10  5.53</code></pre>
+</div>
+</div>
+</section>
+<section id="plants" class="slide level2">
+<h2>Plants</h2>
+<p>What would our null and alternative hypotheses in words / notation be?</p>
+</section>
+<section id="plants-1" class="slide level2">
+<h2>Plants</h2>
+<p>Ho: <span class="math inline">\(\mu_c = \mu_1 = \mu_2\)</span></p>
+<p>Ha: at least one population mean weight across the three groups is different</p>
+</section>
+<section id="assumptions" class="slide level2">
+<h2>Assumptions</h2>
+<p>– Independence</p>
+<p>– Normality (not just going to look at sample size)</p>
+<p>– Equal Variance</p>
+</section>
+<section id="independence" class="slide level2">
+<h2>Independence</h2>
+<p>– between groups</p>
+<p>– across groups</p>
+</section>
+<section id="normality" class="slide level2">
+<h2>Normality</h2>
+<p>Previously, with a quantitative response, we checked the normality assumption by looking at our sample size. If our sample size was <span class="math inline">\(\ge\)</span> 30, the CLT kicks in and we can trust that the sampling distribution of the difference in means is roughly normally distributed. However, as we will see, our statistic is a ratio of mean squares, not simply a standardized difference between two means.</p>
+<p><strong>Takeaway</strong>: With non-normal data, large samples can make ANOVA more robust, but the CLT alone does not guarantee an exact F-distribution.</p>
+</section></section>
+<section>
+<section id="now-what" class="title-slide slide level1 center">
+<h1>Now what?</h1>
+
+</section>
+<section id="now-what-1" class="slide level2">
+<h2>Now what</h2>
+<p>– Plot the raw data</p>
+<p>– Normal q-q plot</p>
+</section>
+<section id="normality-1" class="slide level2">
+<h2>Normality</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="plants-q-q" class="slide level2">
+<h2>Plants q-q</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"><p>– What are Sample Quantiles?</p>
+<p>– What are Theoretical Quantiles?</p>
+<p>– What are we looking for?</p>
+</section>
+<section id="sample-quantiles" class="slide level2">
+<h2>Sample Quantiles</h2>
+<p>These are values that we actually observe from our data set!</p>
+<p>These go on the y-axis of or normal q-q plot</p>
+</section>
+<section id="theoretical-quantiles" class="slide level2">
+<h2>Theoretical Quantiles</h2>
+<p>The theoretical quantiles are the quantiles we would expect to see if the data followed a normal distribution.</p>
+<p>– They represent the values predicted by a theoretical normal distribution.</p>
+<p>– They are plotted on the x-axis.</p>
+</section>
+<section id="theoretical-quantiles-1" class="slide level2 smaller">
+<h2>Theoretical Quantiles</h2>
+<p>– Order our observed data from smallest to largest (rank)</p>
+<p>– Divide up the theoretical normal distribution into EQUAL corresponding quantiles, based on the ranks of our observations</p>
+<p>– Calculate the quantile value</p>
+<p><span class="math inline">\(q_i = \Phi^{-1}\left(\dfrac{i-0.5}{n}\right)\)</span></p>
+<ol type="1">
+<li><p><span class="math inline">\(q_i\)</span> = theoretical quantile for observation <span class="math inline">\(i\)</span></p></li>
+<li><p><span class="math inline">\(\Phi^{-1}\)</span> = inverse standard normal CDF (the quantile function)</p></li>
+<li><p><span class="math inline">\(i\)</span> = rank of the observation, from smallest to largest</p></li>
+<li><p><span class="math inline">\(n\)</span> = sample size</p></li>
+</ol>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="theoretical-quantiles-2" class="slide level2">
+<h2>Theoretical Quantiles</h2>
+<p>You may also see the x-axis back transformed to the original units. Using the quantiles, this is what we would expect for dried weight if our data follwed a perfect theoretical normal distribution.</p>
+</section>
+<section id="theoretical-quantiles-3" class="slide level2">
+<h2>Theoretical Quantiles</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"><p>So, how do we feel about our assumption?</p>
+</section>
+<section id="guess-the-distribution" class="slide level2">
+<h2>Guess the distribution</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section id="general-rule" class="slide level2">
+<h2>General Rule</h2>
+<p>Points above the line: Observed values are larger than the line predicts at those theoretical quantiles.</p>
+<p>Points below the line: Observed values are smaller than the line predicts at those theoretical quantiles.</p>
+</section>
+<section id="the-plot" class="slide level2">
+<h2>The plot</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="guess-the-distribution-1" class="slide level2">
+<h2>Guess the distribution</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="guess-the-distribution-2" class="slide level2">
+<h2>Guess the distribution</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<p>Your qq-plots can take on many different shapes. There is not right/wrong cut-off. It’s up to you to make a justifiable call</p>
+<p>– Right-skewed: The upper tail extends farther above the reference line than expected under normality.</p>
+<p>– Left-skewed: The lower tail extends farther below the reference line than expected under normality.</p>
+</section></section>
+<section>
+<section id="questions-2" class="title-slide slide level1 center">
+<h1>Questions</h1>
+
+</section>
+<section id="equal-variance-new" class="slide level2">
+<h2>Equal variance (New!)</h2>
+<p>The equal variance assumption (also called homogeneity of variance) in ANOVA means that the populations for all groups have the same variance, even if their means differ</p>
+<p><span class="math inline">\(\sigma_1^2=\sigma_2^2=\cdots=\sigma_k^2\)</span></p>
+<p><span class="math inline">\(\sigma^2 = \frac{\sum_{i=1}^{N}(x_i-\mu)^2}{N}\)</span></p>
+</section>
+<section id="equal-variance" class="slide level2">
+<h2>Equal Variance</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<section id="equal-variance-1" class="slide level2">
+<h2>Equal Variance</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"><p>What’s a residual?</p>
+<p>What’s a fitted value?</p>
+</section>
+<section id="residual" class="slide level2">
+<h2>Residual</h2>
+<p><span class="math inline">\(e_i = y_i - \hat{y}_i\)</span></p>
+<p>observed - fitted value</p>
+<p>in ANOVA, the fitted value (best guess) is just the mean!</p>
+<p>So, the residual in ANOVA is distance between individual values and their group mean</p>
+</section>
+<section id="equal-variance-2" class="slide level2">
+<h2>Equal Variance</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"><p>How do we check the assumption?</p>
+</section>
+<section id="equal-variance-3" class="slide level2">
+<h2>Equal Variance</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  group    sd
+  &lt;fct&gt; &lt;dbl&gt;
+1 ctrl  0.583
+2 trt1  0.794
+3 trt2  0.443</code></pre>
+</div>
+</div>
+<p>General rule: Is the largest sample standard deviation more than twice the smallest sample standard deviation?</p>
+</section>
+<section id="assumptions-1" class="slide level2">
+<h2>Assumptions</h2>
+<p>Independence ✓</p>
+<p>Normality ✓</p>
+<p>Equal Variance ✓</p>
+</section>
+<section id="new-statistic" class="slide level2">
+<h2>New statistic</h2>
+<p><span class="math inline">\(F = \frac{\text{MS}_{\text{Between}}}{\text{MS}_{\text{Within}}}\)</span></p>
+<p><span class="math inline">\(\mathbf{F} = \frac{\frac{\text{SS}_{\text{Between}}}{k - 1}}{\frac{\text{SS}_{\text{Within}}}{N - k}}\)</span></p>
+<p><span class="math inline">\(\text{SS}_{\text{Between}} = \sum_{i=1}^{k} n_i (\bar{X}_i - \bar{X}_{\text{grand}})^2\)</span></p>
+<p><span class="math inline">\(\text{SS}_{\text{Within}} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (X_{ij} - \bar{X}_i)^2\)</span></p>
+</section>
+<section id="draw-it-out" class="slide level2">
+<h2>Draw it out</h2>
+<p>What would this look like?</p>
+<p>That is, draw out how each SS would be calculated.</p>
+</section>
+<section id="plants-2" class="slide level2">
+<h2>Plants</h2>
+
+<img data-src="16-anova_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
+<section id="anova" class="slide level2">
+<h2>Anova</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)  
+group        2  3.766  1.8832   4.846 0.0159 *
+Residuals   27 10.492  0.3886                 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="f-distribution" class="slide level2">
+<h2>F-distribution</h2>
+<p><a href="https://www.stapplet.com/fdist.html">applet</a></p>
+<p>A continuous, positively skewed probability distribution, characterized by two degrees of freedom (numerator and denominator) that determine its shape.</p>
+</section>
+<section id="anova-1" class="slide level2">
+<h2>Anova</h2>
+<p>Where did all of this come from?</p>
+<p>The goal is not for you to be able to calculate these values by hand (besides Df). The goal is for you to understand the relationships between the values of the Anova table.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)  
+group        2  3.766  1.8832   4.846 0.0159 *
+Residuals   27 10.492  0.3886                 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="definitions" class="slide level2 smaller">
+<h2>Definitions</h2>
+<p>Degrees of Freedom (df) is the number of independent pieces of information used to calculate the statistic</p>
+<p>The Sum of Squares (SS) is a measure of total variability (between or within)</p>
+<p>The Mean Squares (MS) is an estimate (<span class="math inline">\(s^2\)</span>) of the population variance (<span class="math inline">\(\sigma^2\)</span>)</p>
+<p>It’s a generalized form of <span class="math inline">\(s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\)</span></p>
+</section>
+<section id="anova-table" class="slide level2">
+<h2>Anova table</h2>
+<p>Where did we get df = 2 for between? Where did we get df = 27 for within?</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  group     n
+  &lt;fct&gt; &lt;int&gt;
+1 ctrl     10
+2 trt1     10
+3 trt2     10</code></pre>
+</div>
+</div>
+</section>
+<section id="degrees-of-freedom" class="slide level2">
+<h2>degrees of freedom</h2>
+<p>When we estimate the population (grand) mean, there are k-1 independent pieces of information</p>
+<p>When we estimate the population means within each group, there are n - k independent pieces of information</p>
+</section>
+<section id="anova-ms" class="slide level2 smaller">
+<h2>Anova: MS</h2>
+<p>The Mean Squares (MS) is an estimate (<span class="math inline">\(s^2\)</span>) of the population variance (<span class="math inline">\(\sigma^2\)</span>)</p>
+<p>It’s a generalized form of <span class="math inline">\(s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\)</span></p>
+<p>In Anova, it’s calculated by taking <span class="math inline">\(\frac{SS}{df}\)</span></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)  
+group        2  3.766  1.8832   4.846 0.0159 *
+Residuals   27 10.492  0.3886                 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="anova-f-statistic" class="slide level2">
+<h2>Anova: F-statistic</h2>
+<p>The whole goal of Anova is to compare the variability between groups vs the variability within groups. How can we calculate our F-statistic?</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)  
+group        2  3.766  1.8832   4.846 0.0159 *
+Residuals   27 10.492  0.3886                 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="decision-and-conclusions" class="slide level2">
+<h2>Decision and conclusions</h2>
+<p>What are they? At the <span class="math inline">\(\alpha\)</span> = 0.05 level.</p>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p>So what’s actually different?</p>
+<p>Next time!</p>
 
 
 </section></section>
@@ -439,6 +821,82 @@
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
