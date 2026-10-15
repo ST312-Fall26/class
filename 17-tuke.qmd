@@ -1,7 +1,7 @@
 ---
 title: "Anova"
-subtitle: "Part I"
-date: "October 13, 2026"
+subtitle: "Part II"
+date: "October 15, 2026"
 execute:
   echo: false
   message: false
@@ -29,6 +29,8 @@ editor:
 
 -- Please see the exam-1 moodle announcement if you haven't!
 
+-- Sorry for not posting the slides last week! You can always find them in the slide search!
+
 ## Warm-up 
 
 What is the difference between the scenarios: 
@@ -40,8 +42,6 @@ What is the difference between the scenarios:
 -- One-way ANOVA
 
 ... using the terms variables; levels; explanatory; response
-
-## Warm-up 
 
 ## Warm-up
 
@@ -216,9 +216,9 @@ What are we looking for?
 
 ## Summary{.smaller} 
 
-A residual is the difference between an observed value and its predicted/fitted value: $e_i = y_i - \hat_i$.
+A residual is the difference between an observed value and its predicted/fitted value: $e_i = y_i - \hat{y_i}$.
 
-In a one-way ANOVA, a fitted value is the predicted response for an observation, calculated as the sample mean of the group that observation belongs to: $\hat_ = \bar_j$.
+In a one-way ANOVA, a fitted value is the predicted response for an observation, calculated as the sample mean of the group that observation belongs to: $\hat{y_{ij}} = \bar{x}_j$.
 
 "If you are a plant in group 1, I'd predict your weight to be $\bar{x_1}$."
 
@@ -231,6 +231,22 @@ $\mathbf{F} = \frac{\frac{\text{SS}_{\text{Between}}}{k - 1}}{\frac{\text{SS}_{\
 $\text{SS}_{\text{Between}} = \sum_{i=1}^{k} n_i (\bar{X}_i - \bar{X}_{\text{grand}})^2$
 
 $\text{SS}_{\text{Within}} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (X_{ij} - \bar{X}_i)^2$
+
+## New statistic{.smaller}
+
+$F = \frac{\text{MS}_{\text{Between}}}{\text{MS}_{\text{Within}}}$
+
+$\mathbf{F} = \frac{\frac{\text{SS}_{\text{Between}}}{k - 1}}{\frac{\text{SS}_{\text{Within}}}{N - k}}$
+
+$\text{SS}_{\text{Between}} = \sum_{i=1}^{k} n_i (\bar{X}_i - \bar{X}_{\text{grand}})^2$
+
+We multiply by $n_i$ in the between-groups sum of squares because each group mean represents \(n_i\) observations, and we need to account for all of them.
+
+$\text{SS}_{\text{Within}} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (X_{ij} - \bar{X}_i)^2$
+
+ith - group
+
+jth - observation
 
 ## Draw it out
 
@@ -447,6 +463,8 @@ ggplot(plot_data, aes(x = m, y = FWER)) +
 
 [Article](https://gizmodo.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800)
 
+"Here’s a dirty little science secret...."
+
 ## Learning objectives
 
 -- Why we use tukeysHSD 
@@ -482,6 +500,7 @@ Typically, we use pre-packaged functions/applets to do the above
 calculations for us.
 
 ```{r}
+#| echo: true
 qtukey(p = 0.95, nmeans = 3, df = 27)
 ```
 
