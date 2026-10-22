@@ -65,6 +65,8 @@ website:
             text: "Day-16"
           - href: 17-tuke.qmd
             text: "Day-17"
+          - href: 18-tuke-time.qmd
+            text: "Day-18"
 format:
   html:
     theme: cosmo

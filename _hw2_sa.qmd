@@ -1,5 +1,6 @@
 ---
 title: "Homework-2"
+format: pdf
 author: "Solutions"
 ---
 
@@ -64,11 +65,11 @@ $n_g = 150$
 
 $n_l = 150$
 
-$SE(p_{\text{l-null}} - p_{\text{g-null}}) = \sqrt{\frac{p_{\text{l-null}}(1-p_{\text{l-null}})}{n_l} + \frac{p_{\text{g-null}}(1-p_{\text{g-null}})}{n_g}}$
+$p_{\text{pooled}} = \frac{45 + 60}{150 + 150} = \frac{105}{300} = 0.35$
 
-$= \sqrt{\frac{0.5(1-0.5)}{150} + \frac{0.5(1-0.5)}{150}}$
+$SE = \sqrt{p_{\text{pooled}}(1 - p_{\text{pooled}}) \left(\frac{1}{n_l} + \frac{1}{n_g}\right)}$
 
-$= 0.0577$
+$SE = \sqrt{0.35(1 - 0.35) \left(\frac{1}{150} + \frac{1}{150}\right)} = \sqrt{0.2275 \left(\frac{2}{150}\right)} \approx 0.0550757$
 
 c. Please see the following visualization to answer the following question: 
 
@@ -181,7 +182,7 @@ $SE = \sqrt{\frac{0.35(1-0.35)}{150} + \frac{0.35(1-0.35)}{150}}$
 
 $SE = \sqrt{\frac{0.2275}{150} + \frac{0.2275}{150}}$
 
-$SE \approx 0.0551$
+$SE \approx 0.0550757 \approx 0.0551$ 
 
 Calculate the critical values
 For a two-sided test with $\alpha=0.05$, the critical z-values are $\pm 1.96$.
@@ -190,6 +191,7 @@ $\approx \pm 0.1080$
 
 ```{r}
 #| echo: true
+#| eval: true
 pnorm(q = 1.96 * 0.0551, mean = 0.2, sd = 0.0551) -
   pnorm(q = -1.96 * 0.0551, mean = 0.2, sd = 0.0551)
 ```

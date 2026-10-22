@@ -194,9 +194,9 @@ Note
 <p>The researcher wants to calculate the probability of making a Type-2 error, and the Power of their test. Below, report the values from the context of the problem that we will need to make these calculations. Show your work if necessary.</p>
 <p><span class="math inline">\(n_g = 150\)</span></p>
 <p><span class="math inline">\(n_l = 150\)</span></p>
-<p><span class="math inline">\(SE(p_{\text{l-null}} - p_{\text{g-null}}) = \sqrt{\frac{p_{\text{l-null}}(1-p_{\text{l-null}})}{n_l} + \frac{p_{\text{g-null}}(1-p_{\text{g-null}})}{n_g}}\)</span></p>
-<p><span class="math inline">\(= \sqrt{\frac{0.5(1-0.5)}{150} + \frac{0.5(1-0.5)}{150}}\)</span></p>
-<p><span class="math inline">\(= 0.0577\)</span></p>
+<p><span class="math inline">\(p_{\text{pooled}} = \frac{45 + 60}{150 + 150} = \frac{105}{300} = 0.35\)</span></p>
+<p><span class="math inline">\(SE = \sqrt{p_{\text{pooled}}(1 - p_{\text{pooled}}) \left(\frac{1}{n_l} + \frac{1}{n_g}\right)}\)</span></p>
+<p><span class="math inline">\(SE = \sqrt{0.35(1 - 0.35) \left(\frac{1}{150} + \frac{1}{150}\right)} = \sqrt{0.2275 \left(\frac{2}{150}\right)} \approx 0.0550757\)</span></p>
 <ol start="3" type="a">
 <li>Please see the following visualization to answer the following question:</li>
 </ol>
@@ -228,7 +228,7 @@ Note
 <p>Calculate the standard error under the assumption of the null hypothesis <span class="math inline">\(SE = \sqrt{\frac{\hat{p}_{\text{pooled}}(1-\hat{p}_{\text{pooled}})}{n_l} + \frac{\hat{p}_{\text{pooled}}(1-\hat{p}_{\text{pooled}})}{n_g}}\)</span></p>
 <p><span class="math inline">\(SE = \sqrt{\frac{0.35(1-0.35)}{150} + \frac{0.35(1-0.35)}{150}}\)</span></p>
 <p><span class="math inline">\(SE = \sqrt{\frac{0.2275}{150} + \frac{0.2275}{150}}\)</span></p>
-<p><span class="math inline">\(SE \approx 0.0551\)</span></p>
+<p><span class="math inline">\(SE \approx 0.0550757 \approx 0.0551\)</span></p>
 <p>Calculate the critical values For a two-sided test with <span class="math inline">\(\alpha=0.05\)</span>, the critical z-values are <span class="math inline">\(\pm 1.96\)</span>. <span class="math inline">\(= \pm 1.96(0.0551)\)</span> <span class="math inline">\(\approx \pm 0.1080\)</span></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fl">0.0551</span>, <span class="at">mean =</span> <span class="fl">0.2</span>, <span class="at">sd =</span> <span class="fl">0.0551</span>) <span class="sc">-</span></span>

@@ -1,0 +1,186 @@
+---
+title: "Homework-2"
+format: pdf
+---
+
+:::{.callout-note}
+This assignment is due October 16th at 11:59pm on Gradescope 
+:::
+
+## Instructions on how to start
+
+This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.
+
+**Show your work**. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work. 
+
+
+## Instructions on how to turn your homework in
+
+You will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: [Video](https://www.youtube.com/watch?v=nksyA0s-Geo). **Please submit a PDF**. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation. 
+
+
+## Exercise 1 (15 points)
+
+For each scenario, write out the appropriate null and alternative hypothesis **in proper notation**.
+
+a)  A professor wants to know if the average exam score for her class is different from the historical average of 80 on a standardized test. She believes her class will perform differently due to a new teaching method.
+
+b)  A space agency wants to compare the reliability of two different private companies, Provider A and Provider B, for launching satellites into orbit. The agency collects data on their recent launch history. Provider A has completed 200 launches, with 192 of them being successful. Provider B has completed 150 launches, with 138 of them being successful. The space agency wants to investigate if Provider B has less safe launches, as they tend to user older technologies.
+
+c)  A politician claims that they have an approval rating of at least 50%. A political analyst wants to test this claim and believes the true approval rating is lower.
+
+## Exercise-2 (30-points)
+
+A veterinarian wants to determine whether the proportion of dogs that experience seasonal allergies differs between two breeds. A random sample of 150 Labrador Retrievers is examined, and 45 are found to experience seasonal allergies. A random sample of 150 Golden Retrievers is examined, and 60 are found to experience seasonal allergies.
+
+Is there evidence that the proportion of dogs experiencing seasonal allergies differs between Labrador Retrievers and Golden Retrievers? Use a significance level of $\alpha=0.05$ to answer this question.
+
+a. Define $p_l$ and $p_g$ in words in the context of the problem. 
+
+b. Our null and alternative hypotheses can be seen below: 
+$H_o: p_l = p_g$
+
+$H_a: p_l \neq p_g$
+
+The researcher wants to calculate the probability of making a Type-2 error, and the Power of their test. Below, report the values from the context of the problem that we will need to make these calculations. Show your work if necessary. 
+
+-   $n_g$ = 
+
+-   $n_l$ = 
+
+-   $SE(p_{\text{l-null}} - p_{\text{g-null}})$ = 
+
+c. Please see the following visualization to answer the following question: 
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(ggplot2)
+
+# Parameters
+null_mean <- 0
+alternative_mean <- 0.20
+se <- 0.05
+alpha <- 0.05
+
+# Critical values
+critical_left <- qnorm(alpha / 2, mean = null_mean, sd = se)
+critical_right <- qnorm(1 - alpha / 2, mean = null_mean, sd = se)
+
+# Create data
+x <- seq(-0.25, 0.40, length.out = 1000)
+
+data <- data.frame(
+  x = x,
+  null = dnorm(x, mean = null_mean, sd = se),
+  alternative = dnorm(x, mean = alternative_mean, sd = se)
+)
+
+ggplot(data, aes(x = x)) +
+  
+  # Null distribution
+  geom_line(aes(y = null), linewidth = 1) +
+  
+  # Alternative distribution
+  geom_line(aes(y = alternative), 
+            linewidth = 1, linetype = "dashed") +
+  
+  # Type I error - left tail
+  geom_area(
+    data = subset(data, x <= critical_left),
+    aes(y = null),
+    fill = "red",
+    alpha = 0.5
+  ) +
+  
+  # Type I error - right tail
+  geom_area(
+    data = subset(data, x >= critical_right),
+    aes(y = null),
+    fill = "red",
+    alpha = 0.5
+  ) +
+  
+  # Type II error
+  geom_area(
+    data = subset(data, x >= critical_left & x <= critical_right),
+    aes(y = alternative),
+    fill = "blue",
+    alpha = 0.5
+  ) +
+  
+  # Power - right rejection region
+  geom_area(
+    data = subset(data, x >= critical_right),
+    aes(y = alternative),
+    fill = "green",
+    alpha = 0.5
+  ) +
+  
+  # Critical values
+  geom_vline(
+    xintercept = c(critical_left, critical_right),
+    linetype = "dotted",
+    linewidth = 1
+  ) +
+  
+  labs(
+    x = "Difference in Proportions",
+    y = "Density"
+  ) +
+  
+  theme_minimal()
+```
+
+Match the colors red, blue, and green, to the following terms: 
+
+- Probability of a Type-1 error: 
+
+- Probability of a Type-2 error: 
+
+- Power: 
+
+d. The effect size the researchers are interested in is 0.2. Interpret 0.2 in the context of the problem. 
+
+e. Use the information above to calculate the probability of a Type-2 error, and the power of this test. 
+
+Hint: Please see this slide to help answer this question. [Slide](https://st312-fall26.github.io/class/014-chi.html#/homework-slide)
+
+## Exercise-3 (23 points)
+
+Suppose you took a random sample of North Carolina residents. The following 2×2 contingency table presents the observed frequencies from a survey of N=200 individuals, categorized by their Age Group and their primary Media Preference.
+
+|                  | Prefers Streaming Video | Prefers Traditional TV | Row Total |
+|:-----------------|:-----------------------:|:----------------------:|:---------:|
+| **Ages 18-35**   |           85            |           15           |    100    |
+| **Ages 55+**     |           45            |           55           |    100    |
+| **Column Total** |           130           |           70           |    200    |
+
+a.  We are going to do a chi-square test of independence to assess the relationship between media preference, and age. Below, in words, write out the null and alternative hypothesis.
+
+$Ho:$
+
+$Ha:$
+
+b.  Draw the following table below. Fill in the blanks with the **expected** counts. You may round to your answers to two decimal places.
+
+Table of expected counts:
+
+|                  | Prefers Streaming Video | Prefers Traditional TV | Row Total |
+|:-----------------|:-----------------------:|:----------------------:|:---------:|
+| **Ages 18-35**   |         \_\_\_          |         \_\_\_         |    100    |
+| **Ages 55+**     |         \_\_\_          |         \_\_\_         |    100    |
+| **Column Total** |           130           |           70           |    200    |
+
+c.  Now, calculate our $\chi^2$ statistic, by hand. Use the following slide for [help](https://st312-fall26.github.io/class/014-chi.html#/expected-formula). Show your work!
+
+d.  Visit the applet on the [slide](https://st312-fall26.github.io/class/014-chi.html#/chi-square). Draw the appropriate chi-square distribution that our test-statistic will follow. Title the plot you draw as: "Chi-square distribution with \_\_\_\_ degrees of freedom". Fill in the \_\_\_\_ with the appropriate degrees of freedom.
+
+Next, label your statistic, and shade in the area underneath the graph that represents your p-value.
+
+## Exercise 4 (5 points)
+
+A large retail store tracks customer complaints to determine if the volume of complaints is evenly distributed across the five primary days of the work week (Monday through Friday). The management's null hypothesis is that the complaints occur with equal frequency on all five days. We want to determine if the observed distribution of complaints significantly differs from the expected uniform distribution.
+
+a.  In 2-4 sentences, explain the difference between a goodness of fit test, and a test for independence AND specify which test would be most appropriate for the scenario above.
