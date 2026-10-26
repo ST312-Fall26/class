@@ -1,0 +1,122 @@
+---
+title: "ST312: How to study guide (Exam-2)"
+format: pdf
+---
+
+#### Question Type
+
+The exam will contain the following types of questions: 
+
+-- Multiple choice 
+
+-- TRUE/FALSE 
+
+-- Free response 
+
+-- Identifying scenarios 
+
+Midterm-2 is worth 20% of your total grade. Below is a list of high level topics that have been covered so far since unit-1, that would good for you to consider/review prior to the exam. Note: This list is not mean to be exhaustive and serves to act as a big picture guide on how to study for the exam. As a reminder, this is only a 75-minute exam, and I can not test you on everything. 
+
+#### Identifying scenarios 
+
+It's an important skill to be able to read a short paragraph, and pick out the important pieces of information as they relate to statistical inference. The exam will start with 5 scenarios, where you will be asked to identify the scenario (ex. difference in means; one-way ANOVA), and wirte out the correct null and alternative hypotheses. 
+
+Example: A candy company claims that its bags of jelly beans contain equal proportions of five colors: red, orange, yellow, green, and purple. A student randomly selects 100 jelly beans from several bags and records their following counts. 
+
+To start answering this question, we can first ask ourselves how many variables we are working with. In this case, we can identify there is only a single variable (color of jelly bean). We know this is a cateogrical variable because colors act as bins, and it does not makes sense to take the mean/median. This information eliminates one-way ANOVA, chi-square test of independence, single-mean, difference in means, and difference in proportions. We then can ask "how many levels does my cateogircal variable have". The answer is 5, which is larger than 2. This rules out a single proportion test. We are only left with one scenario we have covered in-class: **chi-square goodness of fit**. A chi-square goodness of fit test tests one cateogircal variable with > 2 levels vs hypothesized values driven from some distribution. In this case, it would be the uniform distribution because the cmopany claims that its bags of jelly beans contain equal proportions of five colors. With this, we know how to write out the null and alternative hypothesis: 
+
+$Ho:$ The true proportion of all five colors of jelly bean are equal. 
+
+$Ha:$ The observed counts/frequencies do not follow the uniform distribution; At least one true proportion of jelly bean colors are different. 
+
+I suggest practicing both with examples we have done in-class, and on old homework assignments. The scenarios are cumulative starting from single-mean / single-proportion up through ANOVA / Chi-square tests. In addition, I suggest practicing writing out your own scenarios. If you have confidently create your paragraphs for each of our scenarios, you should feel confident going into the exam and answering these questions. Practice with the format: 
+
+-- How many variables do I have? 
+
+-- If I have 2, which is my explanatory vs response? 
+
+-- If I have a cateogircal variable, how many levels does it have?
+
+-- What is my research question asking?
+
+This will also help you answer questions on the exam as they pertain to ANOVA/Chi-sqaure. 
+
+#### ANOVA 
+
+-- Do I know when we use ANOVA techniques? 
+
+-- Do I know how this is different than difference in means?
+
+-- Am I comfortable with the null/alternative hypotheses? Do I understand that this is a pre-screening? 
+
+-- Do I know the assumptions and how to check them?
+
+-- Do I know what type of statistic is used for this hypothesis test? What about the distribution? Degrees of freedom?
+
+-- Do I know / am I comfortable with the relationship between values on an ANOVA table. For example, the mean square is the sums of squares divided by the degrees of freedom. Do I know what these values mean?
+
+-- Do I know why we do Tukeys HSD? Do I know why we use it? Do I understand what "family-wise error rate" is? 
+
+-- Can I read ANOVA output? Can I read Tukeys output?
+
+#### Chi-square 
+
+-- Do I know when we use Chi-square techniques?
+
+-- Do I know how these techniques are different than difference in proportions / single proportion tests? 
+
+-- Can I write out the null + alternative hypotheses for chi-square tests?
+
+-- Do I know the assumptions and how to check them?
+
+-- Do I know what type of statistic is used for this hypothesis test? What about the distribution? Degrees of freedom?
+
+-- Do I know what expected values are? Do I know the big picture of chi-square testing? 
+
+-- Can I read output?
+
+#### Error and Power 
+
+-- Am I comfortable with Type-1, Type-2 errors? When could we make them? Can I write out the definitions in the context of the problem?
+
+-- Do I know the value of a Type-1 error? Do I know the relationship between the probability of a Type-II error and Power?
+
+-- Can I locate these values on a graph? 
+
+-- Do I understand the concept of a power analysis? That this is often done before our study to help us ensure our sample size is large enough to have a high probability of rejecting the null hypothesis correctly? 
+
+-- Can I interpret an effect size? Do I understand that an effect size is an assumed population level difference, but that it doesn't actually change my null/alternative hypothesis? Effect sizes help us calculate power, probability of a type-II error for different "what-if" scenarios. 
+
+-- Can I interpret power in the context of the problem?
+
+-- Do I know how changes in my study impact Type-1, Type-II, and power? For example, what happens if the effect size I set to make these calculations is smaller than before? 
+
+#### Study strategies 
+
+It’s one thing to follow along in-class, but I highly suggest you take the time to go back and
+re-read the notes you have put together. Sometimes, it’s difficult to internalize the content
+the first time seeing the content. To help cement the foundation, please go back and re-read +
+apply your understandings.
+
+Simulate the situation! I do not post a formal practice exam because I have seen too many
+students memorize the practice exam and perform poorly on the actual exam. However, you
+have an abundance of practice problems that you can do in a self-timed setting between our
+slides, homework-1, and practice problems from the book. Print out your formula sheet, and
+apply your understanding (using pencil + paper) when studying for the midterm.
+Practice setting up problems! My suggestion here is to write out what you know from the
+problem, and use this information in combination with what you are trying to solve in order to
+pick a correct path.
+
+Bring a highlighter. Pick out important information from the paragraph that will help you
+answer the question.
+
+Create your own scenarios. It's one thing to do problems, but it shows a mastery if you can come up with your own. What does a one-way ANOVA problem look like? Can you write one? Try it! Then, try and answer it. 
+
+**Talk about loud**. No, you can not do this during the exam, but talking out loud while studying helps us master the jargon. Once we master the jargon, the building blocks start to get put into place. 
+
+Ask questions before the midterm! 
+
+
+
+
+

@@ -1,0 +1,333 @@
+---
+title: "Exam-2"
+subtitle: "ST312"
+format: 
+  pdf:
+    fig-align: center
+    fig-asp: 0.618
+    margin-bottom: 2cm
+    margin-top: 1cm
+    margin-left: 1.75cm
+    margin-right: 1.75cm
+editor_options: 
+  chunk_output_type: console
+---
+
+\vspace{-1cm}
+
+|                                                          |                                                           |
+|------------------------------------|------------------------------------|
+|                                                          |                                                           |
+| First name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | Last name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
+
+> I hereby state that I have not communicated with or gained information in any way from my classmates during this exam, and that all work is my own.
+
+\vspace{5 mm}
+
+> Signature: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\vspace{2 mm}
+
+**Any potential violation of NC State's policy on academic integrity will be reported to the Office of Student Conduct & Community Standards. All work on this exam must be your own.**
+
+1.  You have 75 minutes to complete the exam.
+2.  You have a formula sheet on the back of this exam. You may also use this as scratch paper.
+3.  You may use a calculator 
+4.  Every MC question is worth 3-points unless otherwise specified. 
+5.  Every True/False question is worth 2-points unless otherwise specified.
+6.  You are **not** allowed a cell phone, even if you intend to use it for checking the time, music device or headphones, notes, books, or other resources, or to communicate with anyone other than the professor during the exam.
+7.  Show your work. Partial credit can not be earned without any work shown.
+8.  Round all answers to 4 digits (ex. 2.34245 = 2.3425)
+9.  For True or False / MC questions, please circle your answer clearly. 
+
+
+Good luck!
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+```
+
+
+{{< pagebreak >}}
+
+## Pick a Test(25-points) 
+
+For **each** scenario below, identify the **MOST APPROPRIATE** statistical test from the choices in the table. In addition, write out the appropriate **null** and **alternative** hypothesis in **proper notation and/or in words**.
+
+If you identify a scenario as **Other**, you do not need to specify the null and alternative hypothesis.
+
+| Statistical Test | Statistical Test |
+|:-----------------|:-----------------|
+| Single mean | Difference in means |
+| Single proportion | Difference in proportions |
+| One-way ANOVA | Chi-square test of independence |
+| Chi-square goodness of fit | Other |
+
+1. A major sports league is conducting a survey to determine if a person's favorite sport to watch is associated with their level of education. They surveyed 500 fans and recorded their responses. Favorite sport was recorded as: basketball, football, tennis soccer, other. Highest level of education was recorded as: earning a college degree, and not earning a college degree.
+
+Statistical Test: 
+
+\vspace{5 mm}
+
+$Ho:$
+
+\vspace{5 mm}
+
+$Ha:$
+
+\vspace{5 mm}
+
+2. A researcher wants to determine whether average exam scores differ among students who use three different study methods: flashcards, practice exams, or rereading notes. The researcher randomly assigns 60 students to one of the three study methods, with 20 students in each group. Each student then takes the exam.
+
+Statistical Test: 
+
+\vspace{5 mm}
+
+$Ho:$
+
+\vspace{5 mm}
+
+$Ha:$
+
+\vspace{5 mm}
+3. A researcher wants to investigate whether the number of hours a student spends studying for an exam helps accuratly predict the probability that the student passes the exam. The researcher collects data from 200 students, recording each student's hours studied, in hopes that it will help explain whether they passed or failed the exam.
+
+Statistical Test: 
+
+\vspace{5 mm}
+
+$Ho:$
+
+\vspace{5 mm}
+
+$Ha:$
+
+\vspace{5 mm}
+
+\newpage
+
+4. A university claims that at least 70% of its students are satisfied with the campus dining services. A researcher randomly samples 200 students and finds that 130 report being satisfied. The researcher wants to determine whether there is sufficient evidence that the true proportion of satisfied students is less than 70%.
+
+Statistical Test: 
+
+\vspace{5 mm}
+
+$Ho:$
+
+\vspace{5 mm}
+
+$Ha:$
+
+\vspace{5 mm}
+
+5. We would like to test to see if there is a difference in average run times for men and women. A simple random sample of 45 men and 55 women from all runners in the 2012 Cherry Blossom Run. For this study, run time is measured in minutes. From the sample, we calculated the following statistics: $\bar{x_m} = 87.65$, $s_m$ = 12.5, $\bar{x_f} = 102.13$, $s_f$ = 15.2.
+
+Statistical Test: 
+
+\vspace{5 mm}
+
+$Ho:$
+
+\vspace{5 mm}
+
+$Ha:$
+
+\vspace{5 mm}
+
+## Error and Power 
+
+A veterinarian wants to investigate whether Labrador Retrievers and Golden Retrievers differ in their average daily exercise time. The veterinarian randomly samples 100 dogs from each breed and records the number of minutes each dog exercises per day. The hypothesis test was set up as follows: 
+
+$Ho: \mu_g - \mu_l = 0$
+
+$Ha: \mu_g - \mu_l \neq 0$
+
+Prior to the study, previous research suggests that the effect size for the true difference in means was equal to 5-minutes. At n = 200 (100 each), they conducted a power analysis and calculated power to be .74. This hypothesis test uses $\alpha$ = 0.05. 
+
+Please use this context to answer the following questions. 
+
+1. In words and in the context of the problem, interpret the value .74.
+
+\vspace{20 mm}
+
+2. Calculate the probability of making a Type-II error, and calculate the probability of making a Type-I error. 
+
+\newpage
+
+
+3. Assuming everything else stayed the same, if we decreased the sample size from 200 to 50, what would change? **Please circle all that apply** 
+
+|                                                  |                                                  |                                                  |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| a. Power would increase                          | b. Power would decrease                          | c. Probability of a Type-II error would increase |
+| d. Probability of a Type-II error would decrease | e. Probability of a Type-I error would increase  | f. Probability of a Type-I error would decrease  |
+| g. Our null hypothesis value would change        | h. Our alternative hypothesis value would change |                                                  |
+
+4. Assuming everything else stayed the same, if we decided to perform our calculations with a new effect size of 10, what would change? **Please circle all that apply**.
+
+|                                                  |                                                  |                                                  |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| a. Power would increase                          | b. Power would decrease                          | c. Probability of a Type-II error would increase |
+| d. Probability of a Type-II error would decrease | e. Probability of a Type-I error would increase  | f. Probability of a Type-I error would decrease  |
+| g. Our null hypothesis value would change        | h. Our alternative hypothesis value would change |                                                  |
+
+5. Assuming everything else stayed the same, if the standard deviations for each group (Golden and Labrador) decrease, what would change? **Please circle all that apply**.
+
+|                                                  |                                                  |                                                  |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| a. Power would increase                          | b. Power would decrease                          | c. Probability of a Type-II error would increase |
+| d. Probability of a Type-II error would decrease | e. Probability of a Type-I error would increase  | f. Probability of a Type-I error would decrease  |
+| g. Our null hypothesis value would change        | h. Our alternative hypothesis value would change |                                                  |
+
+6. The estimated difference in sample means is 7 minutes (Golden - Labrador), and the test produces a p-value of 0.021, using a significance level of $\alpha$ = 0.05.Which of the following statements is true... 
+
+a. We could have only made a Type-II error, and not a Type-I error.
+
+b. We did make a Type-II error, and not a Type-I error. 
+
+c. We could have only made a Type-I error, and not a Type-II error. 
+
+d. We did make a Type-I error, and not a Type-II error.
+
+
+\newpage
+
+## Anova (20 points)
+
+You think that some coffee shops don't actually fill up their 16oz lattes to the rim..... You set out to investigate this, looking for a significant difference in the mean weight (in oz) of a medium latte among \# popular coffee shop chains around NC State.
+
+You conduct an ANOVA test. See your results below. Use this table to answer your question.
+
+|                             |                             |                         |                      |                 |             |
+|------------|------------|------------|------------|------------|------------|
+| **Source of Variation**     | **Degrees of Freedom (df)** | **Sum of Squares (SS)** | **Mean Square (MS)** | **F-statistic** | **P-value** |
+| **Between Groups** (Chains) | 3                           | 25.10                   | 8.37                 | \_\_\_\_\_      | \< 0.001    |
+| **Within Groups** (Error)   | 28                          | 5.43                    | 0.194                |                 |             |
+| **Total**                   | 31                          | 30.53                   |                      |                 |             |
+
+1.  Based on the ANOVA table, how many coffee shops were included in this study?
+
+<!-- -->
+
+a.  3
+
+b.  4
+
+c.  2
+
+
+<!-- -->
+
+2.  Based on the ANOVA table, what was your total sample size of this study? Show your work.
+
+{{< pagebreak >}}
+
+3.  Based on the ANOVA table, what is the sample size for the first coffee shop?
+
+<!-- -->
+
+a.  28
+
+b.  25 
+
+c.  7 or 8
+
+d.  Not enough information to tell
+
+\vspace{5 mm}
+
+4. The appropriate interpretation for the value 25.10 is...
+
+a. The total variation in weight explained by the differences between individual lattes, and their respective sample mean.
+
+b. The total variation in weight across all lattes in the entire study. 
+
+c. The variation in weight that is specifically due to the differences in the mean weights of the coffee chains from an overall (grand) mean.
+
+\vspace{5 mm}
+
+5.  Based on the ANOVA table, calculate your F-statistic. Show your work.
+
+\vspace{20 mm}
+
+6.  True or False: Based on the p-value from the ANOVA table above, we would be justified to perform a post-hoc analysis. 
+
+a. True
+
+b. False
+
+{{< pagebreak >}}
+
+\vspace{5 mm}
+
+7. See the following graph to answer the next two questions. 
+
+```{r}
+#| echo: false
+
+# Load the ggplot2 library for plotting
+library(ggplot2)
+
+# Set the individual test significance level (alpha)
+alpha <- 0.05
+
+# Define the range of comparisons (m) from 1 to 10
+m_values <- 1:10
+
+# Calculate the Familywise Error Rate (FWER) for each m
+# FWER = 1 - (1 - alpha)^m
+fwer_values <- 1 - (1 - alpha)^m_values
+
+# Create a data frame for plotting
+plot_data <- data.frame(
+  m = m_values,
+  FWER = fwer_values
+)
+
+# Plot the FWER vs. the number of comparisons (m)
+ggplot(plot_data, aes(x = m, y = FWER)) +
+  
+  # Add the line and points for the FWER
+  geom_line(color = "blue", linewidth = 1) +
+  geom_point(color = "darkblue", size = 3) +
+  
+  # Add a horizontal line at the nominal alpha level (0.05)
+  geom_hline(yintercept = alpha, linetype = "dashed", color = "red") +
+  
+  # Add labels and title
+  labs(
+    title = expression(paste("Inflation of Familywise Error Rate (FWER) as m Increases")),
+    subtitle = "alpha = 0.05",
+    x = "Number of Comparisons (m)",
+    y = "Familywise Error Rate (FWER)"
+  ) +
+  
+  # Customize scales
+  scale_x_continuous(breaks = m_values) +
+  scale_y_continuous(breaks = seq(0, max(fwer_values) + 0.05, 0.05)) +
+  
+  # Apply a clean theme
+  theme_minimal()
+```
+
+For our coffee shop study, assuming that $\alpha$ = 0.05, what would you estimate the error rate to be if we **did not** account for the error rate inflation, and did a bunch of individual t-tests to look find evidence for a difference in means. **Circle** your answer on the graph above.  Hint, use your answer from 1 to answer this question. 
+
+\vspace{5 mm}
+
+## Chi-square 
+
+```{r}
+data(HairEyeColor)
+
+# Combine across gender
+hair_eye <- margin.table(HairEyeColor, c(1, 2))
+hair_eye
+
+# Chi-square test of independence
+chisq.test(hair_eye)
+```
+
