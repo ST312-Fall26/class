@@ -7991,7 +7991,7 @@
     "href": "review2.html#example-3-groups",
     "title": "Finish FamilyWise Error Rate Corrections",
     "section": "Example: 3 groups",
-    "text": "Example: 3 groups\nWith 3 groups, there are\n\\(m = \\binom{3}{2} = 3\\)\npairwise comparisons. To obtain 95% familywise confidence:\n\\(\\alpha^* = \\frac{0.05}{3} = 0.0167\\)\nEach interval is therefore constructed at approximately 98.33% confidence, using a \\(t^*\\) critical value with \\(0.0167/2\\) in each tail.\nThis controls the familywise error rate to be 95%",
+    "text": "Example: 3 groups\nWith 3 groups, there are\n\\(m = \\binom{3}{2} = 3\\)\npairwise comparisons. To obtain 95% familywise confidence:\n\\(\\alpha^* = \\frac{0.05}{3} = 0.0167\\)\nEach interval is therefore constructed at approximately 98.33% confidence, using a \\(t^*\\) critical value with \\(0.0167/2\\) in each tail.\nThis controls the familywise error rate to be 5% (95% confidence intervals)",
     "crumbs": [
       "Slides",
       "Day-19"

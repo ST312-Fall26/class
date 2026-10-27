@@ -190,7 +190,7 @@ $\alpha^* = \frac{0.05}{3} = 0.0167$
 
 Each interval is therefore constructed at approximately 98.33% confidence, using a $t^*$ critical value with $0.0167/2$ in each tail.
 
-This controls the familywise error rate to be 95%
+This controls the familywise error rate to be 5% (95% confidence intervals)
 
 
 # Questions 
