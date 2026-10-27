@@ -8376,7 +8376,7 @@
     "href": "review2.html#example-2",
     "title": "Finish FamilyWise Error Rate Corrections",
     "section": "Example",
-    "text": "Example\nstudy_table[,1]\nMaybe we were interested in seeing if there are an equal number of students in each grade. We could write this as:\n\\(Ho:\\) - the observed counts/frequencies follow a uniform theoretical distribution. All 4 grades have an equal probability 1/4\n\\(Ha:\\) - The observed frequencies do not follow the uniform distribution.",
+    "text": "Example\n\n\n Freshman Sophomore    Junior    Senior \n       35        28        22        30 \n\n\nMaybe we were interested in seeing if there are an equal number of students in each grade. We could write this as:\n\\(Ho:\\) - the observed counts/frequencies follow a uniform theoretical distribution. All 4 grades have an equal probability 1/4\n\\(Ha:\\) - The observed frequencies do not follow the uniform distribution.",
     "crumbs": [
       "Slides",
       "Day-19"

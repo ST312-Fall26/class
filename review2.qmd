@@ -646,7 +646,10 @@ One variable vs hypothesized (expected) values from a distribution!
 
 ## Example 
 
+```{r}
 study_table[,1]
+```
+
 
 Maybe we were interested in seeing if there are an equal number of students in each grade. We could write this as: 
 
