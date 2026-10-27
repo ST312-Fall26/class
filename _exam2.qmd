@@ -58,7 +58,7 @@ library(tidyverse)
 
 For **each** scenario below, identify the **MOST APPROPRIATE** statistical test from the choices in the table. In addition, write out the appropriate **null** and **alternative** hypothesis in **proper notation and/or in words**.
 
-If you identify a scenario as **Other**, you do not need to specify the null and alternative hypothesis.
+If you identify a scenario as **Other**, you **DO NOT** need to specify the null and alternative hypothesis.
 
 | Statistical Test | Statistical Test |
 |:-----------------|:-----------------|
@@ -138,7 +138,43 @@ $Ha:$
 
 \vspace{5 mm}
 
-## Error and Power 
+
+## Multiple Choice(9-points){.smaller} 
+
+1.  Suppose you calculate a F-statistic of -6.78. From this, you can determine that...
+
+<!-- -->
+
+a. You made some arithmetic mistake. F-statistics can not be negative
+
+b. You have an observed statistic that is really unlikely to be observed under the assumption of the null hypothesis
+
+c. Every value in your data set is negative
+
+d. You would fail to reject the null hypothesis, because the test statistic is negative
+
+\vspace{5 mm}
+
+2.  Suppose a researcher, using a t-distribution with 20 degrees of freedom, calculated a p-value to be 0.076. Assuming that everything else regarding the study stayed exactly the same, what would happen to the p-value if we used a t-distribution with 5 degrees of freedom...
+
+<!-- -->
+
+a. The p-value would be larger
+
+b. The p-value would be smaller
+
+c. The p-value would stay exactly the same
+
+3. When conducting a chi-square test, if the expected counts are much much lower than the observed counts, we would expect... 
+
+a. The p-value to be large 
+
+b. The p-value to be small
+
+\newpage
+
+
+## Error and Power(24-points)
 
 A veterinarian wants to investigate whether Labrador Retrievers and Golden Retrievers differ in their average daily exercise time. The veterinarian randomly samples 100 dogs from each breed and records the number of minutes each dog exercises per day. The hypothesis test was set up as follows: 
 
@@ -156,7 +192,7 @@ Please use this context to answer the following questions.
 
 2. Calculate the probability of making a Type-II error, and calculate the probability of making a Type-I error. 
 
-\newpage
+\vspace{20 mm}
 
 
 3. Assuming everything else stayed the same, if we decreased the sample size from 200 to 50, what would change? **Please circle all that apply** 
@@ -175,7 +211,9 @@ Please use this context to answer the following questions.
 | d. Probability of a Type-II error would decrease | e. Probability of a Type-I error would increase  | f. Probability of a Type-I error would decrease  |
 | g. Our null hypothesis value would change        | h. Our alternative hypothesis value would change |                                                  |
 
-5. Assuming everything else stayed the same, if the standard deviations for each group (Golden and Labrador) decrease, what would change? **Please circle all that apply**.
+\newpage
+
+5. Assuming everything else stayed the same, if the standard deviations for each group (Golden and Labrador) decrease, and were used to estimate the respective $\sigma$s, what would change? **Please circle all that apply**.
 
 |                                                  |                                                  |                                                  |
 | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
@@ -193,10 +231,72 @@ c. We could have only made a Type-I error, and not a Type-II error.
 
 d. We did make a Type-I error, and not a Type-II error.
 
+7. Below is our null distribution, with an alternative distribution (effect size) centered at 7. Shade in the area that would represent the probability of rejecting the null hypothesis correctly. Note: the gray area on the plot represents the rejection region.
+```{r}
+#| echo: false 
+#| message: false
+#| warning: false
+library(ggplot2)
+
+library(ggplot2)
+
+SE <- 1.852
+alpha <- 0.05
+effect_size <- 7
+
+crit <- qnorm(1 - alpha / 2) * SE
+
+x <- seq(-6, 12, length.out = 1000)
+
+df <- data.frame(
+  x = rep(x, 2),
+  density = c(
+    dnorm(x, mean = 0, sd = SE),
+    dnorm(x, mean = effect_size, sd = SE)
+  ),
+  distribution = factor(
+    rep(c("Null", "Alternative"), each = length(x)),
+    levels = c("Null", "Alternative")
+  )
+)
+
+ggplot(df, aes(x = x, y = density, linetype = distribution)) +
+  geom_area(
+    data = subset(df, distribution == "Null" & x <= -crit),
+    aes(x = x, y = density),
+    fill = "gray75",
+    inherit.aes = FALSE
+  ) +
+  geom_area(
+    data = subset(df, distribution == "Null" & x >= crit),
+    aes(x = x, y = density),
+    fill = "gray75",
+    inherit.aes = FALSE
+  ) +
+  geom_line(linewidth = 1) +
+  geom_vline(
+    xintercept = c(-crit, crit),
+    linetype = "dotted"
+  ) +
+  scale_linetype_manual(
+    values = c("Null" = "solid", "Alternative" = "dashed")
+  ) +
+  scale_x_continuous(
+    breaks = c(-5, 0, 5, 7, 10)
+  ) +
+  labs(
+    x = "Difference in Sample Means (minutes)",
+    y = "Density",
+    linetype = "Distribution"
+  ) +
+  theme_minimal()
+```
+
+
 
 \newpage
 
-## Anova (20 points)
+## Anova (25 points)
 
 You think that some coffee shops don't actually fill up their 16oz lattes to the rim..... You set out to investigate this, looking for a significant difference in the mean weight (in oz) of a medium latte among \# popular coffee shop chains around NC State.
 
@@ -224,7 +324,7 @@ c.  2
 
 2.  Based on the ANOVA table, what was your total sample size of this study? Show your work.
 
-{{< pagebreak >}}
+\vspace{10 mm}
 
 3.  Based on the ANOVA table, what is the sample size for the first coffee shop?
 
@@ -260,11 +360,8 @@ a. True
 
 b. False
 
-{{< pagebreak >}}
 
-\vspace{5 mm}
-
-7. See the following graph to answer the next two questions. 
+7. See the following graph to answer the next question. 
 
 ```{r}
 #| echo: false
@@ -314,20 +411,141 @@ ggplot(plot_data, aes(x = m, y = FWER)) +
   theme_minimal()
 ```
 
-For our coffee shop study, assuming that $\alpha$ = 0.05, what would you estimate the error rate to be if we **did not** account for the error rate inflation, and did a bunch of individual t-tests to look find evidence for a difference in means. **Circle** your answer on the graph above.  Hint, use your answer from 1 to answer this question. 
+For our coffee shop study, assuming that $\alpha$ = 0.05, what would you estimate the family-wise error rate to be if we **did not** account for the error rate inflation, and did a bunch of individual t-tests to look find evidence for a difference in means. **Circle** your answer on the graph above.  
 
-\vspace{5 mm}
+Show your work. Hint, use your answer from 1 to answer this question. 
 
-## Chi-square 
+Next, interpret the value you circled in the context of the problem.
+
+\vspace{60 mm}
+
+(Fill in the blank) - The p-values and quantile values used for hypothesis testing and confidence intervals when we use Tukeys HSD comes from the _____________________________ distribution.
+
+\newpage
+
+## Chi-square(20-points) 
+
+Below, you can see a data of hair and eye color from 592 randomly selected statistics students.
 
 ```{r}
+#| echo: false 
+
 data(HairEyeColor)
 
 # Combine across gender
 hair_eye <- margin.table(HairEyeColor, c(1, 2))
 hair_eye
-
-# Chi-square test of independence
-chisq.test(hair_eye)
 ```
 
+1. For our $\chi^2$ statistic to theoretically follow a $\chi^2$ distribution, we have to check certain assumptions. **Circle all that apply**. 
+
+a. Equal Variance 
+
+b. Independence
+
+c. Normality of residuals 
+
+d. Expected counts $\ge$ 5
+
+e. n $\ge$ 30
+
+f. Success/Failure
+
+\vspace{15 mm}
+
+2. Under the assumption of the null hypothesis of independence, what would be the expected number of Black haired Green eyed statistics students? Show your work.
+
+\vspace{30 mm}
+
+3. Using the table, report the observed number of Blue eyed Blone haired statistics students.
+
+\newpage
+
+4. Below is output from the chi-square test and the chi-square distribution your test statistic follows. On the chi-square graph, draw how the p-value for this test was calculated. Next, fill in the title of your plot with the correct number of degrees of freedom.
+
+$\chi^2$ = 138
+
+$p-value$ = < 0.001
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+
+data(HairEyeColor)
+
+# Combine across gender
+hair_eye <- margin.table(HairEyeColor, c(1, 2))
+
+# Chi-square test of independence
+test <- chisq.test(hair_eye)
+
+# Test statistic and degrees of freedom
+chi_stat <- as.numeric(test$statistic)
+df <- as.numeric(test$parameter)
+
+# Create chi-square distribution
+x <- seq(0, 200, length.out = 1000)
+
+chi_data <- tibble(
+  x = x,
+  density = dchisq(x, df = df)
+)
+
+# Plot
+ggplot(chi_data, aes(x = x, y = density)) +
+  geom_line(linewidth = 1) +
+  scale_x_continuous(
+    breaks = seq(0, 200, by = 20),
+    limits = c(0, 200)
+  ) +
+  labs(
+    title = "Chi-square distribution with _________ degrees of freedom",
+    x = "",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+
+5. Using the hair and eye context from above, come up with an appropriate null and alternative hypothesis where a chi-square goodness of fit test would be appripriate, in the context of the problem.  
+
+$Ho:$
+
+\vspace{10 mm}
+
+$Ha:$
+
+\newpage
+
+#### Formula sheet 
+
+$df$ = n - 1
+
+$df$ = $min(n_1 - 1, n_2 - 1)$
+
+$df$ = (r-1) * (c-1)
+
+$df$ = k-1 
+
+$df_{\text{numerator}}$ = k-1 
+
+$df_{\text{denominator}}$ = N-k
+
+$\chi^2 = \sum \frac{(O - E)^2}{E}$
+
+$F = \frac{MS_{\text{between}}}{MS_{\text{within}}}$
+
+$F = \frac{SS_{\text{between}}/(k-1)}{SS_{\text{within}}/(n-k)}$
+
+$\text{SS}_{\text{Between}} = \sum_{i=1}^{k} n_i (\bar{X}_i - \bar{X}_{\text{grand}})^2$
+
+$\text{SS}_{\text{Within}} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (X_{ij} - \bar{X}_i)^2$
+
+$E_{ij} = \frac{(\text{row total}_i)(\text{column total}_j)}{\text{grand total}}$
+
+$E_i = n p_i$
+
+where n is the total sample size and $p_i$ is the hypothesized probability in category i.
+
+all pairwise comparisons: $\frac{k(k-1)}{2}$

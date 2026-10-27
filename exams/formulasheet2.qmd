@@ -24,6 +24,10 @@ $F = \frac{MS_{\text{between}}}{MS_{\text{within}}}$
 
 $F = \frac{SS_{\text{between}}/(k-1)}{SS_{\text{within}}/(n-k)}$
 
+$\text{SS}_{\text{Between}} = \sum_{i=1}^{k} n_i (\bar{X}_i - \bar{X}_{\text{grand}})^2$
+
+$\text{SS}_{\text{Within}} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (X_{ij} - \bar{X}_i)^2$
+
 $E_{ij} = \frac{(\text{row total}_i)(\text{column total}_j)}{\text{grand total}}$
 
 $E_i = n p_i$
