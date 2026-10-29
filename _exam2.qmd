@@ -411,7 +411,7 @@ ggplot(plot_data, aes(x = m, y = FWER)) +
   theme_minimal()
 ```
 
-For our coffee shop study, assuming that $\alpha$ = 0.05, what would you estimate the family-wise error rate to be if we **did not** account for the error rate inflation, and did a bunch of individual t-tests to look find evidence for a difference in means. **Circle** your answer on the graph above.  
+For our coffee shop study, assuming that $\alpha$ = 0.05, what would you estimate the family-wise error rate to be if we **did not** account for the error rate inflation, and did a bunch of individual t-tests to look for evidence for a differences in means. **Circle** your answer on the graph above.  
 
 Show your work. Hint, use your answer from 1 to answer this question. 
 

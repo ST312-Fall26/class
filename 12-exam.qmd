@@ -1,7 +1,7 @@
 ---
-title: "Exam-1"
+title: "Exam-2"
 subtitle: ""
-date: "September 24, 2026"
+date: "October 29th, 2026"
 format: 
   revealjs:
     theme: [dark, slides.scss]
@@ -46,6 +46,8 @@ setInterval(updateClock, 1000);
 
 
 \vspace{2mm}
+
+-- **MOST APPROPRIATE** means exactly that. Anova and Chi-square are flexible tools; sometimes there are tools that are more simple to use, and thus more appropriate. 
 
 -- Skip questions you do not know 
 
