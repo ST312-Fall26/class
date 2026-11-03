@@ -106,9 +106,9 @@ Include:
 
 a. Set up the correct null and alternative hypothesis based on the context of your problem. 
 
-| Criteria: Setting up $H_o$ and $H_a$ | Points |
+| Criteria: Setting up $H_o$ and $H_a$ | Points = 2 |
 |:---|:---:|
-| Correctly identifies the population parameter ($\mu$) as the true mean number of hours of sleep for college students. | 2 |
+| Correctly identifies the population parameter ($\mu$) as the true mean number of hours of sleep for college students. | -0.5 |
 | Correctly states the null hypothesis: $H_0: \mu = 7$. | -0.5 |
 | Correctly states the alternative hypothesis: $H_A: \mu \neq 7$. | -0.5 |
 | Uses appropriate notation and identifies that this is a two-sided test because the researcher is interested in whether the mean differs from 7 hours. | -0.5 |
