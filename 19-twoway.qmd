@@ -1,0 +1,932 @@
+---
+title: "ST312: Two-way ANOVA (13)"
+subtitle: ""
+date: "November 3, 2026"
+execute:
+  echo: false
+  message: false
+  warning: false
+format: 
+  revealjs:
+    theme: [dark, slides.scss]
+filters: 
+- webr
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Checklist{.smaller}
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+library(palmerpenguins)
+library(broom)
+library(kableExtra)
+```
+
+
+-- No homework-3 next week 
+
+-- Rubric assignment is out now!
+    
+-- Don't forget about the Statistics Experience (12-1)
+
+-- Final Exam 
+
+    > December 3rd 3:30pm in our classroom
+    > Cumulative with a focus on unit-III
+    
+
+-- I'm currently grading Exam-2 (~2 week turn around)
+
+## Goals for today 
+
+-- Review the high level concepts of one-way ANOVA
+
+-- Model notation
+
+-- Set the groundwork for two-way ANOVA
+
+## One-way ANOVA 
+
+-- When can we use it? 
+
+-- $Ho$
+
+-- $Ha$
+
+-- What's our test statistic?
+
+-- What's the fundamental idea behind it? 
+
+## The picture 
+
+
+```{r}
+#| echo: false
+set.seed(123)
+a <- PlantGrowth |>
+  group_by(group) |>
+  summarize(mean = mean(weight))
+
+PlantGrowth |>
+  ggplot(
+    aes(x = group, y = weight)) +
+  geom_jitter(width = .1) + 
+  facet_wrap(~ group) +
+  geom_hline(yintercept = 5.073, color = "red" , lwd = 1) +     
+  geom_hline(data = a, aes(yintercept = mean), color = "blue", linetype = "solid") + 
+  labs(title = "Anova example", 
+       subtitle = "Red line is overall mean; blue lines are group means")
+
+```
+
+## Fundemental idea
+
+Compare: 
+
+-- SS error (within): is the variability that represents the randomness we would expect from our sample
+
+-- SS between (between): is the variability that is explained by the factor(s) (the treatments or groups you're testing)
+
+If the ratio is large, the p-value is small! 
+
+If the ratio is small, the p-value is large!
+
+## F-statistic
+
+$F = \frac{\text{MS}_{\text{Between}}}{\text{MS}_{\text{Within}}}$
+
+$\mathbf{F} = \frac{\frac{\text{SS}_{\text{Between}}}{k - 1}}{\frac{\text{SS}_{\text{Within}}}{N - k}}$
+
+$\text{SS}_{\text{Between}} = \sum_{i=1}^{k} n_i (\bar{X}_i - \bar{X}_{\text{grand}})^2$
+
+$\text{SS}_{\text{Within}} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (X_{ij} - \bar{X}_i)^2$
+
+## Plants{.smaller} 
+
+Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions. We are interested in seeing if the dried weight of plants is different across the three yields. 
+
+Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions.
+
+```{r}
+library(tidyverse)
+tibble(PlantGrowth) |>
+  group_by(group) |>
+  summarize(count = n(),
+            mean = mean(weight))
+```
+
+## Model Notation 
+
+Everything hypothesis test we have set-up this semester can be represented in **model notation**
+
+Model notation is the mathematical representation of a statistical model using symbols and equations to describe the relationship between variables, parameters, and random error. This can be written either at the population level or the sample level.
+
+## Software Results{.smaller} 
+
+Everything hypothesis test we have set-up this semester can be represented in **model notation**
+
+```{r}
+library(tidymodels)
+
+m1 <- lm(weight ~ group, data = PlantGrowth)
+tidy(m1) |>
+  select(term, estimate, std.error)
+```
+
+What seems weird about this? Check this vs...
+
+```{r}
+library(tidyverse)
+tibble(PlantGrowth) |>
+  group_by(group) |>
+  summarize(count = n(),
+            mean = mean(weight))
+```
+
+
+## Why 
+
+Interpretability: It provides a baseline (reference point) from which we interpret the other regression coefficients.
+
+Mathematical properties: Including the intercept ensures the model can account for the overall level of the response and gives us useful least-squares properties, such as residuals summing to zero and the regression line passing through ($\bar{x},\bar{y}$) (will talk about more when we get to regression).
+
+
+## Plants 
+
+Thinking about the Plants context, I want us to look at the following population model notation:
+
+$$
+Y_{ij} = \mu + \alpha_j + \epsilon_{ij}
+$$
+
+
+-- Think
+
+-- Come up with thoughts/questions/ideas
+
+## Model Notation 
+
+$$
+Y_{ij} = \mu + \alpha_j + \epsilon_{ij}
+$$
+
+
+Where:
+
+- $Y_{ij}$ = Weight of plant $i$ in treatment group $j$
+- $\mu$ = Overall population mean plant weight for the baseline group
+- $\alpha_j$ = Effect of treatment group $j$; $j$ = trt1, trt2
+- $\epsilon_{ij}$ = Random error for plant $i$ in treatment group $j$
+
+## Estimated Model{.smaller} 
+
+$$
+\hat{Y}_{ij} = 5.073 + \hat{\alpha}_j
+$$
+
+$$
+\hat{Y}_{ij} =
+\begin{cases}
+5.03 & \text{Control} \\
+5.03 - 0.371 & \text{Treatment 1} \\
+5.03 + 0.494 & \text{Treatment 2}
+\end{cases}
+$$
+
+We omit $\epsilon_$ because the fitted model gives the predicted plant weight for each group.
+
+## Questions?
+
+We will get a ton of practice when we get to regression!
+
+## Two-way ANOVA
+
+How do we think **Two**- way ANOVA differs from **One**-way ANOVA?
+
+## Two-way ANOVA
+
+In two-way ANOVA, there are **two factors (Xs)** each with its own number of levels ($\ge 2$). 
+
+## Benefits
+
+Why might this be useful?
+
+## Benefits
+
+-- We can "control" or "account" for another variable.
+
+-- We can ask and answer more complicated questions.
+
+-- Move variation from the residual (error term) to the FIT (model). This helps us understand more about our response variable, and increases the **power** of our test. 
+
+
+## Research Question 
+
+Back to the Penguins data set!
+
+I'm interested in if the sex of the penguin can help explain the differences we see if penguins' flipper length. However, we are going to investigate if the relationship between Species and Flipper length depends on the Sex of the Penguin. 
+
+Practice: How is this different then before?
+
+## Scenario{.smaller}
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+# Load and clean data: Drop NAs for the three relevant variables
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, island, sex)
+
+# Calculate the mean flipper length for every combination of Island and Sex
+mean_table <- penguins_data %>%
+  group_by(island, sex) %>%
+  summarise(
+    Mean_Flipper_Length = mean(flipper_length_mm),
+    N = n(),
+    .groups = 'drop'
+  )
+
+# Print the resulting table
+print(mean_table)
+```
+
+Response variable: flipper length
+
+Explanatory variables: Species, Sex
+
+## Terms
+
+Additive - 
+
+Interaction - 
+
+## Terms
+
+Additive - The relationship between $X_1$ and $Y$ does not change based on the levels of $X_2$
+
+Additive - The relationship between species and flipper length does not change based on the levels of sex
+
+## Terms
+
+Interaction - The relationship between $X_1$ and $Y$ DOES change based on the levels of $X_2$
+
+Interaction - The relationship between species and flipper length DOES change based on the levels of sex
+
+## Additive
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Load, clean, and fit the ADDITIVE Model
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+# The model assumes no interaction: Flipper Length is the sum of Species effect and Sex effect.
+model_additive <- lm(flipper_length_mm ~ species + sex, data = penguins_data)
+
+# 2. Create a Prediction Grid for the fitted parallel lines
+prediction_grid <- expand.grid(
+    species = unique(penguins_data$species),
+    sex = unique(penguins_data$sex)
+)
+
+# Predict Flipper Length (Y) using the additive model.
+prediction_grid$Predicted_FL <- predict(model_additive, newdata = prediction_grid)
+
+# 3. Generate the Plot combining Raw Data and Fitted Lines
+ggplot(penguins_data, aes(x = species, y = flipper_length_mm, color = sex)) +
+  
+  # A. Plot the original data points with jitter
+  geom_point(position = position_jitter(width = 0.2), 
+             size = 1.5, 
+             alpha = 0.5) +
+  
+  # B. Add the perfectly parallel lines from the additive model predictions
+  # Use prediction_grid as the data source and map the predicted Y-value (Predicted_FL)
+  geom_line(data = prediction_grid, 
+            aes(y = Predicted_FL, group = sex), 
+            linewidth = 1.2) +
+  
+  # C. Add points for the *predicted* means (from the additive model)
+  # Map the color/group based on the 'sex' variable in the prediction grid
+  geom_point(data = prediction_grid, 
+             aes(y = Predicted_FL, group = sex), 
+             size = 4, 
+             shape = 15) + # Use a distinct shape (square) for the predicted means
+  
+  labs(
+    title = "Additive Model: Flipper Length ~ Species + Sex (Parallel Lines)",
+    subtitle = "Fitted lines are mathematically constrained to ignore interaction",
+    x = "Penguin Species",
+    y = "Flipper Length (mm)",
+    color = "Sex"
+  ) +
+  theme_minimal() +
+  scale_color_manual(values = c("female" = "#F8766D", "male" = "#00BFC4")) # Default ggplot colors
+```
+
+
+## Interaction model 
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Load, clean, and fit the INTERACTION Model
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+# The model includes the interaction term: Flipper Length is affected by Species, Sex, AND their interaction.
+model_interaction <- lm(flipper_length_mm ~ species * sex, data = penguins_data)
+
+# 2. Create a Prediction Grid for the fitted non-parallel lines
+prediction_grid_interaction <- expand.grid(
+    species = unique(penguins_data$species),
+    sex = unique(penguins_data$sex)
+)
+
+# Predict Flipper Length (Y) using the interaction model.
+# Since the model has an interaction term, these predictions will naturally result in non-parallel lines.
+prediction_grid_interaction$Predicted_FL <- predict(model_interaction, newdata = prediction_grid_interaction)
+
+# 3. Generate the Plot combining Raw Data and Fitted Interaction Lines
+ggplot(penguins_data, aes(x = species, y = flipper_length_mm, color = sex)) +
+  
+  # A. Plot the original data points with jitter
+  geom_point(position = position_jitter(width = 0.2), 
+             size = 1.5, 
+             alpha = 0.5) +
+  
+  # B. Add the non-parallel lines from the interaction model predictions
+  geom_line(data = prediction_grid_interaction, 
+            aes(y = Predicted_FL, group = sex), 
+            linewidth = 1.2) +
+  
+  # C. Add points for the *predicted* means (from the interaction model)
+  geom_point(data = prediction_grid_interaction, 
+             aes(y = Predicted_FL, group = sex), 
+             size = 4, 
+             shape = 15) + # Use a distinct shape (square) for the predicted means
+  
+  labs(
+    title = "Interaction Model: Flipper Length ~ Species * Sex (Non-Parallel Lines)",
+    subtitle = "Fitted lines show how the effect of sex changes across species",
+    x = "Penguin Species",
+    y = "Flipper Length (mm)",
+    color = "Sex"
+  ) +
+  theme_minimal() +
+  scale_color_manual(values = c("female" = "#F8766D", "male" = "#00BFC4")) # Default ggplot colors
+```
+
+## The difference
+
+The difference between the Additive Model and the Interaction Model in a Two-Way ANOVA is visually represented on an interaction plot by whether the lines connecting the cell means are parallel or non-parallel.
+
+Additive: The effect of Sex is constant across all levels of Species (the distance within species across sex is the same)
+
+Interaction: The effect of Sex depends across all levels of Species
+
+## Research Questions 
+
+-- We can test for the significance of main effect X1 on Y (given X2 is in the model)
+
+-- We can test for the significance of main effect B (given A is in the model)
+
+-- We can test for the interaction effect (AB)
+
+## Research Questions 
+
+-- We can test for the significance of main effect species on flipper length (given sex is in the model)
+
+-- We can test for the significance of main effect sex on flipper length (given species is in the model)
+
+-- We can test for the interaction effect of sex and species on flipper length
+
+## Context 
+
+Is there an interaction between Species, Flipper Length, and Sex? 
+
+## Hypotheses
+
+$Ho:$ The effect of Sex is the same at all levels of factor Species on flipper length at the population level
+
+$Ha:$ The effect of Sex depends on the levels of Species on flipper length at the population level
+
+## Model{.smaller}
+
+Interaction model: $$\mathbf{Y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \epsilon_{ijk}}$$
+
+Additive model: $$\mathbf{Y_{ijk} = \mu + \alpha_i + \beta_j  + \epsilon_{ijk}}$$
+
+## The model terms{.smaller}
+
+| Term | Description | Role in the Interaction Model |
+| :--- | :--- | :--- |
+| **$Y_{ijk}$** | The $k^{th}$ observation in the cell defined by level $i$ of Factor A and level $j$ of Factor B. | The continuous response variable being measured. |
+| **$\mu$** | The **mean of the baseline group**. | . |
+| **$\alpha_i$** | The **Main Effect of Factor A** at level $i$. | The deviation of the mean for Factor A (holding B constant) from the baseline. |
+| **$\beta_j$** | The **Main Effect of Factor B** at level $j$. | The deviation of the mean for Factor B (holding A constant) from the baseline. |
+
+## The model terms{.smaller}
+| Term | Description | Role in the Interaction Model |
+| :--- | :--- | :--- |
+| **$(\alpha\beta)_{ij}$** | The **Interaction Effect** for the cell $(i, j)$. | The non-additive effect specific to that combination of factor levels. This is the core term that distinguishes the interaction model. |
+| **$\epsilon_{ijk}$** | The **Random Error** term. | The unexplained, random variation, assumed to be $\sim N(0, \sigma^2)$. |
+
+
+## Write out the estimated models{.smaller}  
+
+Additive model
+
+```{r}
+modela <- lm(flipper_length_mm ~ species + sex, data = penguins_data)
+tidy(modela)
+```
+
+## Visually 
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Load, clean, and fit the ADDITIVE Model
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+# The model assumes no interaction: Flipper Length is the sum of Species effect and Sex effect.
+model_additive <- lm(flipper_length_mm ~ species + sex, data = penguins_data)
+
+# 2. Create a Prediction Grid for the fitted parallel lines
+prediction_grid <- expand.grid(
+    species = unique(penguins_data$species),
+    sex = unique(penguins_data$sex)
+)
+
+# Predict Flipper Length (Y) using the additive model.
+prediction_grid$Predicted_FL <- predict(model_additive, newdata = prediction_grid)
+
+# 3. Generate the Plot combining Raw Data and Fitted Lines
+ggplot(penguins_data, aes(x = species, y = flipper_length_mm, color = sex)) +
+  
+  # A. Plot the original data points with jitter
+  geom_point(position = position_jitter(width = 0.2), 
+             size = 1.5, 
+             alpha = 0.5) +
+  
+  # B. Add the perfectly parallel lines from the additive model predictions
+  # Use prediction_grid as the data source and map the predicted Y-value (Predicted_FL)
+  geom_line(data = prediction_grid, 
+            aes(y = Predicted_FL, group = sex), 
+            linewidth = 1.2) +
+  
+  # C. Add points for the *predicted* means (from the additive model)
+  # Map the color/group based on the 'sex' variable in the prediction grid
+  geom_point(data = prediction_grid, 
+             aes(y = Predicted_FL, group = sex), 
+             size = 4, 
+             shape = 15) + # Use a distinct shape (square) for the predicted means
+  
+  labs(
+    title = "Additive Model: Flipper Length ~ Species + Sex (Parallel Lines)",
+    subtitle = "Fitted lines are mathematically constrained to ignore interaction",
+    x = "Penguin Species",
+    y = "Flipper Length (mm)",
+    color = "Sex"
+  ) +
+  theme_minimal() +
+  scale_color_manual(values = c("female" = "#F8766D", "male" = "#00BFC4")) # Default ggplot colors
+```
+
+## Write out the estimated models{.smaller} 
+
+Interaction model
+
+```{r}
+modelb <- lm(flipper_length_mm ~ species * sex, data = penguins_data)
+tidy(modelb)
+```
+
+
+## Hypotheses
+
+We now want to test to see if the more complicated model is worth it (is there an interaction present)
+
+$H_0: (\alpha\beta)_{ij} = 0 \text{ for all } i \text{ and } j$
+
+$H_a: (\alpha\beta)_{ij} \neq 0 \text{ for at least one pair of } (i, j)$
+
+where i = Adelie, Chinstrap, and Gentoo 
+
+where j = Male, Female
+
+## Assumptions 
+
+-- Independence 
+
+-- Normality or residuals 
+
+-- Equal Variance 
+
+## Residuals 
+
+Observed - Predicted still applies!
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Load and fit the Interaction Model
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+model_interaction <- lm(flipper_length_mm ~ species * sex, data = penguins_data)
+
+# 2. Create Prediction Grid for fitted lines
+prediction_grid_interaction <- expand.grid(
+  species = unique(penguins_data$species),
+  sex = unique(penguins_data$sex)
+)
+prediction_grid_interaction$Predicted_FL <- predict(model_interaction, newdata = prediction_grid_interaction)
+
+# 3. Select one observation to highlight
+highlight_observation <- penguins_data %>%
+  filter(species == "Gentoo", sex == "female") %>%
+  slice(5) 
+
+predicted_for_highlight <- prediction_grid_interaction %>%
+  filter(species == highlight_observation$species, sex == highlight_observation$sex) %>%
+  pull(Predicted_FL)
+
+# 4. Generate the Plot
+ggplot(penguins_data, aes(x = species, y = flipper_length_mm, color = sex)) +
+  
+  # A. Plot all original data points with jitter (for context)
+  geom_point(position = position_jitter(width = 0.2), 
+             size = 1.5, 
+             alpha = 0.5) +
+  
+  # B. Add the non-parallel fitted lines
+  geom_line(data = prediction_grid_interaction, 
+            aes(y = Predicted_FL, group = sex), 
+            linewidth = 1.2) +
+  
+  # C. Add points for the *predicted* means (the fitted line's points)
+  geom_point(data = prediction_grid_interaction, 
+             aes(y = Predicted_FL, group = sex), 
+             size = 4, 
+             shape = 15) +
+  
+  # D. Highlight the specific observed point (Observed Value)
+  geom_point(data = highlight_observation, 
+             aes(x = species, y = flipper_length_mm), 
+             color = "black", size = 5, shape = 21, fill = "gold", stroke = 1.5) +
+  
+  # E. Illustrate the residual: Vertical line from Observed to Predicted
+  # NOTE: Using highlight_observation as data source and mapping X to 'species'
+  # ensures the line stays precisely on the categorical X position.
+  geom_segment(data = highlight_observation, 
+               aes(x = species,
+                   xend = species,
+                   y = flipper_length_mm, 
+                   yend = predicted_for_highlight),
+               color = "black", linetype = "solid", linewidth = 1.5, inherit.aes = FALSE) + 
+  
+  labs(
+    title = "Residual Illustration: Observed Value - Predicted Mean",
+    subtitle = paste0("The vertical black line is the residual for a ", highlight_observation$sex, " ", highlight_observation$species, " penguin."),
+    x = "Penguin Species",
+    y = "Flipper Length (mm)",
+    color = "Sex"
+  ) +
+  theme_minimal() +
+  scale_color_manual(values = c("female" = "#F8766D", "male" = "#00BFC4")) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5),
+    legend.position = "bottom"
+  )
+```
+
+
+## Normality of residuals
+
+```{r}
+#| echo: false 
+
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Load and Clean Data
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+# 2. Fit the Interaction Model
+# Flipper Length is the response; Species and Sex are explanatory factors.
+model_interaction <- lm(flipper_length_mm ~ species * sex, data = penguins_data)
+
+# 3. Extract Residuals and Store in a Data Frame
+residuals_data <- data.frame(
+  Residuals = residuals(model_interaction)
+)
+
+# 4. Generate the Normal Q-Q Plot using ggplot2
+ggplot(residuals_data, aes(sample = Residuals)) +
+  # Add the quantile points
+  geom_qq(color = "darkgreen", size = 2) + 
+  # Add the reference line (where the points should lie if normal)
+  geom_qq_line(color = "red", linewidth = 1) + 
+  labs(
+    title = "Normal Q-Q Plot of Residuals for Flipper Length Interaction Model",
+    subtitle = "Model: Flipper Length ~ Species * Sex",
+    x = "Theoretical Quantiles (Standard Normal)",
+    y = "Sample Quantiles (Model Residuals)"
+  ) +
+  theme_minimal()
+```
+
+
+## Equal Variance 
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Load and fit the Interaction Model
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+model_interaction <- lm(flipper_length_mm ~ species * sex, data = penguins_data)
+
+# 2. Extract Fitted Values and Residuals
+# The augment() function from the broom package is the easiest way to get these,
+# but using base R/tidyverse functions is more direct for a quick plot.
+plot_data <- data.frame(
+  Fitted_Values = fitted(model_interaction),
+  Residuals = residuals(model_interaction)
+)
+
+# 3. Generate the Residuals vs. Fitted Plot
+ggplot(plot_data, aes(x = Fitted_Values, y = Residuals)) +
+  
+  # Add points for each residual
+  geom_point(alpha = 0.6) +
+  
+  # Add a horizontal line at Residual = 0 (the reference line)
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed", linewidth = 1) +
+  
+  # Add a locally weighted smoothing (LOWESS) line to check for non-linearity
+  # This line should be flat and close to zero if the linearity assumption holds.
+  geom_smooth(method = "loess", color = "blue", se = FALSE, linewidth = 1) +
+  
+  labs(
+    title = "Residuals vs. Fitted Plot for Flipper Length Interaction Model",
+    subtitle = "Checks for Homoscedasticity (equal variance)",
+    x = "Fitted Values (Predicted Mean Flipper Length)",
+    y = "Residuals (Observed - Fitted)"
+  ) +
+  theme_minimal()
+
+```
+
+
+## Our statistic{.smaller} 
+
+Variance **between** vs variance **within**
+
+Because we are testing the interaction term, the **between** is the interaction term vs the additive terms
+
+$$F_{A \times B} = \frac{MS_{A \times B}}{MS_{Error}}$$
+
+
+$$MS_{A \times B} = \frac{SS_{A \times B}}{df_{A \times B}}$$
+
+
+SS measures how much the mean of a specific combination of variables deviates from the mean predicted by the simple additive model.
+
+
+## SS axb
+
+Look at the difference between the predicted mean in the additive model vs the actual mean (interaction model)
+
+Take the values, square them, and sum them up!
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Load and clean data
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+# 2. Calculate necessary means
+means_data <- penguins_data %>%
+  group_by(species, sex) %>%
+  summarise(cell_mean = mean(flipper_length_mm), .groups = 'drop') %>%
+  ungroup()
+
+grand_mean <- mean(penguins_data$flipper_length_mm)
+
+marginal_species_means <- penguins_data %>%
+  group_by(species) %>%
+  summarise(species_mean = mean(flipper_length_mm), .groups = 'drop')
+
+marginal_sex_means <- penguins_data %>%
+  group_by(sex) %>%
+  summarise(sex_mean = mean(flipper_length_mm), .groups = 'drop')
+
+# Join means for plotting and calculate additive predictions and interaction components
+plot_data_full <- means_data %>%
+  left_join(marginal_species_means, by = "species") %>%
+  left_join(marginal_sex_means, by = "sex") %>%
+  mutate(grand_mean = grand_mean) %>%
+  mutate(additive_prediction = species_mean + sex_mean - grand_mean) %>%
+  mutate(interaction_component = cell_mean - additive_prediction)
+
+# 3. Create the ggplot object and assign it to a variable 'p'
+p <- ggplot(plot_data_full, aes(x = species, group = sex, color = sex)) +
+  
+  # A. Grand Mean as a horizontal reference line
+  geom_hline(aes(yintercept = grand_mean), 
+             linetype = "dotted", color = "grey", linewidth = 0.8) +
+  annotate("text", x = 0.7, y = grand_mean + 1, label = expression(mu), color = "grey", size = 4) +
+  
+  # B. Plot the OBSERVED Cell Means (solid lines and circles)
+  geom_line(aes(y = cell_mean), linewidth = 1.2, linetype = "solid") +
+  geom_point(aes(y = cell_mean), size = 5, shape = 19) + 
+  
+  # C. Plot the ADDITIVE Model's Predicted Cell Means (dashed lines and squares)
+  geom_line(aes(y = additive_prediction, group = sex, color = sex), 
+            linewidth = 1.2, linetype = "dashed") +
+  geom_point(aes(y = additive_prediction), size = 5, shape = 15) + 
+  
+  # D. Highlight the INTERACTION COMPONENT FOR ADELIE ONLY
+  geom_segment(data = plot_data_full %>% filter(species == "Adelie"), 
+               aes(x = species, 
+                   xend = species, 
+                   y = cell_mean, 
+                   yend = additive_prediction),
+               color = "black", linewidth = 2, linetype = "solid") + 
+  
+  labs(
+    title = "Visualizing the Interaction Sum of Squares (SS_AxB)",
+    subtitle = "Highlighting the Interaction Component for Adelie Penguins",
+    y = "Mean Flipper Length (mm)",
+    color = "Sex"
+  ) +
+  scale_color_manual(values = c("female" = "#F8766D", "male" = "#00BFC4")) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5),
+    legend.position = "bottom"
+  ) +
+  
+  # ADDED LINE: Explicitly sets the x-axis to be discrete and names the axis
+  scale_x_discrete(name = "Penguin Species") 
+
+# NECESSARY LINE TO DISPLAY THE PLOT
+print(p)
+```
+
+
+## Statistic 
+
+$$MS_{A \times B} = \frac{SS_{A \times B}}{df_{A \times B}}$$
+
+
+$$\mathbf{df_{A \times B} = (a - 1)(b - 1)}$$
+
+a is the number of levels for A
+b is the number of levels for B
+
+
+## Statistic (MSE){.smaller}
+
+$$F_{A \times B} = \frac{MS_{A \times B}}{MS_{Error}}$$
+
+$$\mathbf{MS_{Error} = \frac{SS_{Error}}{df_{Error}}}$$
+
+$$\mathbf{SS_{Error} = \sum_{i=1}^{a} \sum_{j=1}^{b} \sum_{k=1}^{n} (Y_{ijk} - \bar{Y}_{ij})^2}$$
+
+
+$$\mathbf{df_{Error} = ab(n - 1)}$$
+
+## Visually 
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Prepare Data
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+# 2. Calculate Cell Means
+cell_means <- penguins_data %>%
+  group_by(species, sex) %>%
+  summarise(cell_mean = mean(flipper_length_mm), .groups = 'drop')
+
+# 3. Join Cell Means back to the original data frame
+plot_data_ss_error <- penguins_data %>%
+  left_join(cell_means, by = c("species", "sex"))
+
+# 4. Create the Plot
+ggplot(plot_data_ss_error, aes(x = interaction(species, sex), y = flipper_length_mm)) +
+  
+  # A. Plot the individual observations with jitter
+  geom_point(aes(color = sex), 
+             position = position_jitter(width = 0.2), 
+             alpha = 0.6, size = 1.5) +
+  
+  # B. Illustrate SS_Error: Draw a vertical line (residual) from EVERY observation to its cell mean
+  # The squared length of ALL these black lines, summed, is the SS_Error.
+  geom_segment(aes(x = interaction(species, sex), 
+                   xend = interaction(species, sex), 
+                   y = flipper_length_mm, 
+                   yend = cell_mean),
+               color = "black", linewidth = 0.5, alpha = 0.2) + 
+  
+  # C. Plot the Cell Means (the predicted value for the group) on top
+  geom_point(aes(y = cell_mean, color = sex), 
+             size = 6, shape = 18) + # Diamonds for cell means
+  
+  labs(
+    title = "Visualizing Sum of Squares Error (SS_Error)",
+    subtitle = "",
+    x = "Species : Sex Cell",
+    y = "Flipper Length (mm)",
+    color = "Sex"
+  ) +
+  theme_minimal() +
+  scale_x_discrete(labels = c("Adelie.female" = "Adelie F", "Adelie.male" = "Adelie M", 
+                              "Chinstrap.female" = "Chinstrap F", "Chinstrap.male" = "Chinstrap M",
+                              "Gentoo.female" = "Gentoo F", "Gentoo.male" = "Gentoo M"))
+```
+
+
+# Questions?
+
+## Results
+
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Load and clean the data
+# We drop rows with NAs in our variables of interest
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+# 2. Fit the Two-Way ANOVA Interaction Model
+# The asterisk (*) represents the main effects (species and sex) PLUS their interaction.
+# Model Formula: flipper_length_mm ~ species + sex + species:sex
+model_anova <- aov(flipper_length_mm ~ species * sex, data = penguins_data)
+
+# 3. Generate the ANOVA Summary Table
+# This table contains the Sums of Squares (SS), Degrees of Freedom (df), 
+# Mean Squares (MS), F-statistics, and p-values for all effects.
+summary(model_anova)
+```
+
+
+What is the distribution our F-statistic follows? 
+
+## Distribution 
+
+F-distribution 
+
+$$\mathbf{df_{A \times B} = (a - 1)(b - 1)}$$
+
+$$\mathbf{df_{Error} = ab(n - 1)}$$
+
+## What does this tell us? 
+
+
+-- Reject the null hypothesis
+
+-- Strong evidence to conclude that the relationship between Species and Flipper Length does depend on the Sex of the Penguin. 
+
+## Next time 
+
+Test for the main effects 
+
+

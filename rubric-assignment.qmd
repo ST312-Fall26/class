@@ -1,0 +1,175 @@
+---
+title: "Rubric Assignment: Create a Statistical Problem and Grading Rubric"
+---
+
+::: {.callout-tip}
+**Note:** This assignment is due on 11/27 at 11:59pm on Gradescope. However, you have more than able to turn the assignment in before Thanksgiving break if you would prefer.
+:::
+
+## Why
+
+Why am I having you create a rubric, and a submission so you can use your rubric in action? I've designed this assessment to reinforce mastery of statistical concepts by requiring you to approach the material from a different perspective, instead of simply solving a problem I have created for you. You cannot effectively create, evaluate, and grade a statistical problem without having a strong understanding of the underlying statistical concepts yourself.
+
+I hope that you also use this as a tool to study for the final exam. 
+
+## Overview
+
+For this assignment, you will design an original, multi-part statistics problem based on one of the topics covered in this course. Your problem should present a realistic scenario, use reasonable numerical values, and require students to demonstrate their understanding of the statistical concepts involved.
+
+You will also develop a 20-point grading rubric for your problem and create a mock student submission that would earn a 70%-80% according to your rubric.
+
+The goal of this assignment is to demonstrate that you understand both the statistical methods and how to evaluate someone's understanding of those methods.
+
+## Part 1: Choose a Statistical Topic
+
+Choose **ONE** of the following topics:
+
+1. Difference in proportions hypothesis test
+2. Difference in proportions confidence interval
+3. Difference in means hypothesis test
+4. Difference in means confidence interval
+5. Chi-square test of independence
+6. Chi-square goodness of fit test
+7. One-way ANOVA
+8. Two-way ANOVA
+9. Multiple linear regression (hypothesis test)
+10. Regression model selection
+
+## Part 2: Create an Original Problem
+
+Develop a realistic, multi-part statistics problem based on your selected topic.
+
+Your problem must include:
+
+- **Realistic context:** Describe a situation in which the statistical method would reasonably be used. Your scenario should be specific enough that someone can understand the research question.
+- **Realistic values:** Include appropriate sample sizes, summary statistics, observed counts, or other numerical information needed to complete the problem. Values should be plausible within your scenario.
+- **Multiple parts:** Your problem must contain at least four distinct parts that assess different aspects of the statistical method.
+
+Your questions should assess a combination of the following, as appropriate for your topic:
+
+- Identifying the appropriate statistical procedure.
+- Stating the null and alternative hypotheses.
+- Checking assumptions or conditions.
+- Calculating relevant statistics.
+- Finding a p-value or constructing a confidence interval.
+- Interpreting statistical results in context.
+- Drawing an appropriate conclusion.
+- Explaining the practical implications of the results.
+
+Your problem should require more than simply plugging numbers into a formula.
+
+## Part 3: Develop a Complete Solution and Grading Rubric
+
+Create a complete answer key for your problem. Show all necessary calculations, statistical reasoning, and interpretations.
+
+Then, develop a **20-point grading rubric** that could be used by another instructor to grade student submissions.
+
+Your rubric must:
+
+- Assign points to each part of your problem.
+- Clearly describe what students must do to earn the points.
+- Account for partially correct answers and common mistakes.
+- Distinguish between different levels of understanding.
+- Total exactly 20 points.
+
+Your rubric should be detailed enough that another instructor could grade a student's submission without needing to ask you what you intended.
+
+**Important:** Your rubric should award points for statistical reasoning, not just final answers. For example, a student who correctly identifies the hypotheses but makes a minor notation error should be able to earn partial credit.
+
+## Part 4: Create a Mock Student Submission (70%-80%-Level Work)
+
+Create a mock student submission that would earn approximately a **70%–80%** according to the rubric you developed.
+
+This should look like an actual student's attempt at answering your problem.
+
+Your mock submission should:
+
+- Include both correct and incorrect work.
+- Demonstrate some understanding of the statistical method.
+- Contain realistic mistakes that a student might make.
+- Be complete enough to grade using your rubric.
+- Earn a score between **14 and 15.8 points out of 20**.
+
+After creating the mock submission, grade it using your rubric.
+
+Include:
+
+- The points earned for each rubric item.
+- A brief explanation of why the student earned or lost points.
+- The final score out of 20.
+
+**Important:** Do not simply write an intentionally poor solution. Your mock submission should demonstrate partial understanding. It should be the type of work that a student who understands some, but not all, of the material might realistically produce.
+
+## Example Rubric Item Table (2 points)
+
+**Scenario:** A researcher wants to determine whether the average amount of sleep college students get per night differs from the commonly reported average of 7 hours.
+
+a. Set up the correct null and alternative hypothesis based on the context of your problem. 
+
+| Criteria: Setting up $H_o$ and $H_a$ | Points |
+|:---|:---:|
+| Correctly identifies the population parameter ($\mu$) as the true mean number of hours of sleep for college students. | 2 |
+| Correctly states the null hypothesis: $H_0: \mu = 7$. | -0.5 |
+| Correctly states the alternative hypothesis: $H_A: \mu \neq 7$. | -0.5 |
+| Uses appropriate notation and identifies that this is a two-sided test because the researcher is interested in whether the mean differs from 7 hours. | -0.5 |
+
+**Partial Credit Examples:**
+
+- Student correctly identifies $\mu$ but writes hypotheses using the sample mean ($\bar{x}$) instead of the population mean: earns 0.5 points.
+- Student correctly states the null hypothesis but uses a one-sided alternative: earns credit for the null hypothesis but loses credit for the alternative.
+- Student writes both hypotheses correctly but does not explain why the test is two-sided: loses the corresponding 0.5 points.
+
+You do not need to list partial credit examples for each of your rubric items, but your point structure needs to incorporate partial credit. 
+
+::: {.callout-tip}
+**Takeaway:** A good rubric breaks a question into specific, independently gradable components rather than simply saying "2 points for correct hypotheses."
+:::
+
+## Submission Requirements
+
+Submit one hand-written document containing the following two sections:
+
+### Section 1: Problem, Solution, and Rubric
+
+Include:
+- Your original multi-part statistics problem.
+- A complete solution to your problem.
+- Your detailed 20-point grading rubric. For each part of your question, include a table similar to the example. It is your job to identify the important pieces of the statistical inference technique you chosen for your context, and demonstrate your mastery of the material through the creation of the rubric.
+
+### Section 2: Mock 70%–80%-Level Submission
+
+Include:
+- Your mock student submission.
+- Your completed grading rubric showing the points earned.
+- Use your tables to explain why points were earned or lost.
+- The final score out of 20.
+
+## Grading 
+
+You will earn full credit, half credit, or no credit in the following categories: 
+
+#### Structure (5-points)
+
+-- Do you have a realistic scenario with realistic values?
+
+-- Does your question make sense? Is it interesting?
+
+-- Did you set up a multi-part question? 
+
+#### Questions (5-point)
+
+-- Did you structure your questions in an order that makes sense? 
+
+-- Does your questions identify the key components of the statistical inference topic you selected? For example, if you are asking a question about hypothesis testing, you should have a question about assumptions. 
+
+#### Rubric items (5-points)
+
+-- Do your rubric items allow students to demonstrate partial understanding?
+
+-- Do you have a clear table for **each** question? Does your table clearly articulate the criteria, items, and number of points? Please see the example above.
+
+#### Student submission (5-points)
+
+-- Does your student submission earn a 70%–80% based on your rubric? 
+
+-- Are you clearly showing where your submission earns and loses points, based on the rubric items/tables you created? 

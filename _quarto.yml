@@ -18,6 +18,8 @@ website:
             text: "Homework-2"
           - href: hw2_sa.qmd
             text: "Homework-2 Solutions"
+          - href: rubric-assignment.qmd
+            text: "Rubric Assignment"
           #- href: stat-exp.qmd
           #  text: "Statistics Experience"
           #- href: homework3/homework3.qmd
@@ -71,6 +73,8 @@ website:
             text: "Day-18"
           - href: review2.qmd
             text: "Day-19"
+          - href: 19-twoway.qmd
+            text: "Day-20"
 format:
   html:
     theme: cosmo
