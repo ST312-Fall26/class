@@ -198,7 +198,7 @@ $$
 \end{cases}
 $$
 
-We omit $\epsilon_$ because the fitted model gives the predicted plant weight for each group.
+We omit $\epsilon$ because the fitted model gives the predicted plant weight for each group.
 
 ## Questions?
 

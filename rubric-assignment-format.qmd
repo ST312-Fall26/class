@@ -1,0 +1,70 @@
+---
+title: "Rubric Format Example"
+---
+
+This document is meant to serve as a guide on how I would recommend formatting your rubric assignment. As a reminder, this assignment is worth 5% of your grade. Please note that this is a hand-written assignment. 
+
+-- Clearly label each section. We have two sections for this assignment: 
+
+1. Section-1: Solutions and Rubric
+
+2. Section-2: Student work 
+
+Next, have clearly labeled sub-sections. An example can be seen below: 
+
+### Section-1
+
+Context: This is a One-Way-ANOVA problem (please state the topic you chose, and write your realistic scenario underneath)
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#### part a
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. (write your question)
+
+**Write your solutions underneath** 
+
+Under your solutions, put your rubric table: 
+
+| Criteria: Identify the main objective of the question | Points = define your number of points |
+|:---|:---:|
+| Have partial credit opportunities | -0.5 |
+| This means have a breakdown of how a student can earn full credit | -0.5 |
+| These do not need to always be -0.5 | -1.0 |
+| It is up to you. However, be reasonable, and provide a sufficient amount of detail| -0.5 |
+
+#### part b
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. (write your question)
+
+**Write your solutions underneath** 
+
+Again, put your rubric table below. 
+
+**Please note**: I am not requireing exactly **d** or **e** number of parts to your question. Have an appropriate number of parts that identifies the core components of the context that you pick. Your assignment should be out of 20-points.
+
+
+### Section-2
+
+#### part a (**example**)
+
+$Ho: \bar{x} = 7$
+
+$Ha: \bar{x} > 7$
+
+Student earned +1.5 points. Student correctly identified the null/alternative value, but did not use the correct notation (-1), and the alternative sign is incorrect (-.5).
+
+
+**Please make sure to:**
+
+-- Label your question, and provide the mock student solution. 
+
+-- Assign the solution the correct number of points and justify why points were taken off using the rubric you provided in section-1. 
+
+Do this for each part of your multi-part question. 
+
+As always, please let me know if you have any questions!
+
+
+
+

@@ -20,6 +20,8 @@ website:
             text: "Homework-2 Solutions"
           - href: rubric-assignment.qmd
             text: "Rubric Assignment"
+          - href: rubric-assignment-format.qmd
+            text: "Rubric Assignment Format"
           #- href: stat-exp.qmd
           #  text: "Statistics Experience"
           #- href: homework3/homework3.qmd
