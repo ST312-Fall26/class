@@ -306,18 +306,18 @@ $Ha:$ The effect of Sex depends on the levels of Species on flipper length at th
 
 ## Model{.smaller}
 
-Interaction model: $$\mathbf{Y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \epsilon_{ijk}}$$
+Interaction model: $$\mathbf{Y_{ijk} = \mu + \alpha_j + \beta_k + (\alpha\beta)_{jk} + \epsilon_{ijk}}$$
 
-Additive model: $$\mathbf{Y_{ijk} = \mu + \alpha_i + \beta_j  + \epsilon_{ijk}}$$
+Additive model: $$\mathbf{Y_{ijk} = \mu + \alpha_j + \beta_k  + \epsilon_{ijk}}$$
 
 ## The model terms{.smaller}
 
 | Term | Description | Role in the Interaction Model |
 | :--- | :--- | :--- |
-| **$Y_{ijk}$** | The $k^{th}$ observation in the cell defined by level $i$ of Factor A and level $j$ of Factor B. | The continuous response variable being measured. |
+| **$Y_{ijk}$** | The $i^{th}$ observation in the cell defined by level $j$ of Factor A and level $k$ of Factor B. | The continuous response variable being measured. |
 | **$\mu$** | The **mean of the baseline group**. | . |
-| **$\alpha_i$** | The **Main Effect of Factor A** at level $i$. | The deviation of the mean for Factor A (holding B constant) from the baseline. |
-| **$\beta_j$** | The **Main Effect of Factor B** at level $j$. | The deviation of the mean for Factor B (holding A constant) from the baseline. |
+| **$\alpha_i$** | The **Main Effect of Factor A** at level $j$. | The deviation of the mean for Factor A (holding B constant) from the baseline. |
+| **$\beta_j$** | The **Main Effect of Factor B** at level $k$. | The deviation of the mean for Factor B (holding A constant) from the baseline. |
 
 ## The model terms{.smaller}
 | Term | Description | Role in the Interaction Model |
@@ -404,9 +404,9 @@ tidy(modelb)
 
 We now want to test to see if the more complicated model is worth it (is there an interaction present)
 
-$H_0: (\alpha\beta)_{ij} = 0 \text{ for all } i \text{ and } j$
+$H_0: (\alpha\beta)_{jk} = 0 \text{ for all } j \text{ and } k$
 
-$H_a: (\alpha\beta)_{ij} \neq 0 \text{ for at least one pair of } (i, j)$
+$H_a: (\alpha\beta)_{ij} \neq 0 \text{ for at least one pair of } (j, k)$
 
 where i = Adelie, Chinstrap, and Gentoo 
 

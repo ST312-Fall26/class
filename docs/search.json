@@ -191,7 +191,7 @@
     "href": "twowayII.html#model",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Model",
-    "text": "Model\nInteraction model: \\[\\mathbf{Y_{ijk} = \\mu + \\alpha_i + \\beta_j + (\\alpha\\beta)_{ij} + \\epsilon_{ijk}}\\]\nAdditive model: \\[\\mathbf{Y_{ijk} = \\mu + \\alpha_i + \\beta_j  + \\epsilon_{ijk}}\\]",
+    "text": "Model\nInteraction model: \\[\\mathbf{Y_{ijk} = \\mu + \\alpha_j + \\beta_k + (\\alpha\\beta)_{jk} + \\epsilon_{ijk}}\\]\nAdditive model: \\[\\mathbf{Y_{ijk} = \\mu + \\alpha_j + \\beta_k  + \\epsilon_{ijk}}\\]",
     "crumbs": [
       "Slides",
       "Day-21"
@@ -202,7 +202,7 @@
     "href": "twowayII.html#the-model-terms",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "The model terms",
-    "text": "The model terms\n\n\n\n\n\n\n\n\nTerm\nDescription\nRole in the Interaction Model\n\n\n\n\n\\(Y_{ijk}\\)\nThe \\(k^{th}\\) observation in the cell defined by level \\(i\\) of Factor A and level \\(j\\) of Factor B.\nThe continuous response variable being measured.\n\n\n\\(\\mu\\)\nThe mean of the baseline group.\n.\n\n\n\\(\\alpha_i\\)\nThe Main Effect of Factor A at level \\(i\\).\nThe deviation of the mean for Factor A (holding B constant) from the baseline.\n\n\n\\(\\beta_j\\)\nThe Main Effect of Factor B at level \\(j\\).\nThe deviation of the mean for Factor B (holding A constant) from the baseline.",
+    "text": "The model terms\n\n\n\n\n\n\n\n\nTerm\nDescription\nRole in the Interaction Model\n\n\n\n\n\\(Y_{ijk}\\)\nThe \\(i^{th}\\) observation in the cell defined by level \\(j\\) of Factor A and level \\(k\\) of Factor B.\nThe continuous response variable being measured.\n\n\n\\(\\mu\\)\nThe mean of the baseline group.\n.\n\n\n\\(\\alpha_i\\)\nThe Main Effect of Factor A at level \\(j\\).\nThe deviation of the mean for Factor A (holding B constant) from the baseline.\n\n\n\\(\\beta_j\\)\nThe Main Effect of Factor B at level \\(k\\).\nThe deviation of the mean for Factor B (holding A constant) from the baseline.",
     "crumbs": [
       "Slides",
       "Day-21"
@@ -257,7 +257,7 @@
     "href": "twowayII.html#hypotheses-1",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Hypotheses",
-    "text": "Hypotheses\nWe now want to test to see if the more complicated model is worth it (is there an interaction present)\n\\(H_0: (\\alpha\\beta)_{ij} = 0 \\text{ for all } i \\text{ and } j\\)\n\\(H_a: (\\alpha\\beta)_{ij} \\neq 0 \\text{ for at least one pair of } (i, j)\\)\nwhere i = Adelie, Chinstrap, and Gentoo\nwhere j = Male, Female",
+    "text": "Hypotheses\nWe now want to test to see if the more complicated model is worth it (is there an interaction present)\n\\(H_0: (\\alpha\\beta)_{jk} = 0 \\text{ for all } j \\text{ and } k\\)\n\\(H_a: (\\alpha\\beta)_{ij} \\neq 0 \\text{ for at least one pair of } (j, k)\\)\nwhere i = Adelie, Chinstrap, and Gentoo\nwhere j = Male, Female",
     "crumbs": [
       "Slides",
       "Day-21"

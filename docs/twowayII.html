@@ -268,8 +268,8 @@
 </section>
 <section id="model" class="slide level2 smaller">
 <h2>Model</h2>
-<p>Interaction model: <span class="math display">\[\mathbf{Y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \epsilon_{ijk}}\]</span></p>
-<p>Additive model: <span class="math display">\[\mathbf{Y_{ijk} = \mu + \alpha_i + \beta_j  + \epsilon_{ijk}}\]</span></p>
+<p>Interaction model: <span class="math display">\[\mathbf{Y_{ijk} = \mu + \alpha_j + \beta_k + (\alpha\beta)_{jk} + \epsilon_{ijk}}\]</span></p>
+<p>Additive model: <span class="math display">\[\mathbf{Y_{ijk} = \mu + \alpha_j + \beta_k  + \epsilon_{ijk}}\]</span></p>
 </section>
 <section id="the-model-terms" class="slide level2 smaller">
 <h2>The model terms</h2>
@@ -289,7 +289,7 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><strong><span class="math inline">\(Y_{ijk}\)</span></strong></td>
-<td style="text-align: left;">The <span class="math inline">\(k^{th}\)</span> observation in the cell defined by level <span class="math inline">\(i\)</span> of Factor A and level <span class="math inline">\(j\)</span> of Factor B.</td>
+<td style="text-align: left;">The <span class="math inline">\(i^{th}\)</span> observation in the cell defined by level <span class="math inline">\(j\)</span> of Factor A and level <span class="math inline">\(k\)</span> of Factor B.</td>
 <td style="text-align: left;">The continuous response variable being measured.</td>
 </tr>
 <tr class="even">
@@ -299,12 +299,12 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong><span class="math inline">\(\alpha_i\)</span></strong></td>
-<td style="text-align: left;">The <strong>Main Effect of Factor A</strong> at level <span class="math inline">\(i\)</span>.</td>
+<td style="text-align: left;">The <strong>Main Effect of Factor A</strong> at level <span class="math inline">\(j\)</span>.</td>
 <td style="text-align: left;">The deviation of the mean for Factor A (holding B constant) from the baseline.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong><span class="math inline">\(\beta_j\)</span></strong></td>
-<td style="text-align: left;">The <strong>Main Effect of Factor B</strong> at level <span class="math inline">\(j\)</span>.</td>
+<td style="text-align: left;">The <strong>Main Effect of Factor B</strong> at level <span class="math inline">\(k\)</span>.</td>
 <td style="text-align: left;">The deviation of the mean for Factor B (holding A constant) from the baseline.</td>
 </tr>
 </tbody>
@@ -378,8 +378,8 @@
 <section id="hypotheses-1" class="slide level2">
 <h2>Hypotheses</h2>
 <p>We now want to test to see if the more complicated model is worth it (is there an interaction present)</p>
-<p><span class="math inline">\(H_0: (\alpha\beta)_{ij} = 0 \text{ for all } i \text{ and } j\)</span></p>
-<p><span class="math inline">\(H_a: (\alpha\beta)_{ij} \neq 0 \text{ for at least one pair of } (i, j)\)</span></p>
+<p><span class="math inline">\(H_0: (\alpha\beta)_{jk} = 0 \text{ for all } j \text{ and } k\)</span></p>
+<p><span class="math inline">\(H_a: (\alpha\beta)_{ij} \neq 0 \text{ for at least one pair of } (j, k)\)</span></p>
 <p>where i = Adelie, Chinstrap, and Gentoo</p>
 <p>where j = Male, Female</p>
 </section>
