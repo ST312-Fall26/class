@@ -77,6 +77,8 @@ website:
             text: "Day-19"
           - href: 19-twoway.qmd
             text: "Day-20"
+          - href: twowayII.qmd
+            text: "Day-21"
 format:
   html:
     theme: cosmo

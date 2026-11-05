@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <meta name="dcterms.date" content="2026-11-05">
+  <title>312 Storage – ST312: Two-way ANOVA (13)</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-c7b6cf73ab47db6ccc8c81f07da29931.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">ST312: Two-way ANOVA (13)</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+  <p class="date">2026-11-05</p>
+</section>
+<section id="checklist" class="slide level2 smaller">
+<h2>Checklist</h2>
+<p>– No homework-3 until next week</p>
+<p>– Rubric assignment is out now!</p>
+<p>– Don’t forget about the Statistics Experience (12-1)</p>
+<p>– Final Exam</p>
+<pre><code>&gt; December 3rd 3:30pm in our classroom
+&gt; Cumulative with a focus on unit-III</code></pre>
+<p>– I’m currently grading Exam-2 (~2 week turn around)</p>
+</section>
+<section id="warm-up" class="slide level2 smaller">
+<h2>Warm-up</h2>
+<p>A logistics company wants to investigate whether the average delivery time differs among three shipping services.</p>
+<p>The company randomly selects 60 packages and assigns them to one of three shipping services:</p>
+<ul>
+<li><p>Service A: Standard ground shipping</p></li>
+<li><p>Service B: Priority shipping</p></li>
+<li><p>Service C: Express shipping</p></li>
+<li><p>Service D: Overnight air freight delivery The company records the number of hours it takes for each package to reach its destination.</p></li>
+</ul>
+<p>Write out the population model in proper notation</p>
+</section>
+<section id="warm-up-1" class="slide level2">
+<h2>Warm-up</h2>
+<p>Now, write out the estimated model!</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  term             estimate std.error
+  &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)         20.0      0.680
+2 serviceOvernight    -9.13     0.962
+3 servicePriority     11.4      0.962
+4 serviceStandard     29.7      0.962</code></pre>
+</div>
+</div>
+</section>
+<section id="two-way-anova" class="slide level2 smaller">
+<h2>Two-way ANOVA</h2>
+<p>With a quantitative response…</p>
+<p>– Difference in means</p>
+<pre><code>  &gt; single categorical explanatory variable with 2 levels 
+  </code></pre>
+<p>– One way ANOVA</p>
+<pre><code>  &gt; single categorical explanatory variable with 2 or more levels
+  </code></pre>
+<p>– Two way ANOVA</p>
+<pre><code>  &gt; two categorical explanatory variables with 2 or more levels!</code></pre>
+</section>
+<section id="benefits" class="slide level2">
+<h2>Benefits</h2>
+<p>– We can “control” or “account” for another variable.</p>
+<p>– We can ask and answer more complicated questions.</p>
+<p>– Move variation from the residual (error term) to the FIT (model). This helps us understand more about our response variable, and increases the <strong>power</strong> of our test.</p>
+</section>
+<section id="research-question" class="slide level2">
+<h2>Research Question</h2>
+<p>Back to the Penguins data set!</p>
+<p>I’m interested in if the sex of the penguin can help explain the differences we see if penguins’ flipper length. However, we are going to investigate if the relationship between Species and Flipper length depends on the Sex of the Penguin.</p>
+<p>Practice: How is this different then before?</p>
+</section>
+<section id="scenario" class="slide level2 smaller">
+<h2>Scenario</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  island    sex    Mean_Flipper_Length     N
+  &lt;fct&gt;     &lt;fct&gt;                &lt;dbl&gt; &lt;int&gt;
+1 Biscoe    female                206.    80
+2 Biscoe    male                  213.    83
+3 Dream     female                190.    61
+4 Dream     male                  196.    62
+5 Torgersen female                188.    24
+6 Torgersen male                  195.    23</code></pre>
+</div>
+</div>
+<p>Response variable: flipper length</p>
+<p>Explanatory variables: Species, Sex</p>
+</section>
+<section id="terms" class="slide level2">
+<h2>Terms</h2>
+<p>Additive -</p>
+<p>Interaction -</p>
+</section>
+<section id="terms-1" class="slide level2">
+<h2>Terms</h2>
+<p>Additive - The relationship between <span class="math inline">\(X_1\)</span> and <span class="math inline">\(Y\)</span> does not change based on the levels of <span class="math inline">\(X_2\)</span></p>
+<p>Additive - The relationship between species and flipper length does not change based on the levels of sex</p>
+</section>
+<section id="terms-2" class="slide level2">
+<h2>Terms</h2>
+<p>Interaction - The relationship between <span class="math inline">\(X_1\)</span> and <span class="math inline">\(Y\)</span> DOES change based on the levels of <span class="math inline">\(X_2\)</span></p>
+<p>Interaction - The relationship between species and flipper length DOES change based on the levels of sex</p>
+</section>
+<section id="additive" class="slide level2">
+<h2>Additive</h2>
+
+<img data-src="twowayII_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="interaction-model" class="slide level2">
+<h2>Interaction model</h2>
+
+<img data-src="twowayII_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="the-difference" class="slide level2">
+<h2>The difference</h2>
+<p>The difference between the Additive Model and the Interaction Model in a Two-Way ANOVA is visually represented on an interaction plot by whether the lines connecting the cell means are parallel or non-parallel.</p>
+<p>Additive: The effect of Sex is constant across all levels of Species (the distance within species across sex is the same)</p>
+<p>Interaction: The effect of Sex depends across all levels of Species</p>
+</section>
+<section id="research-questions" class="slide level2">
+<h2>Research Questions</h2>
+<p>– We can test for the significance of main effect X1 on Y (given X2 is in the model)</p>
+<p>– We can test for the significance of main effect B (given A is in the model)</p>
+<p>– We can test for the interaction effect (AB)</p>
+</section>
+<section id="research-questions-1" class="slide level2">
+<h2>Research Questions</h2>
+<p>– We can test for the significance of main effect species on flipper length (given sex is in the model)</p>
+<p>– We can test for the significance of main effect sex on flipper length (given species is in the model)</p>
+<p>– We can test for the interaction effect of sex and species on flipper length</p>
+</section>
+<section id="context" class="slide level2">
+<h2>Context</h2>
+<p>Is there an interaction between Species, Flipper Length, and Sex?</p>
+</section>
+<section id="hypotheses" class="slide level2">
+<h2>Hypotheses</h2>
+<p><span class="math inline">\(Ho:\)</span> The effect of Sex is the same at all levels of factor Species on flipper length at the population level</p>
+<p><span class="math inline">\(Ha:\)</span> The effect of Sex depends on the levels of Species on flipper length at the population level</p>
+</section>
+<section id="model" class="slide level2 smaller">
+<h2>Model</h2>
+<p>Interaction model: <span class="math display">\[\mathbf{Y_{ijk} = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \epsilon_{ijk}}\]</span></p>
+<p>Additive model: <span class="math display">\[\mathbf{Y_{ijk} = \mu + \alpha_i + \beta_j  + \epsilon_{ijk}}\]</span></p>
+</section>
+<section id="the-model-terms" class="slide level2 smaller">
+<h2>The model terms</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Role in the Interaction Model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong><span class="math inline">\(Y_{ijk}\)</span></strong></td>
+<td style="text-align: left;">The <span class="math inline">\(k^{th}\)</span> observation in the cell defined by level <span class="math inline">\(i\)</span> of Factor A and level <span class="math inline">\(j\)</span> of Factor B.</td>
+<td style="text-align: left;">The continuous response variable being measured.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong><span class="math inline">\(\mu\)</span></strong></td>
+<td style="text-align: left;">The <strong>mean of the baseline group</strong>.</td>
+<td style="text-align: left;">.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong><span class="math inline">\(\alpha_i\)</span></strong></td>
+<td style="text-align: left;">The <strong>Main Effect of Factor A</strong> at level <span class="math inline">\(i\)</span>.</td>
+<td style="text-align: left;">The deviation of the mean for Factor A (holding B constant) from the baseline.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong><span class="math inline">\(\beta_j\)</span></strong></td>
+<td style="text-align: left;">The <strong>Main Effect of Factor B</strong> at level <span class="math inline">\(j\)</span>.</td>
+<td style="text-align: left;">The deviation of the mean for Factor B (holding A constant) from the baseline.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-model-terms-1" class="slide level2 smaller">
+<h2>The model terms</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Role in the Interaction Model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong><span class="math inline">\((\alpha\beta)_{ij}\)</span></strong></td>
+<td style="text-align: left;">The <strong>Interaction Effect</strong> for the cell <span class="math inline">\((i, j)\)</span>.</td>
+<td style="text-align: left;">The non-additive effect specific to that combination of factor levels. This is the core term that distinguishes the interaction model.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong><span class="math inline">\(\epsilon_{ijk}\)</span></strong></td>
+<td style="text-align: left;">The <strong>Random Error</strong> term.</td>
+<td style="text-align: left;">The unexplained, random variation, assumed to be <span class="math inline">\(\sim N(0, \sigma^2)\)</span>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="write-out-the-estimated-models" class="slide level2 smaller">
+<h2>Write out the estimated models</h2>
+<p>Additive model</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  term             estimate std.error statistic   p.value
+  &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)        187.       0.568    328.   0        
+2 speciesChinstrap     5.72     0.841      6.80 4.79e- 11
+3 speciesGentoo       27.0      0.707     38.2  4.08e-123
+4 sexmale              6.85     0.628     10.9  7.11e- 24</code></pre>
+</div>
+</div>
+</section>
+<section id="visually" class="slide level2">
+<h2>Visually</h2>
+
+<img data-src="twowayII_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="write-out-the-estimated-models-1" class="slide level2 smaller">
+<h2>Write out the estimated models</h2>
+<p>Interaction model</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+  term                     estimate std.error statistic  p.value
+  &lt;chr&gt;                       &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)                188.       0.662    284.   0       
+2 speciesChinstrap             3.94     1.17       3.36 8.84e- 4
+3 speciesGentoo               24.9      0.995     25.0  4.93e-78
+4 sexmale                      4.62     0.936      4.93 1.30e- 6
+5 speciesChinstrap:sexmale     3.56     1.66       2.14 3.28e- 2
+6 speciesGentoo:sexmale        4.22     1.40       3.02 2.74e- 3</code></pre>
+</div>
+</div>
+</section>
+<section id="hypotheses-1" class="slide level2">
+<h2>Hypotheses</h2>
+<p>We now want to test to see if the more complicated model is worth it (is there an interaction present)</p>
+<p><span class="math inline">\(H_0: (\alpha\beta)_{ij} = 0 \text{ for all } i \text{ and } j\)</span></p>
+<p><span class="math inline">\(H_a: (\alpha\beta)_{ij} \neq 0 \text{ for at least one pair of } (i, j)\)</span></p>
+<p>where i = Adelie, Chinstrap, and Gentoo</p>
+<p>where j = Male, Female</p>
+</section>
+<section id="assumptions" class="slide level2">
+<h2>Assumptions</h2>
+<p>– Independence</p>
+<p>– Normality or residuals</p>
+<p>– Equal Variance</p>
+</section>
+<section id="residuals" class="slide level2">
+<h2>Residuals</h2>
+<p>Observed - Predicted still applies!</p>
+
+<img data-src="twowayII_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="normality-of-residuals" class="slide level2">
+<h2>Normality of residuals</h2>
+
+<img data-src="twowayII_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section id="equal-variance" class="slide level2">
+<h2>Equal Variance</h2>
+
+<img data-src="twowayII_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="our-statistic" class="slide level2 smaller">
+<h2>Our statistic</h2>
+<p>Variance <strong>between</strong> vs variance <strong>within</strong></p>
+<p>Because we are testing the interaction term, the <strong>between</strong> is the interaction term vs the additive terms</p>
+<p><span class="math display">\[F_{A \times B} = \frac{MS_{A \times B}}{MS_{Error}}\]</span></p>
+<p><span class="math display">\[MS_{A \times B} = \frac{SS_{A \times B}}{df_{A \times B}}\]</span></p>
+<p>SS measures how much the mean of a specific combination of variables deviates from the mean predicted by the simple additive model.</p>
+</section>
+<section id="ss-axb" class="slide level2">
+<h2>SS axb</h2>
+<p>Look at the difference between the predicted mean in the additive model vs the actual mean (interaction model)</p>
+<p>Take the values, square them, and sum them up!</p>
+
+<img data-src="twowayII_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="statistic" class="slide level2">
+<h2>Statistic</h2>
+<p><span class="math display">\[MS_{A \times B} = \frac{SS_{A \times B}}{df_{A \times B}}\]</span></p>
+<p><span class="math display">\[\mathbf{df_{A \times B} = (a - 1)(b - 1)}\]</span></p>
+<p>a is the number of levels for A b is the number of levels for B</p>
+</section>
+<section id="statistic-mse" class="slide level2 smaller">
+<h2>Statistic (MSE)</h2>
+<p><span class="math display">\[F_{A \times B} = \frac{MS_{A \times B}}{MS_{Error}}\]</span></p>
+<p><span class="math display">\[\mathbf{MS_{Error} = \frac{SS_{Error}}{df_{Error}}}\]</span></p>
+<p><span class="math display">\[\mathbf{SS_{Error} = \sum_{i=1}^{a} \sum_{j=1}^{b} \sum_{k=1}^{n} (Y_{ijk} - \bar{Y}_{ij})^2}\]</span></p>
+<p><span class="math display">\[\mathbf{df_{Error} = ab(n - 1)}\]</span></p>
+</section>
+<section id="visually-1" class="slide level2 smaller">
+<h2>Visually</h2>
+<p><span class="math display">\[\mathbf{SS_{Error} = \sum_{i=1}^{a} \sum_{j=1}^{b} \sum_{k=1}^{n} (Y_{ijk} - \bar{Y}_{ij})^2}\]</span></p>
+
+<img data-src="twowayII_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<section>
+<section id="questions" class="title-slide slide level1 center">
+<h1>Questions?</h1>
+
+</section>
+<section id="results" class="slide level2">
+<h2>Results</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>             Df Sum Sq Mean Sq F value  Pr(&gt;F)    
+species       2  50526   25263 789.912 &lt; 2e-16 ***
+sex           1   3906    3906 122.119 &lt; 2e-16 ***
+species:sex   2    329     165   5.144 0.00631 ** 
+Residuals   327  10458      32                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>What is the distribution our F-statistic follows?</p>
+</section>
+<section id="distribution" class="slide level2">
+<h2>Distribution</h2>
+<p>F-distribution</p>
+<p><span class="math display">\[\mathbf{df_{A \times B} = (a - 1)(b - 1)}\]</span></p>
+<p><span class="math display">\[\mathbf{df_{Error} = ab(n - 1)}\]</span></p>
+</section>
+<section id="what-does-this-tell-us" class="slide level2">
+<h2>What does this tell us?</h2>
+<p>– Reject the null hypothesis</p>
+<p>– Strong evidence to conclude that the relationship between Species and Flipper Length does depend on the Sex of the Penguin.</p>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next time</h2>
+<p>Test for the main effects</p>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

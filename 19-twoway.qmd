@@ -28,7 +28,7 @@ library(kableExtra)
 ```
 
 
--- No homework-3 next week 
+-- No homework-3 until next week 
 
 -- Rubric assignment is out now!
     
