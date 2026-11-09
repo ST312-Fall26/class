@@ -1,1152 +1,758 @@
 [
   {
-    "objectID": "twowayII.html#checklist",
-    "href": "twowayII.html#checklist",
+    "objectID": "twowayIII.html#checklist",
+    "href": "twowayIII.html#checklist",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Checklist",
-    "text": "Checklist\n– No homework-3 until next week\n– Rubric assignment is out now!\n– Don’t forget about the Statistics Experience (12-1)\n– Final Exam\n&gt; December 3rd 3:30pm in our classroom\n&gt; Cumulative with a focus on unit-III\n– I’m currently grading Exam-2 (~2 week turn around)",
+    "text": "Checklist\n– Homework-3 is coming!\n– Rubric assignment is out now!\n– Don’t forget about the Statistics Experience (12-1)\n– Final Exam\n&gt; December 3rd 3:30pm in our classroom\n&gt; Cumulative with a focus on unit-III",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#warm-up",
-    "href": "twowayII.html#warm-up",
+    "objectID": "twowayIII.html#so-far",
+    "href": "twowayIII.html#so-far",
     "title": "ST312: Two-way ANOVA (13)",
-    "section": "Warm-up",
-    "text": "Warm-up\nA logistics company wants to investigate whether the average delivery time differs among three shipping services.\nThe company randomly selects 60 packages and assigns them to one of three shipping services:\n\nService A: Standard ground shipping\nService B: Priority shipping\nService C: Express shipping\nService D: Overnight air freight delivery The company records the number of hours it takes for each package to reach its destination.\n\nWrite out the population model in proper notation",
+    "section": "So far",
+    "text": "So far\n– Model notation\n– Two-way ANOVA\n&gt; 2 categorical explanatory variables with 2 or more levels\n&gt; 1 quantitative response variable\nInteraction effect",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#warm-up-1",
-    "href": "twowayII.html#warm-up-1",
+    "objectID": "twowayIII.html#warm-up",
+    "href": "twowayIII.html#warm-up",
     "title": "ST312: Two-way ANOVA (13)",
-    "section": "Warm-up",
-    "text": "Warm-up\nNow, write out the estimated model!\n\n\n# A tibble: 4 × 3\n  term             estimate std.error\n  &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)         20.0      0.680\n2 serviceOvernight    -9.13     0.962\n3 servicePriority     11.4      0.962\n4 serviceStandard     29.7      0.962",
+    "section": "Warm up",
+    "text": "Warm up\nWhat is an interaction effect? Describe it in general, or use our penguins example to answer the question.\nX1 - Species\nX2 - Sex\nY - Flipper length (mm)",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#two-way-anova",
-    "href": "twowayII.html#two-way-anova",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Two-way ANOVA",
-    "text": "Two-way ANOVA\nWith a quantitative response…\n– Difference in means\n  &gt; single categorical explanatory variable with 2 levels \n  \n– One way ANOVA\n  &gt; single categorical explanatory variable with 2 or more levels\n  \n– Two way ANOVA\n  &gt; two categorical explanatory variables with 2 or more levels!",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#benefits",
-    "href": "twowayII.html#benefits",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Benefits",
-    "text": "Benefits\n– We can “control” or “account” for another variable.\n– We can ask and answer more complicated questions.\n– Move variation from the residual (error term) to the FIT (model). This helps us understand more about our response variable, and increases the power of our test.",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#research-question",
-    "href": "twowayII.html#research-question",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Research Question",
-    "text": "Research Question\nBack to the Penguins data set!\nI’m interested in if the sex of the penguin can help explain the differences we see if penguins’ flipper length. However, we are going to investigate if the relationship between Species and Flipper length depends on the Sex of the Penguin.\nPractice: How is this different then before?",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#scenario",
-    "href": "twowayII.html#scenario",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Scenario",
-    "text": "Scenario\n\n\n# A tibble: 6 × 4\n  island    sex    Mean_Flipper_Length     N\n  &lt;fct&gt;     &lt;fct&gt;                &lt;dbl&gt; &lt;int&gt;\n1 Biscoe    female                206.    80\n2 Biscoe    male                  213.    83\n3 Dream     female                190.    61\n4 Dream     male                  196.    62\n5 Torgersen female                188.    24\n6 Torgersen male                  195.    23\n\n\nResponse variable: flipper length\nExplanatory variables: Species, Sex",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#terms",
-    "href": "twowayII.html#terms",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Terms",
-    "text": "Terms\nAdditive -\nInteraction -",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#terms-1",
-    "href": "twowayII.html#terms-1",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Terms",
-    "text": "Terms\nAdditive - The relationship between \\(X_1\\) and \\(Y\\) does not change based on the levels of \\(X_2\\)\nAdditive - The relationship between species and flipper length does not change based on the levels of sex",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#terms-2",
-    "href": "twowayII.html#terms-2",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Terms",
-    "text": "Terms\nInteraction - The relationship between \\(X_1\\) and \\(Y\\) DOES change based on the levels of \\(X_2\\)\nInteraction - The relationship between species and flipper length DOES change based on the levels of sex",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#additive",
-    "href": "twowayII.html#additive",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Additive",
-    "text": "Additive",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#interaction-model",
-    "href": "twowayII.html#interaction-model",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Interaction model",
-    "text": "Interaction model",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#the-difference",
-    "href": "twowayII.html#the-difference",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "The difference",
-    "text": "The difference\nThe difference between the Additive Model and the Interaction Model in a Two-Way ANOVA is visually represented on an interaction plot by whether the lines connecting the cell means are parallel or non-parallel.\nAdditive: The effect of Sex is constant across all levels of Species (the distance within species across sex is the same)\nInteraction: The effect of Sex depends across all levels of Species",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#research-questions",
-    "href": "twowayII.html#research-questions",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Research Questions",
-    "text": "Research Questions\n– We can test for the significance of main effect X1 on Y (given X2 is in the model)\n– We can test for the significance of main effect B (given A is in the model)\n– We can test for the interaction effect (AB)",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#research-questions-1",
-    "href": "twowayII.html#research-questions-1",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Research Questions",
-    "text": "Research Questions\n– We can test for the significance of main effect species on flipper length (given sex is in the model)\n– We can test for the significance of main effect sex on flipper length (given species is in the model)\n– We can test for the interaction effect of sex and species on flipper length",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#context",
-    "href": "twowayII.html#context",
+    "objectID": "twowayIII.html#context",
+    "href": "twowayIII.html#context",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Context",
     "text": "Context\nIs there an interaction between Species, Flipper Length, and Sex?",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#hypotheses",
-    "href": "twowayII.html#hypotheses",
+    "objectID": "twowayIII.html#hypotheses",
+    "href": "twowayIII.html#hypotheses",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Hypotheses",
     "text": "Hypotheses\n\\(Ho:\\) The effect of Sex is the same at all levels of factor Species on flipper length at the population level\n\\(Ha:\\) The effect of Sex depends on the levels of Species on flipper length at the population level",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#model",
-    "href": "twowayII.html#model",
+    "objectID": "twowayIII.html#model",
+    "href": "twowayIII.html#model",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Model",
-    "text": "Model\nInteraction model: \\[\\mathbf{Y_{ijk} = \\mu + \\alpha_j + \\beta_k + (\\alpha\\beta)_{jk} + \\epsilon_{ijk}}\\]\nAdditive model: \\[\\mathbf{Y_{ijk} = \\mu + \\alpha_j + \\beta_k  + \\epsilon_{ijk}}\\]",
+    "text": "Model\nInteraction model: \\[\\mathbf{Y_{ijk} = \\mu + \\alpha_j + \\beta_k + (\\alpha\\beta)_{jk} + \\epsilon_{ijk}}\\]",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#the-model-terms",
-    "href": "twowayII.html#the-model-terms",
+    "objectID": "twowayIII.html#the-model-terms",
+    "href": "twowayIII.html#the-model-terms",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "The model terms",
     "text": "The model terms\n\n\n\n\n\n\n\n\nTerm\nDescription\nRole in the Interaction Model\n\n\n\n\n\\(Y_{ijk}\\)\nThe \\(i^{th}\\) observation in the cell defined by level \\(j\\) of Factor A and level \\(k\\) of Factor B.\nThe continuous response variable being measured.\n\n\n\\(\\mu\\)\nThe mean of the baseline group.\n.\n\n\n\\(\\alpha_i\\)\nThe Main Effect of Factor A at level \\(j\\).\nThe deviation of the mean for Factor A (holding B constant) from the baseline.\n\n\n\\(\\beta_j\\)\nThe Main Effect of Factor B at level \\(k\\).\nThe deviation of the mean for Factor B (holding A constant) from the baseline.",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#the-model-terms-1",
-    "href": "twowayII.html#the-model-terms-1",
+    "objectID": "twowayIII.html#the-model-terms-1",
+    "href": "twowayIII.html#the-model-terms-1",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "The model terms",
     "text": "The model terms\n\n\n\n\n\n\n\n\nTerm\nDescription\nRole in the Interaction Model\n\n\n\n\n\\((\\alpha\\beta)_{ij}\\)\nThe Interaction Effect for the cell \\((i, j)\\).\nThe non-additive effect specific to that combination of factor levels. This is the core term that distinguishes the interaction model.\n\n\n\\(\\epsilon_{ijk}\\)\nThe Random Error term.\nThe unexplained, random variation, assumed to be \\(\\sim N(0, \\sigma^2)\\).",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#write-out-the-estimated-models",
-    "href": "twowayII.html#write-out-the-estimated-models",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Write out the estimated models",
-    "text": "Write out the estimated models\nAdditive model\n\n\n# A tibble: 4 × 5\n  term             estimate std.error statistic   p.value\n  &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)        187.       0.568    328.   0        \n2 speciesChinstrap     5.72     0.841      6.80 4.79e- 11\n3 speciesGentoo       27.0      0.707     38.2  4.08e-123\n4 sexmale              6.85     0.628     10.9  7.11e- 24",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#visually",
-    "href": "twowayII.html#visually",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Visually",
-    "text": "Visually",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#write-out-the-estimated-models-1",
-    "href": "twowayII.html#write-out-the-estimated-models-1",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "Write out the estimated models",
-    "text": "Write out the estimated models\nInteraction model\n\n\n# A tibble: 6 × 5\n  term                     estimate std.error statistic  p.value\n  &lt;chr&gt;                       &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)                188.       0.662    284.   0       \n2 speciesChinstrap             3.94     1.17       3.36 8.84e- 4\n3 speciesGentoo               24.9      0.995     25.0  4.93e-78\n4 sexmale                      4.62     0.936      4.93 1.30e- 6\n5 speciesChinstrap:sexmale     3.56     1.66       2.14 3.28e- 2\n6 speciesGentoo:sexmale        4.22     1.40       3.02 2.74e- 3",
-    "crumbs": [
-      "Slides",
-      "Day-21"
-    ]
-  },
-  {
-    "objectID": "twowayII.html#hypotheses-1",
-    "href": "twowayII.html#hypotheses-1",
+    "objectID": "twowayIII.html#hypotheses-1",
+    "href": "twowayIII.html#hypotheses-1",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Hypotheses",
-    "text": "Hypotheses\nWe now want to test to see if the more complicated model is worth it (is there an interaction present)\n\\(H_0: (\\alpha\\beta)_{jk} = 0 \\text{ for all } j \\text{ and } k\\)\n\\(H_a: (\\alpha\\beta)_{ij} \\neq 0 \\text{ for at least one pair of } (j, k)\\)\nwhere i = Adelie, Chinstrap, and Gentoo\nwhere j = Male, Female",
+    "text": "Hypotheses\nWe now want to test to see if the more complicated model is “worth it” / detectable (is there an interaction present)\n\\(H_0: (\\alpha\\beta)_{jk} = 0 \\text{ for all } j \\text{ and } k\\)\n\\(H_a: (\\alpha\\beta)_{ij} \\neq 0 \\text{ for at least one pair of } (j, k)\\)\nwhere i = Adelie, Chinstrap, and Gentoo\nwhere j = Male, Female",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#assumptions",
-    "href": "twowayII.html#assumptions",
+    "objectID": "twowayIII.html#assumptions",
+    "href": "twowayIII.html#assumptions",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Assumptions",
     "text": "Assumptions\n– Independence\n– Normality or residuals\n– Equal Variance",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#residuals",
-    "href": "twowayII.html#residuals",
+    "objectID": "twowayIII.html#residuals",
+    "href": "twowayIII.html#residuals",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Residuals",
     "text": "Residuals\nObserved - Predicted still applies!",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#normality-of-residuals",
-    "href": "twowayII.html#normality-of-residuals",
+    "objectID": "twowayIII.html#normality-of-residuals",
+    "href": "twowayIII.html#normality-of-residuals",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Normality of residuals",
     "text": "Normality of residuals",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#equal-variance",
-    "href": "twowayII.html#equal-variance",
+    "objectID": "twowayIII.html#equal-variance",
+    "href": "twowayIII.html#equal-variance",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Equal Variance",
     "text": "Equal Variance",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#our-statistic",
-    "href": "twowayII.html#our-statistic",
+    "objectID": "twowayIII.html#our-statistic",
+    "href": "twowayIII.html#our-statistic",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Our statistic",
-    "text": "Our statistic\nVariance between vs variance within\nBecause we are testing the interaction term, the between is the interaction term vs the additive terms\n\\[F_{A \\times B} = \\frac{MS_{A \\times B}}{MS_{Error}}\\]\n\\[MS_{A \\times B} = \\frac{SS_{A \\times B}}{df_{A \\times B}}\\]\nSS measures how much the mean of a specific combination of variables deviates from the mean predicted by the simple additive model.",
+    "text": "Our statistic\nVariance between vs variance within\nBecause we are testing the interaction term, the between variance (\\(MS_{A \\times B})\\) is the interaction term vs the additive terms\n\\[F_{A \\times B} = \\frac{MS_{A \\times B}}{MS_{Error}}\\]\n\\[MS_{A \\times B} = \\frac{SS_{A \\times B}}{df_{A \\times B}}\\]\nSS measures how much the mean of a specific combination of variables deviates from the mean predicted by the simple additive model.",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#ss-axb",
-    "href": "twowayII.html#ss-axb",
+    "objectID": "twowayIII.html#ss-axb",
+    "href": "twowayIII.html#ss-axb",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "SS axb",
     "text": "SS axb\nLook at the difference between the predicted mean in the additive model vs the actual mean (interaction model)\nTake the values, square them, and sum them up!",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#statistic",
-    "href": "twowayII.html#statistic",
+    "objectID": "twowayIII.html#ssaxb",
+    "href": "twowayIII.html#ssaxb",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "SSaxb",
+    "text": "SSaxb\nThe interaction sum of squares measures how much the cell means deviate from what we would predict if the effects of the two factors were simply additive.\n\\(SS_{AB} = \\sum_{i=1}^{a}\\sum_{j=1}^{b} n_{ij}(\\bar{x}_{ij} - \\bar{x}_{i\\cdot} - \\bar{x}_{\\cdot j} + \\bar{x}_{\\cdot\\cdot})^2\\)\n\n\\(\\bar{x}_{jk}\\) = Mean for the combination of Factor A level \\(j\\) and Factor B level \\(k\\)\n\\(\\bar{x}_{j\\cdot}\\) = Mean for Factor A level \\(j\\)\n\\(\\bar{x}_{\\cdot k}\\) = Mean for Factor B level \\(k\\)\n\\(\\bar{x}_{\\cdot\\cdot}\\) = Grand mean\n\\(n_{jk}\\) = Sample size in cell \\(j,k\\)",
+    "crumbs": [
+      "Slides",
+      "Day-22"
+    ]
+  },
+  {
+    "objectID": "twowayIII.html#statistic",
+    "href": "twowayIII.html#statistic",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Statistic",
     "text": "Statistic\n\\[MS_{A \\times B} = \\frac{SS_{A \\times B}}{df_{A \\times B}}\\]\n\\[\\mathbf{df_{A \\times B} = (a - 1)(b - 1)}\\]\na is the number of levels for A b is the number of levels for B",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#statistic-mse",
-    "href": "twowayII.html#statistic-mse",
+    "objectID": "twowayIII.html#statistic-mse",
+    "href": "twowayIII.html#statistic-mse",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Statistic (MSE)",
     "text": "Statistic (MSE)\n\\[F_{A \\times B} = \\frac{MS_{A \\times B}}{MS_{Error}}\\]\n\\[\\mathbf{MS_{Error} = \\frac{SS_{Error}}{df_{Error}}}\\]\n\\[\\mathbf{SS_{Error} = \\sum_{i=1}^{a} \\sum_{j=1}^{b} \\sum_{k=1}^{n} (Y_{ijk} - \\bar{Y}_{ij})^2}\\]\n\\[\\mathbf{df_{Error} = ab(n - 1)}\\]",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#visually-1",
-    "href": "twowayII.html#visually-1",
+    "objectID": "twowayIII.html#visually",
+    "href": "twowayIII.html#visually",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Visually",
     "text": "Visually\n\\[\\mathbf{SS_{Error} = \\sum_{i=1}^{a} \\sum_{j=1}^{b} \\sum_{k=1}^{n} (Y_{ijk} - \\bar{Y}_{ij})^2}\\]",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#results",
-    "href": "twowayII.html#results",
+    "objectID": "twowayIII.html#results",
+    "href": "twowayIII.html#results",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Results",
     "text": "Results\n\n\n             Df Sum Sq Mean Sq F value  Pr(&gt;F)    \nspecies       2  50526   25263 789.912 &lt; 2e-16 ***\nsex           1   3906    3906 122.119 &lt; 2e-16 ***\nspecies:sex   2    329     165   5.144 0.00631 ** \nResiduals   327  10458      32                    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nWhat is the distribution our F-statistic follows?",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#distribution",
-    "href": "twowayII.html#distribution",
+    "objectID": "twowayIII.html#distribution",
+    "href": "twowayIII.html#distribution",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Distribution",
     "text": "Distribution\nF-distribution\n\\[\\mathbf{df_{A \\times B} = (a - 1)(b - 1)}\\]\n\\[\\mathbf{df_{Error} = ab(n - 1)}\\]",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#what-does-this-tell-us",
-    "href": "twowayII.html#what-does-this-tell-us",
+    "objectID": "twowayIII.html#what-does-this-tell-us",
+    "href": "twowayIII.html#what-does-this-tell-us",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "What does this tell us?",
     "text": "What does this tell us?\n– Reject the null hypothesis\n– Strong evidence to conclude that the relationship between Species and Flipper Length does depend on the Sex of the Penguin.",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "twowayII.html#next-time",
-    "href": "twowayII.html#next-time",
+    "objectID": "twowayIII.html#note",
+    "href": "twowayIII.html#note",
     "title": "ST312: Two-way ANOVA (13)",
-    "section": "Next time",
-    "text": "Next time\nTest for the main effects",
+    "section": "Note",
+    "text": "Note\nIf there is evidence of an interaction effect, this is where we stop!\nThe questions below don’t make sense if we have evidence of an interaction!",
     "crumbs": [
       "Slides",
-      "Day-21"
+      "Day-22"
     ]
   },
   {
-    "objectID": "rubric-assignment-format.html",
-    "href": "rubric-assignment-format.html",
-    "title": "Rubric Format Example",
-    "section": "",
-    "text": "This document is meant to serve as a guide on how I would recommend formatting your rubric assignment. As a reminder, this assignment is worth 5% of your grade. Please note that this is a hand-written assignment.\n– Clearly label each section. We have two sections for this assignment:\n\nSection-1: Solutions and Rubric\nSection-2: Student work\n\nNext, have clearly labeled sub-sections. An example can be seen below:\n\nSection-1\nContext: This is a One-Way-ANOVA problem (please state the topic you chose, and write your realistic scenario underneath)\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\npart a\nLorem ipsum dolor sit amet, consectetur adipiscing elit. (write your question)\nWrite your solutions underneath\nUnder your solutions, put your rubric table:\n\n\n\n\n\n\n\nCriteria: Identify the main objective of the question\nPoints = define your number of points\n\n\n\n\nHave partial credit opportunities\n-0.5\n\n\nThis means have a breakdown of how a student can earn full credit\n-0.5\n\n\nThese do not need to always be -0.5\n-1.0\n\n\nIt is up to you. However, be reasonable, and provide a sufficient amount of detail\n-0.5\n\n\n\n\n\npart b\nLorem ipsum dolor sit amet, consectetur adipiscing elit. (write your question)\nWrite your solutions underneath\nAgain, put your rubric table below.\nPlease note: I am not requireing exactly d or e number of parts to your question. Have an appropriate number of parts that identifies the core components of the context that you pick. Your assignment should be out of 20-points.\n\n\n\nSection-2\n\npart a (example)\n\\(Ho: \\bar{x} = 7\\)\n\\(Ha: \\bar{x} &gt; 7\\)\nStudent earned +1.5 points. Student correctly identified the null/alternative value, but did not use the correct notation (-1), and the alternative sign is incorrect (-.5).\nPlease make sure to:\n– Label your question, and provide the mock student solution.\n– Assign the solution the correct number of points and justify why points were taken off using the rubric you provided in section-1.\nDo this for each part of your multi-part question.\nAs always, please let me know if you have any questions!",
-    "crumbs": [
-      "Assignments",
-      "Rubric Assignment Format"
-    ]
-  },
-  {
-    "objectID": "review2.html#checklist",
-    "href": "review2.html#checklist",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Checklist",
-    "text": "Checklist\n– Don’t forget about the Statistics Experience (12-1)\n– Exam-2 is on 10-29\n  &gt; Cumulative with emphasis on unit-2\n  &gt; Closed notes, bring a calculator you know how to use\n  \n– The formula sheet has been posted\n– The how to study guide has been posted",
+    "objectID": "twowayIII.html#research-questions",
+    "href": "twowayIII.html#research-questions",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Research Questions",
+    "text": "Research Questions\nFor demonstration purposes, we are going to remove the interaction term from the model, and test the main effect!\n– We can test for the significance of main effect A (given B is in the model) &lt;- Let’s do this now\n– We can test for the significance of main effect B (given A is in the model)\nRQ: Is there a relationship between Sex and Flipper Length, give Species is in our model?",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#checklist-1",
-    "href": "review2.html#checklist-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Checklist",
-    "text": "Checklist\n– Do you have questions about midterm-2?\n– Let’s take a look at the formula sheet!",
+    "objectID": "twowayIII.html#what-does-this-look-like",
+    "href": "twowayIII.html#what-does-this-look-like",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "What does this look like?",
+    "text": "What does this look like?",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#warm-up",
-    "href": "review2.html#warm-up",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Warm up",
-    "text": "Warm up\nLast time:\nResults from an experiment to compare yields as measured by dried weight of plants) obtained under a control and two different treatment conditions. We are interested in seeing if the dried weight of plants is different across the three yields.\nResults from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions.",
+    "objectID": "twowayIII.html#vs",
+    "href": "twowayIII.html#vs",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "vs",
+    "text": "vs",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#anova",
-    "href": "review2.html#anova",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Anova",
-    "text": "Anova\n\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)  \ngroup        2  3.766  1.8832   4.846 0.0159 *\nResiduals   27 10.492  0.3886                 \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nWhat does this tell us?",
+    "objectID": "twowayIII.html#model-notation",
+    "href": "twowayIII.html#model-notation",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Model notation",
+    "text": "Model notation\nAdditive model: \\[\\mathbf{Y_{ijk} = \\mu + \\alpha_i + \\beta_j  + \\epsilon_{ijk}}\\]\nWrite out the null and alternative hypothesis to test to see if Species has a significant impact on flipper length, given Sex is in the model.",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#pairwise-comparisons",
-    "href": "review2.html#pairwise-comparisons",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Pairwise comparisons",
-    "text": "Pairwise comparisons\n\\(\\frac{k(k-1)}{2}\\)\n\\(\\frac{3(3-1)}{2} = 3\\)\nWe have three pairwise comparisons!",
+    "objectID": "twowayIII.html#hypothesis",
+    "href": "twowayIII.html#hypothesis",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nHo: \\(\\alpha_i = 0\\), given sex is in the model.\nHa: At least one \\(\\alpha_i \\neq 0\\), given sex is in the model.\nwhere i = Adelie, Chinstrap, Gentoo",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#familywise-error-rate",
-    "href": "review2.html#familywise-error-rate",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Familywise Error Rate",
-    "text": "Familywise Error Rate\nThe family-wise error rate (FWER) is the probability of making AT LEAST one Type I error across a family of hypothesis tests.\n\n\\(FWER = 1 - (1-0.05)^3 \\approx 0.143\\)",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#strategies",
-    "href": "review2.html#strategies",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Strategies",
-    "text": "Strategies\n– Tukeys HSD\n– Bonferonni",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#tukeys-hsd",
-    "href": "review2.html#tukeys-hsd",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Tukeys HSD",
-    "text": "Tukeys HSD\nTalk to me about it!",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#tukeys-hsd-1",
-    "href": "review2.html#tukeys-hsd-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Tukeys HSD",
-    "text": "Tukeys HSD\nTukeys HSD implements an entirely different distribution than the t-distribution, to help us account for our multiple comparisons! That distribution is the studentized range distribution!\nTukey’s Honest Significant Difference (HSD) test is a post hoc test commonly used to assess the significance of differences between pairs of group means. Tukey HSD is often a follow up to one-way ANOVA, when the F-test has revealed the existence of a significant difference between some of the tested groups.\nThis correction makes sure that our collective type-1 error rate is \\(\\alpha\\).",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#other-corrections-bonferonni",
-    "href": "review2.html#other-corrections-bonferonni",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Other corrections: Bonferonni",
-    "text": "Other corrections: Bonferonni\nAdjust \\(\\alpha\\): \\(\\frac{\\alpha}{m}\\)\nThis makes it harder to reject, and re-calibrates your hypothesis test for multiple comparisons!\nThe \\(\\alpha\\) (ex. 0.05) is the collective type I error rate across all the tests combined (called the family-wise error rate), not the rate for each individual test.",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#when-to-use-which",
-    "href": "review2.html#when-to-use-which",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "When to use which",
-    "text": "When to use which\nBonferroni: Adjust the significance level or p-values to account for multiple hypothesis tests.\nTukey: Use a procedure specifically designed for comparing all pairs of means.",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#why",
-    "href": "review2.html#why",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Why",
-    "text": "Why\n– Tukey’s HSD is generally more powerful (reject correctly) when testing every single pair of means.\n– Bonferroni is more conservative, especially as the number of comparisons grows large. Bonferroni haveis designed to have more power if you are only testing a tiny, select number of specific comparisons rather than all possible pairs",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#example",
-    "href": "review2.html#example",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Example",
-    "text": "Example\nThe uncorrected p-values can be seen below. Suppose we wanted to only look at the comparison of the control vs the other two treatments. A Bonferonni correction may be more appropriate! We would compare \\(\\frac{\\alpha}{2}\\) to the two p-values below.\n\n\n\n    Pairwise comparisons using t tests with pooled SD \n\ndata:  PlantGrowth$weight and PlantGrowth$group \n\n     ctrl   trt1  \ntrt1 0.1944 -     \ntrt2 0.0877 0.0045\n\nP value adjustment method: none \n\n\nWe now compare those two p-values vs an \\(\\alpha = 0.025\\)!",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#confidence-intervals",
-    "href": "review2.html#confidence-intervals",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Confidence Intervals",
-    "text": "Confidence Intervals\nYou can also calculate confidence intervals with Bonferonni if you would like!",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#example-3-groups",
-    "href": "review2.html#example-3-groups",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Example: 3 groups",
-    "text": "Example: 3 groups\nWith 3 groups, there are\n\\(m = \\binom{3}{2} = 3\\)\npairwise comparisons. To obtain 95% familywise confidence:\n\\(\\alpha^* = \\frac{0.05}{3} = 0.0167\\)\nEach interval is therefore constructed at approximately 98.33% confidence, using a \\(t^*\\) critical value with \\(0.0167/2\\) in each tail.\nThis controls the familywise error rate to be 5% (95% confidence intervals)",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#review",
-    "href": "review2.html#review",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Review!",
-    "text": "Review!\n– Errors & Power\n– One-way ANOVA\n– Chi-square",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#errors-power",
-    "href": "review2.html#errors-power",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Errors & Power",
-    "text": "Errors & Power\nIdentify the appropriate slot for Type-1, Type-2, and Power\n\n\n\n\n\\(H_o\\) is True\n\\(H_o\\) is False\n\n\n\n\nReject \\(H_o\\)\n____________\n____________\n\n\nFail to Reject \\(H_o\\)\n____________\n_____________",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#errors-power-1",
-    "href": "review2.html#errors-power-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Errors & Power",
-    "text": "Errors & Power\nIdentify the appropriate slot for Type-1, Type-2, and Power\n\n\n\n\n\\(H_o\\) is True\n\\(H_o\\) is False\n\n\n\n\nReject \\(H_o\\)\nType I Error\nPower!\n\n\nFail to Reject \\(H_o\\)\n____________\nType II Error\n\n\n\nEach of these are probabilities that depend on certain characteristics of our study.",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#type-i-error",
-    "href": "review2.html#type-i-error",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Type-I Error",
-    "text": "Type-I Error\nProbability that we reject \\(H_o\\) when \\(H_o\\) is actually true.\nHow do we calculate this probability?",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#type-i-error-1",
-    "href": "review2.html#type-i-error-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Type-I Error",
-    "text": "Type-I Error\nProbability that we reject \\(H_o\\) when \\(H_o\\) is actually true.\nHow do we calculate this probability?\n\\(\\alpha\\)\nWe set this!\n– What are you comfortable with?\n– What does your field consider acceptable?",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#type-ii-error-and-power",
-    "href": "review2.html#type-ii-error-and-power",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Type-II Error and Power",
-    "text": "Type-II Error and Power\nWe can’t calculate these probabilities without talking about an effect size.\nWhat is an effect size?",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#effect-size",
-    "href": "review2.html#effect-size",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Effect size",
-    "text": "Effect size\n“what if” value…\nA quantitative measure of the magnitude of a difference, relationship, or effect at the population.\n“what if” the true effect size at the population level is ___. What would my power be?",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#example-1",
-    "href": "review2.html#example-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Example",
-    "text": "Example\nResearchers want to determine whether tomato plants grown with fertilizer produce a different average number of tomatoes than plants grown without fertilizer. Assume the conditions for a two-sample t-test are satisfied. Use a significance level of \\(\\alpha = 0.05\\). Based on previous literature, a significant difference would be an average of 3 tomatoes.\n\n\n\nSummary statistic\nFertilizer\nNo fertilizer\n\n\n\n\nSample size (\\(n\\))\n25\n25\n\n\nSample mean (\\(\\bar{x}\\))\n32 tomatoes\n27 tomatoes\n\n\nSample standard deviation (\\(s\\))\n6 tomatoes\n5 tomatoes",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#tomatoes",
-    "href": "review2.html#tomatoes",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Tomatoes",
-    "text": "Tomatoes\nBased on the context of the problem, what do we already know?\n– Probability of a Type-1 error\n– Probability of a Type-2 error\n– Power",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#tomatoes-1",
-    "href": "review2.html#tomatoes-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Tomatoes",
-    "text": "Tomatoes",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#power-and-type-ii",
-    "href": "review2.html#power-and-type-ii",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Power and Type II",
-    "text": "Power and Type II\nProbability of a Type-II error ~ 53.15%\nPower ~ 46.85%\nWhy is power small? What could we do to increase power?",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#on-the-exam",
-    "href": "review2.html#on-the-exam",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "On the exam",
-    "text": "On the exam\nFor the homework, I had you actually calculate power/probability of a Type-II error with the help of software! This was to help improve your conceptual understanding of the material. You don’t have software for the exam.\n– Know the definitions\n– Know their relationships with each other\n– Know their relationships with other aspects of the study\n– Know the graph\n… along with things like effect sizes, etc.\nprevious slides",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#one-way-anova",
-    "href": "review2.html#one-way-anova",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "One-way ANOVA",
-    "text": "One-way ANOVA\nFor this study, each animal received one of three dose levels of vitamin C (0.5, 1, and 2 mg/day). The research was interested in seeing if the mean length of odontoblasts (cells responsible for tooth growth) differed based on the dose levels.\n\n\n# A tibble: 3 × 3\n   dose  mean    sd\n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   0.5  10.6  4.50\n2   1    19.7  4.42\n3   2    26.1  3.77\n\n\n\\(Ho:\\)\n\\(Ha:\\)",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#what-do-we-check",
-    "href": "review2.html#what-do-we-check",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "What do we check?",
-    "text": "What do we check?\n… and why do we check it?",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#assumptions",
-    "href": "review2.html#assumptions",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Assumptions",
-    "text": "Assumptions\n– Independence\n– Normality (of residuals)\n– Equal variance",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#normality",
-    "href": "review2.html#normality",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Normality",
-    "text": "Normality",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#equal-variance",
-    "href": "review2.html#equal-variance",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Equal variance",
-    "text": "Equal variance",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#f-statistic",
-    "href": "review2.html#f-statistic",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "F-statistic",
-    "text": "F-statistic\nAnd we calculate an F-statistic that “follows a F-distribution.” This is what I mean…\nThe F-distribution describes the possible values of the F-statistic we COULD obtain from random samples, assuming the null hypothesis is true and the model assumptions hold.\nAlthough we only collect one sample, probability theory (hard math) tells us what the distribution of F-statistics would look like across all possible random samples. This gives us a reference distribution against which we can compare our observed F-statistic.",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#anova-1",
-    "href": "review2.html#anova-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Anova",
-    "text": "Anova\n\n\n            Df Sum Sq Mean Sq F value   Pr(&gt;F)    \ndose         2   2426    1213   67.42 9.53e-16 ***\nResiduals   57   1026      18                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nWhat is this telling us? Are we justified for TukeysHSD?",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#tukeyshsd",
-    "href": "review2.html#tukeyshsd",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "TukeysHSD",
-    "text": "TukeysHSD\n\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = len ~ dose, data = ToothGrowth)\n\n$dose\n        diff       lwr       upr    p adj\n1-0.5  9.130  5.901805 12.358195 0.00e+00\n2-0.5 15.495 12.266805 18.723195 0.00e+00\n2-1    6.365  3.136805  9.593195 4.25e-05",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#tukeyshsd-1",
-    "href": "review2.html#tukeyshsd-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "TukeysHSD",
-    "text": "TukeysHSD\n– Why is Tukeys important?\n– What do we mean by familywise error rate?",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#familywise-error-rate-1",
-    "href": "review2.html#familywise-error-rate-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Familywise error rate",
-    "text": "Familywise error rate\nFamilywise error rate is the probability of making at least one type-1 error… in the family of comparisons that we have. In this case, we have 3 comparisons. We know because k = 3 and\n\\(\\frac{3(3-1)}{2}\\) = 3\nWithout accounting for multiple comparisons, our familywise error rate would be much larger!",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#chi-square-test-for-independence",
-    "href": "review2.html#chi-square-test-for-independence",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Chi-square test for independence",
-    "text": "Chi-square test for independence\nThe scenario is whether preferred study method is associated with class year among college students.\n\n\n  Class_Year In_Person Online Group_Study\n1   Freshman        35     25          40\n2  Sophomore        28     32          30\n3     Junior        22     28          35\n4     Senior        30     20          25\n\n\n– Why is this chi-square?\n– Why is this chi-square test for independence?",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#independence",
-    "href": "review2.html#independence",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Independence",
-    "text": "Independence\n\\(Ho:\\)\n\\(Ha:\\)",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#independence-1",
-    "href": "review2.html#independence-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Independence",
-    "text": "Independence\n\\(Ho:\\) Class year and study type are independent at the population level\n\\(Ha:\\) Class year and study type are dependent at the population level",
-    "crumbs": [
-      "Slides",
-      "Day-19"
-    ]
-  },
-  {
-    "objectID": "review2.html#assumptions-1",
-    "href": "review2.html#assumptions-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
+    "objectID": "twowayIII.html#assumptions-1",
+    "href": "twowayIII.html#assumptions-1",
+    "title": "ST312: Two-way ANOVA (13)",
     "section": "Assumptions",
     "text": "Assumptions\nWhat are they?",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#assumptions-2",
-    "href": "review2.html#assumptions-2",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Assumptions",
-    "text": "Assumptions\n– Independence\n– All expected counts &gt; 5 or “average expected cell count is &gt; 5.”",
+    "objectID": "twowayIII.html#equal-variance-1",
+    "href": "twowayIII.html#equal-variance-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Equal Variance",
+    "text": "Equal Variance",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#expected-counts",
-    "href": "review2.html#expected-counts",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Expected counts",
-    "text": "Expected counts",
+    "objectID": "twowayIII.html#normality",
+    "href": "twowayIII.html#normality",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Normality",
+    "text": "Normality",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#expected-formula",
-    "href": "review2.html#expected-formula",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Expected Formula",
-    "text": "Expected Formula\n\nThis is on your formula sheet",
+    "objectID": "twowayIII.html#f-statistic",
+    "href": "twowayIII.html#f-statistic",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "F-statistic",
+    "text": "F-statistic\n\\[F_A = \\frac{\\mathbf{MS}_A}{\\mathbf{MS}_{Error}}\\]\n\\[\\mathbf{MS}_A = \\frac{\\mathbf{SS}_A}{\\mathbf{df}_A}\\]\n\\[\\mathbf{MS}_{Error} = \\frac{\\mathbf{SS}_{Error}}{\\mathbf{df}_{Error}}\\]\nGraphically, what does this look like?",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#lets-do-the-test",
-    "href": "review2.html#lets-do-the-test",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Let’s do the test!",
-    "text": "Let’s do the test!",
+    "objectID": "twowayIII.html#f-statistic-1",
+    "href": "twowayIII.html#f-statistic-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "F-statistic",
+    "text": "F-statistic\nThe \\(F\\)-test for Factor A determines if the variation explained by Factor A (\\(MS_A\\)) is significantly greater than the variation due to random error (\\(MS_{Error}\\)).\n\\[F_A = \\frac{\\text{Variability due to Factor A}}{\\text{Variability due to Random Error}}\\]",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#p-value",
-    "href": "review2.html#p-value",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "p-value",
-    "text": "p-value\nWhat would the p-value look like? Draw it!\nApplet",
+    "objectID": "twowayIII.html#compare-this-to-one-way-anova",
+    "href": "twowayIII.html#compare-this-to-one-way-anova",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Compare this to one-way ANOVA",
+    "text": "Compare this to one-way ANOVA\n\\[\\mathbf{MS}_A = \\frac{\\mathbf{SS}_A}{\\mathbf{df}_A}\\]\n\\[\\mathbf{MS}_{Error} = \\frac{\\mathbf{SS}_{Error}}{\\mathbf{df}_{Error}}\\]",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#results",
-    "href": "review2.html#results",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Results",
-    "text": "Results\n\n\n\n    Pearson's Chi-squared test\n\ndata:  study_table\nX-squared = 6.1653, df = 6, p-value = 0.4049\n\n\nWhat does this tell us?",
+    "objectID": "twowayIII.html#one-vs-two",
+    "href": "twowayIII.html#one-vs-two",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "one vs two",
+    "text": "one vs two\nWhat’s different between one-way and two-way?\n\\[\\mathbf{MS}_A = \\frac{\\mathbf{SS}_A}{\\mathbf{df}_A}\\]\n\\[\\mathbf{MS}_{Error} = \\frac{\\mathbf{SS}_{Error}}{\\mathbf{df}_{Error}}\\]",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#chi-square-goodness-of-fit-test",
-    "href": "review2.html#chi-square-goodness-of-fit-test",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Chi-square goodness of fit test",
-    "text": "Chi-square goodness of fit test\nHow is goodness of fit different than a test for independence?",
+    "objectID": "twowayIII.html#takeaway",
+    "href": "twowayIII.html#takeaway",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Takeaway",
+    "text": "Takeaway\nSSa is the same, regardless if we have B in the model or not.\nHowever! The SS error term is different (smaller), giving us a more direct (precise?) comparison between A and the response.",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#chi-square-goodness-of-fit-test-1",
-    "href": "review2.html#chi-square-goodness-of-fit-test-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Chi-square goodness of fit test",
-    "text": "Chi-square goodness of fit test\nOne variable vs hypothesized (expected) values from a distribution!",
+    "objectID": "twowayIII.html#precision",
+    "href": "twowayIII.html#precision",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Precision",
+    "text": "Precision\nWhat is precision in ANOVA?",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#example-2",
-    "href": "review2.html#example-2",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Example",
-    "text": "Example\n\n\n Freshman Sophomore    Junior    Senior \n       35        28        22        30 \n\n\nMaybe we were interested in seeing if there are an equal number of students in each grade. We could write this as:\n\\(Ho:\\) - the observed counts/frequencies follow a uniform theoretical distribution. All 4 grades have an equal probability 1/4\n\\(Ha:\\) - The observed frequencies do not follow the uniform distribution.",
+    "objectID": "twowayIII.html#precision-1",
+    "href": "twowayIII.html#precision-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Precision",
+    "text": "Precision\nIt’s all about reducing the standard error!\nWe typically don’t see the SE in the ANOVA table, but here it is:\n\\[\\mathbf{SE}(\\mathbf{\\bar{Y}_1}) = \\sqrt{\\frac{\\mathbf{MS}_{\\text{Error}}}{n_1}}\\]\nit’s a function of the MS error! Which we saw decrease in going from one-way to two-way ANOVA!",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#assumptions-3",
-    "href": "review2.html#assumptions-3",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Assumptions",
-    "text": "Assumptions\nWe check the same assumptions!\n– Expected counts &gt; 5; “average expected cell count is &gt; 5.”\n– Independence\nPut expected counts are now calculated differently…",
+    "objectID": "twowayIII.html#why-is-it-good",
+    "href": "twowayIII.html#why-is-it-good",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Why is it good?",
+    "text": "Why is it good?\nIn general…more precision =\n– more “honest” / direct comparisons (isolate the true effect)\n– smaller confidence intervals\n– More power (given you are looking at the same hypothesis test)",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#expected-counts-1",
-    "href": "review2.html#expected-counts-1",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Expected counts",
-    "text": "Expected counts\nThese are calculated as \\(n*p_i\\)\nWhere n is our sample size, and \\(p_i\\) is the probability for each group under the assumption of the null hypothesis",
+    "objectID": "twowayIII.html#one-way",
+    "href": "twowayIII.html#one-way",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "one-way",
+    "text": "one-way\n\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \nspecies       2  50526   25263   567.4 &lt;2e-16 ***\nResiduals   330  14693      45                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#expected-vs-observed",
-    "href": "review2.html#expected-vs-observed",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Expected vs Observed",
-    "text": "Expected vs Observed\n35 vs (105*.25 = 26.25)\n28 vs (105*.25 = 26.25)\n22 vs (105*.25 = 26.25)\n30 vs (105*.25 = 26.25)",
+    "objectID": "twowayIII.html#two-way",
+    "href": "twowayIII.html#two-way",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "two-way",
+    "text": "two-way\n\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \nspecies       2  50526   25263   770.5 &lt;2e-16 ***\nsex           1   3906    3906   119.1 &lt;2e-16 ***\nResiduals   329  10787      33                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#formal-test",
-    "href": "review2.html#formal-test",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "Formal test",
-    "text": "Formal test\nAnd the chi-square test statistic is calculated the same as before! However, the degrees of freedom for the distribution and different. We don’t have rows and columns. We estimate the degrees of freedom by k-1 = 4-1 = 3\n\n\n\n    Chi-squared test for given probabilities\n\ndata:  observed\nX-squared = 3.0174, df = 3, p-value = 0.389",
+    "objectID": "twowayIII.html#summary",
+    "href": "twowayIII.html#summary",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Summary",
+    "text": "Summary\nControlling Confounders: When you add a control variable (like Sex) to reduce the Sum of Squares Error (\\(\\mathbf{SS}_{\\text{Error}}\\)), you gain precision. This means you do a better job at isolating the unique effect of your primary predictor (Species) from the confounding influence of the control variable.",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "review2.html#in-summary",
-    "href": "review2.html#in-summary",
-    "title": "Finish FamilyWise Error Rate Corrections",
-    "section": "In Summary",
-    "text": "In Summary\nHypothesis testing\n– Identify the scenario\n– Set up \\(Ho\\) and \\(Ha\\)\n– Check assumptions\n– Calculate your test statistic\n– Calculate p-value\n– Talk about it",
+    "objectID": "twowayIII.html#two-way-1",
+    "href": "twowayIII.html#two-way-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "two-way",
+    "text": "two-way\n\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \nspecies       2  50526   25263   770.5 &lt;2e-16 ***\nsex           1   3906    3906   119.1 &lt;2e-16 ***\nResiduals   329  10787      33                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nWhat is this telling us?\nHow were these numbers calculated?",
     "crumbs": [
       "Slides",
-      "Day-19"
+      "Day-22"
     ]
   },
   {
-    "objectID": "hw2.html",
-    "href": "hw2.html",
+    "objectID": "rubric-assignment.html",
+    "href": "rubric-assignment.html",
+    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "section": "",
+    "text": "Tip\n\n\n\nNote: This assignment is due on 11/27 at 11:59pm on Gradescope. However, you have more than able to turn the assignment in before Thanksgiving break if you would prefer.",
+    "crumbs": [
+      "Assignments",
+      "Rubric Assignment"
+    ]
+  },
+  {
+    "objectID": "rubric-assignment.html#why",
+    "href": "rubric-assignment.html#why",
+    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "section": "Why",
+    "text": "Why\nWhy am I having you create a rubric, and a submission so you can use your rubric in action? I’ve designed this assessment to reinforce mastery of statistical concepts by requiring you to approach the material from a different perspective, instead of simply solving a problem I have created for you. You cannot effectively create, evaluate, and grade a statistical problem without having a strong understanding of the underlying statistical concepts yourself.\nI hope that you also use this as a tool to study for the final exam.",
+    "crumbs": [
+      "Assignments",
+      "Rubric Assignment"
+    ]
+  },
+  {
+    "objectID": "rubric-assignment.html#overview",
+    "href": "rubric-assignment.html#overview",
+    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "section": "Overview",
+    "text": "Overview\nFor this assignment, you will design an original, multi-part statistics problem based on one of the topics covered in this course. Your problem should present a realistic scenario, use reasonable numerical values, and require students to demonstrate their understanding of the statistical concepts involved.\nYou will also develop a 20-point grading rubric for your problem and create a mock student submission that would earn a 70%-80% according to your rubric.\nThe goal of this assignment is to demonstrate that you understand both the statistical methods and how to evaluate someone’s understanding of those methods.",
+    "crumbs": [
+      "Assignments",
+      "Rubric Assignment"
+    ]
+  },
+  {
+    "objectID": "rubric-assignment.html#part-1-choose-a-statistical-topic",
+    "href": "rubric-assignment.html#part-1-choose-a-statistical-topic",
+    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "section": "Part 1: Choose a Statistical Topic",
+    "text": "Part 1: Choose a Statistical Topic\nChoose ONE of the following topics:\n\nDifference in proportions hypothesis test\nDifference in proportions confidence interval\nDifference in means hypothesis test\nDifference in means confidence interval\nChi-square test of independence\nChi-square goodness of fit test\nOne-way ANOVA\nTwo-way ANOVA\nMultiple linear regression (hypothesis test)\nRegression model selection",
+    "crumbs": [
+      "Assignments",
+      "Rubric Assignment"
+    ]
+  },
+  {
+    "objectID": "rubric-assignment.html#part-2-create-an-original-problem",
+    "href": "rubric-assignment.html#part-2-create-an-original-problem",
+    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "section": "Part 2: Create an Original Problem",
+    "text": "Part 2: Create an Original Problem\nDevelop a realistic, multi-part statistics problem based on your selected topic.\nYour problem must include:\n\nRealistic context: Describe a situation in which the statistical method would reasonably be used. Your scenario should be specific enough that someone can understand the research question.\nRealistic values: Include appropriate sample sizes, summary statistics, observed counts, or other numerical information needed to complete the problem. Values should be plausible within your scenario.\nMultiple parts: Your problem must contain at least four distinct parts that assess different aspects of the statistical method.\n\nYour questions should assess a combination of the following, as appropriate for your topic:\n\nIdentifying the appropriate statistical procedure.\nStating the null and alternative hypotheses.\nChecking assumptions or conditions.\nCalculating relevant statistics.\nFinding a p-value or constructing a confidence interval.\nInterpreting statistical results in context.\nDrawing an appropriate conclusion.\nExplaining the practical implications of the results.\n\nYour problem should require more than simply plugging numbers into a formula.",
+    "crumbs": [
+      "Assignments",
+      "Rubric Assignment"
+    ]
+  },
+  {
+    "objectID": "rubric-assignment.html#part-3-develop-a-complete-solution-and-grading-rubric",
+    "href": "rubric-assignment.html#part-3-develop-a-complete-solution-and-grading-rubric",
+    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "section": "Part 3: Develop a Complete Solution and Grading Rubric",
+    "text": "Part 3: Develop a Complete Solution and Grading Rubric\nCreate a complete answer key for your problem. Show all necessary calculations, statistical reasoning, and interpretations.\nThen, develop a 20-point grading rubric that could be used by another instructor to grade student submissions.\nYour rubric must:\n\nAssign points to each part of your problem.\nClearly describe what students must do to earn the points.\nAccount for partially correct answers and common mistakes.\nDistinguish between different levels of understanding.\nTotal exactly 20 points.\n\nYour rubric should be detailed enough that another instructor could grade a student’s submission without needing to ask you what you intended.\nImportant: Your rubric should award points for statistical reasoning, not just final answers. For example, a student who correctly identifies the hypotheses but makes a minor notation error should be able to earn partial credit.",
+    "crumbs": [
+      "Assignments",
+      "Rubric Assignment"
+    ]
+  },
+  {
+    "objectID": "rubric-assignment.html#part-4-create-a-mock-student-submission-70-80-level-work",
+    "href": "rubric-assignment.html#part-4-create-a-mock-student-submission-70-80-level-work",
+    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "section": "Part 4: Create a Mock Student Submission (70%-80%-Level Work)",
+    "text": "Part 4: Create a Mock Student Submission (70%-80%-Level Work)\nCreate a mock student submission that would earn approximately a 70%–80% according to the rubric you developed.\nThis should look like an actual student’s attempt at answering your problem.\nYour mock submission should:\n\nInclude both correct and incorrect work.\nDemonstrate some understanding of the statistical method.\nContain realistic mistakes that a student might make.\nBe complete enough to grade using your rubric.\nEarn a score between 14 and 15.8 points out of 20.\n\nAfter creating the mock submission, grade it using your rubric.\nInclude:\n\nThe points earned for each rubric item.\nA brief explanation of why the student earned or lost points.\nThe final score out of 20.\n\nImportant: Do not simply write an intentionally poor solution. Your mock submission should demonstrate partial understanding. It should be the type of work that a student who understands some, but not all, of the material might realistically produce.",
+    "crumbs": [
+      "Assignments",
+      "Rubric Assignment"
+    ]
+  },
+  {
+    "objectID": "rubric-assignment.html#example-rubric-item-table-2-points",
+    "href": "rubric-assignment.html#example-rubric-item-table-2-points",
+    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "section": "Example Rubric Item Table (2 points)",
+    "text": "Example Rubric Item Table (2 points)\nScenario: A researcher wants to determine whether the average amount of sleep college students get per night differs from the commonly reported average of 7 hours.\n\nSet up the correct null and alternative hypothesis based on the context of your problem.\n\n\n\n\n\n\n\n\nCriteria: Setting up \\(H_o\\) and \\(H_a\\)\nPoints = 2\n\n\n\n\nCorrectly identifies the population parameter (\\(\\mu\\)) as the true mean number of hours of sleep for college students.\n-0.5\n\n\nCorrectly states the null hypothesis: \\(H_0: \\mu = 7\\).\n-0.5\n\n\nCorrectly states the alternative hypothesis: \\(H_A: \\mu \\neq 7\\).\n-0.5\n\n\nUses appropriate notation and identifies that this is a two-sided test because the researcher is interested in whether the mean differs from 7 hours.\n-0.5\n\n\n\nPartial Credit Examples:\n\nStudent correctly identifies \\(\\mu\\) but writes hypotheses using the sample mean (\\(\\bar{x}\\)) instead of the population mean: earns 0.5 points.\nStudent correctly states the null hypothesis but uses a one-sided alternative: earns credit for the null hypothesis but loses credit for the alternative.\nStudent writes both hypotheses correctly but does not explain why the test is two-sided: loses the corresponding 0.5 points.\n\nYou do not need to list partial credit examples for each of your rubric items, but your point structure needs to incorporate partial credit.\n\n\n\n\n\n\nTip\n\n\n\nTakeaway: A good rubric breaks a question into specific, independently gradable components rather than simply saying “2 points for correct hypotheses.”",
+    "crumbs": [
+      "Assignments",
+      "Rubric Assignment"
+    ]
+  },
+  {
+    "objectID": "rubric-assignment.html#submission-requirements",
+    "href": "rubric-assignment.html#submission-requirements",
+    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "section": "Submission Requirements",
+    "text": "Submission Requirements\nSubmit one hand-written document containing the following two sections:\n\nSection 1: Problem, Solution, and Rubric\nInclude: - Your original multi-part statistics problem. - A complete solution to your problem. - Your detailed 20-point grading rubric. For each part of your question, include a table similar to the example. It is your job to identify the important pieces of the statistical inference technique you chosen for your context, and demonstrate your mastery of the material through the creation of the rubric.\n\n\nSection 2: Mock 70%–80%-Level Submission\nInclude: - Your mock student submission. - Your completed grading rubric showing the points earned. - Use your tables to explain why points were earned or lost. - The final score out of 20.",
+    "crumbs": [
+      "Assignments",
+      "Rubric Assignment"
+    ]
+  },
+  {
+    "objectID": "rubric-assignment.html#grading",
+    "href": "rubric-assignment.html#grading",
+    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "section": "Grading",
+    "text": "Grading\nYou will earn full credit, half credit, or no credit in the following categories:\n\nStructure (5-points)\n– Do you have a realistic scenario with realistic values?\n– Does your question make sense? Is it interesting?\n– Did you set up a multi-part question?\n\n\nQuestions (5-point)\n– Did you structure your questions in an order that makes sense?\n– Does your questions identify the key components of the statistical inference topic you selected? For example, if you are asking a question about hypothesis testing, you should have a question about assumptions.\n\n\nRubric items (5-points)\n– Do your rubric items allow students to demonstrate partial understanding?\n– Do you have a clear table for each question? Does your table clearly articulate the criteria, items, and number of points? Please see the example above.\n\n\nStudent submission (5-points)\n– Does your student submission earn a 70%–80% based on your rubric?\n– Are you clearly showing where your submission earns and loses points, based on the rubric items/tables you created?",
+    "crumbs": [
+      "Assignments",
+      "Rubric Assignment"
+    ]
+  },
+  {
+    "objectID": "reviewexamslide.html#exam-day",
+    "href": "reviewexamslide.html#exam-day",
+    "title": "ST311 Review Test",
+    "section": "Exam Day",
+    "text": "Exam Day\nWe will all start at 3:00. You may read the front and sign your name. Please write your first as last name as clear as possible.\n– Don’t cheat. It sucks for all of us\n– The exam is worth 5% of your grade\n– You may use a calculator and your 🧠\n– Show your work! Demonstrate your understanding! I can not make assumptions when grading\n– The exam starts with M/C questions ends with T/F questions. Mark your responses as clear as possible\n– You may ask questions. If the question gives you an advantage over other students, I have to say “I can not answer that”\nWhen you are done, please come up and turn in your exam",
+    "crumbs": [
+      "Slides",
+      "Day-4"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ST312 webR assignments",
+    "section": "",
+    "text": "Welcome to ST312\nThis is a home base for our slides and homework assignments.\nThis space allows you to search our slides for key words, so you can quickly find a topic when studying!"
+  },
+  {
+    "objectID": "hw2_sa.html",
+    "href": "hw2_sa.html",
     "title": "Homework-2",
     "section": "",
     "text": "Note\n\n\n\nThis assignment is due October 16th at 11:59pm on Gradescope",
     "crumbs": [
       "Assignments",
-      "Homework-2"
+      "Homework-2 Solutions"
     ]
   },
   {
-    "objectID": "hw2.html#instructions-on-how-to-start",
-    "href": "hw2.html#instructions-on-how-to-start",
+    "objectID": "hw2_sa.html#instructions-on-how-to-start",
+    "href": "hw2_sa.html#instructions-on-how-to-start",
     "title": "Homework-2",
     "section": "Instructions on how to start",
     "text": "Instructions on how to start\nThis is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
     "crumbs": [
       "Assignments",
-      "Homework-2"
+      "Homework-2 Solutions"
     ]
   },
   {
-    "objectID": "hw2.html#instructions-on-how-to-turn-your-homework-in",
-    "href": "hw2.html#instructions-on-how-to-turn-your-homework-in",
+    "objectID": "hw2_sa.html#instructions-on-how-to-turn-your-homework-in",
+    "href": "hw2_sa.html#instructions-on-how-to-turn-your-homework-in",
     "title": "Homework-2",
     "section": "Instructions on how to turn your homework in",
     "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation.",
     "crumbs": [
       "Assignments",
-      "Homework-2"
+      "Homework-2 Solutions"
     ]
   },
   {
-    "objectID": "hw2.html#exercise-1-15-points",
-    "href": "hw2.html#exercise-1-15-points",
+    "objectID": "hw2_sa.html#exercise-1-15-points",
+    "href": "hw2_sa.html#exercise-1-15-points",
     "title": "Homework-2",
     "section": "Exercise 1 (15 points)",
-    "text": "Exercise 1 (15 points)\nFor each scenario, write out the appropriate null and alternative hypothesis in proper notation.\n\nA professor wants to know if the average exam score for her class is different from the historical average of 80 on a standardized test. She believes her class will perform differently due to a new teaching method.\nA space agency wants to compare the reliability of two different private companies, Provider A and Provider B, for launching satellites into orbit. The agency collects data on their recent launch history. Provider A has completed 200 launches, with 192 of them being successful. Provider B has completed 150 launches, with 138 of them being successful. The space agency wants to investigate if Provider B has less safe launches, as they tend to user older technologies.\nA politician claims that they have an approval rating of at least 50%. A political analyst wants to test this claim and believes the true approval rating is lower.",
+    "text": "Exercise 1 (15 points)\nFor each scenario, write out the appropriate null and alternative hypothesis in proper notation.\n\nA professor wants to know if the average exam score for her class is different from the historical average of 80 on a standardized test. She believes her class will perform differently due to a new teaching method.\n\n\\(H_0: \\mu = 80\\)\n\\(H_A: \\mu \\neq 80\\)\n\nA space agency wants to compare the reliability of two different private companies, Provider A and Provider B, for launching satellites into orbit. The agency collects data on their recent launch history. Provider A has completed 200 launches, with 192 of them being successful. Provider B has completed 150 launches, with 138 of them being successful. The space agency wants to investigate if Provider B has less safe launches, as they tend to user older technologies.\n\n\\(H_0: p_A = p_B\\)\n\\(H_A: p_B &lt; p_A\\)\n\nA politician claims that they have an approval rating of at least 50%. A political analyst wants to test this claim and believes the true approval rating is lower.\n\n\\(H_0: p = 0.50\\)\n\\(H_A: p &lt; 0.50\\)",
     "crumbs": [
       "Assignments",
-      "Homework-2"
+      "Homework-2 Solutions"
     ]
   },
   {
-    "objectID": "hw2.html#exercise-2-30-points",
-    "href": "hw2.html#exercise-2-30-points",
+    "objectID": "hw2_sa.html#exercise-2-30-points",
+    "href": "hw2_sa.html#exercise-2-30-points",
     "title": "Homework-2",
     "section": "Exercise-2 (30-points)",
-    "text": "Exercise-2 (30-points)\nA veterinarian wants to determine whether the proportion of dogs that experience seasonal allergies differs between two breeds. A random sample of 150 Labrador Retrievers is examined, and 45 are found to experience seasonal allergies. A random sample of 150 Golden Retrievers is examined, and 60 are found to experience seasonal allergies.\nIs there evidence that the proportion of dogs experiencing seasonal allergies differs between Labrador Retrievers and Golden Retrievers? Use a significance level of \\(\\alpha=0.05\\) to answer this question.\n\nDefine \\(p_l\\) and \\(p_g\\) in words in the context of the problem.\nOur null and alternative hypotheses can be seen below: \\(H_o: p_l = p_g\\)\n\n\\(H_a: p_l \\neq p_g\\)\nThe researcher wants to calculate the probability of making a Type-2 error, and the Power of their test. Below, report the values from the context of the problem that we will need to make these calculations. Show your work if necessary.\n\n\\(n_g\\) =\n\\(n_l\\) =\n\\(SE(p_{\\text{l-null}} - p_{\\text{g-null}})\\) =\n\n\nPlease see the following visualization to answer the following question:\n\n\n\n\n\n\n\n\n\n\nMatch the colors red, blue, and green, to the following terms:\n\nProbability of a Type-1 error:\nProbability of a Type-2 error:\nPower:\n\n\nThe effect size the researchers are interested in is 0.2. Interpret 0.2 in the context of the problem.\nUse the information above to calculate the probability of a Type-2 error, and the power of this test.\n\nHint: Please see this slide to help answer this question. Slide",
+    "text": "Exercise-2 (30-points)\nA veterinarian wants to determine whether the proportion of dogs that experience seasonal allergies differs between two breeds. A random sample of 150 Labrador Retrievers is examined, and 45 are found to experience seasonal allergies. A random sample of 150 Golden Retrievers is examined, and 60 are found to experience seasonal allergies.\nIs there evidence that the proportion of dogs experiencing seasonal allergies differs between Labrador Retrievers and Golden Retrievers? Use a significance level of \\(\\alpha=0.05\\) to answer this question.\n\nDefine \\(p_l\\) and \\(p_g\\) in words in the context of the problem.\n\n\\(p_l\\) = the true proportion of dogs that experience seasonal allergies and are Labrador Retrievers.\n\\(p_g\\) = The true proportion of dogs that experience seasonal allergies and are Golden Retrievers.\n\nOur null and alternative hypotheses can be seen below: \\(H_o: p_l = p_g\\)\n\n\\(H_a: p_l \\neq p_g\\)\nThe researcher wants to calculate the probability of making a Type-2 error, and the Power of their test. Below, report the values from the context of the problem that we will need to make these calculations. Show your work if necessary.\n\\(n_g = 150\\)\n\\(n_l = 150\\)\n\\(p_{\\text{pooled}} = \\frac{45 + 60}{150 + 150} = \\frac{105}{300} = 0.35\\)\n\\(SE = \\sqrt{p_{\\text{pooled}}(1 - p_{\\text{pooled}}) \\left(\\frac{1}{n_l} + \\frac{1}{n_g}\\right)}\\)\n\\(SE = \\sqrt{0.35(1 - 0.35) \\left(\\frac{1}{150} + \\frac{1}{150}\\right)} = \\sqrt{0.2275 \\left(\\frac{2}{150}\\right)} \\approx 0.0550757\\)\n\nPlease see the following visualization to answer the following question:\n\n\n\n\n\n\n\n\n\n\nMatch the colors red, blue, and green, to the following terms:\n\nProbability of a Type-1 error: Red\nProbability of a Type-2 error: Blue\nPower: Green\n\n\nThe effect size the researchers are interested in is 0.2. Interpret 0.2 in the context of the problem.\n\nThe researchers are interested in a difference of \\(0.2\\) between the true proportions of Labrador Retrievers and Golden Retrievers that experience seasonal allergies. They can use this “what if” effect size to actually calculate power, type-2 error, etc.\n\nUse the information above to calculate the probability of a Type-2 error, and the power of this test.\n\nHint: Please see this slide to help answer this question. Slide\nCalculate the pooled proportion \\(\\hat{p}_{\\text{pooled}} = \\frac{x_l+x_g}{n_l+n_g}\\)\n\\(\\hat{p}_{\\text{pooled}} = \\frac{45+60}{150+150} = \\frac{105}{300} = 0.35\\)\nCalculate the standard error under the assumption of the null hypothesis \\(SE = \\sqrt{\\frac{\\hat{p}_{\\text{pooled}}(1-\\hat{p}_{\\text{pooled}})}{n_l} + \\frac{\\hat{p}_{\\text{pooled}}(1-\\hat{p}_{\\text{pooled}})}{n_g}}\\)\n\\(SE = \\sqrt{\\frac{0.35(1-0.35)}{150} + \\frac{0.35(1-0.35)}{150}}\\)\n\\(SE = \\sqrt{\\frac{0.2275}{150} + \\frac{0.2275}{150}}\\)\n\\(SE \\approx 0.0550757 \\approx 0.0551\\)\nCalculate the critical values For a two-sided test with \\(\\alpha=0.05\\), the critical z-values are \\(\\pm 1.96\\). \\(= \\pm 1.96(0.0551)\\) \\(\\approx \\pm 0.1080\\)\n\npnorm(q = 1.96 * 0.0551, mean = 0.2, sd = 0.0551) -\n  pnorm(q = -1.96 * 0.0551, mean = 0.2, sd = 0.0551)\n\n[1] 0.04748301",
     "crumbs": [
       "Assignments",
-      "Homework-2"
+      "Homework-2 Solutions"
     ]
   },
   {
-    "objectID": "hw2.html#exercise-3-23-points",
-    "href": "hw2.html#exercise-3-23-points",
+    "objectID": "hw2_sa.html#exercise-3-23-points",
+    "href": "hw2_sa.html#exercise-3-23-points",
     "title": "Homework-2",
     "section": "Exercise-3 (23 points)",
-    "text": "Exercise-3 (23 points)\nSuppose you took a random sample of North Carolina residents. The following 2×2 contingency table presents the observed frequencies from a survey of N=200 individuals, categorized by their Age Group and their primary Media Preference.\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n85\n15\n100\n\n\nAges 55+\n45\n55\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nWe are going to do a chi-square test of independence to assess the relationship between media preference, and age. Below, in words, write out the null and alternative hypothesis.\n\n\\(Ho:\\)\n\\(Ha:\\)\n\nDraw the following table below. Fill in the blanks with the expected counts. You may round to your answers to two decimal places.\n\nTable of expected counts:\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n___\n___\n100\n\n\nAges 55+\n___\n___\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nNow, calculate our \\(\\chi^2\\) statistic, by hand. Use the following slide for help. Show your work!\nVisit the applet on the slide. Draw the appropriate chi-square distribution that our test-statistic will follow. Title the plot you draw as: “Chi-square distribution with ____ degrees of freedom”. Fill in the ____ with the appropriate degrees of freedom.\n\nNext, label your statistic, and shade in the area underneath the graph that represents your p-value.",
+    "text": "Exercise-3 (23 points)\nSuppose you took a random sample of North Carolina residents. The following 2×2 contingency table presents the observed frequencies from a survey of N=200 individuals, categorized by their Age Group and their primary Media Preference.\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n85\n15\n100\n\n\nAges 55+\n45\n55\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nWe are going to do a chi-square test of independence to assess the relationship between media preference, and age. Below, in words, write out the null and alternative hypothesis.\n\n\\(Ho:\\) Streaming and age are independent at the population level.\n\\(Ha:\\) Streaming and age are not independent at the population level.\n\nDraw the following table below. Fill in the blanks with the expected counts. You may round to your answers to two decimal places.\n\nTable of expected counts:\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n65\n35\n100\n\n\nAges 55+\n65\n35\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nNow, calculate our \\(\\chi^2\\) statistic, by hand. Use the following slide for help. Show your work!\n\n\\(\\chi^2 = \\frac{(85-65)^2}{65} + \\frac{(15-35)^2}{35} + \\frac{(45-65)^2}{65} + \\frac{(55-35)^2}{35}\\)\n\\(= \\frac{400}{65} + \\frac{400}{35} + \\frac{400}{65} + \\frac{400}{35}\\)\n\\(= 6.154 + 11.429 + 6.154 + 11.429\\)\n\\(\\chi^2 \\approx 35.165\\)\n\nVisit the applet on the slide. Draw the appropriate chi-square distribution that our test-statistic will follow. Title the plot you draw as: “Chi-square distribution with ____ degrees of freedom”. Fill in the ____ with the appropriate degrees of freedom.\n\n\n\n\n\n\n\n\n\n\nNext, label your statistic, and shade in the area underneath the graph that represents your p-value.",
     "crumbs": [
       "Assignments",
-      "Homework-2"
+      "Homework-2 Solutions"
     ]
   },
   {
-    "objectID": "hw2.html#exercise-4-5-points",
-    "href": "hw2.html#exercise-4-5-points",
+    "objectID": "hw2_sa.html#exercise-4-5-points",
+    "href": "hw2_sa.html#exercise-4-5-points",
     "title": "Homework-2",
     "section": "Exercise 4 (5 points)",
-    "text": "Exercise 4 (5 points)\nA large retail store tracks customer complaints to determine if the volume of complaints is evenly distributed across the five primary days of the work week (Monday through Friday). The management’s null hypothesis is that the complaints occur with equal frequency on all five days. We want to determine if the observed distribution of complaints significantly differs from the expected uniform distribution.\n\nIn 2-4 sentences, explain the difference between a goodness of fit test, and a test for independence AND specify which test would be most appropriate for the scenario above.",
+    "text": "Exercise 4 (5 points)\nA large retail store tracks customer complaints to determine if the volume of complaints is evenly distributed across the five primary days of the work week (Monday through Friday). The management’s null hypothesis is that the complaints occur with equal frequency on all five days. We want to determine if the observed distribution of complaints significantly differs from the expected uniform distribution.\n\nIn 2-4 sentences, explain the difference between a goodness of fit test, and a test for independence AND specify which test would be most appropriate for the scenario above.\n\nA goodness of fit test tests a single categorical variable with \\(\\ge\\) 2 levels vs the expected counts of a hypothetical theoretical distribution. A test of independence tests if two categorical variables with \\(\\ge\\) 2 levels are independent of each other. For the above example, it would be more appropriate to do a goodness of fit test, because we only have one variable (complaints) vs a hypothesized distribution (equal frequency on all five days).",
     "crumbs": [
       "Assignments",
-      "Homework-2"
+      "Homework-2 Solutions"
     ]
   },
   {
-    "objectID": "hw/hw2.html",
-    "href": "hw/hw2.html",
-    "title": "Homework-2",
+    "objectID": "hw/hw1.html",
+    "href": "hw/hw1.html",
+    "title": "Homework-1",
     "section": "",
-    "text": "Note\n\n\n\nThis assignment is due October 16th at 11:59pm on Gradescope"
+    "text": "This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
   },
   {
-    "objectID": "hw/hw2.html#instructions-on-how-to-start",
-    "href": "hw/hw2.html#instructions-on-how-to-start",
-    "title": "Homework-2",
-    "section": "Instructions on how to start",
-    "text": "Instructions on how to start\nThis is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work."
+    "objectID": "hw/hw1.html#instructions-on-how-to-start",
+    "href": "hw/hw1.html#instructions-on-how-to-start",
+    "title": "Homework-1",
+    "section": "",
+    "text": "This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
   },
   {
-    "objectID": "hw/hw2.html#instructions-on-how-to-turn-your-homework-in",
-    "href": "hw/hw2.html#instructions-on-how-to-turn-your-homework-in",
-    "title": "Homework-2",
+    "objectID": "hw/hw1.html#instructions-on-how-to-turn-your-homework-in",
+    "href": "hw/hw1.html#instructions-on-how-to-turn-your-homework-in",
+    "title": "Homework-1",
     "section": "Instructions on how to turn your homework in",
-    "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation."
+    "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
   },
   {
-    "objectID": "hw/hw2.html#exercise-1-15-points",
-    "href": "hw/hw2.html#exercise-1-15-points",
-    "title": "Homework-2",
-    "section": "Exercise 1 (15 points)",
-    "text": "Exercise 1 (15 points)\nFor each scenario, write out the appropriate null and alternative hypothesis in proper notation.\n\nA professor wants to know if the average exam score for her class is different from the historical average of 80 on a standardized test. She believes her class will perform differently due to a new teaching method.\nA space agency wants to compare the reliability of two different private companies, Provider A and Provider B, for launching satellites into orbit. The agency collects data on their recent launch history. Provider A has completed 200 launches, with 192 of them being successful. Provider B has completed 150 launches, with 138 of them being successful. The space agency wants to investigate if Provider B has less safe launches, as they tend to user older technologies.\nA politician claims that they have an approval rating of at least 50%. A political analyst wants to test this claim and believes the true approval rating is lower."
+    "objectID": "hw/hw1.html#exercise-1-6-points",
+    "href": "hw/hw1.html#exercise-1-6-points",
+    "title": "Homework-1",
+    "section": "Exercise-1 (6-points)",
+    "text": "Exercise-1 (6-points)\nIn each of the following scenarios, there is something wrong. Describe what is wrong and give a reason for your answer.\n\nIf the probability of A is 0.6 and the probability of B is 0.7, the probability of both A and B happening is 1.3.\nIf the probability of A is 0.55, then the probability of the complement of A is -0.55.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
   },
   {
-    "objectID": "hw/hw2.html#exercise-2",
-    "href": "hw/hw2.html#exercise-2",
-    "title": "Homework-2",
-    "section": "Exercise-2",
-    "text": "Exercise-2\nA veterinarian wants to determine whether the proportion of dogs that experience seasonal allergies differs between two breeds. A random sample of 150 Labrador Retrievers is examined, and 45 are found to experience seasonal allergies. A random sample of 150 Golden Retrievers is examined, and 60 are found to experience seasonal allergies.\nIs there evidence that the proportion of dogs experiencing seasonal allergies differs between Labrador Retrievers and Golden Retrievers? Use a significance level of \\(\\alpha=0.05\\) to answer this question.\n\nDefine \\(p_l\\) and \\(p_g\\) in words in the context of the problem.\nOur null and alternative hypotheses can be seen below: \\(H_o: p_l = p_g\\)\n\n\\(H_a: p_l \\neq p_g\\)\nThe researcher wants to calculate the probability of making a Type-2 error, and the Power of their test. Below, report the values from the context of the problem that we will need to make these calculations. Show your work if necessary.\n\n\\(n_g\\) =\n\\(n_l\\) =\n\\(SE(p_{\\text{l-null}} - p_{\\text{g-null}})\\) =\n\n\nPlease see the following visualization to answer the following question:\n\n\n\n\n\n\n\n\n\n\nMatch the colors red, blue, and green, to the following terms:\n\nProbability of a Type-1 error:\nProbability of a Type-2 error:\nPower:\n\n\nThe effect size the researchers are interested in is 0.2. Interpret 0.2 in the context of the problem.\nUse the information above to calculate the probability of a Type-2 error, and the power of this test.\n\nHint: Please see this slide to help answer this question. Slide"
+    "objectID": "hw/hw1.html#exercise-2-7-points",
+    "href": "hw/hw1.html#exercise-2-7-points",
+    "title": "Homework-1",
+    "section": "Exercise-2 (7-points)",
+    "text": "Exercise-2 (7-points)\nAll human blood can be “ABO‑typed” as one of O, A, B, or AB, but the distribution of the types varies a bit among groups of people. Here is the distribution of blood types for a randomly chosen person in the United States. The following may be a useful resource for this question: article\n\n\n\nBlood type\nA\nB\nAB\nO\n\n\nU.S. probability\n0.42\n0.11\n0.03\n?\n\n\n\na) What is the probability of type O blood in the United States?\nb) Explain your answer to part a.\nc) Are events A, B, AB, and O disjoint? Justify your response.\nd) Sasha has type A blood. She can safely receive blood transfusions from people with blood types O and A. What is the probability that a randomly chosen person from the United States can donate blood to Sasha? (This exercise ignores the Rh factor, another classification of blood types that is related to whether one person can donate blood to another.)",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
   },
   {
-    "objectID": "hw/hw2.html#exercise-3-23-points",
-    "href": "hw/hw2.html#exercise-3-23-points",
-    "title": "Homework-2",
-    "section": "Exercise-3 (23 points)",
-    "text": "Exercise-3 (23 points)\nSuppose you took a random sample of North Carolina residents. The following 2×2 contingency table presents the observed frequencies from a survey of N=200 individuals, categorized by their Age Group and their primary Media Preference.\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n85\n15\n100\n\n\nAges 55+\n45\n55\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nWe are going to do a chi-square test of independence to assess the relationship between media preference, and age. Below, in words, write out the null and alternative hypothesis.\n\n\\(Ho:\\)\n\\(Ha:\\)\n\nDraw the following table below. Fill in the blanks with the expected counts. You may round to your answers to two decimal places.\n\nTable of expected counts:\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n___\n___\n100\n\n\nAges 55+\n___\n___\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nNow, calculate our \\(\\chi^2\\) statistic, by hand. Use the following slide for help. Show your work!\nVisit the applet on the slide. Draw the appropriate chi-square distribution that our test-statistic will follow. Title your plot “Chi-square distribution with ____ degrees of freedom”. Fill in the ____ with the appropriate degrees of freedom.\n\nNext, label your statistic, and shade in the area underneath the graph that represents your p-value."
+    "objectID": "hw/hw1.html#exercise-3-10-points",
+    "href": "hw/hw1.html#exercise-3-10-points",
+    "title": "Homework-1",
+    "section": "Exercise-3 (10-points)",
+    "text": "Exercise-3 (10-points)\nA roulette wheel has 38 slots, numbered 0, 00, and 1 to 36. The slots 0 and 00 are colored green, 18 of the others are red, and 18 are black. The dealer spins the wheel and, at the same time, rolls a small ball along the wheel in the opposite direction. The wheel is carefully balanced so that the ball is equally likely to land in any slot when the wheel slows. Gamblers can bet on various combinations of numbers and colors.\n\n\nWhat is the probability that the ball will land in any one slot? Give your answer to four decimal places for this question.\nIf you bet on “red,” you win if the ball lands in a red slot. What is the probability of winning? Give your answer to four decimal places. Define your event A, and use proper notation when writing your response.\nThe slot numbers are laid out on a board on which gamblers place their bets. One column of numbers on the board contains all multiples of 3 – that is, 3, 6, 9, …, 36. You place a “column bet” that wins if any of these numbers comes up. What is your probability of winning? Give your answer to four decimal places for this question. Define your event B, and use proper notation when writing your response.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
   },
   {
-    "objectID": "hw/hw2.html#exercise-4-5-points",
-    "href": "hw/hw2.html#exercise-4-5-points",
-    "title": "Homework-2",
-    "section": "Exercise 4 (5 points)",
-    "text": "Exercise 4 (5 points)\nA large retail store tracks customer complaints to determine if the volume of complaints is evenly distributed across the five primary days of the work week (Monday through Friday). The management’s null hypothesis is that the complaints occur with equal frequency on all five days. We want to determine if the observed distribution of complaints significantly differs from the expected uniform distribution.\n\nIn 2-4 sentences, explain the difference between a goodness of fit test, and a test for independence AND specify which test would be most appropriate for the scenario above."
+    "objectID": "hw/hw1.html#exercise-4-40-points",
+    "href": "hw/hw1.html#exercise-4-40-points",
+    "title": "Homework-1",
+    "section": "Exercise 4 (40 points)",
+    "text": "Exercise 4 (40 points)\n\nMurderous Nurse\nFor several years in the 1990s, Kristen Gilbert worked as a nurse in the intensive care unit (ICU) of the Veterans Administration Hospital in Northampton, Massachusetts. Over the course of her time there, other nurses came to suspect that she was killing patients by inject-ing them with the heart stimulant epinephrine. Gilbert was eventually arrested and charged with these murders. Part of the evidence presented against Gilbert at her murder trial was a statistical analysis of 1,641 randomly selected eight-hour shifts during the time Gilbert worked in the ICU. For each of these shifts, researchers recorded two variables: whether Gilbert worked on the shift and whether at least one patient died during the shift.You may use \\(\\alpha = 0.05\\) for this question.\n\nWhat are the observational units. That is, Whom or what exactly are the data being collected off of.\nClassify each variable as categorical or quantitative. Additionally, classify if this is our response variable or explanatory variable.\n\n– Whether Gilbert worked on the shift\n– Whether at least one patient died during the shift\n\nBased on the research question in the context of the problem, write out your null and alternative hypotheses below in both words and in proper notation. Use informative subscripts.\n\nHo:\nHa:\n\nThe researchers’ data can be found below:\n\n\n\n\n\n\n\n\n\n\n\nGilbert working on shift\nGilbert not working on shift\nTotal\n\n\nPatient died during shift\n40\n34\n74\n\n\nNo patient died during shift\n217\n1350\n1567\n\n\nTotal\n257\n1384\n1641\n\n\n\nReport your sample statistic in proper notation based on the values from the table.\n\nWe are now going to conduct a Z-test to test your null/alternative hypothesis.\n\nBefore conducting this test, justify if we can trust the results of a z-test below? Why or why not.\n\nRegardless of your answer, calculate your z-statistic below. Show your work.\nDraw a standard normal distribution, and label your z-statistic on the distribution. Shade in the area of the p-value.\nBased on your z-statistic, would you your p-value be large or small? Justify your answer.\nNow, write an appropriate decision and conclusion in the context of the problem.",
+    "crumbs": [
+      "Assignments",
+      "Homework-1"
+    ]
   },
   {
     "objectID": "18-tuke-time.html#checklist",
@@ -9234,285 +8840,1152 @@
     ]
   },
   {
-    "objectID": "hw/hw1.html",
-    "href": "hw/hw1.html",
-    "title": "Homework-1",
+    "objectID": "hw/hw2.html",
+    "href": "hw/hw2.html",
+    "title": "Homework-2",
     "section": "",
-    "text": "This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
+    "text": "Note\n\n\n\nThis assignment is due October 16th at 11:59pm on Gradescope"
   },
   {
-    "objectID": "hw/hw1.html#instructions-on-how-to-start",
-    "href": "hw/hw1.html#instructions-on-how-to-start",
-    "title": "Homework-1",
-    "section": "",
-    "text": "This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
+    "objectID": "hw/hw2.html#instructions-on-how-to-start",
+    "href": "hw/hw2.html#instructions-on-how-to-start",
+    "title": "Homework-2",
+    "section": "Instructions on how to start",
+    "text": "Instructions on how to start\nThis is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work."
   },
   {
-    "objectID": "hw/hw1.html#instructions-on-how-to-turn-your-homework-in",
-    "href": "hw/hw1.html#instructions-on-how-to-turn-your-homework-in",
-    "title": "Homework-1",
+    "objectID": "hw/hw2.html#instructions-on-how-to-turn-your-homework-in",
+    "href": "hw/hw2.html#instructions-on-how-to-turn-your-homework-in",
+    "title": "Homework-2",
     "section": "Instructions on how to turn your homework in",
-    "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
+    "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation."
   },
   {
-    "objectID": "hw/hw1.html#exercise-1-6-points",
-    "href": "hw/hw1.html#exercise-1-6-points",
-    "title": "Homework-1",
-    "section": "Exercise-1 (6-points)",
-    "text": "Exercise-1 (6-points)\nIn each of the following scenarios, there is something wrong. Describe what is wrong and give a reason for your answer.\n\nIf the probability of A is 0.6 and the probability of B is 0.7, the probability of both A and B happening is 1.3.\nIf the probability of A is 0.55, then the probability of the complement of A is -0.55.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
+    "objectID": "hw/hw2.html#exercise-1-15-points",
+    "href": "hw/hw2.html#exercise-1-15-points",
+    "title": "Homework-2",
+    "section": "Exercise 1 (15 points)",
+    "text": "Exercise 1 (15 points)\nFor each scenario, write out the appropriate null and alternative hypothesis in proper notation.\n\nA professor wants to know if the average exam score for her class is different from the historical average of 80 on a standardized test. She believes her class will perform differently due to a new teaching method.\nA space agency wants to compare the reliability of two different private companies, Provider A and Provider B, for launching satellites into orbit. The agency collects data on their recent launch history. Provider A has completed 200 launches, with 192 of them being successful. Provider B has completed 150 launches, with 138 of them being successful. The space agency wants to investigate if Provider B has less safe launches, as they tend to user older technologies.\nA politician claims that they have an approval rating of at least 50%. A political analyst wants to test this claim and believes the true approval rating is lower."
   },
   {
-    "objectID": "hw/hw1.html#exercise-2-7-points",
-    "href": "hw/hw1.html#exercise-2-7-points",
-    "title": "Homework-1",
-    "section": "Exercise-2 (7-points)",
-    "text": "Exercise-2 (7-points)\nAll human blood can be “ABO‑typed” as one of O, A, B, or AB, but the distribution of the types varies a bit among groups of people. Here is the distribution of blood types for a randomly chosen person in the United States. The following may be a useful resource for this question: article\n\n\n\nBlood type\nA\nB\nAB\nO\n\n\nU.S. probability\n0.42\n0.11\n0.03\n?\n\n\n\na) What is the probability of type O blood in the United States?\nb) Explain your answer to part a.\nc) Are events A, B, AB, and O disjoint? Justify your response.\nd) Sasha has type A blood. She can safely receive blood transfusions from people with blood types O and A. What is the probability that a randomly chosen person from the United States can donate blood to Sasha? (This exercise ignores the Rh factor, another classification of blood types that is related to whether one person can donate blood to another.)",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
+    "objectID": "hw/hw2.html#exercise-2",
+    "href": "hw/hw2.html#exercise-2",
+    "title": "Homework-2",
+    "section": "Exercise-2",
+    "text": "Exercise-2\nA veterinarian wants to determine whether the proportion of dogs that experience seasonal allergies differs between two breeds. A random sample of 150 Labrador Retrievers is examined, and 45 are found to experience seasonal allergies. A random sample of 150 Golden Retrievers is examined, and 60 are found to experience seasonal allergies.\nIs there evidence that the proportion of dogs experiencing seasonal allergies differs between Labrador Retrievers and Golden Retrievers? Use a significance level of \\(\\alpha=0.05\\) to answer this question.\n\nDefine \\(p_l\\) and \\(p_g\\) in words in the context of the problem.\nOur null and alternative hypotheses can be seen below: \\(H_o: p_l = p_g\\)\n\n\\(H_a: p_l \\neq p_g\\)\nThe researcher wants to calculate the probability of making a Type-2 error, and the Power of their test. Below, report the values from the context of the problem that we will need to make these calculations. Show your work if necessary.\n\n\\(n_g\\) =\n\\(n_l\\) =\n\\(SE(p_{\\text{l-null}} - p_{\\text{g-null}})\\) =\n\n\nPlease see the following visualization to answer the following question:\n\n\n\n\n\n\n\n\n\n\nMatch the colors red, blue, and green, to the following terms:\n\nProbability of a Type-1 error:\nProbability of a Type-2 error:\nPower:\n\n\nThe effect size the researchers are interested in is 0.2. Interpret 0.2 in the context of the problem.\nUse the information above to calculate the probability of a Type-2 error, and the power of this test.\n\nHint: Please see this slide to help answer this question. Slide"
   },
   {
-    "objectID": "hw/hw1.html#exercise-3-10-points",
-    "href": "hw/hw1.html#exercise-3-10-points",
-    "title": "Homework-1",
-    "section": "Exercise-3 (10-points)",
-    "text": "Exercise-3 (10-points)\nA roulette wheel has 38 slots, numbered 0, 00, and 1 to 36. The slots 0 and 00 are colored green, 18 of the others are red, and 18 are black. The dealer spins the wheel and, at the same time, rolls a small ball along the wheel in the opposite direction. The wheel is carefully balanced so that the ball is equally likely to land in any slot when the wheel slows. Gamblers can bet on various combinations of numbers and colors.\n\n\nWhat is the probability that the ball will land in any one slot? Give your answer to four decimal places for this question.\nIf you bet on “red,” you win if the ball lands in a red slot. What is the probability of winning? Give your answer to four decimal places. Define your event A, and use proper notation when writing your response.\nThe slot numbers are laid out on a board on which gamblers place their bets. One column of numbers on the board contains all multiples of 3 – that is, 3, 6, 9, …, 36. You place a “column bet” that wins if any of these numbers comes up. What is your probability of winning? Give your answer to four decimal places for this question. Define your event B, and use proper notation when writing your response.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
+    "objectID": "hw/hw2.html#exercise-3-23-points",
+    "href": "hw/hw2.html#exercise-3-23-points",
+    "title": "Homework-2",
+    "section": "Exercise-3 (23 points)",
+    "text": "Exercise-3 (23 points)\nSuppose you took a random sample of North Carolina residents. The following 2×2 contingency table presents the observed frequencies from a survey of N=200 individuals, categorized by their Age Group and their primary Media Preference.\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n85\n15\n100\n\n\nAges 55+\n45\n55\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nWe are going to do a chi-square test of independence to assess the relationship between media preference, and age. Below, in words, write out the null and alternative hypothesis.\n\n\\(Ho:\\)\n\\(Ha:\\)\n\nDraw the following table below. Fill in the blanks with the expected counts. You may round to your answers to two decimal places.\n\nTable of expected counts:\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n___\n___\n100\n\n\nAges 55+\n___\n___\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nNow, calculate our \\(\\chi^2\\) statistic, by hand. Use the following slide for help. Show your work!\nVisit the applet on the slide. Draw the appropriate chi-square distribution that our test-statistic will follow. Title your plot “Chi-square distribution with ____ degrees of freedom”. Fill in the ____ with the appropriate degrees of freedom.\n\nNext, label your statistic, and shade in the area underneath the graph that represents your p-value."
   },
   {
-    "objectID": "hw/hw1.html#exercise-4-40-points",
-    "href": "hw/hw1.html#exercise-4-40-points",
-    "title": "Homework-1",
-    "section": "Exercise 4 (40 points)",
-    "text": "Exercise 4 (40 points)\n\nMurderous Nurse\nFor several years in the 1990s, Kristen Gilbert worked as a nurse in the intensive care unit (ICU) of the Veterans Administration Hospital in Northampton, Massachusetts. Over the course of her time there, other nurses came to suspect that she was killing patients by inject-ing them with the heart stimulant epinephrine. Gilbert was eventually arrested and charged with these murders. Part of the evidence presented against Gilbert at her murder trial was a statistical analysis of 1,641 randomly selected eight-hour shifts during the time Gilbert worked in the ICU. For each of these shifts, researchers recorded two variables: whether Gilbert worked on the shift and whether at least one patient died during the shift.You may use \\(\\alpha = 0.05\\) for this question.\n\nWhat are the observational units. That is, Whom or what exactly are the data being collected off of.\nClassify each variable as categorical or quantitative. Additionally, classify if this is our response variable or explanatory variable.\n\n– Whether Gilbert worked on the shift\n– Whether at least one patient died during the shift\n\nBased on the research question in the context of the problem, write out your null and alternative hypotheses below in both words and in proper notation. Use informative subscripts.\n\nHo:\nHa:\n\nThe researchers’ data can be found below:\n\n\n\n\n\n\n\n\n\n\n\nGilbert working on shift\nGilbert not working on shift\nTotal\n\n\nPatient died during shift\n40\n34\n74\n\n\nNo patient died during shift\n217\n1350\n1567\n\n\nTotal\n257\n1384\n1641\n\n\n\nReport your sample statistic in proper notation based on the values from the table.\n\nWe are now going to conduct a Z-test to test your null/alternative hypothesis.\n\nBefore conducting this test, justify if we can trust the results of a z-test below? Why or why not.\n\nRegardless of your answer, calculate your z-statistic below. Show your work.\nDraw a standard normal distribution, and label your z-statistic on the distribution. Shade in the area of the p-value.\nBased on your z-statistic, would you your p-value be large or small? Justify your answer.\nNow, write an appropriate decision and conclusion in the context of the problem.",
-    "crumbs": [
-      "Assignments",
-      "Homework-1"
-    ]
+    "objectID": "hw/hw2.html#exercise-4-5-points",
+    "href": "hw/hw2.html#exercise-4-5-points",
+    "title": "Homework-2",
+    "section": "Exercise 4 (5 points)",
+    "text": "Exercise 4 (5 points)\nA large retail store tracks customer complaints to determine if the volume of complaints is evenly distributed across the five primary days of the work week (Monday through Friday). The management’s null hypothesis is that the complaints occur with equal frequency on all five days. We want to determine if the observed distribution of complaints significantly differs from the expected uniform distribution.\n\nIn 2-4 sentences, explain the difference between a goodness of fit test, and a test for independence AND specify which test would be most appropriate for the scenario above."
   },
   {
-    "objectID": "hw2_sa.html",
-    "href": "hw2_sa.html",
+    "objectID": "hw2.html",
+    "href": "hw2.html",
     "title": "Homework-2",
     "section": "",
     "text": "Note\n\n\n\nThis assignment is due October 16th at 11:59pm on Gradescope",
     "crumbs": [
       "Assignments",
-      "Homework-2 Solutions"
+      "Homework-2"
     ]
   },
   {
-    "objectID": "hw2_sa.html#instructions-on-how-to-start",
-    "href": "hw2_sa.html#instructions-on-how-to-start",
+    "objectID": "hw2.html#instructions-on-how-to-start",
+    "href": "hw2.html#instructions-on-how-to-start",
     "title": "Homework-2",
     "section": "Instructions on how to start",
     "text": "Instructions on how to start\nThis is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
     "crumbs": [
       "Assignments",
-      "Homework-2 Solutions"
+      "Homework-2"
     ]
   },
   {
-    "objectID": "hw2_sa.html#instructions-on-how-to-turn-your-homework-in",
-    "href": "hw2_sa.html#instructions-on-how-to-turn-your-homework-in",
+    "objectID": "hw2.html#instructions-on-how-to-turn-your-homework-in",
+    "href": "hw2.html#instructions-on-how-to-turn-your-homework-in",
     "title": "Homework-2",
     "section": "Instructions on how to turn your homework in",
     "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation.",
     "crumbs": [
       "Assignments",
-      "Homework-2 Solutions"
+      "Homework-2"
     ]
   },
   {
-    "objectID": "hw2_sa.html#exercise-1-15-points",
-    "href": "hw2_sa.html#exercise-1-15-points",
+    "objectID": "hw2.html#exercise-1-15-points",
+    "href": "hw2.html#exercise-1-15-points",
     "title": "Homework-2",
     "section": "Exercise 1 (15 points)",
-    "text": "Exercise 1 (15 points)\nFor each scenario, write out the appropriate null and alternative hypothesis in proper notation.\n\nA professor wants to know if the average exam score for her class is different from the historical average of 80 on a standardized test. She believes her class will perform differently due to a new teaching method.\n\n\\(H_0: \\mu = 80\\)\n\\(H_A: \\mu \\neq 80\\)\n\nA space agency wants to compare the reliability of two different private companies, Provider A and Provider B, for launching satellites into orbit. The agency collects data on their recent launch history. Provider A has completed 200 launches, with 192 of them being successful. Provider B has completed 150 launches, with 138 of them being successful. The space agency wants to investigate if Provider B has less safe launches, as they tend to user older technologies.\n\n\\(H_0: p_A = p_B\\)\n\\(H_A: p_B &lt; p_A\\)\n\nA politician claims that they have an approval rating of at least 50%. A political analyst wants to test this claim and believes the true approval rating is lower.\n\n\\(H_0: p = 0.50\\)\n\\(H_A: p &lt; 0.50\\)",
+    "text": "Exercise 1 (15 points)\nFor each scenario, write out the appropriate null and alternative hypothesis in proper notation.\n\nA professor wants to know if the average exam score for her class is different from the historical average of 80 on a standardized test. She believes her class will perform differently due to a new teaching method.\nA space agency wants to compare the reliability of two different private companies, Provider A and Provider B, for launching satellites into orbit. The agency collects data on their recent launch history. Provider A has completed 200 launches, with 192 of them being successful. Provider B has completed 150 launches, with 138 of them being successful. The space agency wants to investigate if Provider B has less safe launches, as they tend to user older technologies.\nA politician claims that they have an approval rating of at least 50%. A political analyst wants to test this claim and believes the true approval rating is lower.",
     "crumbs": [
       "Assignments",
-      "Homework-2 Solutions"
+      "Homework-2"
     ]
   },
   {
-    "objectID": "hw2_sa.html#exercise-2-30-points",
-    "href": "hw2_sa.html#exercise-2-30-points",
+    "objectID": "hw2.html#exercise-2-30-points",
+    "href": "hw2.html#exercise-2-30-points",
     "title": "Homework-2",
     "section": "Exercise-2 (30-points)",
-    "text": "Exercise-2 (30-points)\nA veterinarian wants to determine whether the proportion of dogs that experience seasonal allergies differs between two breeds. A random sample of 150 Labrador Retrievers is examined, and 45 are found to experience seasonal allergies. A random sample of 150 Golden Retrievers is examined, and 60 are found to experience seasonal allergies.\nIs there evidence that the proportion of dogs experiencing seasonal allergies differs between Labrador Retrievers and Golden Retrievers? Use a significance level of \\(\\alpha=0.05\\) to answer this question.\n\nDefine \\(p_l\\) and \\(p_g\\) in words in the context of the problem.\n\n\\(p_l\\) = the true proportion of dogs that experience seasonal allergies and are Labrador Retrievers.\n\\(p_g\\) = The true proportion of dogs that experience seasonal allergies and are Golden Retrievers.\n\nOur null and alternative hypotheses can be seen below: \\(H_o: p_l = p_g\\)\n\n\\(H_a: p_l \\neq p_g\\)\nThe researcher wants to calculate the probability of making a Type-2 error, and the Power of their test. Below, report the values from the context of the problem that we will need to make these calculations. Show your work if necessary.\n\\(n_g = 150\\)\n\\(n_l = 150\\)\n\\(p_{\\text{pooled}} = \\frac{45 + 60}{150 + 150} = \\frac{105}{300} = 0.35\\)\n\\(SE = \\sqrt{p_{\\text{pooled}}(1 - p_{\\text{pooled}}) \\left(\\frac{1}{n_l} + \\frac{1}{n_g}\\right)}\\)\n\\(SE = \\sqrt{0.35(1 - 0.35) \\left(\\frac{1}{150} + \\frac{1}{150}\\right)} = \\sqrt{0.2275 \\left(\\frac{2}{150}\\right)} \\approx 0.0550757\\)\n\nPlease see the following visualization to answer the following question:\n\n\n\n\n\n\n\n\n\n\nMatch the colors red, blue, and green, to the following terms:\n\nProbability of a Type-1 error: Red\nProbability of a Type-2 error: Blue\nPower: Green\n\n\nThe effect size the researchers are interested in is 0.2. Interpret 0.2 in the context of the problem.\n\nThe researchers are interested in a difference of \\(0.2\\) between the true proportions of Labrador Retrievers and Golden Retrievers that experience seasonal allergies. They can use this “what if” effect size to actually calculate power, type-2 error, etc.\n\nUse the information above to calculate the probability of a Type-2 error, and the power of this test.\n\nHint: Please see this slide to help answer this question. Slide\nCalculate the pooled proportion \\(\\hat{p}_{\\text{pooled}} = \\frac{x_l+x_g}{n_l+n_g}\\)\n\\(\\hat{p}_{\\text{pooled}} = \\frac{45+60}{150+150} = \\frac{105}{300} = 0.35\\)\nCalculate the standard error under the assumption of the null hypothesis \\(SE = \\sqrt{\\frac{\\hat{p}_{\\text{pooled}}(1-\\hat{p}_{\\text{pooled}})}{n_l} + \\frac{\\hat{p}_{\\text{pooled}}(1-\\hat{p}_{\\text{pooled}})}{n_g}}\\)\n\\(SE = \\sqrt{\\frac{0.35(1-0.35)}{150} + \\frac{0.35(1-0.35)}{150}}\\)\n\\(SE = \\sqrt{\\frac{0.2275}{150} + \\frac{0.2275}{150}}\\)\n\\(SE \\approx 0.0550757 \\approx 0.0551\\)\nCalculate the critical values For a two-sided test with \\(\\alpha=0.05\\), the critical z-values are \\(\\pm 1.96\\). \\(= \\pm 1.96(0.0551)\\) \\(\\approx \\pm 0.1080\\)\n\npnorm(q = 1.96 * 0.0551, mean = 0.2, sd = 0.0551) -\n  pnorm(q = -1.96 * 0.0551, mean = 0.2, sd = 0.0551)\n\n[1] 0.04748301",
+    "text": "Exercise-2 (30-points)\nA veterinarian wants to determine whether the proportion of dogs that experience seasonal allergies differs between two breeds. A random sample of 150 Labrador Retrievers is examined, and 45 are found to experience seasonal allergies. A random sample of 150 Golden Retrievers is examined, and 60 are found to experience seasonal allergies.\nIs there evidence that the proportion of dogs experiencing seasonal allergies differs between Labrador Retrievers and Golden Retrievers? Use a significance level of \\(\\alpha=0.05\\) to answer this question.\n\nDefine \\(p_l\\) and \\(p_g\\) in words in the context of the problem.\nOur null and alternative hypotheses can be seen below: \\(H_o: p_l = p_g\\)\n\n\\(H_a: p_l \\neq p_g\\)\nThe researcher wants to calculate the probability of making a Type-2 error, and the Power of their test. Below, report the values from the context of the problem that we will need to make these calculations. Show your work if necessary.\n\n\\(n_g\\) =\n\\(n_l\\) =\n\\(SE(p_{\\text{l-null}} - p_{\\text{g-null}})\\) =\n\n\nPlease see the following visualization to answer the following question:\n\n\n\n\n\n\n\n\n\n\nMatch the colors red, blue, and green, to the following terms:\n\nProbability of a Type-1 error:\nProbability of a Type-2 error:\nPower:\n\n\nThe effect size the researchers are interested in is 0.2. Interpret 0.2 in the context of the problem.\nUse the information above to calculate the probability of a Type-2 error, and the power of this test.\n\nHint: Please see this slide to help answer this question. Slide",
     "crumbs": [
       "Assignments",
-      "Homework-2 Solutions"
+      "Homework-2"
     ]
   },
   {
-    "objectID": "hw2_sa.html#exercise-3-23-points",
-    "href": "hw2_sa.html#exercise-3-23-points",
+    "objectID": "hw2.html#exercise-3-23-points",
+    "href": "hw2.html#exercise-3-23-points",
     "title": "Homework-2",
     "section": "Exercise-3 (23 points)",
-    "text": "Exercise-3 (23 points)\nSuppose you took a random sample of North Carolina residents. The following 2×2 contingency table presents the observed frequencies from a survey of N=200 individuals, categorized by their Age Group and their primary Media Preference.\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n85\n15\n100\n\n\nAges 55+\n45\n55\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nWe are going to do a chi-square test of independence to assess the relationship between media preference, and age. Below, in words, write out the null and alternative hypothesis.\n\n\\(Ho:\\) Streaming and age are independent at the population level.\n\\(Ha:\\) Streaming and age are not independent at the population level.\n\nDraw the following table below. Fill in the blanks with the expected counts. You may round to your answers to two decimal places.\n\nTable of expected counts:\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n65\n35\n100\n\n\nAges 55+\n65\n35\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nNow, calculate our \\(\\chi^2\\) statistic, by hand. Use the following slide for help. Show your work!\n\n\\(\\chi^2 = \\frac{(85-65)^2}{65} + \\frac{(15-35)^2}{35} + \\frac{(45-65)^2}{65} + \\frac{(55-35)^2}{35}\\)\n\\(= \\frac{400}{65} + \\frac{400}{35} + \\frac{400}{65} + \\frac{400}{35}\\)\n\\(= 6.154 + 11.429 + 6.154 + 11.429\\)\n\\(\\chi^2 \\approx 35.165\\)\n\nVisit the applet on the slide. Draw the appropriate chi-square distribution that our test-statistic will follow. Title the plot you draw as: “Chi-square distribution with ____ degrees of freedom”. Fill in the ____ with the appropriate degrees of freedom.\n\n\n\n\n\n\n\n\n\n\nNext, label your statistic, and shade in the area underneath the graph that represents your p-value.",
+    "text": "Exercise-3 (23 points)\nSuppose you took a random sample of North Carolina residents. The following 2×2 contingency table presents the observed frequencies from a survey of N=200 individuals, categorized by their Age Group and their primary Media Preference.\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n85\n15\n100\n\n\nAges 55+\n45\n55\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nWe are going to do a chi-square test of independence to assess the relationship between media preference, and age. Below, in words, write out the null and alternative hypothesis.\n\n\\(Ho:\\)\n\\(Ha:\\)\n\nDraw the following table below. Fill in the blanks with the expected counts. You may round to your answers to two decimal places.\n\nTable of expected counts:\n\n\n\n\n\n\n\n\n\n\nPrefers Streaming Video\nPrefers Traditional TV\nRow Total\n\n\n\n\nAges 18-35\n___\n___\n100\n\n\nAges 55+\n___\n___\n100\n\n\nColumn Total\n130\n70\n200\n\n\n\n\nNow, calculate our \\(\\chi^2\\) statistic, by hand. Use the following slide for help. Show your work!\nVisit the applet on the slide. Draw the appropriate chi-square distribution that our test-statistic will follow. Title the plot you draw as: “Chi-square distribution with ____ degrees of freedom”. Fill in the ____ with the appropriate degrees of freedom.\n\nNext, label your statistic, and shade in the area underneath the graph that represents your p-value.",
     "crumbs": [
       "Assignments",
-      "Homework-2 Solutions"
+      "Homework-2"
     ]
   },
   {
-    "objectID": "hw2_sa.html#exercise-4-5-points",
-    "href": "hw2_sa.html#exercise-4-5-points",
+    "objectID": "hw2.html#exercise-4-5-points",
+    "href": "hw2.html#exercise-4-5-points",
     "title": "Homework-2",
     "section": "Exercise 4 (5 points)",
-    "text": "Exercise 4 (5 points)\nA large retail store tracks customer complaints to determine if the volume of complaints is evenly distributed across the five primary days of the work week (Monday through Friday). The management’s null hypothesis is that the complaints occur with equal frequency on all five days. We want to determine if the observed distribution of complaints significantly differs from the expected uniform distribution.\n\nIn 2-4 sentences, explain the difference between a goodness of fit test, and a test for independence AND specify which test would be most appropriate for the scenario above.\n\nA goodness of fit test tests a single categorical variable with \\(\\ge\\) 2 levels vs the expected counts of a hypothetical theoretical distribution. A test of independence tests if two categorical variables with \\(\\ge\\) 2 levels are independent of each other. For the above example, it would be more appropriate to do a goodness of fit test, because we only have one variable (complaints) vs a hypothesized distribution (equal frequency on all five days).",
+    "text": "Exercise 4 (5 points)\nA large retail store tracks customer complaints to determine if the volume of complaints is evenly distributed across the five primary days of the work week (Monday through Friday). The management’s null hypothesis is that the complaints occur with equal frequency on all five days. We want to determine if the observed distribution of complaints significantly differs from the expected uniform distribution.\n\nIn 2-4 sentences, explain the difference between a goodness of fit test, and a test for independence AND specify which test would be most appropriate for the scenario above.",
     "crumbs": [
       "Assignments",
-      "Homework-2 Solutions"
+      "Homework-2"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ST312 webR assignments",
-    "section": "",
-    "text": "Welcome to ST312\nThis is a home base for our slides and homework assignments.\nThis space allows you to search our slides for key words, so you can quickly find a topic when studying!"
-  },
-  {
-    "objectID": "reviewexamslide.html#exam-day",
-    "href": "reviewexamslide.html#exam-day",
-    "title": "ST311 Review Test",
-    "section": "Exam Day",
-    "text": "Exam Day\nWe will all start at 3:00. You may read the front and sign your name. Please write your first as last name as clear as possible.\n– Don’t cheat. It sucks for all of us\n– The exam is worth 5% of your grade\n– You may use a calculator and your 🧠\n– Show your work! Demonstrate your understanding! I can not make assumptions when grading\n– The exam starts with M/C questions ends with T/F questions. Mark your responses as clear as possible\n– You may ask questions. If the question gives you an advantage over other students, I have to say “I can not answer that”\nWhen you are done, please come up and turn in your exam",
+    "objectID": "review2.html#checklist",
+    "href": "review2.html#checklist",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Checklist",
+    "text": "Checklist\n– Don’t forget about the Statistics Experience (12-1)\n– Exam-2 is on 10-29\n  &gt; Cumulative with emphasis on unit-2\n  &gt; Closed notes, bring a calculator you know how to use\n  \n– The formula sheet has been posted\n– The how to study guide has been posted",
     "crumbs": [
       "Slides",
-      "Day-4"
+      "Day-19"
     ]
   },
   {
-    "objectID": "rubric-assignment.html",
-    "href": "rubric-assignment.html",
-    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
-    "section": "",
-    "text": "Tip\n\n\n\nNote: This assignment is due on 11/27 at 11:59pm on Gradescope. However, you have more than able to turn the assignment in before Thanksgiving break if you would prefer.",
+    "objectID": "review2.html#checklist-1",
+    "href": "review2.html#checklist-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Checklist",
+    "text": "Checklist\n– Do you have questions about midterm-2?\n– Let’s take a look at the formula sheet!",
     "crumbs": [
-      "Assignments",
-      "Rubric Assignment"
+      "Slides",
+      "Day-19"
     ]
   },
   {
-    "objectID": "rubric-assignment.html#why",
-    "href": "rubric-assignment.html#why",
-    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
+    "objectID": "review2.html#warm-up",
+    "href": "review2.html#warm-up",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Warm up",
+    "text": "Warm up\nLast time:\nResults from an experiment to compare yields as measured by dried weight of plants) obtained under a control and two different treatment conditions. We are interested in seeing if the dried weight of plants is different across the three yields.\nResults from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions.",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#anova",
+    "href": "review2.html#anova",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Anova",
+    "text": "Anova\n\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)  \ngroup        2  3.766  1.8832   4.846 0.0159 *\nResiduals   27 10.492  0.3886                 \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nWhat does this tell us?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#pairwise-comparisons",
+    "href": "review2.html#pairwise-comparisons",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Pairwise comparisons",
+    "text": "Pairwise comparisons\n\\(\\frac{k(k-1)}{2}\\)\n\\(\\frac{3(3-1)}{2} = 3\\)\nWe have three pairwise comparisons!",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#familywise-error-rate",
+    "href": "review2.html#familywise-error-rate",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Familywise Error Rate",
+    "text": "Familywise Error Rate\nThe family-wise error rate (FWER) is the probability of making AT LEAST one Type I error across a family of hypothesis tests.\n\n\\(FWER = 1 - (1-0.05)^3 \\approx 0.143\\)",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#strategies",
+    "href": "review2.html#strategies",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Strategies",
+    "text": "Strategies\n– Tukeys HSD\n– Bonferonni",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#tukeys-hsd",
+    "href": "review2.html#tukeys-hsd",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Tukeys HSD",
+    "text": "Tukeys HSD\nTalk to me about it!",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#tukeys-hsd-1",
+    "href": "review2.html#tukeys-hsd-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Tukeys HSD",
+    "text": "Tukeys HSD\nTukeys HSD implements an entirely different distribution than the t-distribution, to help us account for our multiple comparisons! That distribution is the studentized range distribution!\nTukey’s Honest Significant Difference (HSD) test is a post hoc test commonly used to assess the significance of differences between pairs of group means. Tukey HSD is often a follow up to one-way ANOVA, when the F-test has revealed the existence of a significant difference between some of the tested groups.\nThis correction makes sure that our collective type-1 error rate is \\(\\alpha\\).",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#other-corrections-bonferonni",
+    "href": "review2.html#other-corrections-bonferonni",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Other corrections: Bonferonni",
+    "text": "Other corrections: Bonferonni\nAdjust \\(\\alpha\\): \\(\\frac{\\alpha}{m}\\)\nThis makes it harder to reject, and re-calibrates your hypothesis test for multiple comparisons!\nThe \\(\\alpha\\) (ex. 0.05) is the collective type I error rate across all the tests combined (called the family-wise error rate), not the rate for each individual test.",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#when-to-use-which",
+    "href": "review2.html#when-to-use-which",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "When to use which",
+    "text": "When to use which\nBonferroni: Adjust the significance level or p-values to account for multiple hypothesis tests.\nTukey: Use a procedure specifically designed for comparing all pairs of means.",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#why",
+    "href": "review2.html#why",
+    "title": "Finish FamilyWise Error Rate Corrections",
     "section": "Why",
-    "text": "Why\nWhy am I having you create a rubric, and a submission so you can use your rubric in action? I’ve designed this assessment to reinforce mastery of statistical concepts by requiring you to approach the material from a different perspective, instead of simply solving a problem I have created for you. You cannot effectively create, evaluate, and grade a statistical problem without having a strong understanding of the underlying statistical concepts yourself.\nI hope that you also use this as a tool to study for the final exam.",
+    "text": "Why\n– Tukey’s HSD is generally more powerful (reject correctly) when testing every single pair of means.\n– Bonferroni is more conservative, especially as the number of comparisons grows large. Bonferroni haveis designed to have more power if you are only testing a tiny, select number of specific comparisons rather than all possible pairs",
     "crumbs": [
-      "Assignments",
-      "Rubric Assignment"
+      "Slides",
+      "Day-19"
     ]
   },
   {
-    "objectID": "rubric-assignment.html#overview",
-    "href": "rubric-assignment.html#overview",
-    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
-    "section": "Overview",
-    "text": "Overview\nFor this assignment, you will design an original, multi-part statistics problem based on one of the topics covered in this course. Your problem should present a realistic scenario, use reasonable numerical values, and require students to demonstrate their understanding of the statistical concepts involved.\nYou will also develop a 20-point grading rubric for your problem and create a mock student submission that would earn a 70%-80% according to your rubric.\nThe goal of this assignment is to demonstrate that you understand both the statistical methods and how to evaluate someone’s understanding of those methods.",
+    "objectID": "review2.html#example",
+    "href": "review2.html#example",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Example",
+    "text": "Example\nThe uncorrected p-values can be seen below. Suppose we wanted to only look at the comparison of the control vs the other two treatments. A Bonferonni correction may be more appropriate! We would compare \\(\\frac{\\alpha}{2}\\) to the two p-values below.\n\n\n\n    Pairwise comparisons using t tests with pooled SD \n\ndata:  PlantGrowth$weight and PlantGrowth$group \n\n     ctrl   trt1  \ntrt1 0.1944 -     \ntrt2 0.0877 0.0045\n\nP value adjustment method: none \n\n\nWe now compare those two p-values vs an \\(\\alpha = 0.025\\)!",
     "crumbs": [
-      "Assignments",
-      "Rubric Assignment"
+      "Slides",
+      "Day-19"
     ]
   },
   {
-    "objectID": "rubric-assignment.html#part-1-choose-a-statistical-topic",
-    "href": "rubric-assignment.html#part-1-choose-a-statistical-topic",
-    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
-    "section": "Part 1: Choose a Statistical Topic",
-    "text": "Part 1: Choose a Statistical Topic\nChoose ONE of the following topics:\n\nDifference in proportions hypothesis test\nDifference in proportions confidence interval\nDifference in means hypothesis test\nDifference in means confidence interval\nChi-square test of independence\nChi-square goodness of fit test\nOne-way ANOVA\nTwo-way ANOVA\nMultiple linear regression (hypothesis test)\nRegression model selection",
+    "objectID": "review2.html#confidence-intervals",
+    "href": "review2.html#confidence-intervals",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\nYou can also calculate confidence intervals with Bonferonni if you would like!",
     "crumbs": [
-      "Assignments",
-      "Rubric Assignment"
+      "Slides",
+      "Day-19"
     ]
   },
   {
-    "objectID": "rubric-assignment.html#part-2-create-an-original-problem",
-    "href": "rubric-assignment.html#part-2-create-an-original-problem",
-    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
-    "section": "Part 2: Create an Original Problem",
-    "text": "Part 2: Create an Original Problem\nDevelop a realistic, multi-part statistics problem based on your selected topic.\nYour problem must include:\n\nRealistic context: Describe a situation in which the statistical method would reasonably be used. Your scenario should be specific enough that someone can understand the research question.\nRealistic values: Include appropriate sample sizes, summary statistics, observed counts, or other numerical information needed to complete the problem. Values should be plausible within your scenario.\nMultiple parts: Your problem must contain at least four distinct parts that assess different aspects of the statistical method.\n\nYour questions should assess a combination of the following, as appropriate for your topic:\n\nIdentifying the appropriate statistical procedure.\nStating the null and alternative hypotheses.\nChecking assumptions or conditions.\nCalculating relevant statistics.\nFinding a p-value or constructing a confidence interval.\nInterpreting statistical results in context.\nDrawing an appropriate conclusion.\nExplaining the practical implications of the results.\n\nYour problem should require more than simply plugging numbers into a formula.",
+    "objectID": "review2.html#example-3-groups",
+    "href": "review2.html#example-3-groups",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Example: 3 groups",
+    "text": "Example: 3 groups\nWith 3 groups, there are\n\\(m = \\binom{3}{2} = 3\\)\npairwise comparisons. To obtain 95% familywise confidence:\n\\(\\alpha^* = \\frac{0.05}{3} = 0.0167\\)\nEach interval is therefore constructed at approximately 98.33% confidence, using a \\(t^*\\) critical value with \\(0.0167/2\\) in each tail.\nThis controls the familywise error rate to be 5% (95% confidence intervals)",
     "crumbs": [
-      "Assignments",
-      "Rubric Assignment"
+      "Slides",
+      "Day-19"
     ]
   },
   {
-    "objectID": "rubric-assignment.html#part-3-develop-a-complete-solution-and-grading-rubric",
-    "href": "rubric-assignment.html#part-3-develop-a-complete-solution-and-grading-rubric",
-    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
-    "section": "Part 3: Develop a Complete Solution and Grading Rubric",
-    "text": "Part 3: Develop a Complete Solution and Grading Rubric\nCreate a complete answer key for your problem. Show all necessary calculations, statistical reasoning, and interpretations.\nThen, develop a 20-point grading rubric that could be used by another instructor to grade student submissions.\nYour rubric must:\n\nAssign points to each part of your problem.\nClearly describe what students must do to earn the points.\nAccount for partially correct answers and common mistakes.\nDistinguish between different levels of understanding.\nTotal exactly 20 points.\n\nYour rubric should be detailed enough that another instructor could grade a student’s submission without needing to ask you what you intended.\nImportant: Your rubric should award points for statistical reasoning, not just final answers. For example, a student who correctly identifies the hypotheses but makes a minor notation error should be able to earn partial credit.",
+    "objectID": "review2.html#review",
+    "href": "review2.html#review",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Review!",
+    "text": "Review!\n– Errors & Power\n– One-way ANOVA\n– Chi-square",
     "crumbs": [
-      "Assignments",
-      "Rubric Assignment"
+      "Slides",
+      "Day-19"
     ]
   },
   {
-    "objectID": "rubric-assignment.html#part-4-create-a-mock-student-submission-70-80-level-work",
-    "href": "rubric-assignment.html#part-4-create-a-mock-student-submission-70-80-level-work",
-    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
-    "section": "Part 4: Create a Mock Student Submission (70%-80%-Level Work)",
-    "text": "Part 4: Create a Mock Student Submission (70%-80%-Level Work)\nCreate a mock student submission that would earn approximately a 70%–80% according to the rubric you developed.\nThis should look like an actual student’s attempt at answering your problem.\nYour mock submission should:\n\nInclude both correct and incorrect work.\nDemonstrate some understanding of the statistical method.\nContain realistic mistakes that a student might make.\nBe complete enough to grade using your rubric.\nEarn a score between 14 and 15.8 points out of 20.\n\nAfter creating the mock submission, grade it using your rubric.\nInclude:\n\nThe points earned for each rubric item.\nA brief explanation of why the student earned or lost points.\nThe final score out of 20.\n\nImportant: Do not simply write an intentionally poor solution. Your mock submission should demonstrate partial understanding. It should be the type of work that a student who understands some, but not all, of the material might realistically produce.",
+    "objectID": "review2.html#errors-power",
+    "href": "review2.html#errors-power",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Errors & Power",
+    "text": "Errors & Power\nIdentify the appropriate slot for Type-1, Type-2, and Power\n\n\n\n\n\\(H_o\\) is True\n\\(H_o\\) is False\n\n\n\n\nReject \\(H_o\\)\n____________\n____________\n\n\nFail to Reject \\(H_o\\)\n____________\n_____________",
     "crumbs": [
-      "Assignments",
-      "Rubric Assignment"
+      "Slides",
+      "Day-19"
     ]
   },
   {
-    "objectID": "rubric-assignment.html#example-rubric-item-table-2-points",
-    "href": "rubric-assignment.html#example-rubric-item-table-2-points",
-    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
-    "section": "Example Rubric Item Table (2 points)",
-    "text": "Example Rubric Item Table (2 points)\nScenario: A researcher wants to determine whether the average amount of sleep college students get per night differs from the commonly reported average of 7 hours.\n\nSet up the correct null and alternative hypothesis based on the context of your problem.\n\n\n\n\n\n\n\n\nCriteria: Setting up \\(H_o\\) and \\(H_a\\)\nPoints = 2\n\n\n\n\nCorrectly identifies the population parameter (\\(\\mu\\)) as the true mean number of hours of sleep for college students.\n-0.5\n\n\nCorrectly states the null hypothesis: \\(H_0: \\mu = 7\\).\n-0.5\n\n\nCorrectly states the alternative hypothesis: \\(H_A: \\mu \\neq 7\\).\n-0.5\n\n\nUses appropriate notation and identifies that this is a two-sided test because the researcher is interested in whether the mean differs from 7 hours.\n-0.5\n\n\n\nPartial Credit Examples:\n\nStudent correctly identifies \\(\\mu\\) but writes hypotheses using the sample mean (\\(\\bar{x}\\)) instead of the population mean: earns 0.5 points.\nStudent correctly states the null hypothesis but uses a one-sided alternative: earns credit for the null hypothesis but loses credit for the alternative.\nStudent writes both hypotheses correctly but does not explain why the test is two-sided: loses the corresponding 0.5 points.\n\nYou do not need to list partial credit examples for each of your rubric items, but your point structure needs to incorporate partial credit.\n\n\n\n\n\n\nTip\n\n\n\nTakeaway: A good rubric breaks a question into specific, independently gradable components rather than simply saying “2 points for correct hypotheses.”",
+    "objectID": "review2.html#errors-power-1",
+    "href": "review2.html#errors-power-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Errors & Power",
+    "text": "Errors & Power\nIdentify the appropriate slot for Type-1, Type-2, and Power\n\n\n\n\n\\(H_o\\) is True\n\\(H_o\\) is False\n\n\n\n\nReject \\(H_o\\)\nType I Error\nPower!\n\n\nFail to Reject \\(H_o\\)\n____________\nType II Error\n\n\n\nEach of these are probabilities that depend on certain characteristics of our study.",
     "crumbs": [
-      "Assignments",
-      "Rubric Assignment"
+      "Slides",
+      "Day-19"
     ]
   },
   {
-    "objectID": "rubric-assignment.html#submission-requirements",
-    "href": "rubric-assignment.html#submission-requirements",
-    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
-    "section": "Submission Requirements",
-    "text": "Submission Requirements\nSubmit one hand-written document containing the following two sections:\n\nSection 1: Problem, Solution, and Rubric\nInclude: - Your original multi-part statistics problem. - A complete solution to your problem. - Your detailed 20-point grading rubric. For each part of your question, include a table similar to the example. It is your job to identify the important pieces of the statistical inference technique you chosen for your context, and demonstrate your mastery of the material through the creation of the rubric.\n\n\nSection 2: Mock 70%–80%-Level Submission\nInclude: - Your mock student submission. - Your completed grading rubric showing the points earned. - Use your tables to explain why points were earned or lost. - The final score out of 20.",
+    "objectID": "review2.html#type-i-error",
+    "href": "review2.html#type-i-error",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Type-I Error",
+    "text": "Type-I Error\nProbability that we reject \\(H_o\\) when \\(H_o\\) is actually true.\nHow do we calculate this probability?",
     "crumbs": [
-      "Assignments",
-      "Rubric Assignment"
+      "Slides",
+      "Day-19"
     ]
   },
   {
-    "objectID": "rubric-assignment.html#grading",
-    "href": "rubric-assignment.html#grading",
-    "title": "Rubric Assignment: Create a Statistical Problem and Grading Rubric",
-    "section": "Grading",
-    "text": "Grading\nYou will earn full credit, half credit, or no credit in the following categories:\n\nStructure (5-points)\n– Do you have a realistic scenario with realistic values?\n– Does your question make sense? Is it interesting?\n– Did you set up a multi-part question?\n\n\nQuestions (5-point)\n– Did you structure your questions in an order that makes sense?\n– Does your questions identify the key components of the statistical inference topic you selected? For example, if you are asking a question about hypothesis testing, you should have a question about assumptions.\n\n\nRubric items (5-points)\n– Do your rubric items allow students to demonstrate partial understanding?\n– Do you have a clear table for each question? Does your table clearly articulate the criteria, items, and number of points? Please see the example above.\n\n\nStudent submission (5-points)\n– Does your student submission earn a 70%–80% based on your rubric?\n– Are you clearly showing where your submission earns and loses points, based on the rubric items/tables you created?",
+    "objectID": "review2.html#type-i-error-1",
+    "href": "review2.html#type-i-error-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Type-I Error",
+    "text": "Type-I Error\nProbability that we reject \\(H_o\\) when \\(H_o\\) is actually true.\nHow do we calculate this probability?\n\\(\\alpha\\)\nWe set this!\n– What are you comfortable with?\n– What does your field consider acceptable?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#type-ii-error-and-power",
+    "href": "review2.html#type-ii-error-and-power",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Type-II Error and Power",
+    "text": "Type-II Error and Power\nWe can’t calculate these probabilities without talking about an effect size.\nWhat is an effect size?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#effect-size",
+    "href": "review2.html#effect-size",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Effect size",
+    "text": "Effect size\n“what if” value…\nA quantitative measure of the magnitude of a difference, relationship, or effect at the population.\n“what if” the true effect size at the population level is ___. What would my power be?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#example-1",
+    "href": "review2.html#example-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Example",
+    "text": "Example\nResearchers want to determine whether tomato plants grown with fertilizer produce a different average number of tomatoes than plants grown without fertilizer. Assume the conditions for a two-sample t-test are satisfied. Use a significance level of \\(\\alpha = 0.05\\). Based on previous literature, a significant difference would be an average of 3 tomatoes.\n\n\n\nSummary statistic\nFertilizer\nNo fertilizer\n\n\n\n\nSample size (\\(n\\))\n25\n25\n\n\nSample mean (\\(\\bar{x}\\))\n32 tomatoes\n27 tomatoes\n\n\nSample standard deviation (\\(s\\))\n6 tomatoes\n5 tomatoes",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#tomatoes",
+    "href": "review2.html#tomatoes",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Tomatoes",
+    "text": "Tomatoes\nBased on the context of the problem, what do we already know?\n– Probability of a Type-1 error\n– Probability of a Type-2 error\n– Power",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#tomatoes-1",
+    "href": "review2.html#tomatoes-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Tomatoes",
+    "text": "Tomatoes",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#power-and-type-ii",
+    "href": "review2.html#power-and-type-ii",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Power and Type II",
+    "text": "Power and Type II\nProbability of a Type-II error ~ 53.15%\nPower ~ 46.85%\nWhy is power small? What could we do to increase power?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#on-the-exam",
+    "href": "review2.html#on-the-exam",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "On the exam",
+    "text": "On the exam\nFor the homework, I had you actually calculate power/probability of a Type-II error with the help of software! This was to help improve your conceptual understanding of the material. You don’t have software for the exam.\n– Know the definitions\n– Know their relationships with each other\n– Know their relationships with other aspects of the study\n– Know the graph\n… along with things like effect sizes, etc.\nprevious slides",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#one-way-anova",
+    "href": "review2.html#one-way-anova",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "One-way ANOVA",
+    "text": "One-way ANOVA\nFor this study, each animal received one of three dose levels of vitamin C (0.5, 1, and 2 mg/day). The research was interested in seeing if the mean length of odontoblasts (cells responsible for tooth growth) differed based on the dose levels.\n\n\n# A tibble: 3 × 3\n   dose  mean    sd\n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   0.5  10.6  4.50\n2   1    19.7  4.42\n3   2    26.1  3.77\n\n\n\\(Ho:\\)\n\\(Ha:\\)",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#what-do-we-check",
+    "href": "review2.html#what-do-we-check",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "What do we check?",
+    "text": "What do we check?\n… and why do we check it?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#assumptions",
+    "href": "review2.html#assumptions",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Assumptions",
+    "text": "Assumptions\n– Independence\n– Normality (of residuals)\n– Equal variance",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#normality",
+    "href": "review2.html#normality",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Normality",
+    "text": "Normality",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#equal-variance",
+    "href": "review2.html#equal-variance",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Equal variance",
+    "text": "Equal variance",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#f-statistic",
+    "href": "review2.html#f-statistic",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "F-statistic",
+    "text": "F-statistic\nAnd we calculate an F-statistic that “follows a F-distribution.” This is what I mean…\nThe F-distribution describes the possible values of the F-statistic we COULD obtain from random samples, assuming the null hypothesis is true and the model assumptions hold.\nAlthough we only collect one sample, probability theory (hard math) tells us what the distribution of F-statistics would look like across all possible random samples. This gives us a reference distribution against which we can compare our observed F-statistic.",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#anova-1",
+    "href": "review2.html#anova-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Anova",
+    "text": "Anova\n\n\n            Df Sum Sq Mean Sq F value   Pr(&gt;F)    \ndose         2   2426    1213   67.42 9.53e-16 ***\nResiduals   57   1026      18                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nWhat is this telling us? Are we justified for TukeysHSD?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#tukeyshsd",
+    "href": "review2.html#tukeyshsd",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "TukeysHSD",
+    "text": "TukeysHSD\n\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = len ~ dose, data = ToothGrowth)\n\n$dose\n        diff       lwr       upr    p adj\n1-0.5  9.130  5.901805 12.358195 0.00e+00\n2-0.5 15.495 12.266805 18.723195 0.00e+00\n2-1    6.365  3.136805  9.593195 4.25e-05",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#tukeyshsd-1",
+    "href": "review2.html#tukeyshsd-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "TukeysHSD",
+    "text": "TukeysHSD\n– Why is Tukeys important?\n– What do we mean by familywise error rate?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#familywise-error-rate-1",
+    "href": "review2.html#familywise-error-rate-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Familywise error rate",
+    "text": "Familywise error rate\nFamilywise error rate is the probability of making at least one type-1 error… in the family of comparisons that we have. In this case, we have 3 comparisons. We know because k = 3 and\n\\(\\frac{3(3-1)}{2}\\) = 3\nWithout accounting for multiple comparisons, our familywise error rate would be much larger!",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#chi-square-test-for-independence",
+    "href": "review2.html#chi-square-test-for-independence",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Chi-square test for independence",
+    "text": "Chi-square test for independence\nThe scenario is whether preferred study method is associated with class year among college students.\n\n\n  Class_Year In_Person Online Group_Study\n1   Freshman        35     25          40\n2  Sophomore        28     32          30\n3     Junior        22     28          35\n4     Senior        30     20          25\n\n\n– Why is this chi-square?\n– Why is this chi-square test for independence?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#independence",
+    "href": "review2.html#independence",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Independence",
+    "text": "Independence\n\\(Ho:\\)\n\\(Ha:\\)",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#independence-1",
+    "href": "review2.html#independence-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Independence",
+    "text": "Independence\n\\(Ho:\\) Class year and study type are independent at the population level\n\\(Ha:\\) Class year and study type are dependent at the population level",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#assumptions-1",
+    "href": "review2.html#assumptions-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Assumptions",
+    "text": "Assumptions\nWhat are they?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#assumptions-2",
+    "href": "review2.html#assumptions-2",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Assumptions",
+    "text": "Assumptions\n– Independence\n– All expected counts &gt; 5 or “average expected cell count is &gt; 5.”",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#expected-counts",
+    "href": "review2.html#expected-counts",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Expected counts",
+    "text": "Expected counts",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#expected-formula",
+    "href": "review2.html#expected-formula",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Expected Formula",
+    "text": "Expected Formula\n\nThis is on your formula sheet",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#lets-do-the-test",
+    "href": "review2.html#lets-do-the-test",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Let’s do the test!",
+    "text": "Let’s do the test!",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#p-value",
+    "href": "review2.html#p-value",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "p-value",
+    "text": "p-value\nWhat would the p-value look like? Draw it!\nApplet",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#results",
+    "href": "review2.html#results",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Results",
+    "text": "Results\n\n\n\n    Pearson's Chi-squared test\n\ndata:  study_table\nX-squared = 6.1653, df = 6, p-value = 0.4049\n\n\nWhat does this tell us?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#chi-square-goodness-of-fit-test",
+    "href": "review2.html#chi-square-goodness-of-fit-test",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Chi-square goodness of fit test",
+    "text": "Chi-square goodness of fit test\nHow is goodness of fit different than a test for independence?",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#chi-square-goodness-of-fit-test-1",
+    "href": "review2.html#chi-square-goodness-of-fit-test-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Chi-square goodness of fit test",
+    "text": "Chi-square goodness of fit test\nOne variable vs hypothesized (expected) values from a distribution!",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#example-2",
+    "href": "review2.html#example-2",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Example",
+    "text": "Example\n\n\n Freshman Sophomore    Junior    Senior \n       35        28        22        30 \n\n\nMaybe we were interested in seeing if there are an equal number of students in each grade. We could write this as:\n\\(Ho:\\) - the observed counts/frequencies follow a uniform theoretical distribution. All 4 grades have an equal probability 1/4\n\\(Ha:\\) - The observed frequencies do not follow the uniform distribution.",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#assumptions-3",
+    "href": "review2.html#assumptions-3",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Assumptions",
+    "text": "Assumptions\nWe check the same assumptions!\n– Expected counts &gt; 5; “average expected cell count is &gt; 5.”\n– Independence\nPut expected counts are now calculated differently…",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#expected-counts-1",
+    "href": "review2.html#expected-counts-1",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Expected counts",
+    "text": "Expected counts\nThese are calculated as \\(n*p_i\\)\nWhere n is our sample size, and \\(p_i\\) is the probability for each group under the assumption of the null hypothesis",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#expected-vs-observed",
+    "href": "review2.html#expected-vs-observed",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Expected vs Observed",
+    "text": "Expected vs Observed\n35 vs (105*.25 = 26.25)\n28 vs (105*.25 = 26.25)\n22 vs (105*.25 = 26.25)\n30 vs (105*.25 = 26.25)",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#formal-test",
+    "href": "review2.html#formal-test",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "Formal test",
+    "text": "Formal test\nAnd the chi-square test statistic is calculated the same as before! However, the degrees of freedom for the distribution and different. We don’t have rows and columns. We estimate the degrees of freedom by k-1 = 4-1 = 3\n\n\n\n    Chi-squared test for given probabilities\n\ndata:  observed\nX-squared = 3.0174, df = 3, p-value = 0.389",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "review2.html#in-summary",
+    "href": "review2.html#in-summary",
+    "title": "Finish FamilyWise Error Rate Corrections",
+    "section": "In Summary",
+    "text": "In Summary\nHypothesis testing\n– Identify the scenario\n– Set up \\(Ho\\) and \\(Ha\\)\n– Check assumptions\n– Calculate your test statistic\n– Calculate p-value\n– Talk about it",
+    "crumbs": [
+      "Slides",
+      "Day-19"
+    ]
+  },
+  {
+    "objectID": "rubric-assignment-format.html",
+    "href": "rubric-assignment-format.html",
+    "title": "Rubric Format Example",
+    "section": "",
+    "text": "This document is meant to serve as a guide on how I would recommend formatting your rubric assignment. As a reminder, this assignment is worth 5% of your grade. Please note that this is a hand-written assignment.\n– Clearly label each section. We have two sections for this assignment:\n\nSection-1: Solutions and Rubric\nSection-2: Student work\n\nNext, have clearly labeled sub-sections. An example can be seen below:\n\nSection-1\nContext: This is a One-Way-ANOVA problem (please state the topic you chose, and write your realistic scenario underneath)\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\npart a\nLorem ipsum dolor sit amet, consectetur adipiscing elit. (write your question)\nWrite your solutions underneath\nUnder your solutions, put your rubric table:\n\n\n\n\n\n\n\nCriteria: Identify the main objective of the question\nPoints = define your number of points\n\n\n\n\nHave partial credit opportunities\n-0.5\n\n\nThis means have a breakdown of how a student can earn full credit\n-0.5\n\n\nThese do not need to always be -0.5\n-1.0\n\n\nIt is up to you. However, be reasonable, and provide a sufficient amount of detail\n-0.5\n\n\n\n\n\npart b\nLorem ipsum dolor sit amet, consectetur adipiscing elit. (write your question)\nWrite your solutions underneath\nAgain, put your rubric table below.\nPlease note: I am not requireing exactly d or e number of parts to your question. Have an appropriate number of parts that identifies the core components of the context that you pick. Your assignment should be out of 20-points.\n\n\n\nSection-2\n\npart a (example)\n\\(Ho: \\bar{x} = 7\\)\n\\(Ha: \\bar{x} &gt; 7\\)\nStudent earned +1.5 points. Student correctly identified the null/alternative value, but did not use the correct notation (-1), and the alternative sign is incorrect (-.5).\nPlease make sure to:\n– Label your question, and provide the mock student solution.\n– Assign the solution the correct number of points and justify why points were taken off using the rubric you provided in section-1.\nDo this for each part of your multi-part question.\nAs always, please let me know if you have any questions!",
     "crumbs": [
       "Assignments",
-      "Rubric Assignment"
+      "Rubric Assignment Format"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#checklist",
+    "href": "twowayII.html#checklist",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Checklist",
+    "text": "Checklist\n– No homework-3 until next week\n– Rubric assignment is out now!\n– Don’t forget about the Statistics Experience (12-1)\n– Final Exam\n&gt; December 3rd 3:30pm in our classroom\n&gt; Cumulative with a focus on unit-III\n– I’m currently grading Exam-2 (~2 week turn around)",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#warm-up",
+    "href": "twowayII.html#warm-up",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Warm-up",
+    "text": "Warm-up\nA logistics company wants to investigate whether the average delivery time differs among three shipping services.\nThe company randomly selects 60 packages and assigns them to one of three shipping services:\n\nService A: Standard ground shipping\nService B: Priority shipping\nService C: Express shipping\nService D: Overnight air freight delivery The company records the number of hours it takes for each package to reach its destination.\n\nWrite out the population model in proper notation",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#warm-up-1",
+    "href": "twowayII.html#warm-up-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Warm-up",
+    "text": "Warm-up\nNow, write out the estimated model!\n\n\n# A tibble: 4 × 3\n  term             estimate std.error\n  &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)         20.0      0.680\n2 serviceOvernight    -9.13     0.962\n3 servicePriority     11.4      0.962\n4 serviceStandard     29.7      0.962",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#two-way-anova",
+    "href": "twowayII.html#two-way-anova",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Two-way ANOVA",
+    "text": "Two-way ANOVA\nWith a quantitative response…\n– Difference in means\n  &gt; single categorical explanatory variable with 2 levels \n  \n– One way ANOVA\n  &gt; single categorical explanatory variable with 2 or more levels\n  \n– Two way ANOVA\n  &gt; two categorical explanatory variables with 2 or more levels!",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#benefits",
+    "href": "twowayII.html#benefits",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Benefits",
+    "text": "Benefits\n– We can “control” or “account” for another variable.\n– We can ask and answer more complicated questions.\n– Move variation from the residual (error term) to the FIT (model). This helps us understand more about our response variable, and increases the power of our test.",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#research-question",
+    "href": "twowayII.html#research-question",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Research Question",
+    "text": "Research Question\nBack to the Penguins data set!\nI’m interested in if the sex of the penguin can help explain the differences we see if penguins’ flipper length. However, we are going to investigate if the relationship between Species and Flipper length depends on the Sex of the Penguin.\nPractice: How is this different then before?",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#scenario",
+    "href": "twowayII.html#scenario",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Scenario",
+    "text": "Scenario\n\n\n# A tibble: 6 × 4\n  island    sex    Mean_Flipper_Length     N\n  &lt;fct&gt;     &lt;fct&gt;                &lt;dbl&gt; &lt;int&gt;\n1 Biscoe    female                206.    80\n2 Biscoe    male                  213.    83\n3 Dream     female                190.    61\n4 Dream     male                  196.    62\n5 Torgersen female                188.    24\n6 Torgersen male                  195.    23\n\n\nResponse variable: flipper length\nExplanatory variables: Species, Sex",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#terms",
+    "href": "twowayII.html#terms",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Terms",
+    "text": "Terms\nAdditive -\nInteraction -",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#terms-1",
+    "href": "twowayII.html#terms-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Terms",
+    "text": "Terms\nAdditive - The relationship between \\(X_1\\) and \\(Y\\) does not change based on the levels of \\(X_2\\)\nAdditive - The relationship between species and flipper length does not change based on the levels of sex",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#terms-2",
+    "href": "twowayII.html#terms-2",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Terms",
+    "text": "Terms\nInteraction - The relationship between \\(X_1\\) and \\(Y\\) DOES change based on the levels of \\(X_2\\)\nInteraction - The relationship between species and flipper length DOES change based on the levels of sex",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#additive",
+    "href": "twowayII.html#additive",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Additive",
+    "text": "Additive",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#interaction-model",
+    "href": "twowayII.html#interaction-model",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Interaction model",
+    "text": "Interaction model",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#the-difference",
+    "href": "twowayII.html#the-difference",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "The difference",
+    "text": "The difference\nThe difference between the Additive Model and the Interaction Model in a Two-Way ANOVA is visually represented on an interaction plot by whether the lines connecting the cell means are parallel or non-parallel.\nAdditive: The effect of Sex is constant across all levels of Species (the distance within species across sex is the same)\nInteraction: The effect of Sex depends across all levels of Species",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#research-questions",
+    "href": "twowayII.html#research-questions",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Research Questions",
+    "text": "Research Questions\n– We can test for the significance of main effect X1 on Y (given X2 is in the model)\n– We can test for the significance of main effect B (given A is in the model)\n– We can test for the interaction effect (AB)",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#research-questions-1",
+    "href": "twowayII.html#research-questions-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Research Questions",
+    "text": "Research Questions\n– We can test for the significance of main effect species on flipper length (given sex is in the model)\n– We can test for the significance of main effect sex on flipper length (given species is in the model)\n– We can test for the interaction effect of sex and species on flipper length",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#context",
+    "href": "twowayII.html#context",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Context",
+    "text": "Context\nIs there an interaction between Species, Flipper Length, and Sex?",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#hypotheses",
+    "href": "twowayII.html#hypotheses",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\\(Ho:\\) The effect of Sex is the same at all levels of factor Species on flipper length at the population level\n\\(Ha:\\) The effect of Sex depends on the levels of Species on flipper length at the population level",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#model",
+    "href": "twowayII.html#model",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Model",
+    "text": "Model\nInteraction model: \\[\\mathbf{Y_{ijk} = \\mu + \\alpha_j + \\beta_k + (\\alpha\\beta)_{jk} + \\epsilon_{ijk}}\\]\nAdditive model: \\[\\mathbf{Y_{ijk} = \\mu + \\alpha_j + \\beta_k  + \\epsilon_{ijk}}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#the-model-terms",
+    "href": "twowayII.html#the-model-terms",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "The model terms",
+    "text": "The model terms\n\n\n\n\n\n\n\n\nTerm\nDescription\nRole in the Interaction Model\n\n\n\n\n\\(Y_{ijk}\\)\nThe \\(i^{th}\\) observation in the cell defined by level \\(j\\) of Factor A and level \\(k\\) of Factor B.\nThe continuous response variable being measured.\n\n\n\\(\\mu\\)\nThe mean of the baseline group.\n.\n\n\n\\(\\alpha_i\\)\nThe Main Effect of Factor A at level \\(j\\).\nThe deviation of the mean for Factor A (holding B constant) from the baseline.\n\n\n\\(\\beta_j\\)\nThe Main Effect of Factor B at level \\(k\\).\nThe deviation of the mean for Factor B (holding A constant) from the baseline.",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#the-model-terms-1",
+    "href": "twowayII.html#the-model-terms-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "The model terms",
+    "text": "The model terms\n\n\n\n\n\n\n\n\nTerm\nDescription\nRole in the Interaction Model\n\n\n\n\n\\((\\alpha\\beta)_{ij}\\)\nThe Interaction Effect for the cell \\((i, j)\\).\nThe non-additive effect specific to that combination of factor levels. This is the core term that distinguishes the interaction model.\n\n\n\\(\\epsilon_{ijk}\\)\nThe Random Error term.\nThe unexplained, random variation, assumed to be \\(\\sim N(0, \\sigma^2)\\).",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#write-out-the-estimated-models",
+    "href": "twowayII.html#write-out-the-estimated-models",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Write out the estimated models",
+    "text": "Write out the estimated models\nAdditive model\n\n\n# A tibble: 4 × 5\n  term             estimate std.error statistic   p.value\n  &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)        187.       0.568    328.   0        \n2 speciesChinstrap     5.72     0.841      6.80 4.79e- 11\n3 speciesGentoo       27.0      0.707     38.2  4.08e-123\n4 sexmale              6.85     0.628     10.9  7.11e- 24",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#visually",
+    "href": "twowayII.html#visually",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Visually",
+    "text": "Visually",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#write-out-the-estimated-models-1",
+    "href": "twowayII.html#write-out-the-estimated-models-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Write out the estimated models",
+    "text": "Write out the estimated models\nInteraction model\n\n\n# A tibble: 6 × 5\n  term                     estimate std.error statistic  p.value\n  &lt;chr&gt;                       &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)                188.       0.662    284.   0       \n2 speciesChinstrap             3.94     1.17       3.36 8.84e- 4\n3 speciesGentoo               24.9      0.995     25.0  4.93e-78\n4 sexmale                      4.62     0.936      4.93 1.30e- 6\n5 speciesChinstrap:sexmale     3.56     1.66       2.14 3.28e- 2\n6 speciesGentoo:sexmale        4.22     1.40       3.02 2.74e- 3",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#hypotheses-1",
+    "href": "twowayII.html#hypotheses-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nWe now want to test to see if the more complicated model is worth it (is there an interaction present)\n\\(H_0: (\\alpha\\beta)_{jk} = 0 \\text{ for all } j \\text{ and } k\\)\n\\(H_a: (\\alpha\\beta)_{ij} \\neq 0 \\text{ for at least one pair of } (j, k)\\)\nwhere i = Adelie, Chinstrap, and Gentoo\nwhere j = Male, Female",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#assumptions",
+    "href": "twowayII.html#assumptions",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Assumptions",
+    "text": "Assumptions\n– Independence\n– Normality or residuals\n– Equal Variance",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#residuals",
+    "href": "twowayII.html#residuals",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Residuals",
+    "text": "Residuals\nObserved - Predicted still applies!",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#normality-of-residuals",
+    "href": "twowayII.html#normality-of-residuals",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Normality of residuals",
+    "text": "Normality of residuals",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#equal-variance",
+    "href": "twowayII.html#equal-variance",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Equal Variance",
+    "text": "Equal Variance",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#our-statistic",
+    "href": "twowayII.html#our-statistic",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Our statistic",
+    "text": "Our statistic\nVariance between vs variance within\nBecause we are testing the interaction term, the between is the interaction term vs the additive terms\n\\[F_{A \\times B} = \\frac{MS_{A \\times B}}{MS_{Error}}\\]\n\\[MS_{A \\times B} = \\frac{SS_{A \\times B}}{df_{A \\times B}}\\]\nSS measures how much the mean of a specific combination of variables deviates from the mean predicted by the simple additive model.",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#ss-axb",
+    "href": "twowayII.html#ss-axb",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "SS axb",
+    "text": "SS axb\nLook at the difference between the predicted mean in the additive model vs the actual mean (interaction model)\nTake the values, square them, and sum them up!",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#statistic",
+    "href": "twowayII.html#statistic",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Statistic",
+    "text": "Statistic\n\\[MS_{A \\times B} = \\frac{SS_{A \\times B}}{df_{A \\times B}}\\]\n\\[\\mathbf{df_{A \\times B} = (a - 1)(b - 1)}\\]\na is the number of levels for A b is the number of levels for B",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#statistic-mse",
+    "href": "twowayII.html#statistic-mse",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Statistic (MSE)",
+    "text": "Statistic (MSE)\n\\[F_{A \\times B} = \\frac{MS_{A \\times B}}{MS_{Error}}\\]\n\\[\\mathbf{MS_{Error} = \\frac{SS_{Error}}{df_{Error}}}\\]\n\\[\\mathbf{SS_{Error} = \\sum_{i=1}^{a} \\sum_{j=1}^{b} \\sum_{k=1}^{n} (Y_{ijk} - \\bar{Y}_{ij})^2}\\]\n\\[\\mathbf{df_{Error} = ab(n - 1)}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#visually-1",
+    "href": "twowayII.html#visually-1",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Visually",
+    "text": "Visually\n\\[\\mathbf{SS_{Error} = \\sum_{i=1}^{a} \\sum_{j=1}^{b} \\sum_{k=1}^{n} (Y_{ijk} - \\bar{Y}_{ij})^2}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#results",
+    "href": "twowayII.html#results",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Results",
+    "text": "Results\n\n\n             Df Sum Sq Mean Sq F value  Pr(&gt;F)    \nspecies       2  50526   25263 789.912 &lt; 2e-16 ***\nsex           1   3906    3906 122.119 &lt; 2e-16 ***\nspecies:sex   2    329     165   5.144 0.00631 ** \nResiduals   327  10458      32                    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nWhat is the distribution our F-statistic follows?",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#distribution",
+    "href": "twowayII.html#distribution",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Distribution",
+    "text": "Distribution\nF-distribution\n\\[\\mathbf{df_{A \\times B} = (a - 1)(b - 1)}\\]\n\\[\\mathbf{df_{Error} = ab(n - 1)}\\]",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#what-does-this-tell-us",
+    "href": "twowayII.html#what-does-this-tell-us",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "What does this tell us?",
+    "text": "What does this tell us?\n– Reject the null hypothesis\n– Strong evidence to conclude that the relationship between Species and Flipper Length does depend on the Sex of the Penguin.",
+    "crumbs": [
+      "Slides",
+      "Day-21"
+    ]
+  },
+  {
+    "objectID": "twowayII.html#next-time",
+    "href": "twowayII.html#next-time",
+    "title": "ST312: Two-way ANOVA (13)",
+    "section": "Next time",
+    "text": "Next time\nTest for the main effects",
+    "crumbs": [
+      "Slides",
+      "Day-21"
     ]
   }
 ]

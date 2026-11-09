@@ -1,0 +1,20 @@
+---
+title: "Rubric Assignment"
+format: pdf
+---
+
+## Section - 1 
+
+-- Topic chosen 
+
+-- Questions
+
+-- Solutions 
+
+-- Rubric 
+
+\newpage
+
+## Section - 2
+
+-- Graded student example 
