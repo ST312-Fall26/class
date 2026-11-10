@@ -170,6 +170,10 @@
 <p><span class="math inline">\(Ho:\)</span> The effect of Sex is the same at all levels of factor Species on flipper length at the population level</p>
 <p><span class="math inline">\(Ha:\)</span> The effect of Sex depends on the levels of Species on flipper length at the population level</p>
 </section>
+<section id="picture" class="slide level2">
+<h2>Picture</h2>
+
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="model" class="slide level2 smaller">
 <h2>Model</h2>
 <p>Interaction model: <span class="math display">\[\mathbf{Y_{ijk} = \mu + \alpha_j + \beta_k + (\alpha\beta)_{jk} + \epsilon_{ijk}}\]</span></p>
@@ -260,15 +264,15 @@
 <h2>Residuals</h2>
 <p>Observed - Predicted still applies!</p>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="normality-of-residuals" class="slide level2">
 <h2>Normality of residuals</h2>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="equal-variance" class="slide level2">
 <h2>Equal Variance</h2>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 <section id="our-statistic" class="slide level2 smaller">
 <h2>Our statistic</h2>
 <p>Variance <strong>between</strong> vs variance <strong>within</strong></p>
@@ -282,7 +286,7 @@
 <p>Look at the difference between the predicted mean in the additive model vs the actual mean (interaction model)</p>
 <p>Take the values, square them, and sum them up!</p>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
 <section id="ssaxb" class="slide level2 smaller">
 <h2>SSaxb</h2>
 <p>The interaction sum of squares measures how much the cell means deviate from what we would predict if the effects of the two factors were simply additive.</p>
@@ -312,7 +316,7 @@
 <h2>Visually</h2>
 <p><span class="math display">\[\mathbf{SS_{Error} = \sum_{i=1}^{a} \sum_{j=1}^{b} \sum_{k=1}^{n} (Y_{ijk} - \bar{Y}_{ij})^2}\]</span></p>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
 <section>
 <section id="questions" class="title-slide slide level1 center">
 <h1>Questions?</h1>
@@ -364,11 +368,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <section id="what-does-this-look-like" class="slide level2">
 <h2>What does this look like?</h2>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
 <section id="vs" class="slide level2">
 <h2>vs</h2>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
 <section id="model-notation" class="slide level2">
 <h2>Model notation</h2>
 <p>Additive model: <span class="math display">\[\mathbf{Y_{ijk} = \mu + \alpha_i + \beta_j  + \epsilon_{ijk}}\]</span></p>
@@ -387,11 +391,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <section id="equal-variance-1" class="slide level2">
 <h2>Equal Variance</h2>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="normality" class="slide level2">
 <h2>Normality</h2>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
 <section id="f-statistic" class="slide level2">
 <h2>F-statistic</h2>
 <p><span class="math display">\[F_A = \frac{\mathbf{MS}_A}{\mathbf{MS}_{Error}}\]</span></p>
@@ -402,15 +406,15 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <section id="section" class="slide level2">
 <h2></h2>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
 <section id="section-1" class="slide level2">
 <h2></h2>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
 <section id="section-2" class="slide level2">
 <h2></h2>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
 <section id="f-statistic-1" class="slide level2">
 <h2>F-statistic</h2>
 <p>The <span class="math inline">\(F\)</span>-test for Factor A determines if the variation explained by Factor A (<span class="math inline">\(MS_A\)</span>) is significantly greater than the variation due to random error (<span class="math inline">\(MS_{Error}\)</span>).</p>

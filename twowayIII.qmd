@@ -70,6 +70,64 @@ $Ho:$ The effect of Sex is the same at all levels of factor Species on flipper l
 
 $Ha:$ The effect of Sex depends on the levels of Species on flipper length at the population level
 
+## Picture
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Load and fit the Interaction Model
+penguins_data <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+model_interaction <- lm(flipper_length_mm ~ species * sex, data = penguins_data)
+
+# 2. Create Prediction Grid for fitted lines
+prediction_grid_interaction <- expand.grid(
+  species = unique(penguins_data$species),
+  sex = unique(penguins_data$sex)
+)
+prediction_grid_interaction$Predicted_FL <- predict(model_interaction, newdata = prediction_grid_interaction)
+
+# 3. Select one observation to highlight
+highlight_observation <- penguins_data %>%
+  filter(species == "Gentoo", sex == "female") %>%
+  slice(5) 
+
+predicted_for_highlight <- prediction_grid_interaction %>%
+  filter(species == highlight_observation$species, sex == highlight_observation$sex) %>%
+  pull(Predicted_FL)
+
+# 4. Generate the Plot
+ggplot(penguins_data, aes(x = species, y = flipper_length_mm, color = sex)) +
+  
+  # A. Plot all original data points with jitter (for context)
+  geom_point(position = position_jitter(width = 0.2), 
+             size = 1.5, 
+             alpha = 0.5) +
+  
+  # B. Add the non-parallel fitted lines
+  geom_line(data = prediction_grid_interaction, 
+            aes(y = Predicted_FL, group = sex), 
+            linewidth = 1.2) +
+  
+  # C. Add points for the *predicted* means (the fitted line's points)
+  geom_point(data = prediction_grid_interaction, 
+             aes(y = Predicted_FL, group = sex), 
+             size = 4, 
+             shape = 15) +
+  theme_minimal() +
+  scale_color_manual(values = c("female" = "#F8766D", "male" = "#00BFC4")) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5),
+    legend.position = "bottom"
+  )
+```
+
+
+
 ## Model{.smaller}
 
 Interaction model: $$\mathbf{Y_{ijk} = \mu + \alpha_j + \beta_k + (\alpha\beta)_{jk} + \epsilon_{ijk}}$$
