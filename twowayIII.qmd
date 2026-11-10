@@ -330,19 +330,15 @@ plot_data_full <- means_data %>%
 # 3. Create the ggplot object and assign it to a variable 'p'
 p <- ggplot(plot_data_full, aes(x = species, group = sex, color = sex)) +
   
-  # A. Grand Mean as a horizontal reference line
-  geom_hline(aes(yintercept = grand_mean), 
-             linetype = "dotted", color = "grey", linewidth = 0.8) +
-  annotate("text", x = 0.7, y = grand_mean + 1, label = expression(mu), color = "grey", size = 4) +
   
   # B. Plot the OBSERVED Cell Means (solid lines and circles)
   geom_line(aes(y = cell_mean), linewidth = 1.2, linetype = "solid") +
-  geom_point(aes(y = cell_mean), size = 5, shape = 19) + 
+  geom_point(aes(y = cell_mean), size = 2, shape = 19) + 
   
   # C. Plot the ADDITIVE Model's Predicted Cell Means (dashed lines and squares)
   geom_line(aes(y = additive_prediction, group = sex, color = sex), 
             linewidth = 1.2, linetype = "dashed") +
-  geom_point(aes(y = additive_prediction), size = 5, shape = 15) + 
+  geom_point(aes(y = additive_prediction), size = 3, shape = 15) + 
   
   # D. Highlight the INTERACTION COMPONENT FOR ADELIE ONLY
   geom_segment(data = plot_data_full %>% filter(species == "Adelie"), 
@@ -350,7 +346,7 @@ p <- ggplot(plot_data_full, aes(x = species, group = sex, color = sex)) +
                    xend = species, 
                    y = cell_mean, 
                    yend = additive_prediction),
-               color = "black", linewidth = 2, linetype = "solid") + 
+               color = "black", linewidth = 1, linetype = "solid") + 
   
   labs(
     title = "Visualizing the Interaction Sum of Squares (SS_AxB)",
@@ -541,6 +537,9 @@ For demonstration purposes, we are going to remove the interaction term from the
 library(tidyverse)
 library(palmerpenguins)
 
+library(tidyverse)
+library(palmerpenguins)
+
 # Remove missing observations
 penguins_clean <- penguins %>%
   drop_na(flipper_length_mm, sex, species)
@@ -556,39 +555,42 @@ pred_add <- expand_grid(
 ) %>%
   mutate(predicted = predict(model_add, newdata = .))
 
-# Predicted means for Adelie
+# Predicted means for Female Adelie and Chinstrap
 adelie_female <- pred_add %>%
   filter(species == "Adelie", sex == "female") %>%
   pull(predicted)
 
-adelie_male <- pred_add %>%
-  filter(species == "Adelie", sex == "male") %>%
-  pull(predicted)
-
-# Plot 1: Additive model
+# Plot: Additive Model
 plot_add <- ggplot(pred_add,
                    aes(x = species, y = predicted,
                        color = sex, group = sex)) +
+
   geom_line(linewidth = 1.2) +
   geom_point(size = 3) +
+
+  # Horizontal arrow showing the main effect of Species
   annotate("segment",
-           x = 1, xend = 1,
-           y = adelie_female, yend = adelie_male,
+           x = 1, xend = 3,
+           y = adelie_female,
+           yend = adelie_female,
            arrow = arrow(length = unit(0.2, "cm")),
            linewidth = 1,
            color = "black") +
+
   annotate("text",
-           x = 1.25,
-           y = (adelie_female + adelie_male) / 2,
-           label = "Main effect of Sex",
-           hjust = 0,
+           x = 2,
+           y = adelie_female + 8,
+           label = "Main effect of Species",
+           hjust = 0.5,
            size = 3.5) +
+
   labs(
     title = "Additive Model: Flipper Length ~ Sex + Species",
     x = "Species",
     y = "Predicted Flipper Length (mm)",
     color = "Sex"
   ) +
+
   theme_minimal()
 
 plot_add
@@ -598,32 +600,34 @@ plot_add
 
 ```{r}
 #| echo: false
-# Model without Sex
-model_species <- lm(flipper_length_mm ~ species,
-                    data = penguins_clean)
+# Model without Species
+model_sex <- lm(flipper_length_mm ~ sex,
+                data = penguins_clean)
 
-# Predicted means for each species
-pred_species <- data.frame(
-  species = levels(penguins_clean$species)
+# Predicted means for each species and sex
+pred_sex <- expand_grid(
+  species = levels(penguins_clean$species),
+  sex = levels(penguins_clean$sex)
 ) %>%
-  mutate(predicted = predict(model_species, newdata = .))
+  mutate(predicted = predict(model_sex, newdata = .))
 
-# Plot 2: Model without Sex
-plot_species <- ggplot(pred_species,
-                       aes(x = species, y = predicted,
-                           group = 1)) +
-  geom_line(linewidth = 1.2, color = "blue") +
-  geom_point(size = 3, color = "blue") +
+# Plot: Model without Species
+plot_sex <- ggplot(pred_sex,
+                   aes(x = species, y = predicted,
+                       color = sex, group = sex)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 3) +
   labs(
-    title = "Model: Flipper Length ~ Species",
-    subtitle = "Sex is not included in the model",
+    title = "Model: Flipper Length ~ Sex",
+    subtitle = "Species is not included in the model",
     x = "Species",
-    y = "Predicted Flipper Length (mm)"
+    y = "Predicted Flipper Length (mm)",
+    color = "Sex"
   ) +
   theme_minimal()
 
-# Display both plots
-plot_species
+# Display plot
+plot_sex
 ```
 
 
@@ -812,6 +816,7 @@ ggplot(plot_data, aes(x = species, y = flipper_length_mm)) +
 
 
 ```{r}
+#| echo: false
 library(tidyverse)
 library(palmerpenguins)
 
@@ -899,6 +904,131 @@ ggplot(plot_data, aes(x = species, y = flipper_length_mm)) +
   theme_minimal()
 ```
 
+## 
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(palmerpenguins)
+
+# 1. Prepare Data
+penguins_clean <- penguins %>%
+  drop_na(flipper_length_mm, species, sex)
+
+# Calculate Grand Mean
+grand_mean <- mean(penguins_clean$flipper_length_mm)
+
+# Calculate Marginal Species Means
+marginal_species_means <- penguins_clean %>%
+  group_by(species) %>%
+  summarise(
+    marginal_mean_flipper = mean(flipper_length_mm),
+    .groups = "drop"
+  )
+
+# Calculate Cell Means (Species x Sex)
+cell_means <- penguins_clean %>%
+  group_by(species, sex) %>%
+  summarise(
+    cell_mean_flipper = mean(flipper_length_mm),
+    .groups = "drop"
+  )
+
+# Join Means Back to Plot Data
+plot_data <- penguins_clean %>%
+  left_join(marginal_species_means, by = "species") %>%
+  mutate(grand_mean = grand_mean) %>%
+  left_join(cell_means, by = c("species", "sex"))
+
+# Select One Example Observation for Each Species x Sex Combination
+example_points <- plot_data %>%
+  group_by(species, sex) %>%
+  slice(1) %>%
+  ungroup()
+
+# 2. Generate Plot
+ggplot(plot_data, aes(x = species, y = flipper_length_mm)) +
+
+  # Individual observations
+  geom_point(
+    aes(color = sex),
+    position = position_jitter(width = 0.2),
+    alpha = 0.5,
+    size = 1.5
+  ) +
+
+  # Cell Means (Species x Sex)
+  geom_segment(
+    data = cell_means,
+    aes(
+      x = as.numeric(species) - 0.25,
+      xend = as.numeric(species) + 0.25,
+      y = cell_mean_flipper,
+      yend = cell_mean_flipper,
+      color = sex
+    ),
+    inherit.aes = FALSE,
+    linewidth = 1.2
+  ) +
+
+  # Grand Mean
+  geom_hline(
+    yintercept = grand_mean,
+    color = "black",
+    linewidth = 1,
+    linetype = "dashed"
+  ) +
+
+  # Marginal Species Means
+  geom_segment(
+    data = marginal_species_means,
+    aes(
+      y = marginal_mean_flipper,
+      yend = marginal_mean_flipper,
+      x = as.numeric(species) - 0.4,
+      xend = as.numeric(species) + 0.4
+    ),
+    inherit.aes = FALSE,
+    color = "black",
+    linewidth = 3
+  ) +
+
+  # Example SSE Arrows: Observation to Corresponding Cell Mean
+  geom_segment(
+    data = example_points,
+    aes(
+      x = species,
+      xend = species,
+      y = flipper_length_mm,
+      yend = cell_mean_flipper,
+      color = sex
+    ),
+    inherit.aes = FALSE,
+    linewidth = 1,
+    arrow = arrow(
+      length = unit(0.12, "inches"),
+      ends = "both"
+    )
+  ) +
+
+  # Highlight Example Observations
+  geom_point(
+    data = example_points,
+    aes(x = species, y = flipper_length_mm, color = sex),
+    inherit.aes = FALSE,
+    size = 4
+  ) +
+
+  labs(
+    title = "Sums of Squares Error (SSE)",
+    subtitle = "Arrows illustrate the distance from individual observations to their Species x Sex cell means",
+    x = "Penguin Species",
+    y = "Flipper Length (mm)",
+    color = "Sex"
+  ) +
+
+  theme_minimal()
+```
 
 
 
@@ -909,107 +1039,7 @@ The $F$-test for Factor A determines if the variation explained by Factor A ($MS
 $$F_A = \frac{\text{Variability due to Factor A}}{\text{Variability due to Random Error}}$$
 
 
-## Compare this to one-way ANOVA{.smaller}
-
-$$\mathbf{MS}_A = \frac{\mathbf{SS}_A}{\mathbf{df}_A}$$
-
-$$\mathbf{MS}_{Error} = \frac{\mathbf{SS}_{Error}}{\mathbf{df}_{Error}}$$
-
-```{r}
-#| echo: false
-library(tidyverse)
-library(palmerpenguins)
-
-# --- 1. Prepare Data and Calculate Means ---
-penguins_clean <- penguins %>%
-  drop_na(flipper_length_mm, species, sex) 
-
-grand_mean <- mean(penguins_clean$flipper_length_mm)
-
-# We still use the Marginal Means of Species
-marginal_species_means <- penguins_clean %>%
-  group_by(species) %>%
-  summarise(
-    marginal_mean_flipper = mean(flipper_length_mm),
-    .groups = 'drop'
-  )
-
-plot_data <- penguins_clean %>%
-  left_join(marginal_species_means, by = "species") %>%
-  mutate(grand_mean = grand_mean)
-
-# --- 2. Generate the Minimalist ggplot Visualization ---
-ggplot(plot_data, aes(x = species, y = flipper_length_mm)) +
-  
-  # A. Plot individual data points (Single color, no 'sex' aesthetic)
-  geom_point(color = "gray40", 
-             position = position_jitter(width = 0.2), 
-             alpha = 0.6, size = 1.5) +
-  
-  # B. Draw the Grand Mean (Y-bar)
-  geom_hline(aes(yintercept = grand_mean), 
-             color = "red", linewidth = 1.2, linetype = "dashed") +
-  
-  # C. Draw the Marginal Species Means (Y-bar_i dot) as thick black segments
-  geom_segment(data = marginal_species_means,
-               aes(y = marginal_mean_flipper, yend = marginal_mean_flipper, 
-                   x = as.numeric(species) - 0.4, 
-                   xend = as.numeric(species) + 0.4),
-               inherit.aes = FALSE,
-               color = "black", linewidth = 3) +
-  
-  # D. Labels (X and Y axis labels restored, Color/Legend label removed)
-  labs(
-    x = "Penguin Species (Factor A)",
-    y = "Flipper Length (mm)"
-  ) +
-  theme_minimal() +
-  # Remove title/subtitle
-  theme(plot.title = element_blank(),
-        plot.subtitle = element_blank())
-```
-
-
-## one vs two 
-
-What's different between one-way and two-way?
-
-$$\mathbf{MS}_A = \frac{\mathbf{SS}_A}{\mathbf{df}_A}$$
-
-$$\mathbf{MS}_{Error} = \frac{\mathbf{SS}_{Error}}{\mathbf{df}_{Error}}$$
-
-
-
-## Takeaway
-
-SSa is the same, regardless if we have B in the model or not. 
-
-However! The SS error term is different (smaller), giving us a more direct (precise?) comparison between A and the response.
-
-## Precision
-
-What is precision in ANOVA?
-
-## Precision
-
-It's all about reducing the standard error! 
-
-We typically don't see the SE in the ANOVA table, but here it is: 
-
-$$\mathbf{SE}(\mathbf{\bar{Y}_1}) = \sqrt{\frac{\mathbf{MS}_{\text{Error}}}{n_1}}$$
-
-it's a function of the MS error! Which we saw decrease in going from one-way to two-way ANOVA!
-
-
-## Why is it good?
-
-In general...more precision = 
-
--- more "honest" / direct comparisons (isolate the true effect)
-
--- smaller confidence intervals 
-
--- More power (given you are looking at the same hypothesis test)
+# Compare this to one-way ANOVA{.smaller}
 
 ## one-way
 
@@ -1058,6 +1088,40 @@ model_anova <- aov(flipper_length_mm ~ species + sex, data = penguins_data)
 # Mean Squares (MS), F-statistics, and p-values for all effects.
 summary(model_anova)
 ```
+
+
+
+## Takeaway
+
+SSa is the same, regardless if we have B in the model or not. 
+
+However! The SS error term is different (smaller), giving us a more direct (precise?) comparison between A and the response.
+
+## Precision
+
+What is precision in ANOVA?
+
+## Precision
+
+It's all about reducing the standard error! 
+
+We typically don't see the SE in the ANOVA table, but here it is: 
+
+$$\mathbf{SE}(\mathbf{\bar{Y}_1}) = \sqrt{\frac{\mathbf{MS}_{\text{Error}}}{n_1}}$$
+
+it's a function of the MS error! Which we saw decrease in going from one-way to two-way ANOVA!
+
+
+## Why is it good?
+
+In general...more precision = 
+
+-- more "honest" / direct comparisons (isolate the true effect)
+
+-- smaller confidence intervals 
+
+-- More power (given you are looking at the same hypothesis test)
+
 
 
 ## Summary 

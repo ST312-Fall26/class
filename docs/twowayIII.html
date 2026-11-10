@@ -407,45 +407,19 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <h2></h2>
 
 <img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+
+<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
 <section id="f-statistic-1" class="slide level2">
 <h2>F-statistic</h2>
 <p>The <span class="math inline">\(F\)</span>-test for Factor A determines if the variation explained by Factor A (<span class="math inline">\(MS_A\)</span>) is significantly greater than the variation due to random error (<span class="math inline">\(MS_{Error}\)</span>).</p>
 <p><span class="math display">\[F_A = \frac{\text{Variability due to Factor A}}{\text{Variability due to Random Error}}\]</span></p>
-</section>
-<section id="compare-this-to-one-way-anova" class="slide level2 smaller">
-<h2>Compare this to one-way ANOVA</h2>
-<p><span class="math display">\[\mathbf{MS}_A = \frac{\mathbf{SS}_A}{\mathbf{df}_A}\]</span></p>
-<p><span class="math display">\[\mathbf{MS}_{Error} = \frac{\mathbf{SS}_{Error}}{\mathbf{df}_{Error}}\]</span></p>
+</section></section>
+<section>
+<section id="compare-this-to-one-way-anova" class="title-slide slide level1 smaller center">
+<h1>Compare this to one-way ANOVA</h1>
 
-<img data-src="twowayIII_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
-<section id="one-vs-two" class="slide level2">
-<h2>one vs two</h2>
-<p>What’s different between one-way and two-way?</p>
-<p><span class="math display">\[\mathbf{MS}_A = \frac{\mathbf{SS}_A}{\mathbf{df}_A}\]</span></p>
-<p><span class="math display">\[\mathbf{MS}_{Error} = \frac{\mathbf{SS}_{Error}}{\mathbf{df}_{Error}}\]</span></p>
-</section>
-<section id="takeaway" class="slide level2">
-<h2>Takeaway</h2>
-<p>SSa is the same, regardless if we have B in the model or not.</p>
-<p>However! The SS error term is different (smaller), giving us a more direct (precise?) comparison between A and the response.</p>
-</section>
-<section id="precision" class="slide level2">
-<h2>Precision</h2>
-<p>What is precision in ANOVA?</p>
-</section>
-<section id="precision-1" class="slide level2">
-<h2>Precision</h2>
-<p>It’s all about reducing the standard error!</p>
-<p>We typically don’t see the SE in the ANOVA table, but here it is:</p>
-<p><span class="math display">\[\mathbf{SE}(\mathbf{\bar{Y}_1}) = \sqrt{\frac{\mathbf{MS}_{\text{Error}}}{n_1}}\]</span></p>
-<p>it’s a function of the MS error! Which we saw decrease in going from one-way to two-way ANOVA!</p>
-</section>
-<section id="why-is-it-good" class="slide level2">
-<h2>Why is it good?</h2>
-<p>In general…more precision =</p>
-<p>– more “honest” / direct comparisons (isolate the true effect)</p>
-<p>– smaller confidence intervals</p>
-<p>– More power (given you are looking at the same hypothesis test)</p>
 </section>
 <section id="one-way" class="slide level2">
 <h2>one-way</h2>
@@ -471,6 +445,29 @@ Residuals   329  10787      33
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
+</section>
+<section id="takeaway" class="slide level2">
+<h2>Takeaway</h2>
+<p>SSa is the same, regardless if we have B in the model or not.</p>
+<p>However! The SS error term is different (smaller), giving us a more direct (precise?) comparison between A and the response.</p>
+</section>
+<section id="precision" class="slide level2">
+<h2>Precision</h2>
+<p>What is precision in ANOVA?</p>
+</section>
+<section id="precision-1" class="slide level2">
+<h2>Precision</h2>
+<p>It’s all about reducing the standard error!</p>
+<p>We typically don’t see the SE in the ANOVA table, but here it is:</p>
+<p><span class="math display">\[\mathbf{SE}(\mathbf{\bar{Y}_1}) = \sqrt{\frac{\mathbf{MS}_{\text{Error}}}{n_1}}\]</span></p>
+<p>it’s a function of the MS error! Which we saw decrease in going from one-way to two-way ANOVA!</p>
+</section>
+<section id="why-is-it-good" class="slide level2">
+<h2>Why is it good?</h2>
+<p>In general…more precision =</p>
+<p>– more “honest” / direct comparisons (isolate the true effect)</p>
+<p>– smaller confidence intervals</p>
+<p>– More power (given you are looking at the same hypothesis test)</p>
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>

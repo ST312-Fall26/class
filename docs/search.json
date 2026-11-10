@@ -363,22 +363,22 @@
     ]
   },
   {
-    "objectID": "twowayIII.html#compare-this-to-one-way-anova",
-    "href": "twowayIII.html#compare-this-to-one-way-anova",
+    "objectID": "twowayIII.html#one-way",
+    "href": "twowayIII.html#one-way",
     "title": "ST312: Two-way ANOVA (13)",
-    "section": "Compare this to one-way ANOVA",
-    "text": "Compare this to one-way ANOVA\n\\[\\mathbf{MS}_A = \\frac{\\mathbf{SS}_A}{\\mathbf{df}_A}\\]\n\\[\\mathbf{MS}_{Error} = \\frac{\\mathbf{SS}_{Error}}{\\mathbf{df}_{Error}}\\]",
+    "section": "one-way",
+    "text": "one-way\n\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \nspecies       2  50526   25263   567.4 &lt;2e-16 ***\nResiduals   330  14693      45                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
     "crumbs": [
       "Slides",
       "Day-22"
     ]
   },
   {
-    "objectID": "twowayIII.html#one-vs-two",
-    "href": "twowayIII.html#one-vs-two",
+    "objectID": "twowayIII.html#two-way",
+    "href": "twowayIII.html#two-way",
     "title": "ST312: Two-way ANOVA (13)",
-    "section": "one vs two",
-    "text": "one vs two\nWhat’s different between one-way and two-way?\n\\[\\mathbf{MS}_A = \\frac{\\mathbf{SS}_A}{\\mathbf{df}_A}\\]\n\\[\\mathbf{MS}_{Error} = \\frac{\\mathbf{SS}_{Error}}{\\mathbf{df}_{Error}}\\]",
+    "section": "two-way",
+    "text": "two-way\n\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \nspecies       2  50526   25263   770.5 &lt;2e-16 ***\nsex           1   3906    3906   119.1 &lt;2e-16 ***\nResiduals   329  10787      33                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
     "crumbs": [
       "Slides",
       "Day-22"
@@ -423,28 +423,6 @@
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Why is it good?",
     "text": "Why is it good?\nIn general…more precision =\n– more “honest” / direct comparisons (isolate the true effect)\n– smaller confidence intervals\n– More power (given you are looking at the same hypothesis test)",
-    "crumbs": [
-      "Slides",
-      "Day-22"
-    ]
-  },
-  {
-    "objectID": "twowayIII.html#one-way",
-    "href": "twowayIII.html#one-way",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "one-way",
-    "text": "one-way\n\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \nspecies       2  50526   25263   567.4 &lt;2e-16 ***\nResiduals   330  14693      45                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
-    "crumbs": [
-      "Slides",
-      "Day-22"
-    ]
-  },
-  {
-    "objectID": "twowayIII.html#two-way",
-    "href": "twowayIII.html#two-way",
-    "title": "ST312: Two-way ANOVA (13)",
-    "section": "two-way",
-    "text": "two-way\n\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \nspecies       2  50526   25263   770.5 &lt;2e-16 ***\nsex           1   3906    3906   119.1 &lt;2e-16 ***\nResiduals   329  10787      33                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
     "crumbs": [
       "Slides",
       "Day-22"
