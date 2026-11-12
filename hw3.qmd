@@ -1,0 +1,147 @@
+---
+title: "Homework-2"
+format: pdf
+---
+
+:::{.callout-note}
+This assignment is due November 20th at 11:59pm on Gradescope 
+:::
+
+## Instructions on how to start
+
+This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.
+
+**Show your work**. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work. 
+
+
+## Instructions on how to turn your homework in
+
+You will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: [Video](https://www.youtube.com/watch?v=nksyA0s-Geo). **Please submit a PDF**. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation. 
+
+## Context 
+
+The ToothGrowth dataset contains data from an experiment investigating the effect of vitamin C on tooth growth in guinea pigs. The study examined two different supplement types, orange juice (OJ) and ascorbic acid (VC), at three different dosage levels (0.5, 1, and 2 mg per day). The response variable, len, measures tooth length for each guinea pig. There are 60 observations in total, with 10 guinea pigs in each combination of supplement type and dosage level. The goal is to investigate whether tooth growth differs based on supplement type and dosage, and whether the effect of dosage on tooth growth depends on the type of supplement administered.
+
+The estimated means can be seen below.
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+
+ToothGrowth %>%
+  group_by(supp, dose) %>%
+  summarize(mean_len = mean(len))
+```
+
+
+## Question-1 (10-points)
+
+This interaction plot displays the mean tooth length for each supplement type at each dosage level. Draw this interaction plot. Based on the interaction plot, do you think there is evidence of an interaction between supplement type and dosage? Explain your reasoning using the patterns observed in the plot.
+
+Next, use the sample means from the context above, and label each circle with their appropriate value. 
+
+```{r}
+#| echo: false
+library(tidyverse)
+
+ToothGrowth %>%
+  ggplot(aes(x = dose, y = len,
+             color = supp, group = supp)) +
+  stat_summary(fun = mean, geom = "line",
+               linewidth = 1) +
+  stat_summary(fun = mean, geom = "point",
+               size = 3) +
+  labs(
+    x = "Vitamin C Dosage (mg/day)",
+    y = "Mean Tooth Length",
+    color = "Supplement Type"
+  ) +
+  theme_minimal()
+```
+
+## Question-2 
+
+What is the baseline mean represent? That is, what does the value of 13.230 represent in the context of our problem.
+
+Show, using the estimated model, how we are calculating the value of 16.8 for the supplement = VC, dose = 1 group.
+
+```{r}
+library(tidymodels)
+# Fit interaction model
+model_int <- lm(len ~ supp * dose, data = ToothGrowth)
+
+summary(model_int)
+```
+
+
+## Question-3
+
+The additive model assumes that the effect of supplement type is the same at every dosage level.
+
+```{r}
+library(tidyverse)
+
+ToothGrowth <- ToothGrowth %>%
+  mutate(dose = factor(dose))
+
+# Fit additive model
+model_add <- aov(len ~ supp + dose, data = ToothGrowth)
+
+# Calculate estimated means
+pred_add <- expand_grid(
+  supp = levels(ToothGrowth$supp),
+  dose = levels(ToothGrowth$dose)
+) %>%
+  mutate(
+    estimated_mean = predict(model_add, newdata = .)
+  )
+
+pred_add
+
+ggplot(pred_add,
+       aes(x = dose, y = estimated_mean,
+           color = supp, group = supp)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(
+    x = "Vitamin C Dosage (mg/day)",
+    y = "Estimated Mean Tooth Length",
+    color = "Supplement Type"
+  ) +
+  theme_minimal()
+```
+
+
+## Question-4 
+
+```{r}
+model_int <- lm(len ~ supp + dose, data = ToothGrowth)
+
+summary(model_int)
+```
+
+Show, using the estimated model, how we are calculating the value of 28.0 for the supplement = OJ, dose = 2 group.
+
+## Question-5
+
+I now want you to calculate the Sums of Squares for the interaction term by hand using the estimated means from the interaction model and the estimated means for the additive model. You can check if you calculated this correctly by comparing it to the following output below 
+
+$$
+SS_{\text{Interaction}} =
+n\sum_{i=1}^{a}\sum_{j=1}^{b}
+\left(
+\widehat{\mu}_{ij,\text{interaction}}
+-
+\widehat{\mu}_{ij,\text{additive}}
+\right)^2
+$$
+
+#### Anova output
+
+```{r}
+model_int <- aov(len ~ supp * dose, data = ToothGrowth)
+
+summary(model_int)
+```
+
