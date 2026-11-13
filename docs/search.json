@@ -92,7 +92,7 @@
     "href": "twowayIIII.html#break-it-down",
     "title": "ST312: Two-way ANOVA (13)",
     "section": "Break it down",
-    "text": "Break it down\n\\[\nSS_{\\text{AxB}} =\nn\\sum_{i=1}^{a}\\sum_{j=1}^{b}\n\\left(\n\\bar{Y}_{ij,\\text{interaction}}\n-\n\\bar{Y}_{ij,\\text{additive}}\n\\right)^2\n\\]\n\\(SS_{A \\times B}\\) -\n\\[\\mathbf{SS_{Error} = \\sum_{i=1}^{a} \\sum_{j=1}^{b} \\sum_{k=1}^{n} (Y_{ijk} - \\bar{Y}_{ij})^2}\\]\n\\(SS_{error}\\) -",
+    "text": "Break it down\n\\[\nSS_{\\text{AxB}} =\nn\\sum_{i=1}^{a}\\sum_{j=1}^{b}\n\\left(\n\\bar{Y}_{jk,\\text{interaction}}\n-\n\\bar{Y}_{jk,\\text{additive}}\n\\right)^2\n\\]\n\\(SS_{A \\times B}\\) -\n\\[\\mathbf{SS_{Error} = \\sum_{i=1}^{a} \\sum_{j=1}^{b} \\sum_{k=1}^{n} (Y_{ijk} - \\bar{Y}_{ij})^2}\\]\n\\(SS_{error}\\) -\nNote: this is for a balance design (sample size is the same for each group combination) Otherwise, we bring \\(\\n_text{jk}\\) into the summation.",
     "crumbs": [
       "Slides",
       "Day-23"
@@ -10144,6 +10144,116 @@
     "crumbs": [
       "Assignments",
       "Homework-2"
+    ]
+  },
+  {
+    "objectID": "hw3.html",
+    "href": "hw3.html",
+    "title": "Homework-3",
+    "section": "",
+    "text": "Note\n\n\n\nThis assignment is due November 20th at 11:59pm on Gradescope The late window goes until November 21st at 11:59pm on Gradescope",
+    "crumbs": [
+      "Assignments",
+      "Homework-3"
+    ]
+  },
+  {
+    "objectID": "hw3.html#instructions-on-how-to-start",
+    "href": "hw3.html#instructions-on-how-to-start",
+    "title": "Homework-3",
+    "section": "Instructions on how to start",
+    "text": "Instructions on how to start\nThis is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.\nShow your work. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work.",
+    "crumbs": [
+      "Assignments",
+      "Homework-3"
+    ]
+  },
+  {
+    "objectID": "hw3.html#instructions-on-how-to-turn-your-homework-in",
+    "href": "hw3.html#instructions-on-how-to-turn-your-homework-in",
+    "title": "Homework-3",
+    "section": "Instructions on how to turn your homework in",
+    "text": "Instructions on how to turn your homework in\nYou will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: Video. Please submit a PDF. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation.",
+    "crumbs": [
+      "Assignments",
+      "Homework-3"
+    ]
+  },
+  {
+    "objectID": "hw3.html#context",
+    "href": "hw3.html#context",
+    "title": "Homework-3",
+    "section": "Context",
+    "text": "Context\nThe ToothGrowth dataset contains data from an experiment investigating the effect of vitamin C on tooth growth in guinea pigs. The study examined two different supplement types, orange juice (OJ) and ascorbic acid (VC), at three different dosage levels (0.5, 1, and 2 mg per day). The response variable, len, measures tooth length for each guinea pig. There are 60 observations in total, with 10 guinea pigs in each combination of supplement type and dosage level. The goal is to investigate whether tooth growth differs based on supplement type and dosage, and whether the effect of dosage on tooth growth depends on the type of supplement administered.\nThe estimated means can be seen below.\n\n\n# A tibble: 6 × 3\n# Groups:   supp [2]\n  supp  dose  mean_len\n  &lt;fct&gt; &lt;fct&gt;    &lt;dbl&gt;\n1 OJ    0.5      13.2 \n2 OJ    1        22.7 \n3 OJ    2        26.1 \n4 VC    0.5       7.98\n5 VC    1        16.8 \n6 VC    2        26.1",
+    "crumbs": [
+      "Assignments",
+      "Homework-3"
+    ]
+  },
+  {
+    "objectID": "hw3.html#question-1-15-points",
+    "href": "hw3.html#question-1-15-points",
+    "title": "Homework-3",
+    "section": "Question-1 (15-points)",
+    "text": "Question-1 (15-points)\n\nThis interaction plot displays the mean tooth length for each supplement type at each dosage level. Draw this interaction plot. Based on the interaction plot, do you think there is evidence of an interaction between supplement type and dosage? Explain your reasoning using the patterns observed in the plot.\n\nNext, use the sample means from the context above, and label each circle with their appropriate value.\n\n\n\n\n\n\n\n\n\n\nWe are going to test for an interaction between dosage, supplement type, and mean tooth growth. In words, write out the null and alternative hypothesis. Hint: see the slides for an example.\n\n\\(Ho:\\)\n\\(Ha:\\)",
+    "crumbs": [
+      "Assignments",
+      "Homework-3"
+    ]
+  },
+  {
+    "objectID": "hw3.html#question-2-15-points",
+    "href": "hw3.html#question-2-15-points",
+    "title": "Homework-3",
+    "section": "Question-2 (15-points)",
+    "text": "Question-2 (15-points)\n\nWhat does the Intercept estimate represent in the context of the problem? That is, what does the value of 13.230 represent in the context of our problem?\n\n\n\n# A tibble: 6 × 3\n  term         estimate std.error\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)    13.2        1.15\n2 suppVC         -5.25       1.62\n3 dose1           9.47       1.62\n4 dose2          12.8        1.62\n5 suppVC:dose1   -0.680      2.30\n6 suppVC:dose2    5.33       2.30\n\n\n\nWrite out the estimated model, including the appropriate indicator functions for supplement type and dosage.\nUsing your estimated model from part b, show how 16.8 is calculated for an observation that had a vitamin C dosage, and a dose amount of 1, by plugging in the appropriate 1s and 0s. Show your work.",
+    "crumbs": [
+      "Assignments",
+      "Homework-3"
+    ]
+  },
+  {
+    "objectID": "hw3.html#question-3-10-points",
+    "href": "hw3.html#question-3-10-points",
+    "title": "Homework-3",
+    "section": "Question-3 (10-points)",
+    "text": "Question-3 (10-points)\nThe additive model assumes that the effect of supplement type is the same at every dosage level. The estimated output, and the plot, can be seen below.\n\n\n# A tibble: 4 × 3\n  term        estimate std.error\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)    12.5      0.988\n2 suppVC         -3.7      0.988\n3 dose1           9.13     1.21 \n4 dose2          15.5      1.21 \n\n\n\n\n\n\n\n\n\n\nWrite out the estimated model for the model that only has an additive effect between dosage, supplement type, and mean tooth length, including the appropriate indicator functions for supplement type and dosage.\nUsing your estimated model from part a, calculate the estimated mean tooth length for an observation that had a vitamin C dosage, and a dose amount of 1. Show your work.",
+    "crumbs": [
+      "Assignments",
+      "Homework-3"
+    ]
+  },
+  {
+    "objectID": "hw3.html#question-4-10-points",
+    "href": "hw3.html#question-4-10-points",
+    "title": "Homework-3",
+    "section": "Question-4 (10-points)",
+    "text": "Question-4 (10-points)\nI now want you to calculate the Sums of Squares for the interaction term by hand using the estimated means from the interaction model and the estimated means for the additive model. You can check if you calculated this correctly by comparing it to the following output below\n\\[\nSS_{\\text{Interaction}} =\nn\\sum_{j=1}^{a}\\sum_{k=1}^{b}\n\\left(\n\\widehat{\\mu}_{jk,\\text{interaction}}\n-\n\\widehat{\\mu}_{jk,\\text{additive}}\n\\right)^2\n\\]\nHint: Repeat steps from Question-3 and Question-4 for every other combination of dosage and supplement type to answer this question.\nNote: Lowercase n represents the sample size for each group, and is outside the summations because each group has the same sample size of 10. That is, after you calculate the estimated means, subtract them, square them, and sum them all up, you need to multiply by 10.\n\nAnova output\n\n\n            Df Sum Sq Mean Sq F value   Pr(&gt;F)    \nsupp         1  205.4   205.4  15.572 0.000231 ***\ndose         2 2426.4  1213.2  92.000  &lt; 2e-16 ***\nsupp:dose    2  108.3    54.2   4.107 0.021860 *  \nResiduals   54  712.1    13.2                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1",
+    "crumbs": [
+      "Assignments",
+      "Homework-3"
+    ]
+  },
+  {
+    "objectID": "hw3.html#question-5-10-points",
+    "href": "hw3.html#question-5-10-points",
+    "title": "Homework-3",
+    "section": "Question-5 (10-points)",
+    "text": "Question-5 (10-points)\nUsing the Anova output from above report the following information:\n– Our statistic\n– The distribution our statistic follows\n– A conclusion in terms of the alternative hypothesis, in the context of the problem.",
+    "crumbs": [
+      "Assignments",
+      "Homework-3"
+    ]
+  },
+  {
+    "objectID": "hw3.html#question-6-30-points",
+    "href": "hw3.html#question-6-30-points",
+    "title": "Homework-3",
+    "section": "Question-6 (30-points)",
+    "text": "Question-6 (30-points)\nFor this question, we are going to use the iris data set. This famous (Fisher’s or Anderson’s) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.\nLet’s investigate whether species has an additive effect on sepal length.\n\nIn 1-2 sentences, explain why including petal width may also be important when looking at the relationship between petal length and species.\nRegardless of your answer in a, we are going to include petal width. Please see the output below:\n\n\n\n# A tibble: 4 × 3\n# Groups:   Petal_Width [2]\n  Petal_Width Species    mean_length\n  &lt;fct&gt;       &lt;fct&gt;            &lt;dbl&gt;\n1 Small       setosa            1.46\n2 Small       versicolor        3.99\n3 Large       versicolor        4.61\n4 Large       virginica         5.55\n\n\nIn 1-2 sentences, explain why this is a Two-way ANOVA problem.\n\nIn words, write out the appropriate null and alternative hypothesis.\n\n\\(Ho:\\)\n\\(Ha:\\)\n\n\nBelow is a plot of the additive model:\n\n\n\n\n\n\n\n\n\n\nIn 1-2 sentences, explain if you think Species has an effect on mean Sepal Length.\n\nBelow is the output to answer your research question.\n\n\nAnova output\n\n\nAnalysis of Variance Table\n\nResponse: Sepal.Length\n            Df Sum Sq Mean Sq F value    Pr(&gt;F)    \nSpecies      2 63.212 31.6061 130.708 &lt; 2.2e-16 ***\npetal_size   1  3.652  3.6524  15.104 0.0001539 ***\nResiduals  146 35.304  0.2418                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nUsing the Anova output from above report the following information:\n– Our statistic\n– The distribution our statistic follows\n– A conclusion in terms of the alternative hypothesis, in the context of the problem.",
+    "crumbs": [
+      "Assignments",
+      "Homework-3"
     ]
   },
   {

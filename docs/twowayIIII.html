@@ -187,14 +187,15 @@
 SS_{\text{AxB}} =
 n\sum_{i=1}^{a}\sum_{j=1}^{b}
 \left(
-\bar{Y}_{ij,\text{interaction}}
+\bar{Y}_{jk,\text{interaction}}
 -
-\bar{Y}_{ij,\text{additive}}
+\bar{Y}_{jk,\text{additive}}
 \right)^2
 \]</span></p>
 <p><span class="math inline">\(SS_{A \times B}\)</span> -</p>
 <p><span class="math display">\[\mathbf{SS_{Error} = \sum_{i=1}^{a} \sum_{j=1}^{b} \sum_{k=1}^{n} (Y_{ijk} - \bar{Y}_{ij})^2}\]</span></p>
 <p><span class="math inline">\(SS_{error}\)</span> -</p>
+<p><strong>Note: this is for a balance design (sample size is the same for each group combination)</strong> Otherwise, we bring <span class="math inline">\(\n_text{jk}\)</span> into the summation.</p>
 </section>
 <section id="output" class="slide level2">
 <h2>Output</h2>

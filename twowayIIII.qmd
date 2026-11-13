@@ -287,9 +287,9 @@ $$
 SS_{\text{AxB}} =
 n\sum_{i=1}^{a}\sum_{j=1}^{b}
 \left(
-\bar{Y}_{ij,\text{interaction}}
+\bar{Y}_{jk,\text{interaction}}
 -
-\bar{Y}_{ij,\text{additive}}
+\bar{Y}_{jk,\text{additive}}
 \right)^2
 $$
 
@@ -298,6 +298,8 @@ $SS_{A \times B}$ -
 $$\mathbf{SS_{Error} = \sum_{i=1}^{a} \sum_{j=1}^{b} \sum_{k=1}^{n} (Y_{ijk} - \bar{Y}_{ij})^2}$$
 
 $SS_{error}$ - 
+
+**Note: this is for a balance design (sample size is the same for each group combination)** Otherwise, we bring $\n_text{jk}$ into the summation. 
 
 ## Output 
 
