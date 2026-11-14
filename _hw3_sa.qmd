@@ -1,0 +1,424 @@
+---
+title: "Homework-3"
+execute:
+  echo: false
+  warning: false
+  message: false
+format: html
+---
+
+:::{.callout-note}
+This assignment is due November 20th at 11:59pm on Gradescope 
+The late window goes until November 21st at 11:59pm on Gradescope
+:::
+
+## Instructions on how to start
+
+This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.
+
+**Show your work**. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work. 
+
+
+## Instructions on how to turn your homework in
+
+You will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: [Video](https://www.youtube.com/watch?v=nksyA0s-Geo). **Please submit a PDF**. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation. 
+
+\newpage
+
+## Context 
+
+The ToothGrowth dataset contains data from an experiment investigating the effect of vitamin C on tooth growth in guinea pigs. The study examined two different supplement types, orange juice (OJ) and ascorbic acid (VC), at three different dosage levels (0.5, 1, and 2 mg per day). The response variable, len, measures tooth length for each guinea pig. There are 60 observations in total, with 10 guinea pigs in each combination of supplement type and dosage level. The goal is to investigate whether tooth growth differs based on supplement type and dosage, and whether the effect of dosage on tooth growth depends on the type of supplement administered.
+
+The estimated means can be seen below.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(tidymodels)
+
+ToothGrowth <- ToothGrowth %>%
+  mutate(dose = factor(dose))
+
+ToothGrowth |>
+  group_by(supp, dose) %>%
+  summarize(mean_len = mean(len))
+```
+
+\newpage
+
+## Question-1 (15-points)
+
+a. This interaction plot displays the mean tooth length for each supplement type at each dosage level. Draw this interaction plot. Based on the interaction plot, do you think there is evidence of an interaction between supplement type and dosage? Explain your reasoning using the patterns observed in the plot.
+
+Next, use the sample means from the context above, and label each circle with their appropriate value. 
+
+```{r}
+#| echo: false
+library(tidyverse)
+
+ToothGrowth %>%
+  ggplot(aes(x = dose, y = len,
+             color = supp, group = supp)) +
+  stat_summary(fun = mean, geom = "line",
+               linewidth = 1) +
+  stat_summary(fun = mean, geom = "point",
+               size = 3,
+               position = position_dodge(width = 0.15)) +
+  stat_summary(fun = mean, geom = "text",
+               aes(label = round(after_stat(y), 1)),
+               position = position_dodge(width = 0.15),
+               vjust = -1,
+               size = 4,
+               show.legend = FALSE) +
+  labs(
+    x = "Vitamin C Dosage (mg/day)",
+    y = "Mean Tooth Length",
+    color = "Supplement Type"
+  ) +
+  theme_minimal()
+```
+
+**There is evidence of an interaction between mean tooth length, dosage, and supplement type. The relationship between mean tooth length and dosage depends on the supplement type. For example, there is a larger increase in mean tooth length for VC type from dosage 1 to 2 vs the OJ supplement type.**
+
+
+b. We are going to test for an interaction between dosage, supplement type, and mean tooth growth. **In words**, write out the null and alternative hypothesis. Hint: see the slides for an example.  
+
+$Ho:$ The impact of dosage on mean tooth length does not depend on supplement type at the population level.
+
+$Ha:$ The impact of dosage of mean tooth length does depend on supplement type at the population level.
+
+\newpage
+
+## Question-2 (15-points) 
+
+a. What does the `Intercept` estimate represent in the context of the problem? That is, what does the value of 13.230 represent in the context of our problem?
+
+```{r}
+#| echo: false
+model_int <- lm(len ~ supp * dose, data = ToothGrowth)
+
+tidy(model_int) |>
+  select(term, estimate, std.error)
+```
+
+**The intercept represents the mean tooth length for dosage at 0.5 for the OJ supplement type.**
+
+b. Write out the estimated model, including the appropriate indicator functions for supplement type and dosage. 
+
+$\widehat{len}_i = 13.2 - 5.25I(supp_i = VC) + 9.47I(dose_i = 1)$ 
+
+$+ 12.8I(dose_i = 2) - 0.680I(supp_i = VC)I(dose_i = 1) + 5.33I(supp_i = VC)I(dose_i = 2)$
+
+$$
+I(supp_i = VC) =
+\begin{cases}
+1 & \text{if } supp_i = VC \\
+0 & \text{otherwise}
+\end{cases}
+\\
+I(dose_i = 1) =
+\begin{cases}
+1 & \text{if } dose_i = 1 \\
+0 & \text{otherwise}
+\end{cases}
+\\
+I(dose_i = 2) =
+\begin{cases}
+1 & \text{if } dose_i = 2 \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+c. Using your estimated model from part b, show how 16.8 is calculated for an observation that had a vitamin C dosage, and a dose amount of 1, by plugging in the appropriate 1s and 0s. Show your work. 
+
+$$
+\widehat{len}_i = 13.2 - 5.25(1) + 9.47(1) + 12.8(0)
+- 0.680(1)(1) + 5.33(1)(0)
+$$
+
+$$
+= 13.2 - 5.25 + 9.47 - 0.680
+$$
+
+$$
+= 16.74 \approx 16.8
+$$
+
+\newpage
+
+## Question-3 (10-points)
+
+The additive model assumes that the effect of supplement type is the same at every dosage level. The estimated output, and the plot, can be seen below.
+
+```{r}
+#| echo: false
+
+# Fit additive model
+model_add <- lm(len ~ supp + dose, data = ToothGrowth)
+
+# Calculate estimated means
+pred_add <- expand_grid(
+  supp = levels(ToothGrowth$supp),
+  dose = levels(ToothGrowth$dose)
+) %>%
+  mutate(
+    estimated_mean = predict(model_add, newdata = .)
+  )
+
+tidy(model_add) |>
+  select(term, estimate, std.error)
+
+ggplot(pred_add,
+       aes(x = dose, y = estimated_mean,
+           color = supp, group = supp)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(
+    x = "Vitamin C Dosage (mg/day)",
+    y = "Estimated Mean Tooth Length",
+    color = "Supplement Type"
+  ) +
+  theme_minimal()
+```
+
+a. Write out the estimated model for the model that only has an additive effect between dosage, supplement type, and mean tooth length, including the appropriate indicator functions for supplement type and dosage. 
+
+$$
+\widehat{len}_i = 12.5 - 3.7I(supp_i = VC) + 9.13I(dose_i = 1) + 15.5I(dose_i = 2)
+$$
+
+$$
+I(supp_i = VC) =
+\begin{cases}
+1 & \text{if } supp_i = VC \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+$$
+I(dose_i = 1) =
+\begin{cases}
+1 & \text{if } dose_i = 1 \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+$$
+I(dose_i = 2) =
+\begin{cases}
+1 & \text{if } dose_i = 2 \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+
+
+b. Using your estimated model from part a, calculate the estimated mean tooth length for an observation that had a vitamin C dosage, and a dose amount of 1. Show your work. 
+
+$$
+I(supp_i = VC) = 1
+\qquad
+I(dose_i = 1) = 1
+\qquad
+I(dose_i = 2) = 0
+$$
+
+$$
+\widehat{len}_i = 12.5 - 3.7(1) + 9.13(1) + 15.5(0)
+$$
+
+$$
+= 12.5 - 3.7 + 9.13
+$$
+
+$$
+= 17.93
+$$
+\newpage
+
+## Question-4 (10-points)
+
+I now want you to calculate the Sums of Squares for the interaction term by hand using the estimated means from the interaction model and the estimated means for the additive model. You can check if you calculated this correctly by comparing it to the following output below 
+
+$$
+SS_{\text{Interaction}} =
+n\sum_{j=1}^{a}\sum_{k=1}^{b}
+\left(
+\widehat{\mu}_{jk,\text{interaction}}
+-
+\widehat{\mu}_{jk,\text{additive}}
+\right)^2
+$$
+
+
+Hint: Repeat steps from Question-3 and Question-4 for every other combination of dosage and supplement type to answer this question.
+
+Note: Lowercase `n` represents the sample size for each group, and is outside the summations because each group has the same sample size of `10`. That is, *after* you calculate the estimated means, subtract them, square them, and sum them all up, you need to multiply by `10`. 
+
+
+#### Anova output
+
+```{r}
+model_int <- aov(len ~ supp * dose, data = ToothGrowth)
+
+summary(model_int)
+```
+
+
+$$
+\begin{aligned}
+SS_{Interaction} = 10[ &(13.2-12.5)^2 + (7.95-8.8)^2 \\
+&+ (22.67-21.63)^2 + (16.74-17.93)^2 \\
+&+ (26.0-28.0)^2 + (26.08-24.3)^2 ]
+\end{aligned}
+$$
+
+$$
+= 10[0.49+0.7225+1.0816+1.4161+4+3.1684]
+$$
+
+$$
+= 108.786 \approx 108.8
+$$
+
+$$
+108.8 / 2 = 54.4 \approx 54.2 
+\\
+\text{not exact due to rounding error}
+$$
+\newpage
+
+## Question-5 (10-points)
+
+Using the Anova output from above report the following information: 
+
+-- Our statistic 
+
+-- The distribution our statistic follows
+
+-- A conclusion in terms of the alternative hypothesis, in the context of the problem.
+
+**With a F-statistic of 4.017 using a F-distribution with 2 and 54 degrees of freedom and a p-value of 0.0219, we have strong evidence to conclude that the impact of dosage of mean tooth length does depend on supplement type at the population level.**
+
+\newpage
+
+## Question-6 (30-points)
+
+For this question, we are going to use the `iris` data set. This famous (Fisher's or Anderson's) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
+
+Let's investigate whether species has an additive effect on sepal length. 
+
+```{r}
+iris_data <- iris %>%
+  mutate(
+    petal_size = ifelse(
+      Petal.Width <= median(Petal.Width),
+      "Small",
+      "Large"
+    ),
+    petal_size = factor(petal_size,
+                        levels = c("Small", "Large"))
+  )
+```
+
+a. In 1-2 sentences, explain why including `petal size` may also be important when looking at the relationship between `petal length` and `species`. 
+
+**Including an additional variable in the model makes our comparison more "honest" or precise. It helps us better investigate the relationship between petal length and species, when we account for petal width.** 
+
+b. Regardless of your answer in `a`, we are going to include `petal width`. Please see the output below: 
+
+```{r}
+iris_data |>
+  group_by(petal_size, Species, .drop = FALSE) |>
+  summarize(mean_length = mean(Sepal.Length), .groups = "drop") |>
+  mutate(
+    mean_length = case_when(
+      is.nan(mean_length) & petal_size == "Small" & Species == "virginica" ~ 5.696429,
+      is.nan(mean_length) & petal_size == "Large" & Species == "setosa" ~ 6.240909,
+      TRUE ~ mean_length
+    )
+  )
+```
+
+In 1-2 sentences, explain why this is a Two-way ANOVA problem. 
+
+**This is a two way anova problem because petal width is categorical, and species is categorical**, with our response (sepal length) being quantitative**.
+
+c. **In words**, write out the appropriate null and alternative hypothesis.
+
+$Ho:$ There is no relationship between species and mean sepal length, given petal size is in the model at the population level. 
+
+$Ha:$ There is some relationship between species and mean sepal length, given petal size is in the model at the population level. 
+
+\newpage
+
+d. Below is a plot of the additive model: 
+
+```{r}
+#| echo: false
+
+# Fit additive model
+model_add <- lm(
+  Sepal.Length ~ Species + petal_size,
+  data = iris_data
+)
+
+# Prediction grid
+prediction_grid <- expand_grid(
+  Species = levels(iris_data$Species),
+  petal_size = levels(iris_data$petal_size)
+)
+
+# Predicted means
+prediction_grid$predicted <- predict(
+  model_add,
+  newdata = prediction_grid
+)
+
+# Plot additive model
+ggplot(prediction_grid,
+       aes(x = Species,
+           y = predicted,
+           color = petal_size,
+           group = petal_size)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(
+    title = "Additive Model: Species + Petal Size",
+    x = "Iris Species",
+    y = "Predicted Mean Sepal Length",
+    color = "Petal Size"
+  ) +
+  theme_minimal(base_size = 13)
+```
+
+In 1-2 sentences, explain if you think Species has an effect on mean Sepal Length. 
+
+**There is some evidence of a relationship between species and mean sepal length, given petal size is in the model**. **Regardless of petal size, we see the estimated mean sepal length increase as we move across the levels of species.**
+
+e. Below is the output to answer your research question. 
+
+#### Anova output
+
+```{r}
+model_add <- lm(
+  Sepal.Length ~ Species + petal_size,
+  data = iris_data
+)
+
+anova(model_add)
+```
+
+
+Using the Anova output from above report the following information: 
+
+-- Our statistic 
+
+-- The distribution our statistic follows
+
+-- A conclusion in terms of the alternative hypothesis, in the context of the problem.
+
+**With a test statistic of 130.708 that follows a F-distribution with 2 and 146 degrees of freedom, and with with a p-value of < 0.001, we have strong evidence to conclude that there is some relationship between species and mean sepal length, given petal size is in the model at the population level.**  
