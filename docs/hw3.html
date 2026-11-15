@@ -525,7 +525,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p>Using the Anova output from above report the following information:</p>
 <p>– Our statistic</p>
 <p>– The distribution our statistic follows</p>
-<p>– A conclusion in terms of the alternative hypothesis, in the context of the problem.</p>
+<p>– A conclusion in terms of the alternative hypothesis, in the context of the problem. You may assume <span class="math inline">\(\alpha\)</span> = 0.05.</p>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="question-6-30-points" class="level2">
@@ -533,19 +533,20 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p>For this question, we are going to use the <code>iris</code> data set. This famous (Fisher’s or Anderson’s) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.</p>
 <p>Let’s investigate whether species has an additive effect on sepal length.</p>
 <ol type="a">
-<li><p>In 1-2 sentences, explain why including <code>petal width</code> may also be important when looking at the relationship between <code>petal length</code> and <code>species</code>.</p></li>
+<li><p>In 1-2 sentences, explain why including <code>petal size</code> may also be important when looking at the relationship between <code>sepal length</code> and <code>species</code>.</p></li>
 <li><p>Regardless of your answer in <code>a</code>, we are going to include <code>petal width</code>. Please see the output below:</p></li>
 </ol>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 3
-# Groups:   Petal_Width [2]
-  Petal_Width Species    mean_length
-  &lt;fct&gt;       &lt;fct&gt;            &lt;dbl&gt;
-1 Small       setosa            1.46
-2 Small       versicolor        3.99
-3 Large       versicolor        4.61
-4 Large       virginica         5.55</code></pre>
+<pre><code># A tibble: 6 × 3
+  petal_size Species    mean_length
+  &lt;fct&gt;      &lt;fct&gt;            &lt;dbl&gt;
+1 Small      setosa            5.01
+2 Small      versicolor        5.70
+3 Small      virginica         5.70
+4 Large      setosa            6.24
+5 Large      versicolor        6.24
+6 Large      virginica         6.59</code></pre>
 </div>
 </div>
 <p>In 1-2 sentences, explain why this is a Two-way ANOVA problem.</p>
@@ -589,7 +590,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p>Using the Anova output from above report the following information:</p>
 <p>– Our statistic</p>
 <p>– The distribution our statistic follows</p>
-<p>– A conclusion in terms of the alternative hypothesis, in the context of the problem.</p>
+<p>– A conclusion in terms of the alternative hypothesis, in the context of the problem. You may assume <span class="math inline">\(\alpha\)</span> = 0.05.</p>
 
 
 </section>
