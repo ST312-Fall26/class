@@ -85,6 +85,8 @@ website:
             text: "Day-22"
           - href: twowayIIII.qmd
             text: "Day-23"
+          - href: slopeinf26.qmd
+            text: "Day-24"
 format:
   html:
     theme: cosmo
