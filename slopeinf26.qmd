@@ -470,7 +470,12 @@ plot_flipper_qq <- penguins_clean |>
 # 4. Display Plots Side-by-Side using patchwork
 # This allows for easy comparison
 plot_bill_qq 
+```
 
+
+## 
+
+```{r}
 plot_flipper_qq
 ```
 
@@ -485,3 +490,7 @@ $$t = \frac{0.65626 \sqrt{342 - 2}}{\sqrt{1 - 0.65626^2}} = 16.034$$
 $\frac{b1}{SE_\text{b1}} = \frac{r\sqrt{n-2}}{\sqrt{1 - r^2}}$
 
 The statistic is the same! It comes down to your research question. 
+
+# Questions 
+
+# See you Thursday!
