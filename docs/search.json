@@ -1401,7 +1401,7 @@
     "href": "slopeinf226.html#coefficients-2",
     "title": "ST312: Regression Inference (10)",
     "section": "Coefficients",
-    "text": "Coefficients\nMultiple Linear Regression\n\n\n\n\n\nterm\nestimate\n\n\n\n\n(Intercept)\n147.951\n\n\nbill_length_mm\n1.083\n\n\nspeciesChinstrap\n-5.004\n\n\nspeciesGentoo\n17.799",
+    "text": "Coefficients\nMultiple Linear Regression\n\n\n\n\n\nterm\nestimate\n\n\n\n\n(Intercept)\n147.951\n\n\nbill_length_mm\n1.083\n\n\nspeciesChinstrap\n-5.004\n\n\nspeciesGentoo\n17.799\n\n\n\n\n\nIs this model better than simple linear regression? That is, should we include species? Is species important?",
     "crumbs": [
       "Slides",
       "Day-25"
@@ -1697,8 +1697,8 @@
     "objectID": "slopeinf226.html#interaction-model",
     "href": "slopeinf226.html#interaction-model",
     "title": "ST312: Regression Inference (10)",
-    "section": "Interaction model",
-    "text": "Interaction model\n\n\n# A tibble: 4 × 5\n  term                         estimate std.error statistic  p.value\n  &lt;chr&gt;                           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)                  -120.      42.4        -2.84 4.85e- 3\n2 bill_length_mm                  8.37     0.932       8.98 1.94e-17\n3 bill_depth_mm                  14.5      2.37        6.09 3.03e- 9\n4 bill_length_mm:bill_depth_mm   -0.392    0.0524     -7.49 6.05e-13",
+    "section": "Interaction Model",
+    "text": "Interaction Model\n\n\n# A tibble: 4 × 5\n  term                         estimate std.error statistic  p.value\n  &lt;chr&gt;                           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)                  -120.      42.4        -2.84 4.85e- 3\n2 bill_length_mm                  8.37     0.932       8.98 1.94e-17\n3 bill_depth_mm                  14.5      2.37        6.09 3.03e- 9\n4 bill_length_mm:bill_depth_mm   -0.392    0.0524     -7.49 6.05e-13",
     "crumbs": [
       "Slides",
       "Day-25"

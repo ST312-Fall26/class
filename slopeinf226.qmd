@@ -79,7 +79,7 @@ These are important!
 
 You are my favorite ST 312 class I’ve ever taught at NC State!
 
-![](images/pointwolf.jpg){fig-align="center"}
+![](images2/pointwolf.jpg){fig-align="center"}
 
 ## Confidence intervals 
 
@@ -257,6 +257,7 @@ tidy(model2) |>
   kbl(digits = 3)
 ```
 
+Is this model better than simple linear regression? That is, should we include species? Is species important? 
 
 ## We can test for it
 
@@ -866,7 +867,7 @@ plot_ly(plot_data, x = ~bill_length_mm, y = ~bill_depth_mm, z = ~flipper_length_
   ))
 ```
 
-## Interaction model{.smaller} 
+## Interaction Model{.smaller} 
 
 ```{r}
 #| echo: false 
