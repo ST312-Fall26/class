@@ -87,6 +87,8 @@ website:
             text: "Day-23"
           - href: slopeinf26.qmd
             text: "Day-24"
+          - href: slopeinf226.qmd
+            text: "Day-25"
 format:
   html:
     theme: cosmo
