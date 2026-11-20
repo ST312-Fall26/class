@@ -1,0 +1,308 @@
+---
+title: "Homework-4"
+format: html
+---
+
+:::{.callout-note}
+Because you still have multiple graded assessments due before the final exam, this is an OPTIONAL homework assignment to help you study for the final exam. This is not required, and you do NOT need to turn this in. 
+
+If you turn this assignment in by 12/1 at 11:59pm, you will earn +3 extra credit points towards the final exam. Partial extra credit can not be earned. You must complete this assignment in its entirety to earn extra credit points. Note: You can not earn more than a 100% on the final exam. 
+:::
+
+## Instructions on how to start
+
+This is a hand written assignment. Please label your questions as clearly as possible and put your name at the top of your assignment. You may work together on homework, but you are required to turn in your individual work. Unless otherwise specified, please give your answers to 2 decimal places.
+
+**Show your work**. I am happy to assign partial credit that you earn, but this can not be done if you do not show your work. 
+
+
+## Instructions on how to turn your homework in
+
+You will turn in your assignment on Gradescope. A Gradescope link to Homework-1 can be found on Moodle. Here is a short video by Gradescope on how to turn in your assignment: [Video](https://www.youtube.com/watch?v=nksyA0s-Geo). **Please submit a PDF**. All other file types will not be graded. As the video says, there are several phone apps you can use to create a PDF of your work. You can also you a scanner. If you are having trouble creating a PDF of your work, please reach out to me and we will have a conversation. 
+
+\newpage
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(MASS)
+library(tidyverse)
+library(broom)
+```
+
+
+## Data
+
+For this homework, we are going to being using the `survey` data set. These data contains the responses of 237 Statistics I students at the University of Adelaide to a number of questions. You can find the variable names and descriptions by clicking the link [here](https://rdrr.io/cran/MASS/man/survey.html). We are going to use a cleaned up data set that **only looks at students younger than 25 years old**. 
+
+```{r}
+#| echo: false
+survey <- na.omit(survey) |>
+  filter(Age < 25)
+```
+
+## Before you start 
+
+Sometimes software output can be difficult to read. For example, 7.72e- 1 should be read as 0.772. The `e- 1` means move the decimal place over 1. 
+
+## Exercise 1 (15 points)
+
+In this exercise, we are going to investigate the relationship between a student's `age` and their `Pulse`. For this question, use `Pulse` as our response variable, and `Age` as our explanatory variable.
+
+a)  Justify, in as much detail as possible, why we **can't** use difference in means methodology to analyze these data.
+
+b) The correlation coefficient can be seen below. 
+
+```{r}
+#| echo: false
+
+survey |>
+  summarise(cor = cor(Age, Pulse))
+```
+
+Report the proper noation for the correlation coefficient AND write out the appropriate interpretation of your correlation coefficient in part b by selecting the most appropriate interpreation below.
+
+-- There is a strong positive linear relationship between Age and Pulse. 
+
+-- There is a weak positive linear relationship between Age and Pulse. 
+
+-- There is a strong negative linear relationship between Age and Pulse. 
+
+-- There is a weak negative linear relationsihp between Age and Pulse. 
+
+-- There is a strong negative relationship between Age and Pulse. 
+
+-- There is a weak negative relationship between Age and Pulse. 
+
+c. You can see the scatterplot with our line of best fit below that models the linear relationship between Pulse and Age. You can also see the estimated coefficients for the line of best fit below.
+
+```{r}
+#| echo: false
+#| message: false
+
+survey |>
+  ggplot(
+    aes(x = Age, y = Pulse)
+  ) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = F)
+
+model1 <- lm(Pulse ~ Age, data = survey)
+
+tidy(model1)
+```
+
+Interpret your slope coefficient in the context of the problem. 
+
+
+d) Interpret your intercept in the context of the problem. 
+
+# Exercise 2 (15 points)
+
+We are now going to conduct a hypothesis test to test for a linear relationship between Pulse and Age. 
+
+a. Write out your appropriate null and alternative hypotheses in proper notation below. Note: 
+
+$Ho:$
+
+$Ha:$
+
+b. You may assume that one student is independent of the other. See the following plots below. You may or may not include this code in your document. 
+
+Use the plots to discuss the following assumptions in 1-2 sentences each: 
+
+-- Linearity 
+
+-- Equal Variance 
+
+-- Normality 
+
+```{r}
+plot(model1, which = c(1,2))
+```
+
+c. Using your model output from Exercise 1 part c, what type of statistic is -1.32? 
+
+-- F 
+
+-- $\chi^2$
+
+-- t 
+
+-- z
+
+d. Using your model output, show how -1.32 was calculated. 
+
+
+e. Using an $\alpha$ value of 0.05, select the appropriate decision and conclusion. 
+
+-- With a p-value larger that 0.05, we fail to reject the null hypothesis, and have weak evidence to conclude a true linear relationship between a student's Age and Pulse. 
+
+-- With a p-value larger that 0.05, we reject the null hypothesis, and have weak evidence to conclude a true linear relationship between a student's Age and Pulse. 
+
+-- With a p-value smaller that 0.05, we fail to reject the null hypothesis, and have weak evidence to conclude a true linear relationship between a student's Age and Pulse.
+
+-- With a p-value smaller that 0.05, reject the null hypothesis, and have strong evidence to conclude a true linear relationship between a student's Age and Pulse. 
+
+## Exercise 3 (15 points)
+
+We are now going to fit a multiple linear regression model, and include the categorical variable `Smoke`. Smoke has four levels: Heavy, Never, Occas, and Regul. The plot for your model can be seen below.  
+
+```{r}
+#| echo: false
+
+# 1. Prepare the data (as in your prompt)
+survey_data <- na.omit(survey) |>
+  filter(Age < 25)
+
+# 2. Fit the Additive Model (Shared Slope)
+# The formula Pulse ~ Age + Smoke is the additive model
+model_additive <- lm(Pulse ~ Age + Smoke, data = survey_data)
+
+# 3. Generate Predictions and Add to Data Frame
+# Create a data frame of predictions for the fitted model
+survey_data$Pulse_Fitted <- predict(model_additive, newdata = survey_data)
+
+# 4. Create the ggplot
+ggplot(survey_data, aes(x = Age, y = Pulse, color = Smoke)) +
+  # Original Data Points
+  geom_point(alpha = 0.6) +
+  # Fitted Regression Lines (The shared slope is key here)
+  # The geom_line will draw parallel lines because the model is additive.
+  geom_line(aes(y = Pulse_Fitted), linewidth = 1) +
+  # Customization
+  labs(
+    title = "Additive Linear Model of Pulse vs Age, Grouped by Smoking Habit",
+    subtitle = "Same Slope for Age Across All Smoking Categories",
+    y = "Pulse Rate",
+    x = "Age (Years)"
+  ) +
+  theme_minimal() +
+  scale_color_brewer(palette = "Set1")
+```
+
+a) Explain in 1-2 sentences why this is an additive model, and not an interaction model. 
+
+b) Please see your model output for your additive model below. 
+
+```{r}
+#| echo: false
+model2 <- lm(Pulse ~ Age + Smoke, data = survey)
+tidy(model2)
+```
+
+Write out the simplified model for someone who smokes **Heavy**. 
+
+c) Write out the simplified model for someone who smokes **Never**. 
+
+d) Interpret -0.828 in the context of the problem. 
+
+
+## Exercise 4 (15 points)
+
+We are now going to fit an interaction model, and include the categorical variable `Smoke`. Smoke has four levels: Heavy, Never, Occas, and Regul. The plot for your model can be seen below.  
+
+```{r}
+#| echo: false
+# 1. Prepare the data (as per the original prompt)
+survey_data <- na.omit(survey) |>
+  filter(Age < 25)
+
+# 2. Fit the Interaction Model (Different Slopes)
+# The formula Pulse ~ Age * Smoke is the interaction model
+model_interaction <- lm(Pulse ~ Age * Smoke, data = survey_data)
+
+# 3. Generate Predictions and Add to Data Frame
+# Create a data frame of predictions for the fitted model
+survey_data$Pulse_Fitted_Interaction <- predict(model_interaction, newdata = survey_data)
+
+# 4. Create the ggplot
+ggplot(survey_data, aes(x = Age, y = Pulse, color = Smoke)) +
+  # Original Data Points
+  geom_point(alpha = 0.6) +
+  # Fitted Regression Lines (The different slopes are key here)
+  # The geom_line will draw non-parallel lines because of the interaction term.
+  geom_line(aes(y = Pulse_Fitted_Interaction), linewidth = 1) +
+  # Customization
+  labs(
+    title = "Interaction Model of Pulse vs Age, Grouped by Smoking Habit",
+    subtitle = "Different Slopes for Age Across All Smoking Categories",
+    y = "Pulse Rate",
+    x = "Age (Years)"
+  ) +
+  theme_minimal() +
+  scale_color_brewer(palette = "Set1")
+```
+
+a) In 1-2 sentences, explain why this is an interaction model instead of a additive model. 
+
+b) Please see your model output for your interaction model below. 
+
+```{r}
+#| echo: false
+model3 <- lm(Pulse ~ Age * Smoke, data = survey)
+tidy(model3)
+```
+
+c) Write out the simplified model for someone who smokes **Heavy**. 
+
+d) Write out the simplified model for someone who smokes **Never**. 
+
+## Exercise 5 (15 points)
+
+We are now going to **test** if it makes sense to include the interaction term between Smoke and Age, versus our additive model. 
+
+a) Write out the null and alternative hypothesis in proper notation below: 
+
+$H_o:$ 
+
+$H_a:$ 
+
+b) In 1-2 sentences, describe why our reduced model (additive) is entirely nested into the interaction model (full).
+
+
+c) List out the other assumptions you need to check for this hypothesis test. I'm not asking you to check them, I'm asking you to name them. 
+
+
+d) Please see the follow `Anova` table from R below.
+
+```{r}
+#| echo: false
+# 1. Fit the Reduced Model (MR: Flipper Length ~ Bill Length)
+model_reduced <- lm(Pulse ~ Age + Smoke, data = survey)
+
+# 2. Fit the Full Model (MF: Flipper Length ~ Bill Length + Species)
+model_full <- lm(Pulse ~ Age * Smoke, data = survey)
+
+# 3. Perform the Model Comparison F-test
+anova(model_reduced, model_full)
+```
+
+Report your F-statistic. That is identify and write what your F-statistic is from the output. 
+
+e) That F-statistic is created using the following formula:
+
+$$F = \frac{\frac{RSS_R - RSS_F}{df_R - df_F}}{\frac{RSS_F}{df_F}}$$
+
+
+The residual sums of squares is calculated as so: 
+
+$$\text{RSS} = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
+
+
+The R represents your reduced model. The F represents your full model. 
+
+
+$\text{RSS}_R = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 = 20154.72$
+
+$\text{RSS}_F = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 = 19998.49$
+
+
+Use this information, and output from part d, to show exactly the F-statistic was calculated that you identified in part d.
+
+
+
+
+

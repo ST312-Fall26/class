@@ -24,6 +24,8 @@ website:
             text: "Rubric Assignment Format"
           - href: hw3.qmd
             text: "Homework-3"
+          - href: homework4.qmd
+            text: "Optional Homework-4"
           #- href: stat-exp.qmd
           #  text: "Statistics Experience"
           #- href: homework3/homework3.qmd
