@@ -47,7 +47,7 @@ survey <- na.omit(survey) |>
 
 Sometimes software output can be difficult to read. For example, 7.72e- 1 should be read as 0.772. The `e- 1` means move the decimal place over 1. 
 
-## Exercise 1 (15 points)
+## Exercise 1
 
 In this exercise, we are going to investigate the relationship between a student's `age` and their `Pulse`. For this question, use `Pulse` as our response variable, and `Age` as our explanatory variable.
 
@@ -99,7 +99,7 @@ Interpret your slope coefficient in the context of the problem.
 
 d) Interpret your intercept in the context of the problem. 
 
-# Exercise 2 (15 points)
+# Exercise 2
 
 We are now going to conduct a hypothesis test to test for a linear relationship between Pulse and Age. 
 
@@ -146,7 +146,7 @@ e. Using an $\alpha$ value of 0.05, select the appropriate decision and conclusi
 
 -- With a p-value smaller that 0.05, reject the null hypothesis, and have strong evidence to conclude a true linear relationship between a student's Age and Pulse. 
 
-## Exercise 3 (15 points)
+## Exercise 3
 
 We are now going to fit a multiple linear regression model, and include the categorical variable `Smoke`. Smoke has four levels: Heavy, Never, Occas, and Regul. The plot for your model can be seen below.  
 
@@ -200,7 +200,7 @@ c) Write out the simplified model for someone who smokes **Never**.
 d) Interpret -0.828 in the context of the problem. 
 
 
-## Exercise 4 (15 points)
+## Exercise 4
 
 We are now going to fit an interaction model, and include the categorical variable `Smoke`. Smoke has four levels: Heavy, Never, Occas, and Regul. The plot for your model can be seen below.  
 
@@ -250,7 +250,7 @@ c) Write out the simplified model for someone who smokes **Heavy**.
 
 d) Write out the simplified model for someone who smokes **Never**. 
 
-## Exercise 5 (15 points)
+## Exercise 5
 
 We are now going to **test** if it makes sense to include the interaction term between Smoke and Age, versus our additive model. 
 

@@ -10626,44 +10626,44 @@
     ]
   },
   {
-    "objectID": "homework4.html#exercise-1-15-points",
-    "href": "homework4.html#exercise-1-15-points",
+    "objectID": "homework4.html#exercise-1",
+    "href": "homework4.html#exercise-1",
     "title": "Homework-4",
-    "section": "Exercise 1 (15 points)",
-    "text": "Exercise 1 (15 points)\nIn this exercise, we are going to investigate the relationship between a student’s age and their Pulse. For this question, use Pulse as our response variable, and Age as our explanatory variable.\n\nJustify, in as much detail as possible, why we can’t use difference in means methodology to analyze these data.\nThe correlation coefficient can be seen below.\n\n\n\n         cor\n1 -0.1069597\n\n\nReport the proper noation for the correlation coefficient AND write out the appropriate interpretation of your correlation coefficient in part b by selecting the most appropriate interpreation below.\n– There is a strong positive linear relationship between Age and Pulse.\n– There is a weak positive linear relationship between Age and Pulse.\n– There is a strong negative linear relationship between Age and Pulse.\n– There is a weak negative linear relationsihp between Age and Pulse.\n– There is a strong negative relationship between Age and Pulse.\n– There is a weak negative relationship between Age and Pulse.\n\nYou can see the scatterplot with our line of best fit below that models the linear relationship between Pulse and Age. You can also see the estimated coefficients for the line of best fit below.\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   87.7      10.0        8.75 3.91e-15\n2 Age           -0.697     0.527     -1.32 1.88e- 1\n\n\nInterpret your slope coefficient in the context of the problem.\n\nInterpret your intercept in the context of the problem.",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nIn this exercise, we are going to investigate the relationship between a student’s age and their Pulse. For this question, use Pulse as our response variable, and Age as our explanatory variable.\n\nJustify, in as much detail as possible, why we can’t use difference in means methodology to analyze these data.\nThe correlation coefficient can be seen below.\n\n\n\n         cor\n1 -0.1069597\n\n\nReport the proper noation for the correlation coefficient AND write out the appropriate interpretation of your correlation coefficient in part b by selecting the most appropriate interpreation below.\n– There is a strong positive linear relationship between Age and Pulse.\n– There is a weak positive linear relationship between Age and Pulse.\n– There is a strong negative linear relationship between Age and Pulse.\n– There is a weak negative linear relationsihp between Age and Pulse.\n– There is a strong negative relationship between Age and Pulse.\n– There is a weak negative relationship between Age and Pulse.\n\nYou can see the scatterplot with our line of best fit below that models the linear relationship between Pulse and Age. You can also see the estimated coefficients for the line of best fit below.\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   87.7      10.0        8.75 3.91e-15\n2 Age           -0.697     0.527     -1.32 1.88e- 1\n\n\nInterpret your slope coefficient in the context of the problem.\n\nInterpret your intercept in the context of the problem.",
     "crumbs": [
       "Assignments",
       "Optional Homework-4"
     ]
   },
   {
-    "objectID": "homework4.html#exercise-3-15-points",
-    "href": "homework4.html#exercise-3-15-points",
+    "objectID": "homework4.html#exercise-3",
+    "href": "homework4.html#exercise-3",
     "title": "Homework-4",
-    "section": "Exercise 3 (15 points)",
-    "text": "Exercise 3 (15 points)\nWe are now going to fit a multiple linear regression model, and include the categorical variable Smoke. Smoke has four levels: Heavy, Never, Occas, and Regul. The plot for your model can be seen below.\n\n\n\n\n\n\n\n\n\n\nExplain in 1-2 sentences why this is an additive model, and not an interaction model.\nPlease see your model output for your additive model below.\n\n\n\n# A tibble: 5 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   95.7      11.6       8.28  6.74e-14\n2 Age           -0.828     0.533    -1.55  1.22e- 1\n3 SmokeNever    -6.08      4.90     -1.24  2.17e- 1\n4 SmokeOccas    -6.76      5.86     -1.16  2.50e- 1\n5 SmokeRegul    -1.70      5.84     -0.291 7.72e- 1\n\n\nWrite out the simplified model for someone who smokes Heavy.\n\nWrite out the simplified model for someone who smokes Never.\nInterpret -0.828 in the context of the problem.",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nWe are now going to fit a multiple linear regression model, and include the categorical variable Smoke. Smoke has four levels: Heavy, Never, Occas, and Regul. The plot for your model can be seen below.\n\n\n\n\n\n\n\n\n\n\nExplain in 1-2 sentences why this is an additive model, and not an interaction model.\nPlease see your model output for your additive model below.\n\n\n\n# A tibble: 5 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   95.7      11.6       8.28  6.74e-14\n2 Age           -0.828     0.533    -1.55  1.22e- 1\n3 SmokeNever    -6.08      4.90     -1.24  2.17e- 1\n4 SmokeOccas    -6.76      5.86     -1.16  2.50e- 1\n5 SmokeRegul    -1.70      5.84     -0.291 7.72e- 1\n\n\nWrite out the simplified model for someone who smokes Heavy.\n\nWrite out the simplified model for someone who smokes Never.\nInterpret -0.828 in the context of the problem.",
     "crumbs": [
       "Assignments",
       "Optional Homework-4"
     ]
   },
   {
-    "objectID": "homework4.html#exercise-4-15-points",
-    "href": "homework4.html#exercise-4-15-points",
+    "objectID": "homework4.html#exercise-4",
+    "href": "homework4.html#exercise-4",
     "title": "Homework-4",
-    "section": "Exercise 4 (15 points)",
-    "text": "Exercise 4 (15 points)\nWe are now going to fit an interaction model, and include the categorical variable Smoke. Smoke has four levels: Heavy, Never, Occas, and Regul. The plot for your model can be seen below.\n\n\n\n\n\n\n\n\n\n\nIn 1-2 sentences, explain why this is an interaction model instead of a additive model.\nPlease see your model output for your interaction model below.\n\n\n\n# A tibble: 8 × 5\n  term           estimate std.error statistic p.value\n  &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 (Intercept)     140.        56.1      2.50   0.0136\n2 Age              -3.07       2.83    -1.09   0.279 \n3 SmokeNever      -54.3       57.2     -0.950  0.344 \n4 SmokeOccas      -25.8       69.6     -0.371  0.711 \n5 SmokeRegul      -44.6       66.5     -0.671  0.503 \n6 Age:SmokeNever    2.45       2.89     0.848  0.398 \n7 Age:SmokeOccas    0.900      3.57     0.252  0.801 \n8 Age:SmokeRegul    2.17       3.36     0.645  0.520 \n\n\n\nWrite out the simplified model for someone who smokes Heavy.\nWrite out the simplified model for someone who smokes Never.",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nWe are now going to fit an interaction model, and include the categorical variable Smoke. Smoke has four levels: Heavy, Never, Occas, and Regul. The plot for your model can be seen below.\n\n\n\n\n\n\n\n\n\n\nIn 1-2 sentences, explain why this is an interaction model instead of a additive model.\nPlease see your model output for your interaction model below.\n\n\n\n# A tibble: 8 × 5\n  term           estimate std.error statistic p.value\n  &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 (Intercept)     140.        56.1      2.50   0.0136\n2 Age              -3.07       2.83    -1.09   0.279 \n3 SmokeNever      -54.3       57.2     -0.950  0.344 \n4 SmokeOccas      -25.8       69.6     -0.371  0.711 \n5 SmokeRegul      -44.6       66.5     -0.671  0.503 \n6 Age:SmokeNever    2.45       2.89     0.848  0.398 \n7 Age:SmokeOccas    0.900      3.57     0.252  0.801 \n8 Age:SmokeRegul    2.17       3.36     0.645  0.520 \n\n\n\nWrite out the simplified model for someone who smokes Heavy.\nWrite out the simplified model for someone who smokes Never.",
     "crumbs": [
       "Assignments",
       "Optional Homework-4"
     ]
   },
   {
-    "objectID": "homework4.html#exercise-5-15-points",
-    "href": "homework4.html#exercise-5-15-points",
+    "objectID": "homework4.html#exercise-5",
+    "href": "homework4.html#exercise-5",
     "title": "Homework-4",
-    "section": "Exercise 5 (15 points)",
-    "text": "Exercise 5 (15 points)\nWe are now going to test if it makes sense to include the interaction term between Smoke and Age, versus our additive model.\n\nWrite out the null and alternative hypothesis in proper notation below:\n\n\\(H_o:\\)\n\\(H_a:\\)\n\nIn 1-2 sentences, describe why our reduced model (additive) is entirely nested into the interaction model (full).\nList out the other assumptions you need to check for this hypothesis test. I’m not asking you to check them, I’m asking you to name them.\nPlease see the follow Anova table from R below.\n\n\n\nAnalysis of Variance Table\n\nModel 1: Pulse ~ Age + Smoke\nModel 2: Pulse ~ Age * Smoke\n  Res.Df   RSS Df Sum of Sq      F Pr(&gt;F)\n1    148 20155                           \n2    145 19999  3    156.24 0.3776 0.7693\n\n\nReport your F-statistic. That is identify and write what your F-statistic is from the output.\n\nThat F-statistic is created using the following formula:\n\n\\[F = \\frac{\\frac{RSS_R - RSS_F}{df_R - df_F}}{\\frac{RSS_F}{df_F}}\\]\nThe residual sums of squares is calculated as so:\n\\[\\text{RSS} = \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2\\]\nThe R represents your reduced model. The F represents your full model.\n\\(\\text{RSS}_R = \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2 = 20154.72\\)\n\\(\\text{RSS}_F = \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2 = 19998.49\\)\nUse this information, and output from part d, to show exactly the F-statistic was calculated that you identified in part d.",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nWe are now going to test if it makes sense to include the interaction term between Smoke and Age, versus our additive model.\n\nWrite out the null and alternative hypothesis in proper notation below:\n\n\\(H_o:\\)\n\\(H_a:\\)\n\nIn 1-2 sentences, describe why our reduced model (additive) is entirely nested into the interaction model (full).\nList out the other assumptions you need to check for this hypothesis test. I’m not asking you to check them, I’m asking you to name them.\nPlease see the follow Anova table from R below.\n\n\n\nAnalysis of Variance Table\n\nModel 1: Pulse ~ Age + Smoke\nModel 2: Pulse ~ Age * Smoke\n  Res.Df   RSS Df Sum of Sq      F Pr(&gt;F)\n1    148 20155                           \n2    145 19999  3    156.24 0.3776 0.7693\n\n\nReport your F-statistic. That is identify and write what your F-statistic is from the output.\n\nThat F-statistic is created using the following formula:\n\n\\[F = \\frac{\\frac{RSS_R - RSS_F}{df_R - df_F}}{\\frac{RSS_F}{df_F}}\\]\nThe residual sums of squares is calculated as so:\n\\[\\text{RSS} = \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2\\]\nThe R represents your reduced model. The F represents your full model.\n\\(\\text{RSS}_R = \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2 = 20154.72\\)\n\\(\\text{RSS}_F = \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2 = 19998.49\\)\nUse this information, and output from part d, to show exactly the F-statistic was calculated that you identified in part d.",
     "crumbs": [
       "Assignments",
       "Optional Homework-4"
